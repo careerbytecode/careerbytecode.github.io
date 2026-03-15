@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerByteCode — Top European Tech Brand. Global Tech Learning & Innovation Ecosystem. 2.4M+ learners across 105+ countries.">
+<meta property="og:title" content="CareerByteCode — Top European Tech Brand">
+<meta property="og:description" content="Learn. Build. Collaborate. Earn. 2.4M+ Tech Professionals across 105+ Countries.">
+<title>CareerByteCode — Top European Tech Brand</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root{
+  --bg:#03070f;
+  --bg2:#060d1a;
+  --card:#09121f;
+  --card2:#0d1828;
+  --border:#112236;
+  --border2:#162d47;
+  --c1:#00cfef;   /* cyan */
+  --c2:#7c5cfc;   /* purple */
+  --c3:#00e898;   /* green */
+  --c4:#ffb520;   /* amber */
+  --c5:#ff5c87;   /* pink */
+  --c6:#ff7a3d;   /* orange */
+  --text:#cfe0f0;
+  --muted:#3d6080;
+  --display:'Bricolage Grotesque',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--display);
+  overflow-x:hidden;
+  line-height:1.65;
+}
+
+/* ── CANVAS PARTICLES ── */
+#canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 40px;
+  background:rgba(3,7,15,.85);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(0,207,239,.08);
+  transition:padding .3s;
+}
+.nav-brand{
+  font-weight:800;font-size:1.15rem;letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--c1),var(--c2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:flex;align-items:center;gap:8px;
+}
+.nav-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--c3);
+  animation:pulse 2s ease-in-out infinite;flex-shrink:0;
+}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{
+  font-size:.78rem;font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .2s;
+}
+.nav-links a:hover{color:var(--c1);}
+.nav-cta{
+  font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.08em;
+  padding:8px 20px;border-radius:6px;text-decoration:none;
+  background:var(--c1);color:#03070f;
+  transition:box-shadow .2s,transform .15s;
+}
+.nav-cta:hover{box-shadow:0 0 28px rgba(0,207,239,.4);transform:translateY(-1px);}
+
+/* ── PAGE ── */
+.page{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 28px 100px;}
+
+/* ── SECTION LABEL ── */
+.slabel{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--c1);
+  margin-bottom:24px;
+}
+.slabel::before{content:'//';color:var(--c2);font-weight:500;}
+.slabel::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--border2),transparent);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:120px 0 80px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--c3);border:1px solid rgba(0,232,152,.2);
+  background:rgba(0,232,152,.05);padding:7px 20px;border-radius:100px;
+  margin-bottom:36px;
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--c3);animation:pulse 1.8s ease-in-out infinite;}
+
+.hero-kicker{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:18px;
+}
+
+.hero-h1{
+  font-size:clamp(3.8rem,10vw,7.5rem);
+  font-weight:800;line-height:.94;letter-spacing:-.045em;
+  margin-bottom:24px;
+}
+.hero-h1 .line1{
+  display:block;
+  background:linear-gradient(135deg,#fff 20%,var(--c1) 55%,var(--c2) 85%);
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 6s linear infinite;
+}
+.hero-h1 .line2{
+  display:block;
+  background:linear-gradient(135deg,var(--c2) 0%,var(--c5) 50%,var(--c3) 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 6s linear infinite reverse;
+  font-size:.52em;letter-spacing:-.02em;margin-top:8px;
+}
+
+.hero-sub{
+  font-size:1.1rem;color:var(--muted);font-weight:400;max-width:600px;margin:0 auto 36px;line-height:1.75;
+}
+.hero-sub strong{color:var(--text);}
+
+.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:48px;}
+.hpill{
+  font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.08em;
+  padding:8px 20px;border-radius:100px;border:1px solid;
+  transition:transform .2s,box-shadow .2s;cursor:default;
+}
+.hpill:hover{transform:translateY(-3px);}
+.hp1{color:var(--c1);border-color:rgba(0,207,239,.3);background:rgba(0,207,239,.06);}
+.hp1:hover{box-shadow:0 8px 24px rgba(0,207,239,.2);}
+.hp2{color:var(--c3);border-color:rgba(0,232,152,.3);background:rgba(0,232,152,.06);}
+.hp2:hover{box-shadow:0 8px 24px rgba(0,232,152,.2);}
+.hp3{color:var(--c2);border-color:rgba(124,92,252,.3);background:rgba(124,92,252,.06);}
+.hp3:hover{box-shadow:0 8px 24px rgba(124,92,252,.2);}
+.hp4{color:var(--c4);border-color:rgba(255,181,32,.3);background:rgba(255,181,32,.06);}
+.hp4:hover{box-shadow:0 8px 24px rgba(255,181,32,.2);}
+.hp5{color:var(--c5);border-color:rgba(255,92,135,.3);background:rgba(255,92,135,.06);}
+
+.hero-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  padding:14px 30px;border-radius:8px;text-decoration:none;
+  transition:transform .15s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px);}
+.btn-primary{background:var(--c1);color:#03070f;box-shadow:0 0 0 0 rgba(0,207,239,0);}
+.btn-primary:hover{box-shadow:0 0 32px rgba(0,207,239,.45);}
+.btn-outline{background:transparent;color:var(--c1);border:1px solid rgba(0,207,239,.35);}
+.btn-outline:hover{background:rgba(0,207,239,.06);box-shadow:0 0 20px rgba(0,207,239,.15);}
+
+/* ── SCROLL INDICATOR ── */
+.scroll-indicator{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--muted);
+  animation:float 2.5s ease-in-out infinite;
+}
+.scroll-line{width:1px;height:40px;background:linear-gradient(var(--c1),transparent);}
+
+/* ── STATS ── */
+.stats-section{padding:80px 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.stat-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:32px 20px;text-align:center;position:relative;overflow:hidden;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.stat-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--c1),var(--c2));
+}
+.stat-card:hover{transform:translateY(-6px);border-color:var(--border2);box-shadow:0 20px 60px rgba(0,207,239,.07);}
+.stat-icon{font-size:1.8rem;margin-bottom:12px;display:block;}
+.stat-num{
+  font-family:var(--mono);font-size:2.2rem;font-weight:500;
+  background:linear-gradient(135deg,var(--c1),var(--c2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:block;line-height:1;
+}
+.stat-lbl{font-size:.68rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:8px;}
+
+/* ── SECTION WRAPPER ── */
+.section{padding:80px 0;}
+
+/* ── MISSION ── */
+.mission-wrap{
+  background:linear-gradient(135deg,rgba(124,92,252,.1),rgba(0,207,239,.07));
+  border:1px solid rgba(124,92,252,.2);border-radius:20px;
+  padding:48px 52px;position:relative;overflow:hidden;
+}
+.mission-wrap::after{
+  content:'{ }';position:absolute;right:40px;bottom:10px;
+  font-family:var(--mono);font-size:7rem;color:rgba(124,92,252,.07);font-weight:500;
+  line-height:1;pointer-events:none;
+}
+.mission-title{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:14px;}
+.mission-body{font-size:.95rem;color:var(--text);line-height:1.9;margin-bottom:28px;max-width:720px;}
+.mission-body em{color:var(--c1);font-style:normal;font-weight:600;}
+.phils{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.phil{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(0,207,239,.04);border:1px solid rgba(0,207,239,.1);
+  border-radius:10px;padding:12px 18px;font-size:.82rem;color:var(--text);
+  transition:border-color .2s,background .2s;
+}
+.phil:hover{border-color:rgba(0,207,239,.25);background:rgba(0,207,239,.07);}
+.phil-tick{color:var(--c3);font-size:.95rem;flex-shrink:0;}
+
+/* ── 7 PILLARS ── */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
+.pillar{
+  background:var(--card2);border:1px solid var(--border);border-radius:18px;
+  padding:30px 24px;position:relative;overflow:hidden;
+  transition:transform .25s,border-color .25s,box-shadow .25s;cursor:default;
+}
+.pillar:hover{transform:translateY(-6px);}
+.pillar::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  border-radius:18px 18px 0 0;
+}
+.p1::before{background:linear-gradient(90deg,var(--c1),transparent);}  .p1:hover{border-color:rgba(0,207,239,.35);box-shadow:0 20px 60px rgba(0,207,239,.07);}
+.p2::before{background:linear-gradient(90deg,var(--c2),transparent);}  .p2:hover{border-color:rgba(124,92,252,.35);box-shadow:0 20px 60px rgba(124,92,252,.07);}
+.p3::before{background:linear-gradient(90deg,var(--c3),transparent);}  .p3:hover{border-color:rgba(0,232,152,.35);box-shadow:0 20px 60px rgba(0,232,152,.07);}
+.p4::before{background:linear-gradient(90deg,var(--c4),transparent);}  .p4:hover{border-color:rgba(255,181,32,.35);box-shadow:0 20px 60px rgba(255,181,32,.07);}
+.p5::before{background:linear-gradient(90deg,var(--c5),transparent);}  .p5:hover{border-color:rgba(255,92,135,.35);box-shadow:0 20px 60px rgba(255,92,135,.07);}
+.p6::before{background:linear-gradient(90deg,var(--c6),transparent);}  .p6:hover{border-color:rgba(255,122,61,.35);box-shadow:0 20px 60px rgba(255,122,61,.07);}
+.p7::before{background:linear-gradient(90deg,var(--c1),var(--c2));}    .p7:hover{border-color:rgba(0,207,239,.35);}
+
+.p-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;margin-bottom:14px;opacity:.6;}
+.p1 .p-num{color:var(--c1);} .p2 .p-num{color:var(--c2);} .p3 .p-num{color:var(--c3);}
+.p4 .p-num{color:var(--c4);} .p5 .p-num{color:var(--c5);} .p6 .p-num{color:var(--c6);} .p7 .p-num{color:var(--c1);}
+
+.p-icon{
+  width:54px;height:54px;border-radius:14px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+  margin-bottom:18px;
+}
+.p-name{font-size:1rem;font-weight:700;color:#fff;letter-spacing:-.01em;margin-bottom:10px;line-height:1.25;}
+.p-desc{font-size:.75rem;color:var(--muted);line-height:1.7;margin-bottom:16px;}
+.p-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.ptag{
+  font-family:var(--mono);font-size:.6rem;
+  padding:3px 9px;border-radius:4px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
+}
+.p1 .ptag{color:var(--c1);} .p2 .ptag{color:var(--c2);} .p3 .ptag{color:var(--c3);}
+.p4 .ptag{color:var(--c4);} .p5 .ptag{color:var(--c5);} .p6 .ptag{color:var(--c6);} .p7 .ptag{color:var(--c1);}
+
+.pillar-wide{
+  background:var(--card2);border:1px solid var(--border);border-radius:18px;
+  padding:28px 32px;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;
+  transition:border-color .25s,box-shadow .25s;cursor:default;
+}
+.pillar-wide:hover{border-color:rgba(0,207,239,.3);box-shadow:0 16px 50px rgba(0,207,239,.06);}
+.pillar-wide::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--c1),var(--c2));
+}
+
+/* ── TECH STACK ── */
+.tech-cats{display:flex;flex-direction:column;gap:22px;}
+.tc{display:flex;align-items:flex-start;gap:20px;}
+.tc-label{
+  font-family:var(--mono);font-size:.62rem;color:var(--c4);
+  letter-spacing:.14em;text-transform:uppercase;
+  white-space:nowrap;min-width:160px;padding-top:4px;
+}
+.tc-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.ttag{
+  font-family:var(--mono);font-size:.68rem;
+  padding:5px 13px;border-radius:7px;
+  border:1px solid var(--border2);color:var(--text);background:var(--card);
+  transition:all .15s;cursor:default;
+}
+.ttag:hover{border-color:var(--c1);color:var(--c1);background:rgba(0,207,239,.05);}
+
+/* ── TRACKS ── */
+.tracks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.track{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:20px 18px;display:flex;align-items:center;gap:16px;
+  transition:transform .2s,border-color .2s;
+}
+.track:hover{transform:translateX(5px);border-color:var(--c3);}
+.tr-icon{font-size:1.6rem;flex-shrink:0;}
+.tr-name{font-size:.84rem;font-weight:600;color:#fff;}
+.tr-badge{font-family:var(--mono);font-size:.58rem;color:var(--c3);margin-top:3px;letter-spacing:.05em;}
+
+/* ── MENTORS ── */
+.mgroup{margin-bottom:36px;}
+.mg-title{
+  font-family:var(--mono);font-size:.68rem;color:var(--c1);
+  letter-spacing:.12em;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+}
+.mg-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;}
+.mcard{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:14px;display:flex;align-items:center;gap:11px;
+  text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.mcard:hover{border-color:rgba(124,92,252,.45);transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,92,252,.1);}
+.mavatar{
+  width:36px;height:36px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.72rem;font-weight:500;color:#fff;
+}
+.mcard:nth-child(7n+1) .mavatar{background:linear-gradient(135deg,#065a82,#00cfef);}
+.mcard:nth-child(7n+2) .mavatar{background:linear-gradient(135deg,#5b3fd4,#7c5cfc);}
+.mcard:nth-child(7n+3) .mavatar{background:linear-gradient(135deg,#047857,#00e898);}
+.mcard:nth-child(7n+4) .mavatar{background:linear-gradient(135deg,#b45309,#ffb520);}
+.mcard:nth-child(7n+5) .mavatar{background:linear-gradient(135deg,#9d174d,#ff5c87);}
+.mcard:nth-child(7n+6) .mavatar{background:linear-gradient(135deg,#1e40af,#60a5fa);}
+.mcard:nth-child(7n+7) .mavatar{background:linear-gradient(135deg,#7f1d1d,#ff7a3d);}
+.mname{font-size:.74rem;font-weight:600;color:var(--text);line-height:1.3;}
+.mrole{font-size:.62rem;color:var(--muted);}
+
+/* ── FOUNDERS ── */
+.founders-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.fcard{
+  background:linear-gradient(145deg,var(--card2),var(--card));
+  border:1px solid var(--border2);border-radius:18px;
+  padding:28px 18px;text-align:center;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.fcard:hover{transform:translateY(-7px);box-shadow:0 24px 60px rgba(0,207,239,.08);border-color:rgba(0,207,239,.2);}
+.fav{
+  width:60px;height:60px;border-radius:50%;margin:0 auto 14px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:1.2rem;font-weight:500;color:#fff;
+  border:2px solid rgba(0,207,239,.2);
+}
+.fa1{background:linear-gradient(135deg,#065a82,#00cfef);}
+.fa2{background:linear-gradient(135deg,#5b3fd4,#7c5cfc);}
+.fa3{background:linear-gradient(135deg,#047857,#00e898);}
+.fa4{background:linear-gradient(135deg,#b45309,#ffb520);}
+.fname{font-size:.9rem;font-weight:700;color:#fff;}
+.frole{font-family:var(--mono);font-size:.62rem;color:var(--c1);letter-spacing:.06em;margin-top:5px;}
+.floc{font-size:.7rem;color:var(--muted);margin-top:4px;}
+
+/* ── JOIN CTA ── */
+.join-section{
+  background:linear-gradient(135deg,rgba(0,207,239,.08),rgba(124,92,252,.1),rgba(0,232,152,.06));
+  border:1px solid rgba(0,207,239,.2);border-radius:24px;
+  padding:60px 52px;position:relative;overflow:hidden;
+}
+.join-section::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,92,252,.15),transparent 70%);
+  pointer-events:none;
+}
+.join-top{text-align:center;margin-bottom:48px;}
+.join-gift{font-size:2.8rem;display:block;margin-bottom:16px;}
+.join-h2{
+  font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;
+  letter-spacing:-.03em;color:#fff;margin-bottom:12px;
+}
+.join-h2 span{
+  background:linear-gradient(135deg,var(--c1),var(--c3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.join-sub{font-size:.92rem;color:var(--muted);max-width:500px;margin:0 auto;}
+
+.perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px;}
+.perk{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;padding:22px 20px;
+  display:flex;align-items:flex-start;gap:14px;
+  transition:transform .2s,border-color .2s,background .2s;cursor:default;
+}
+.perk:hover{transform:translateY(-4px);border-color:rgba(0,207,239,.25);background:rgba(0,207,239,.04);}
+.perk-ico{font-size:1.6rem;flex-shrink:0;margin-top:2px;line-height:1;}
+.perk-title{font-size:.84rem;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3;}
+.perk-desc{font-size:.71rem;color:var(--muted);line-height:1.6;}
+
+.join-cta{text-align:center;border-top:1px solid rgba(255,255,255,.06);padding-top:40px;}
+.join-cta-label{font-size:.9rem;color:var(--text);margin-bottom:22px;font-weight:500;}
+
+.sangeetha-btn{
+  display:inline-flex;align-items:center;gap:18px;
+  background:linear-gradient(135deg,rgba(0,207,239,.12),rgba(124,92,252,.12));
+  border:1px solid rgba(0,207,239,.3);border-radius:16px;
+  padding:18px 32px;text-decoration:none;color:var(--text);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+  animation:glow-pulse 3s ease-in-out infinite;
+}
+.sangeetha-btn:hover{transform:translateY(-4px);box-shadow:0 20px 56px rgba(0,207,239,.2);border-color:var(--c1);}
+.s-avatar{
+  width:54px;height:54px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,#065a82,#00cfef);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:1.3rem;font-weight:500;color:#fff;
+  border:2px solid rgba(0,207,239,.35);
+}
+.s-name{font-size:1rem;font-weight:700;color:#fff;text-align:left;}
+.s-role{font-family:var(--mono);font-size:.62rem;color:var(--c1);letter-spacing:.06em;margin-top:3px;}
+.s-arrow{font-size:1.5rem;color:var(--c1);margin-left:auto;transition:transform .2s;}
+.sangeetha-btn:hover .s-arrow{transform:translateX(6px);}
+.join-note{font-size:.7rem;color:var(--muted);margin-top:16px;font-family:var(--mono);}
+
+/* ── FREELANCER ── */
+.fl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.flcard{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:18px 20px;display:flex;gap:16px;align-items:flex-start;
+  transition:border-color .2s,transform .2s;
+}
+.flcard:hover{border-color:rgba(255,181,32,.3);transform:translateY(-3px);}
+.fli{font-size:1.35rem;flex-shrink:0;margin-top:2px;line-height:1;}
+.flt{font-size:.82rem;font-weight:700;color:var(--c4);margin-bottom:4px;}
+.fld{font-size:.71rem;color:var(--muted);line-height:1.6;}
+
+/* ── CONNECT ── */
+.connect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.ccard{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:24px 18px;text-align:center;text-decoration:none;color:var(--text);
+  transition:transform .2s,border-color .2s,box-shadow .2s;display:block;
+}
+.ccard:hover{transform:translateY(-5px);border-color:var(--c1);box-shadow:0 12px 36px rgba(0,207,239,.1);}
+.cico{font-size:2rem;margin-bottom:10px;}
+.cname{font-size:.8rem;font-weight:700;color:#fff;}
+.curl{font-family:var(--mono);font-size:.62rem;color:var(--muted);margin-top:4px;word-break:break-all;}
+
+/* ── CONTACT ── */
+.contact-box{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:28px 32px;font-family:var(--mono);font-size:.78rem;
+  color:var(--text);position:relative;line-height:2.1;
+}
+.contact-box::before{
+  content:'CONTACT TEMPLATE';
+  position:absolute;top:-10px;left:22px;
+  background:var(--bg);padding:0 10px;
+  font-size:.58rem;letter-spacing:.18em;color:var(--c1);
+}
+.ck{color:var(--c1);} .cv{color:var(--c4);}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;border-top:1px solid var(--border);
+  padding:48px 28px 60px;
+  position:relative;z-index:1;
+}
+.footer-title{
+  font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:8px;
+}
+.footer-title span{
+  background:linear-gradient(135deg,var(--c1),var(--c3));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.footer-sub{font-size:.78rem;color:var(--muted);margin-bottom:24px;}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:24px;}
+.footer-links a{font-family:var(--mono);font-size:.65rem;color:var(--muted);text-decoration:none;letter-spacing:.06em;transition:color .2s;}
+.footer-links a:hover{color:var(--c1);}
+.footer-copy{font-family:var(--mono);font-size:.6rem;color:rgba(61,96,128,.5);}
+
+/* ── ANIMATIONS ── */
+@keyframes shimmer{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
+@keyframes glow-pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,207,239,0)}50%{box-shadow:0 0 30px 2px rgba(0,207,239,.12)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .pillars-grid{grid-template-columns:repeat(2,1fr);}
+  .mgrid{grid-template-columns:repeat(2,1fr);}
+  .founders-grid{grid-template-columns:repeat(2,1fr);}
+  .perks-grid{grid-template-columns:repeat(2,1fr);}
+  nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .mission-wrap{padding:32px 28px;}
+  .join-section{padding:40px 28px;}
+  .tc{flex-direction:column;gap:8px;}
+  .tc-label{min-width:unset;}
+  .pillar-wide{grid-template-columns:auto 1fr;grid-template-rows:auto auto;}
+  .pillar-wide .p-tags{grid-column:1/-1;}
+}
+@media(max-width:580px){
+  .pillars-grid{grid-template-columns:1fr;}
+  .tracks-grid{grid-template-columns:repeat(2,1fr);}
+  .fl-grid{grid-template-columns:1fr;}
+  .connect-grid{grid-template-columns:repeat(2,1fr);}
+  .perks-grid{grid-template-columns:1fr;}
+  .founders-grid{grid-template-columns:repeat(2,1fr);}
+  .phils{grid-template-columns:1fr;}
+  .hero-h1{font-size:3.2rem;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-brand"><span class="nav-dot"></span>CareerByteCode</div>
+  <ul class="nav-links">
+    <li><a href="#pillars">Pillars</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#mentors">Mentors</a></li>
+    <li><a href="#join">Join Us</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <a class="nav-cta" href="https://www.linkedin.com/in/careerbytecode" target="_blank">Join Now →</a>
+</nav>
+
+<div class="page">
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section class="hero" style="position:relative;">
+  <div class="hero-badge"><span class="dot"></span>Top European Tech Brand · Est. 2015</div>
+  <div class="hero-kicker">Global Tech Learning &amp; Innovation Ecosystem</div>
+  <h1 class="hero-h1">
+    <span class="line1">CareerByteCode</span>
+    <span class="line2">Learn · Build · Collaborate · Earn</span>
+  </h1>
+  <p class="hero-sub">
+    Empowering professionals, creators, startups &amp; enterprises through
+    <strong>real-world technology collaboration</strong> since 2015.
+    Join <strong>2.4M+ learners</strong> across <strong>105+ countries</strong>.
+  </p>
+  <div class="hero-pills">
+    <span class="hpill hp1">☁️ Cloud</span>
+    <span class="hpill hp2">⚙️ DevOps</span>
+    <span class="hpill hp3">🤖 AI / ML</span>
+    <span class="hpill hp4">🐳 Kubernetes</span>
+    <span class="hpill hp5">👩‍💻 SheLeads</span>
+  </div>
+  <div class="hero-btns">
+    <a class="btn btn-primary" href="#join">🚀 Grow as a Leader</a>
+    <a class="btn btn-outline" href="https://github.com/careerbytecode" target="_blank">🐙 GitHub Org</a>
+    <a class="btn btn-outline" href="https://www.careerbytecode.com" target="_blank">🌐 Platform</a>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ══════════════════════ STATS ══════════════════════ -->
+<section class="stats-section reveal">
+  <div class="stats-grid">
+    <div class="stat-card"><span class="stat-icon">🌐</span><span class="stat-num" data-val="2.4M+">0</span><span class="stat-lbl">Tech Professionals</span></div>
+    <div class="stat-card"><span class="stat-icon">🗺️</span><span class="stat-num" data-val="105+">0</span><span class="stat-lbl">Countries</span></div>
+    <div class="stat-card"><span class="stat-icon">📦</span><span class="stat-num" data-val="300+">0</span><span class="stat-lbl">Earning Services</span></div>
+    <div class="stat-card"><span class="stat-icon">⚡</span><span class="stat-num" data-val="15yr+">0</span><span class="stat-lbl">Years Experience</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ MISSION ══════════════════════ -->
+<section class="section reveal" id="mission">
+  <div class="slabel">mission &amp; vision</div>
+  <div class="mission-wrap">
+    <div class="mission-title">🎯 Our Mission</div>
+    <p class="mission-body">
+      To be the world's leading platform for tech professionals to <em>learn, create, and collaborate</em> —
+      bridging the gap between education and industry through real-world experience and community support.
+      We build a <em>leadership-first ecosystem</em> where engineers design systems, automate platforms, deploy at scale, and lead with confidence.
+    </p>
+    <div class="phils">
+      <div class="phil"><span class="phil-tick">✅</span>Execution over certificates</div>
+      <div class="phil"><span class="phil-tick">✅</span>Projects over theory</div>
+      <div class="phil"><span class="phil-tick">✅</span>Mentorship over isolation</div>
+      <div class="phil"><span class="phil-tick">✅</span>Leadership over job titles</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 7 PILLARS ══════════════════════ -->
+<section class="section reveal" id="pillars">
+  <div class="slabel">7 pillars of growth</div>
+  <div class="pillars-grid">
+    <div class="pillar p1">
+      <div class="p-num">PILLAR 01</div>
+      <div class="p-icon">📚</div>
+      <div class="p-name">Learning Platform</div>
+      <p class="p-desc">Structured courses, blogs &amp; real-world projects spanning DevOps, Cloud, AI/ML, Security &amp; Data Engineering. Video lessons, labs &amp; scenario-based walkthroughs built for real job outcomes.</p>
+      <div class="p-tags"><span class="ptag">DevOps</span><span class="ptag">Cloud</span><span class="ptag">AI/ML</span><span class="ptag">Security</span></div>
+    </div>
+    <div class="pillar p2">
+      <div class="p-num">PILLAR 02</div>
+      <div class="p-icon">🏢</div>
+      <div class="p-name">Tech Consulting</div>
+      <p class="p-desc">Corporate training, team upskilling, proof-of-concepts, benchmarking &amp; architecture guidance. Custom learning paths for enterprises with progress tracking and measurable outcomes.</p>
+      <div class="p-tags"><span class="ptag">POCs</span><span class="ptag">Architecture</span><span class="ptag">Upskilling</span></div>
+    </div>
+    <div class="pillar p3">
+      <div class="p-num">PILLAR 03</div>
+      <div class="p-icon">🌐</div>
+      <div class="p-name">Community &amp; Events</div>
+      <p class="p-desc">Workshops, meetups, hackathons, webinars &amp; mentorship programmes. Active community forums with peer support, networking &amp; collaborative learning globally.</p>
+      <div class="p-tags"><span class="ptag">Hackathons</span><span class="ptag">Webinars</span><span class="ptag">Forums</span></div>
+    </div>
+    <div class="pillar p4">
+      <div class="p-num">PILLAR 04</div>
+      <div class="p-icon">💼</div>
+      <div class="p-name">Freelancing &amp; Consulting</div>
+      <p class="p-desc">Client projects, paid mentorship, advisory roles &amp; a service marketplace with 300+ ways to earn. Work directly with enterprises on flexible remote projects.</p>
+      <div class="p-tags"><span class="ptag">Freelancing</span><span class="ptag">Advisory</span><span class="ptag">Marketplace</span></div>
+    </div>
+    <div class="pillar p5">
+      <div class="p-num">PILLAR 05</div>
+      <div class="p-icon">👩‍💻</div>
+      <div class="p-name">Women Empowerment</div>
+      <p class="p-desc">SheLeads Digital — dedicated learning tracks, leadership mentorship &amp; work-from-home earning support. Empowering women with complete training to build careers &amp; earn from home.</p>
+      <div class="p-tags"><span class="ptag">SheLeads</span><span class="ptag">Leadership</span><span class="ptag">Remote</span></div>
+    </div>
+    <div class="pillar p6">
+      <div class="p-num">PILLAR 06</div>
+      <div class="p-icon">🚀</div>
+      <div class="p-name">SaaS Partnerships</div>
+      <p class="p-desc">Product demos, POCs, beta testing &amp; developer workshops. Reach 2.4M+ global tech professionals through brand ambassador programmes &amp; product showcases.</p>
+      <div class="p-tags"><span class="ptag">Brand Ambassadors</span><span class="ptag">Beta</span><span class="ptag">Demos</span></div>
+    </div>
+  </div>
+  <!-- Pillar 7 full width -->
+  <div class="pillar-wide p7">
+    <div class="p-icon">🎯</div>
+    <div>
+      <div class="p-num">PILLAR 07</div>
+      <div class="p-name">Hiring &amp; Recruitment Network</div>
+      <p class="p-desc">Job opportunities, contract work &amp; a recruiter partner network. Access a verified talent network, run hiring drives, and get job, contract, and placement support — connecting learners with real industry opportunities.</p>
+    </div>
+    <div class="p-tags"><span class="ptag">Jobs</span><span class="ptag">Contracts</span><span class="ptag">Talent Network</span><span class="ptag">Placement</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TECH STACK ══════════════════════ -->
+<section class="section reveal" id="stack">
+  <div class="slabel">technology stack</div>
+  <div class="tech-cats">
+    <div class="tc"><div class="tc-label">☁️ Cloud Platforms</div><div class="tc-tags"><span class="ttag">AWS</span><span class="ttag">Azure</span><span class="ttag">GCP</span><span class="ttag">Multi-Cloud</span></div></div>
+    <div class="tc"><div class="tc-label">⚙️ DevOps &amp; CI/CD</div><div class="tc-tags"><span class="ttag">GitHub Actions</span><span class="ttag">Jenkins</span><span class="ttag">GitLab</span><span class="ttag">ArgoCD</span><span class="ttag">GitOps</span></div></div>
+    <div class="tc"><div class="tc-label">🏗️ IaC</div><div class="tc-tags"><span class="ttag">Terraform</span><span class="ttag">Ansible</span><span class="ttag">Bicep</span><span class="ttag">Helm</span><span class="ttag">Kustomize</span></div></div>
+    <div class="tc"><div class="tc-label">🐳 Containers</div><div class="tc-tags"><span class="ttag">Docker</span><span class="ttag">Kubernetes</span><span class="ttag">Istio</span><span class="ttag">Containerd</span></div></div>
+    <div class="tc"><div class="tc-label">💻 Programming</div><div class="tc-tags"><span class="ttag">Python</span><span class="ttag">Go</span><span class="ttag">JavaScript</span><span class="ttag">Bash</span><span class="ttag">Linux</span></div></div>
+    <div class="tc"><div class="tc-label">📊 Observability</div><div class="tc-tags"><span class="ttag">Prometheus</span><span class="ttag">Grafana</span><span class="ttag">Loki</span><span class="ttag">Jaeger</span><span class="ttag">ELK</span></div></div>
+    <div class="tc"><div class="tc-label">🤖 AI / ML</div><div class="tc-tags"><span class="ttag">TensorFlow</span><span class="ttag">PyTorch</span><span class="ttag">HuggingFace</span><span class="ttag">LangChain</span><span class="ttag">MLflow</span></div></div>
+    <div class="tc"><div class="tc-label">🔒 Security</div><div class="tc-tags"><span class="ttag">DevSecOps</span><span class="ttag">Cloud Security</span><span class="ttag">IAM</span><span class="ttag">Compliance</span></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ TRACKS ══════════════════════ -->
+<section class="section reveal">
+  <div class="slabel">learning tracks</div>
+  <div class="tracks-grid">
+    <div class="track"><div class="tr-icon">🚀</div><div><div class="tr-name">100 Days of DevOps</div><div class="tr-badge">// FLAGSHIP</div></div></div>
+    <div class="track"><div class="tr-icon">☁️</div><div><div class="tr-name">100 Days of Azure</div><div class="tr-badge">// CLOUD</div></div></div>
+    <div class="track"><div class="tr-icon">🐍</div><div><div class="tr-name">100 Days of Python</div><div class="tr-badge">// PROGRAMMING</div></div></div>
+    <div class="track"><div class="tr-icon">☸️</div><div><div class="tr-name">100 Days of Kubernetes</div><div class="tr-badge">// CONTAINERS</div></div></div>
+    <div class="track"><div class="tr-icon">🤖</div><div><div class="tr-name">AI / ML Engineer Roadmap</div><div class="tr-badge">// AI</div></div></div>
+    <div class="track"><div class="tr-icon">🏗️</div><div><div class="tr-name">Cloud Architect Roadmap</div><div class="tr-badge">// ARCHITECTURE</div></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ MENTORS ══════════════════════ -->
+<section class="section reveal" id="mentors">
+  <div class="slabel">leadership &amp; mentors network</div>
+
+  <div class="mgroup">
+    <div class="mg-title">🧠 Core Cloud &amp; DevOps Mentors</div>
+    <div class="mgrid">
+      <a class="mcard" href="https://www.linkedin.com/in/riswanrajacloud/" target="_blank"><div class="mavatar">RR</div><div><div class="mname">Riswan Raja A</div><div class="mrole">CloudOps Engineer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/geethascloud/" target="_blank"><div class="mavatar">GS</div><div><div class="mname">Geetha S</div><div class="mrole">Azure Mentor</div></div></a>
+      <a class="mcard" href="https://linkedin.com/in/raghavendracloud" target="_blank"><div class="mavatar">RR</div><div><div class="mname">Raghavendra Ramesh</div><div class="mrole">CI/CD Specialist</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/bavicnative/" target="_blank"><div class="mavatar">BM</div><div><div class="mname">Bavithran M</div><div class="mrole">Founder &amp; Architect</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/clouddevopswithpradnya/" target="_blank"><div class="mavatar">PD</div><div><div class="mname">Pradnya Deshpande</div><div class="mrole">IaC Mentor</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/rakshitabelwal/" target="_blank"><div class="mavatar">RB</div><div><div class="mname">Rakshita Belwal</div><div class="mrole">Cloud Practitioner</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/manojwithdevopsai" target="_blank"><div class="mavatar">MS</div><div><div class="mname">Manoj Savukar</div><div class="mrole">DevOps + AI Mentor</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/techopsbysonali/" target="_blank"><div class="mavatar">SK</div><div><div class="mname">Sonali Kurade</div><div class="mrole">Senior DevOps Coach</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/learnwithshruthi/" target="_blank"><div class="mavatar">SC</div><div><div class="mname">Shruthi Chikkela</div><div class="mrole">Hands-on Trainer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/arunvtechno/" target="_blank"><div class="mavatar">AV</div><div><div class="mname">Arun Vaidyanathan</div><div class="mrole">Cloud Migration</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/cloudbyvenkat/" target="_blank"><div class="mavatar">SV</div><div><div class="mname">Subbareddy Vundela</div><div class="mrole">DevOps Architect</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/vjcloudops/" target="_blank"><div class="mavatar">VV</div><div><div class="mname">Vijesh Vijayan</div><div class="mrole">Cloud Reliability</div></div></a>
+    </div>
+  </div>
+
+  <div class="mgroup">
+    <div class="mg-title">🤖 Python &amp; AI Leaders</div>
+    <div class="mgrid">
+      <a class="mcard" href="https://www.linkedin.com/in/reshmawithai/" target="_blank"><div class="mavatar">RS</div><div><div class="mname">Reshma S</div><div class="mrole">AI Mentor</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/aiwithkiruthiga/" target="_blank"><div class="mavatar">KR</div><div><div class="mname">Kiruthiga Ravi</div><div class="mrole">AI Engineer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/iamlavanyar/" target="_blank"><div class="mavatar">LR</div><div><div class="mname">Lavanya R</div><div class="mrole">Data Scientist</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/anidigitalhub/" target="_blank"><div class="mavatar">AN</div><div><div class="mname">Anitha</div><div class="mrole">AI Educator</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/askdharshiniai/" target="_blank"><div class="mavatar">DK</div><div><div class="mname">Dharshini Karthikeyan</div><div class="mrole">Data Mentor</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/kruthicawithai/" target="_blank"><div class="mavatar">KT</div><div><div class="mname">Kruthica T</div><div class="mrole">Python Trainer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/jenwithai/" target="_blank"><div class="mavatar">JR</div><div><div class="mname">Jenefer Rexee George</div><div class="mrole">NLP Specialist</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/charismawithai/" target="_blank"><div class="mavatar">CP</div><div><div class="mname">Charisma Devi Polothu</div><div class="mrole">ML Practitioner</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/tanisharajesh/" target="_blank"><div class="mavatar">TR</div><div><div class="mname">Tanisha R A</div><div class="mrole">AI Passionate Leader</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/gayuwithai/" target="_blank"><div class="mavatar">GP</div><div><div class="mname">Gayathri P</div><div class="mrole">AI Engineer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/kalaiselvi-kanagaraj-aa12a278/" target="_blank"><div class="mavatar">KK</div><div><div class="mname">Kalaiselvi Kanagaraj</div><div class="mrole">AI Engineer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/komalasalesforce/" target="_blank"><div class="mavatar">KO</div><div><div class="mname">Komala</div><div class="mrole">Salesforce Architect</div></div></a>
+    </div>
+  </div>
+
+  <div class="mgroup">
+    <div class="mg-title">🌐 FullStack · SaaS · Telecom</div>
+    <div class="mgrid">
+      <a class="mcard" href="https://www.linkedin.com/in/minithras/" target="_blank"><div class="mavatar">MS</div><div><div class="mname">Minithra S</div><div class="mrole">FullStack Developer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/pradeepafsd/" target="_blank"><div class="mavatar">PC</div><div><div class="mname">Pradeepa Chandrasekaran</div><div class="mrole">FullStack Developer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/ankitsawdev" target="_blank"><div class="mavatar">AS</div><div><div class="mname">Ankit Saw</div><div class="mrole">FullStack Developer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/navixgr/" target="_blank"><div class="mavatar">NG</div><div><div class="mname">Naveen G.R</div><div class="mrole">FullStack Developer</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/sasikumarstyle/" target="_blank"><div class="mavatar">SS</div><div><div class="mname">Sasikumar S</div><div class="mrole">Senior FullStack Dev</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/kl5gnexus/" target="_blank"><div class="mavatar">KL</div><div><div class="mname">Kapil Lakhanpal</div><div class="mrole">CPO · Telecom</div></div></a>
+      <a class="mcard" href="https://www.linkedin.com/in/leadwithnav/" target="_blank"><div class="mavatar">NK</div><div><div class="mname">Navdeep Kaur</div><div class="mrole">SaaS Product Owner</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOUNDERS ══════════════════════ -->
+<section class="section reveal">
+  <div class="slabel">founding team</div>
+  <div class="founders-grid">
+    <div class="fcard"><div class="fav fa1">RR</div><div class="fname">Raghavendra R</div><div class="frole">Platform Owner</div><div class="floc">🇧🇪 Belgium, Europe</div></div>
+    <div class="fcard"><div class="fav fa2">SK</div><div class="fname">Sonali Kurade</div><div class="frole">Co-Founder</div><div class="floc">🇮🇳 Pune, India</div></div>
+    <div class="fcard"><div class="fav fa3">SS</div><div class="fname">Siva Sankari</div><div class="frole">Co-Founder</div><div class="floc">🇸🇬 Singapore</div></div>
+    <div class="fcard"><div class="fav fa4">AD</div><div class="fname">Anitha D</div><div class="frole">Co-Founder</div><div class="floc">🇮🇳 Tirupur, India</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ JOIN CTA ══════════════════════ -->
+<section class="section reveal" id="join">
+  <div class="join-section">
+    <div class="join-top">
+      <span class="join-gift">🎁</span>
+      <h2 class="join-h2">Are you looking to grow as a <span>Leader?</span></h2>
+      <p class="join-sub">Join our internal team and unlock global visibility, earnings &amp; real impact.</p>
+    </div>
+    <div class="perks-grid">
+      <div class="perk"><div class="perk-ico">🎖️</div><div><div class="perk-title">Verified Digital Leader Badge</div><div class="perk-desc">Flaunt it on LinkedIn &amp; your resume — instant credibility across 105+ countries.</div></div></div>
+      <div class="perk"><div class="perk-ico">🌍</div><div><div class="perk-title">Global Reach</div><div class="perk-desc">Be seen across 105+ countries by 2.4M+ learners worldwide.</div></div></div>
+      <div class="perk"><div class="perk-ico">🆓</div><div><div class="perk-title">Full Free Platform Access</div><div class="perk-desc">Real-time projects, events &amp; training resources — all included, zero cost.</div></div></div>
+      <div class="perk"><div class="perk-ico">📈</div><div><div class="perk-title">Follower Growth &amp; Branding</div><div class="perk-desc">Boost your visibility with our global network &amp; European brand power.</div></div></div>
+      <div class="perk"><div class="perk-ico">💸</div><div><div class="perk-title">Passive Earning Opportunities</div><div class="perk-desc">Paid talks, collabs, affiliate invites &amp; 37+ earning services on the platform.</div></div></div>
+      <div class="perk"><div class="perk-ico">🤝</div><div><div class="perk-title">Leaders Circle Entry</div><div class="perk-desc">Join our private network of high-impact mentors &amp; trainers globally.</div></div></div>
+    </div>
+    <div class="join-cta">
+      <p class="join-cta-label">Ready to join? Speak directly to our Director 👇</p>
+      <a class="sangeetha-btn" href="https://www.linkedin.com/in/careerbytecode" target="_blank">
+        <div class="s-avatar">S</div>
+        <div><div class="s-name">Sangeetha</div><div class="s-role">Director · CareerByteCode</div></div>
+        <span class="s-arrow">→</span>
+      </a>
+      <p class="join-note">// Click to connect on LinkedIn and start your leadership journey 🚀</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FREELANCER ══════════════════════ -->
+<section class="section reveal">
+  <div class="slabel">become a freelancer &amp; earn</div>
+  <div class="fl-grid">
+    <div class="flcard"><div class="fli">🤝</div><div><div class="flt">Consultancy Collaborations</div><div class="fld">Hands-on exposure to real-world consulting &amp; client projects through our partner network.</div></div></div>
+    <div class="flcard"><div class="fli">💼</div><div><div class="flt">Product Company Collabs</div><div class="fld">Work with fast-growing startups &amp; enterprise tech companies on strategic initiatives.</div></div></div>
+    <div class="flcard"><div class="fli">🎙️</div><div><div class="flt">Founder Podcasts</div><div class="fld">Get featured globally — share your story, inspire thousands &amp; build authority.</div></div></div>
+    <div class="flcard"><div class="fli">🎓</div><div><div class="flt">Training Opportunities</div><div class="fld">Deliver live or recorded training under the CareerByteCode brand.</div></div></div>
+    <div class="flcard"><div class="fli">📚</div><div><div class="flt">Catalog Sales</div><div class="fld">Monetize your skills by publishing &amp; selling your own course materials.</div></div></div>
+    <div class="flcard"><div class="fli">🔄</div><div><div class="flt">Reseller Partnerships</div><div class="fld">Build income by onboarding trainers, institutes &amp; partners into our platform.</div></div></div>
+    <div class="flcard"><div class="fli">🌍</div><div><div class="flt">Global Speaker Opportunities</div><div class="fld">Represent CareerByteCode at international tech summits &amp; leadership panels.</div></div></div>
+    <div class="flcard"><div class="fli">💎</div><div><div class="flt">Free Platform Access</div><div class="fld">Premium tools, templates &amp; assets worth ₹1 Lakh — yours as a partner.</div></div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CONNECT ══════════════════════ -->
+<section class="section reveal" id="connect">
+  <div class="slabel">connect &amp; collaborate</div>
+  <div class="connect-grid">
+    <a class="ccard" href="https://www.linkedin.com/company/careerbytecode" target="_blank"><div class="cico">💼</div><div class="cname">LinkedIn</div><div class="curl">linkedin.com/company/careerbytecode</div></a>
+    <a class="ccard" href="https://github.com/careerbytecode" target="_blank"><div class="cico">🐙</div><div class="cname">GitHub Organization</div><div class="curl">github.com/careerbytecode</div></a>
+    <a class="ccard" href="https://youtube.com/@CareerByteCode" target="_blank"><div class="cico">📺</div><div class="cname">YouTube</div><div class="curl">youtube.com/@CareerByteCode</div></a>
+    <a class="ccard" href="https://careerbytecode.substack.com" target="_blank"><div class="cico">📰</div><div class="cname">Newsletter</div><div class="curl">careerbytecode.substack.com</div></a>
+    <a class="ccard" href="https://medium.com/careerbytecode" target="_blank"><div class="cico">✍️</div><div class="cname">Medium</div><div class="curl">medium.com/careerbytecode</div></a>
+    <a class="ccard" href="mailto:support@careerbytecode.com"><div class="cico">📧</div><div class="cname">Email Us</div><div class="curl">support@careerbytecode.com</div></a>
+  </div>
+</section>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<section class="section reveal">
+  <div class="slabel">want to partner, teach or mentor?</div>
+  <div class="contact-box">
+    <span class="ck">Hi CareerByteCode,</span><br>
+    I'm <span class="cv">[Your Name]</span> and I'm interested in <span class="cv">partnering / mentoring / teaching</span>.<br><br>
+    <span class="ck">Domain:</span>       <span class="cv">Cloud / DevOps / AI / Full Stack / Salesforce</span><br>
+    <span class="ck">Location:</span>     <span class="cv">City, Country</span><br>
+    <span class="ck">Availability:</span> <span class="cv">Weekdays / Weekends / Timezone</span>
+  </div>
+</section>
+
+</div><!-- /page -->
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer>
+  <div class="footer-title">We don't just teach tech — <span>we create leaders</span> 🌟</div>
+  <div class="footer-sub">CareerByteCode · Top European Tech Brand 🇪🇺 · Remote-first · Serving 105+ Countries</div>
+  <div class="footer-links">
+    <a href="https://www.careerbytecode.com" target="_blank">Website</a>
+    <a href="https://github.com/careerbytecode" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/company/careerbytecode" target="_blank">LinkedIn</a>
+    <a href="https://youtube.com/@CareerByteCode" target="_blank">YouTube</a>
+    <a href="https://medium.com/careerbytecode" target="_blank">Medium</a>
+    <a href="mailto:support@careerbytecode.com">Email</a>
+  </div>
+  <div class="footer-copy">© 2015–2025 CareerByteCode · Learn. Build. Collaborate. Earn.</div>
+</footer>
+
+<script>
+/* ── PARTICLE CANVAS ── */
+const canvas=document.getElementById('canvas');
+const ctx=canvas.getContext('2d');
+let W,H,particles=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+function rand(a,b){return Math.random()*(b-a)+a;}
+const COLORS=['#00cfef','#7c5cfc','#00e898','#ffb520','#ff5c87'];
+class Particle{
+  constructor(){this.reset();}
+  reset(){
+    this.x=rand(0,W);this.y=rand(0,H);
+    this.vx=rand(-.3,.3);this.vy=rand(-.5,-.1);
+    this.r=rand(.5,2);this.life=1;this.decay=rand(.003,.007);
+    this.color=COLORS[Math.floor(rand(0,COLORS.length))];
+  }
+  update(){this.x+=this.vx;this.y+=this.vy;this.life-=this.decay;if(this.life<=0||this.y<-10)this.reset();}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=this.color;ctx.globalAlpha=this.life*.6;ctx.fill();}
+}
+for(let i=0;i<120;i++)particles.push(new Particle());
+function loop(){
+  ctx.clearRect(0,0,W,H);
+  ctx.globalAlpha=1;
+  particles.forEach(p=>{p.update();p.draw();});
+  requestAnimationFrame(loop);
+}
+loop();
+
+/* ── SCROLL REVEAL ── */
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revealObs.unobserve(e.target);}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+/* ── STAGGERED CARD REVEAL ── */
+const cardObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';e.target.style.transform='translateY(0)';
+      cardObs.unobserve(e.target);
+    }
+  });
+},{threshold:.06});
+document.querySelectorAll('.pillar,.mcard,.flcard,.ccard,.fcard,.track,.perk,.stat-card,.phil,.ttag').forEach((el,i)=>{
+  el.style.opacity='0';el.style.transform='translateY(16px)';
+  el.style.transition=`opacity .5s ${(i%6)*.07}s ease, transform .5s ${(i%6)*.07}s ease`;
+  cardObs.observe(el);
+});
+
+/* ── COUNTER ── */
+const numObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target,val=el.dataset.val;
+      const num=parseFloat(val);
+      if(isNaN(num)){el.textContent=val;return;}
+      const suffix=val.replace(/[\d.]/g,'');
+      const dec=val.includes('.')?1:0;
+      let s=null;
+      const tick=ts=>{
+        if(!s)s=ts;
+        const p=Math.min((ts-s)/1600,1);
+        const ease=1-Math.pow(1-p,3);
+        el.textContent=(ease*num).toFixed(dec)+suffix;
+        if(p<1)requestAnimationFrame(tick);
+        else el.textContent=val;
+      };
+      requestAnimationFrame(tick);
+      numObs.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.stat-num[data-val]').forEach(el=>numObs.observe(el));
+
+/* ── NAV SHRINK ── */
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.padding=window.scrollY>60?'8px 40px':'14px 40px';
+});
+</script>
+</body>
+</html>
