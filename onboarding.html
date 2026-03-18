@@ -1139,7 +1139,7 @@ footer a:hover{color:#fff}
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const pb = document.getElementById('pb');
 window.addEventListener('scroll', () => {
   const s = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
@@ -1148,4 +1148,11 @@ window.addEventListener('scroll', () => {
 
 const rio = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); rio.unobserve(e.target); } });
-}, { threshold: 0.05, rootMargin: '0px 0px 
+}, { threshold: 0.05, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.r').forEach(el => rio.observe(el));
+setTimeout(() => {
+  document.querySelectorAll('.hero .r').forEach((el, i) => setTimeout(() => el.classList.add('vis'), i * 110));
+}, 60);
+</script>
+</body>
+</html>
