@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerByteCode — Complete Onboarding Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1e4e;--navy-mid:#0f2d72;--navy-light:#1a4aad;--navy-pale:#eef2fc;
+  --sky:#2563eb;--sky-light:#dbeafe;--sky-mid:#bfdbfe;
+  --cyan:#0891b2;--cyan-light:#cffafe;
+  --gold:#d97706;--gold-light:#fef3c7;--gold-mid:#fde68a;
+  --green:#059669;--green-light:#d1fae5;--green-mid:#6ee7b7;
+  --rose:#e11d48;--rose-light:#ffe4e6;--rose-mid:#fca5a5;
+  --violet:#7c3aed;--violet-light:#ede9fe;--violet-mid:#c4b5fd;
+  --amber:#b45309;--amber-light:#fef3c7;
+  --bg:#f4f7fb;--surface:#fff;--surface2:#f8fafd;
+  --border:#dde4f0;--border-mid:#c5d0e8;
+  --text:#0a1e4e;--text-mid:#2d4278;--muted:#6b7fa8;--muted-lt:#9aaac8;
+  --sh-sm:0 1px 4px rgba(10,30,78,.07);
+  --sh-md:0 4px 24px rgba(10,30,78,.10);
+  --sh-lg:0 12px 48px rgba(10,30,78,.13);
+  --sh-xl:0 24px 80px rgba(10,30,78,.17);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* ── TOPBAR ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;
+  background:rgba(244,247,251,.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.tb-logo{display:flex;align-items:center;gap:10px;text-decoration:none;
+  font-weight:700;font-size:16px;color:var(--navy)}
+.tb-logo-icon{width:32px;height:32px;border-radius:8px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:11px;color:#fff;font-weight:500}
+.tb-logo span{color:var(--sky)}
+.tb-nav{display:flex;gap:2px}
+.tb-nav a{font-size:12.5px;font-weight:500;color:var(--muted);text-decoration:none;
+  padding:5px 12px;border-radius:6px;transition:all .2s}
+.tb-nav a:hover{color:var(--navy);background:var(--navy-pale)}
+.tb-btn{display:inline-flex;align-items:center;gap:6px;
+  background:var(--navy);color:#fff;padding:7px 16px;border-radius:8px;
+  font-size:12.5px;font-weight:600;text-decoration:none;transition:all .2s}
+.tb-btn:hover{background:var(--navy-mid);box-shadow:var(--sh-md)}
+.progress{position:fixed;top:58px;left:0;height:3px;z-index:199;
+  background:linear-gradient(90deg,var(--sky),var(--cyan));width:0;transition:width .1s}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:110px 24px 80px;
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#fff 0%,#edf2fc 45%,#dce6f8 100%)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(37,99,235,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(37,99,235,.04) 1px,transparent 1px);
+  background-size:52px 52px}
+.hero-orb1{position:absolute;width:600px;height:600px;top:-180px;right:-180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 70%);pointer-events:none}
+.hero-orb2{position:absolute;width:450px;height:450px;bottom:-100px;left:-120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(8,145,178,.09) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:70px;
+  background:var(--bg);clip-path:polygon(0 100%,100% 100%,100% 0)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;
+  background:var(--sky-light);border:1px solid var(--sky-mid);
+  color:var(--sky);font-size:11.5px;font-weight:600;letter-spacing:1.2px;
+  text-transform:uppercase;padding:6px 18px;border-radius:100px;
+  margin-bottom:28px;animation:fadeUp .5s ease both}
+.eyebrow::before{content:'●';animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:.35}50%{opacity:1}}
+
+.hero h1{font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,6.2rem);font-weight:900;
+  letter-spacing:-2px;line-height:.95;color:var(--navy);
+  animation:fadeUp .6s .1s ease both}
+.hero h1 em{font-style:normal;
+  background:linear-gradient(120deg,var(--sky),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero h1 .mono{display:block;font-family:'DM Mono',monospace;
+  font-size:clamp(1rem,2.3vw,1.9rem);font-weight:400;
+  color:var(--gold);-webkit-text-fill-color:var(--gold);
+  letter-spacing:0;margin-top:14px}
+
+.hero-desc{font-size:clamp(15px,1.8vw,18px);color:var(--muted);max-width:580px;
+  margin:28px auto 48px;line-height:1.78;animation:fadeUp .6s .2s ease both}
+
+.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;
+  border:1.5px solid var(--border-mid);border-radius:18px;
+  background:var(--surface);box-shadow:var(--sh-lg);overflow:hidden;
+  animation:fadeUp .6s .3s ease both}
+.hs{padding:22px 44px;border-right:1.5px solid var(--border);text-align:center}
+.hs:last-child{border-right:none}
+.hs-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;
+  color:var(--navy);line-height:1;display:block}
+.hs-num em{font-style:normal;color:var(--sky)}
+.hs-lbl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;
+  margin-top:5px;font-weight:500}
+
+/* ── SECTION HELPERS ── */
+.sec{padding:88px 0}
+.sec-alt{background:var(--surface)}
+.sec-navy{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 60%,#0d3080 100%);color:#fff}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;
+  letter-spacing:1.4px;text-transform:uppercase;padding:5px 13px;border-radius:4px;
+  font-family:'DM Mono',monospace;margin-bottom:16px}
+.tag.blue{background:var(--sky-light);color:var(--sky);border:1px solid var(--sky-mid)}
+.tag.navy{background:var(--navy);color:#fff}
+.tag.gold{background:var(--gold-light);color:var(--gold);border:1px solid var(--gold-mid)}
+.tag.green{background:var(--green-light);color:var(--green);border:1px solid var(--green-mid)}
+.tag.rose{background:var(--rose-light);color:var(--rose);border:1px solid var(--rose-mid)}
+.tag.violet{background:var(--violet-light);color:var(--violet);border:1px solid var(--violet-mid)}
+.tag.white{background:rgba(255,255,255,.13);color:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.2)}
+
+.sec-title{font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3.4rem);font-weight:800;
+  letter-spacing:-1.2px;line-height:1.08;margin-bottom:14px;color:var(--navy)}
+.sec-title em{font-style:normal;color:var(--sky)}
+.sec-title.wh{color:#fff}.sec-title.wh em{color:#93c5fd}
+.sec-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.75}
+.sec-sub.wh{color:rgba(255,255,255,.6)}
+
+/* ── REALITY CARDS ── */
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.rc{background:var(--surface);border:1.5px solid var(--border);border-radius:20px;
+  padding:36px 30px;box-shadow:var(--sh-sm);transition:all .3s;position:relative;overflow:hidden}
+.rc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.rc:nth-child(1)::before{background:linear-gradient(90deg,var(--sky),var(--cyan))}
+.rc:nth-child(2)::before{background:linear-gradient(90deg,var(--gold),#fbbf24)}
+.rc:nth-child(3)::before{background:linear-gradient(90deg,var(--green),#34d399)}
+.rc:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.rc-num{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:900;
+  color:var(--navy-pale);line-height:1;margin-bottom:14px;display:block}
+.rc h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.rc p{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* ── TASK SHELL ── */
+.tl{position:relative}
+.tl::before{content:'';position:absolute;left:26px;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--sky),var(--cyan),var(--navy-pale))}
+
+.ti{display:grid;grid-template-columns:54px 1fr;gap:22px;margin-bottom:18px}
+.tb-badge{width:52px;height:52px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:13px;font-weight:700;
+  border:2px solid;position:relative;z-index:1;
+  background:var(--surface);box-shadow:var(--sh-sm);transition:all .3s}
+.tb-badge.c0{border-color:var(--sky);color:var(--sky)}
+.tb-badge.c1{border-color:#3b82f6;color:#3b82f6}
+.tb-badge.c2{border-color:var(--cyan);color:var(--cyan)}
+.tb-badge.c3{border-color:var(--violet);color:var(--violet)}
+.tb-badge.c4{border-color:var(--gold);color:var(--gold)}
+.tb-badge.c5{border-color:var(--green);color:var(--green)}
+.tb-badge.c6{border-color:var(--rose);color:var(--rose)}
+.tb-badge.c7{border-color:var(--navy);color:var(--navy)}
+
+.tc{background:var(--surface);border:1.5px solid var(--border);border-radius:18px;
+  padding:24px 28px;box-shadow:var(--sh-sm);transition:all .3s}
+.tc:hover{box-shadow:var(--sh-lg);border-color:var(--sky-mid);transform:translateX(5px)}
+.tc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.tc-title{font-size:17px;font-weight:700;color:var(--navy)}
+.chip{font-size:10px;font-weight:700;padding:3px 11px;border-radius:100px;
+  white-space:nowrap;flex-shrink:0;font-family:'DM Mono',monospace}
+.chip.mand{background:var(--rose-light);color:var(--rose);border:1px solid var(--rose-mid)}
+.chip.crit{background:var(--violet-light);color:var(--violet);border:1px solid var(--violet-mid)}
+.chip.gate{background:var(--navy);color:#fff}
+.chip.opt{background:var(--green-light);color:var(--green);border:1px solid var(--green-mid)}
+
+.tc-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:14px}
+
+/* info box */
+.info-box{background:var(--sky-light);border:1px solid var(--sky-mid);border-radius:10px;
+  padding:12px 16px;margin-bottom:14px;font-size:13.5px;color:var(--sky);font-weight:500}
+.warn-box{background:var(--rose-light);border:1px solid var(--rose-mid);border-radius:10px;
+  padding:12px 16px;margin-bottom:14px;font-size:13.5px;color:var(--rose);font-weight:500}
+.tip-box{background:var(--green-light);border:1px solid var(--green-mid);border-radius:10px;
+  padding:12px 16px;margin-bottom:14px;font-size:13.5px;color:var(--green);font-weight:500}
+.gold-box{background:var(--gold-light);border:1px solid var(--gold-mid);border-radius:10px;
+  padding:12px 16px;margin-bottom:14px;font-size:13.5px;color:var(--gold);font-weight:500}
+
+/* step list */
+.steps{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.step{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--text-mid)}
+.step::before{content:'→';color:var(--sky);font-weight:700;flex-shrink:0}
+.step.bad::before{content:'❌'}
+.step.ok::before{content:'✅'}
+
+/* video lesson table */
+.vt{width:100%;border-collapse:collapse;margin-top:12px;border-radius:12px;overflow:hidden;
+  border:1.5px solid var(--border);box-shadow:var(--sh-sm)}
+.vt thead tr{background:linear-gradient(90deg,var(--navy),var(--navy-mid))}
+.vt th{padding:10px 14px;font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.7px;color:#fff;text-align:left}
+.vt tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.vt tbody tr:last-child{border-bottom:none}
+.vt tbody tr:hover{background:var(--navy-pale)}
+.vt td{padding:11px 14px;font-size:13px;color:var(--text-mid);vertical-align:middle}
+.vt td:first-child{color:var(--muted-lt);font-family:'DM Mono',monospace;font-size:11px;width:36px}
+.vlink{display:inline-flex;align-items:center;gap:5px;color:var(--sky);font-weight:600;
+  text-decoration:none;font-size:12px;padding:3px 10px;border-radius:6px;
+  border:1px solid var(--sky-mid);background:var(--sky-light);transition:all .2s}
+.vlink:hover{background:var(--sky);color:#fff;border-color:var(--sky)}
+.vlink::before{content:'▶';font-size:9px}
+
+/* assignment/resource link */
+.res-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  font-size:12.5px;font-weight:600;font-family:'DM Mono',monospace;
+  color:var(--gold);text-decoration:none;letter-spacing:.3px;transition:gap .2s}
+.res-link:hover{gap:10px}
+.sky-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  font-size:12.5px;font-weight:600;font-family:'DM Mono',monospace;
+  color:var(--sky);text-decoration:none;letter-spacing:.3px;transition:gap .2s}
+.sky-link:hover{gap:10px}
+
+/* platform table */
+.pt{width:100%;border-collapse:collapse;margin-top:10px;border-radius:10px;overflow:hidden;
+  border:1.5px solid var(--border)}
+.pt tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.pt tbody tr:last-child{border-bottom:none}
+.pt tbody tr:hover{background:var(--sky-light)}
+.pt td{padding:10px 14px;font-size:13px;color:var(--text-mid)}
+.pt td:first-child{font-weight:600;color:var(--navy);width:120px}
+.pt td a{color:var(--sky);text-decoration:none;font-family:'DM Mono',monospace;font-size:12px}
+.pt td a:hover{text-decoration:underline}
+
+/* weekly schedule table */
+.wt{width:100%;border-collapse:collapse;margin-top:14px;border-radius:12px;overflow:hidden;
+  border:1.5px solid var(--border);box-shadow:var(--sh-sm)}
+.wt thead tr{background:linear-gradient(90deg,var(--navy),var(--navy-mid))}
+.wt th{padding:11px 14px;font-size:11px;font-weight:700;letter-spacing:.7px;
+  text-transform:uppercase;color:#fff;text-align:left}
+.wt tbody tr{border-bottom:1px solid var(--border);transition:background .15s}
+.wt tbody tr:hover{background:var(--navy-pale)}
+.wt td{padding:11px 14px;font-size:13px;color:var(--text-mid);vertical-align:top;line-height:1.5}
+.wt td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+.day-badge{display:inline-flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;padding:3px 9px;border-radius:100px;
+  font-family:'DM Mono',monospace;white-space:nowrap}
+.day-mon{background:#dbeafe;color:#1d4ed8}
+.day-tue{background:#e0e7ff;color:#4338ca}
+.day-wed{background:#d1fae5;color:#065f46}
+.day-thu{background:#fef3c7;color:#92400e}
+.day-fri{background:#ede9fe;color:#5b21b6}
+.day-sat{background:#ffe4e6;color:#9f1239}
+.day-sun{background:#fae8ff;color:#86198f}
+
+/* sample posts section */
+.sp-section{margin-top:14px}
+.sp-group{margin-bottom:18px}
+.sp-group-title{font-size:13px;font-weight:700;color:var(--navy);
+  margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sp-links{display:flex;flex-wrap:wrap;gap:8px}
+.sp-link{display:inline-flex;align-items:center;gap:5px;
+  font-size:12px;font-weight:600;color:var(--sky);text-decoration:none;
+  padding:4px 12px;border-radius:6px;border:1px solid var(--sky-mid);
+  background:var(--sky-light);transition:all .2s}
+.sp-link:hover{background:var(--sky);color:#fff;border-color:var(--sky)}
+
+/* community members */
+.cm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:12px}
+.cm-card{background:var(--navy-pale);border:1.5px solid var(--border);border-radius:12px;
+  padding:14px 16px;transition:all .3s}
+.cm-card:hover{border-color:var(--sky-mid);background:var(--sky-light)}
+.cm-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.cm-role{font-size:11px;color:var(--muted);margin-bottom:6px;line-height:1.4}
+.cm-link{font-size:11px;color:var(--sky);text-decoration:none;font-family:'DM Mono',monospace}
+.cm-link:hover{text-decoration:underline}
+
+/* ── HANDLE SECTION ── */
+.handle-hero{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start;margin-top:56px}
+.plat-list{display:flex;flex-direction:column;gap:9px}
+.pr{display:flex;align-items:center;gap:12px;background:var(--surface);
+  border:1.5px solid var(--border);border-radius:11px;padding:12px 16px;
+  box-shadow:var(--sh-sm);transition:all .25s}
+.pr.ok{border-color:var(--green-mid);background:#f0fdf9}
+.pr-icon{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;
+  justify-content:center;font-size:14px;flex-shrink:0;font-weight:700}
+.pr-name{font-size:12.5px;font-weight:600;color:var(--text-mid);min-width:90px}
+.pr-handle{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);flex:1}
+.pr-ok{font-size:15px;flex-shrink:0}
+
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.cmp-box{background:var(--surface);border:1.5px solid var(--border);
+  border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm)}
+.cmp-head{padding:16px 22px;font-weight:700;font-size:13.5px;
+  display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border)}
+.cmp-head.ok{background:var(--green-light);color:var(--green)}
+.cmp-head.bad{background:var(--rose-light);color:var(--rose)}
+.cmp-body{padding:20px 22px}
+.cmp-row{display:flex;align-items:center;justify-content:space-between;
+  padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+.cmp-row:last-child{border-bottom:none}
+.cmp-row .lbl{color:var(--muted)}
+.cmp-row .val{font-family:'DM Mono',monospace;font-size:11.5px;font-weight:600;
+  padding:2px 9px;border-radius:5px}
+.val.g{background:var(--green-light);color:var(--green)}
+.val.r{background:var(--rose-light);color:var(--rose)}
+
+/* poster demo */
+.poster-demo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+.pd-label{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  font-family:'DM Mono',monospace;margin-bottom:10px}
+.pd-label.ok{color:var(--green)}
+.pd-label.bad{color:var(--rose)}
+.pcard{border-radius:14px;overflow:hidden;border:1.5px solid var(--border);box-shadow:var(--sh-md)}
+.pb{height:66px;display:flex;align-items:center;padding:0 18px;justify-content:space-between}
+.pb.nb{background:linear-gradient(120deg,var(--navy),var(--navy-light))}
+.pb.vb{background:linear-gradient(120deg,#5b21b6,#7c3aed)}
+.pb-title{font-size:12.5px;font-weight:700;color:#fff}
+.pb-handle{font-family:'DM Mono',monospace;font-size:10.5px;color:rgba(255,255,255,.75)}
+.pb-body{padding:16px 18px;background:var(--surface)}
+.pb-name{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.pb-tags{display:flex;flex-wrap:wrap;gap:5px}
+.p-tag{font-family:'DM Mono',monospace;font-size:10.5px;padding:2px 9px;border-radius:5px;border:1px solid}
+.p-tag.ok{color:var(--green);border-color:var(--green-mid);background:var(--green-light)}
+.p-tag.bad{color:var(--rose);border-color:var(--rose-mid);background:var(--rose-light)}
+.pb-cap{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.55}
+
+/* ── STAGES ── */
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:52px;
+  border:1.5px solid var(--border-mid);border-radius:20px;overflow:hidden}
+.sc{background:var(--surface);padding:26px 20px;position:relative;
+  transition:all .3s;border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sc:nth-child(4n){border-right:none}
+.sc:nth-child(n+9){border-bottom:none}
+.sc:hover{background:var(--navy-pale);z-index:1}
+.sc-num{font-family:'Playfair Display',serif;font-size:3.8rem;font-weight:900;
+  color:var(--border-mid);line-height:1;position:absolute;top:10px;right:14px}
+.sc-icon{font-size:24px;margin-bottom:10px;display:block}
+.sc h4{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.sc p{font-size:12px;color:var(--muted);line-height:1.55}
+.sc-bar{position:absolute;bottom:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--sky),var(--cyan))}
+
+/* ── BENEFITS (navy bg) ── */
+.bg-grid-ben{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.bc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;padding:30px 26px;transition:all .3s;position:relative;overflow:hidden}
+.bc:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.bc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.bc:nth-child(1)::before{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.bc:nth-child(2)::before{background:linear-gradient(90deg,#3b82f6,#06b6d4)}
+.bc:nth-child(3)::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.bc:nth-child(4)::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.bc:nth-child(5)::before{background:linear-gradient(90deg,#f43f5e,#fb7185)}
+.bc:nth-child(6)::before{background:linear-gradient(90deg,#06b6d4,#3b82f6)}
+.bc-icon{font-size:30px;margin-bottom:14px;display:block}
+.bc h4{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+.bc p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7}
+.bc-pill{display:inline-block;margin-top:12px;font-family:'DM Mono',monospace;
+  font-size:10px;text-transform:uppercase;letter-spacing:.5px;
+  padding:3px 9px;border-radius:4px;
+  background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15)}
+
+.d-pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.dp{padding:7px 16px;border-radius:100px;font-size:12.5px;font-weight:500;
+  border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.72);
+  background:rgba(255,255,255,.05);transition:all .2s}
+.dp:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+
+/* ── COMPLETION ── */
+.completion{background:linear-gradient(135deg,var(--sky-light) 0%,#e0f2fe 50%,var(--cyan-light) 100%);
+  border:1.5px solid var(--sky-mid);border-radius:26px;padding:64px 56px;
+  text-align:center;position:relative;overflow:hidden;box-shadow:var(--sh-xl)}
+.completion::before{content:'';position:absolute;top:-60px;right:-60px;
+  width:220px;height:220px;border-radius:50%;background:rgba(37,99,235,.08)}
+.completion::after{content:'';position:absolute;bottom:-40px;left:-40px;
+  width:170px;height:170px;border-radius:50%;background:rgba(8,145,178,.08)}
+.completion-icon{font-size:60px;display:block;margin-bottom:20px}
+.completion h2{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;
+  color:var(--navy);margin-bottom:14px;letter-spacing:-.8px}
+.completion p{font-size:16px;color:var(--text-mid);max-width:540px;margin:0 auto 36px;line-height:1.75}
+.cl{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px}
+.cp{display:flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--sky-mid);
+  border-radius:100px;padding:8px 18px;font-size:12.5px;font-weight:600;color:var(--navy);
+  box-shadow:var(--sh-sm)}
+.cp::before{content:'✓';color:var(--green);font-weight:900}
+.completion-note{font-family:'DM Mono',monospace;font-size:12.5px;color:var(--muted);
+  border-top:1px solid var(--sky-mid);padding-top:28px;margin-top:8px;
+  max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+
+/* ── BUTTONS ── */
+.btn-navy{display:inline-flex;align-items:center;gap:7px;background:var(--navy);
+  color:#fff;padding:13px 28px;border-radius:10px;font-size:13.5px;font-weight:600;
+  text-decoration:none;transition:all .25s;box-shadow:0 4px 18px rgba(10,30,78,.22)}
+.btn-navy:hover{background:var(--navy-mid);box-shadow:0 8px 28px rgba(10,30,78,.3);transform:translateY(-2px)}
+.btn-out{display:inline-flex;align-items:center;gap:7px;background:transparent;
+  color:var(--navy);padding:13px 28px;border-radius:10px;font-size:13.5px;font-weight:600;
+  text-decoration:none;border:1.5px solid var(--border-mid);transition:all .25s}
+.btn-out:hover{background:var(--navy-pale);border-color:var(--navy)}
+
+/* ── CTA BANNER ── */
+.cta-banner{background:var(--surface);border:1.5px solid var(--border-mid);
+  border-radius:22px;padding:48px 56px;margin-top:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:36px;flex-wrap:wrap;box-shadow:var(--sh-lg);position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;right:0;top:0;bottom:0;width:38%;
+  background:linear-gradient(90deg,transparent,var(--navy-pale));pointer-events:none}
+.cta-left h3{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:800;
+  color:var(--navy);margin-bottom:10px}
+.cta-left p{font-size:14.5px;color:var(--muted);max-width:460px;line-height:1.7}
+.cta-btns{display:flex;gap:11px;flex-wrap:wrap;flex-shrink:0;position:relative;z-index:1}
+
+/* navy inline cta */
+.navy-cta{margin-top:56px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);border-radius:18px;
+  padding:44px;display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:28px}
+.navy-cta h3{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:800;
+  color:#fff;margin-bottom:8px}
+.navy-cta p{font-size:14px;color:rgba(255,255,255,.6);max-width:460px;line-height:1.7}
+.navy-cta-btns{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
+.btn-white{display:inline-flex;align-items:center;gap:7px;background:#fff;
+  color:var(--navy);padding:13px 26px;border-radius:10px;font-size:13.5px;
+  font-weight:700;text-decoration:none;transition:all .25s}
+.btn-white:hover{background:var(--navy-pale);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-ghost{display:inline-flex;align-items:center;gap:7px;background:transparent;
+  color:#fff;padding:13px 26px;border-radius:10px;font-size:13.5px;font-weight:600;
+  text-decoration:none;border:1.5px solid rgba(255,255,255,.25);transition:all .25s}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,.55);
+  padding:52px 32px;text-align:center;font-size:13px}
+footer strong{color:#fff}
+footer a{color:#93c5fd;text-decoration:none}
+footer a:hover{color:#fff}
+.footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+
+/* ── REVEAL ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.r{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.r.vis{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:.07s}.r.d2{transition-delay:.14s}.r.d3{transition-delay:.21s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .rg{grid-template-columns:1fr}
+  .handle-hero{grid-template-columns:1fr;gap:36px}
+  .cmp-grid{grid-template-columns:1fr}
+  .poster-demo{grid-template-columns:1fr}
+  .sg{grid-template-columns:repeat(2,1fr)}
+  .bg-grid-ben{grid-template-columns:1fr 1fr}
+  .tb-nav{display:none}
+}
+@media(max-width:640px){
+  .sg{grid-template-columns:1fr 1fr}
+  .bg-grid-ben{grid-template-columns:1fr}
+  .hs{padding:16px 16px;flex:1}
+  .hs-num{font-size:2rem}
+  .cta-banner{padding:28px 22px;flex-direction:column}
+  .completion{padding:44px 22px}
+  .completion h2{font-size:2.1rem}
+  .ti{grid-template-columns:42px 1fr;gap:12px}
+  .tl::before{left:21px}
+  .wrap{padding:0 16px}
+  .vt td,th{padding:8px 10px;font-size:12px}
+  .wt td,th{padding:8px 10px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#" class="tb-logo">
+    <div class="tb-logo-icon">&lt;/&gt;</div>Career<span>ByteCode</span>
+  </a>
+  <nav class="tb-nav">
+    <a href="#why">Why Visibility</a>
+    <a href="#tasks">Tasks 0–7</a>
+    <a href="#stages">Growth Stages</a>
+    <a href="#speak">Speak With Us</a>
+  </nav>
+  <a href="https://forms.gle/BWGkaWMdxkYf8fhs5" target="_blank" class="tb-btn">Begin Onboarding →</a>
+</header>
+<div class="progress" id="pb"></div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="eyebrow">🌍 &nbsp; Global Engineering &amp; Leadership Movement</div>
+  <h1>Welcome to<br><em>CareerByteCode</em><span class="mono">// onboarding.mission</span></h1>
+  <p class="hero-desc">2.4M+ Learners · 103 Countries · One Global Mission.<br>This is where engineers become <strong>industry-recognized leaders</strong>.</p>
+  <div class="hero-stats">
+    <div class="hs"><span class="hs-num"><em>2.4</em>M+</span><div class="hs-lbl">Learners</div></div>
+    <div class="hs"><span class="hs-num">103</span><div class="hs-lbl">Countries</div></div>
+    <div class="hs"><span class="hs-num">T0–T7</span><div class="hs-lbl">8 Mandatory Tasks</div></div>
+    <div class="hs"><span class="hs-num"><em>300</em>+</span><div class="hs-lbl">Earning Opportunities</div></div>
+  </div>
+</section>
+
+<!-- ══════════════ WHY VISIBILITY ══════════════ -->
+<section id="why" class="sec">
+  <div class="wrap">
+    <div class="r">
+      <div class="tag blue">⚠ The Reality</div>
+      <h2 class="sec-title">Why Self-Visibility Is<br><em>Non-Negotiable</em></h2>
+      <p class="sec-sub">Most engineers focus only on technical skills and wonder why opportunities don't find them. Here's the truth.</p>
+    </div>
+    <div class="rg">
+      <div class="rc r d1"><span class="rc-num">01</span><h3>Millions of Resumes, Zero Faces</h3><p>Job seekers hiding behind portals and faceless applications rarely get hired easily. Recruiters see thousands of identical resumes every week — you need a distinct presence that speaks before your resume does.</p></div>
+      <div class="rc r d2"><span class="rc-num">02</span><h3>Companies Check Your LinkedIn First</h3><p>Before hiring managers even read your resume, they look at how you share technical knowledge with the world. Your digital presence IS your first impression — make it count every time.</p></div>
+      <div class="rc r d3"><span class="rc-num">03</span><h3>Visibility Creates Compounding Growth</h3><p>LinkedIn posts with your face, self-speech videos, interviews with top leaders, conference speaking — all of these compound over time into salary hikes, senior role attraction, and freelancing income.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SOCIAL HANDLE ══════════════ -->
+<section id="handle" class="sec sec-alt">
+  <div class="wrap">
+    <div class="r" style="text-align:center;margin-bottom:0">
+      <div class="tag violet">Task 3 Deep Dive</div>
+      <h2 class="sec-title">One Handle.<br>One <em>Global Identity</em>.</h2>
+      <p class="sec-sub" style="margin:14px auto 0">Same handle (≤ 11 characters) on ALL platforms. Non-negotiable. This is the foundation of your personal brand.</p>
+    </div>
+
+    <div class="handle-hero">
+      <div class="r">
+        <div class="tip-box">💡 <strong>Handle rule:</strong> Maximum 11 characters · Same on all platforms · No numbers or special characters preferred · Simple, professional, memorable.<br><br><strong>Example: <code>bavicnative</code></strong></div>
+        <div class="steps" style="margin-bottom:16px">
+          <div class="step">Check availability first on Medium, GitHub, and Instagram</div>
+          <div class="step">Once confirmed, register on LinkedIn, Facebook, and X</div>
+          <div class="step">All 6+ platforms must have the identical handle</div>
+        </div>
+        <a href="https://chatgpt.com/share/695baa34-411c-800d-9abf-9f24372e8986" target="_blank" class="sky-link">Reference for handle alignment logic →</a>
+
+        <div style="margin-top:22px">
+          <div class="tag blue" style="margin-bottom:10px">📺 Account Creation Videos</div>
+          <table class="vt">
+            <thead><tr><th>#</th><th>Platform</th><th>Video</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Gmail</td><td><a href="https://drive.google.com/file/d/1755S4hgD3sd796ElumT8JLTerT6Ci13g/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+              <tr><td>2</td><td>Facebook</td><td><a href="https://drive.google.com/file/d/1fTs46hrJRVOCltAUpeU0Am414T7u4y9j/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+              <tr><td>3</td><td>GitHub</td><td><a href="https://drive.google.com/file/d/18xXosE5QKVUj5MGuS4JXGFabvl3rJuy2/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+              <tr><td>4</td><td>Instagram</td><td><a href="https://drive.google.com/file/d/1Yj7YSDPJhTVpKWl2q0GqusFx0cdvxeyZ/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+              <tr><td>5</td><td>LinkedIn</td><td><a href="https://drive.google.com/file/d/1ouivGqtAA3sv-Ax3PVMTIql2YRpQpOgP/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+              <tr><td>6</td><td>Medium</td><td><a href="https://drive.google.com/file/d/13NmkA6B3fCBlwPyY6wGtZmg1iTfIa3ie/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+              <tr><td>7</td><td>YouTube</td><td><a href="https://drive.google.com/file/d/1HnwGCBcVSDwEgjzQ9bB6upT91oMaq4ST/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+              <tr><td>8</td><td>Intro to All Platforms</td><td><a href="https://drive.google.com/file/d/17ThpBvf9lj98PQF1_LzOr7s2ffSTFIIf/view?usp=drive_link" target="_blank" class="vlink">Watch</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:18px">
+          <div class="tag blue" style="margin-bottom:10px">🔗 Required Platform URLs</div>
+          <table class="pt">
+            <tbody>
+              <tr><td>Medium</td><td><a href="https://medium.com/bavicnative" target="_blank">medium.com/@yourhandle</a></td></tr>
+              <tr><td>GitHub</td><td><a href="https://github.com/bavicnative" target="_blank">github.com/yourhandle</a></td></tr>
+              <tr><td>Instagram</td><td><a href="https://www.instagram.com/bavicnative" target="_blank">instagram.com/yourhandle</a></td></tr>
+              <tr><td>X (Twitter)</td><td><a href="https://x.com/bavicnative" target="_blank">x.com/yourhandle</a></td></tr>
+              <tr><td>Facebook</td><td><a href="https://www.facebook.com/bavicnative" target="_blank">facebook.com/yourhandle</a></td></tr>
+              <tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/in/bavicnative" target="_blank">linkedin.com/in/yourhandle</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="r d1">
+        <div style="font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:10px">✅ Consistent Handle — @bavicnative</div>
+        <div class="plat-list">
+          <div class="pr ok"><div class="pr-icon" style="background:#0077b5;color:#fff;">in</div><div class="pr-name">LinkedIn</div><div class="pr-handle">@bavicnative</div><div class="pr-ok">✅</div></div>
+          <div class="pr ok"><div class="pr-icon" style="background:#000;color:#fff;">𝕏</div><div class="pr-name">Twitter/X</div><div class="pr-handle">@bavicnative</div><div class="pr-ok">✅</div></div>
+          <div class="pr ok"><div class="pr-icon" style="background:#24292e;color:#fff;">⌥</div><div class="pr-name">GitHub</div><div class="pr-handle">@bavicnative</div><div class="pr-ok">✅</div></div>
+          <div class="pr ok"><div class="pr-icon" style="background:#02b875;color:#fff;">M</div><div class="pr-name">Medium</div><div class="pr-handle">@bavicnative</div><div class="pr-ok">✅</div></div>
+          <div class="pr ok"><div class="pr-icon" style="background:#e1306c;color:#fff;">📷</div><div class="pr-name">Instagram</div><div class="pr-handle">@bavicnative</div><div class="pr-ok">✅</div></div>
+          <div class="pr ok"><div class="pr-icon" style="background:#1877f2;color:#fff;">f</div><div class="pr-name">Facebook</div><div class="pr-handle">@bavicnative</div><div class="pr-ok">✅</div></div>
+        </div>
+        <div class="tip-box" style="margin-top:14px">💡 One search = instant discovery on every platform. Your brand works <strong>for you 24/7</strong>.</div>
+      </div>
+    </div>
+
+    <div class="cmp-grid r">
+      <div class="cmp-box">
+        <div class="cmp-head ok">✅ Same Handle — All Platforms</div>
+        <div class="cmp-body">
+          <div class="cmp-row"><span class="lbl">Global identity</span><span class="val g">unified</span></div>
+          <div class="cmp-row"><span class="lbl">Search &amp; discovery</span><span class="val g">instant</span></div>
+          <div class="cmp-row"><span class="lbl">Personal brand recall</span><span class="val g">strong</span></div>
+          <div class="cmp-row"><span class="lbl">Poster branding</span><span class="val g">clean &amp; pro</span></div>
+          <div class="cmp-row"><span class="lbl">Recruiter trust</span><span class="val g">high</span></div>
+          <div class="cmp-row"><span class="lbl">Authenticity</span><span class="val g">easy to validate</span></div>
+        </div>
+      </div>
+      <div class="cmp-box">
+        <div class="cmp-head bad">❌ Different Handles — Each Platform</div>
+        <div class="cmp-body">
+          <div class="cmp-row"><span class="lbl">Global identity</span><span class="val r">fragmented</span></div>
+          <div class="cmp-row"><span class="lbl">Search &amp; discovery</span><span class="val r">impossible</span></div>
+          <div class="cmp-row"><span class="lbl">Personal brand recall</span><span class="val r">confused</span></div>
+          <div class="cmp-row"><span class="lbl">Poster branding</span><span class="val r">messy</span></div>
+          <div class="cmp-row"><span class="lbl">Recruiter trust</span><span class="val r">low</span></div>
+          <div class="cmp-row"><span class="lbl">Authenticity</span><span class="val r">hard to validate</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="poster-demo r">
+      <div>
+        <div class="pd-label ok">✅ Same Handle — Clean &amp; Professional Poster</div>
+        <div class="pcard">
+          <div class="pb nb"><div class="pb-title">My Tech Talk on Azure AutoML</div><div class="pb-handle">@bavicnative</div></div>
+          <div class="pb-body">
+            <div class="pb-name">Ravi Kumar · Cloud &amp; DevOps Leader</div>
+            <div class="pb-tags"><span class="p-tag ok">LinkedIn: @bavicnative</span><span class="p-tag ok">Twitter: @bavicnative</span><span class="p-tag ok">GitHub: @bavicnative</span></div>
+            <p class="pb-cap">One consistent identity everywhere. Viewers instantly know where to find you — no guessing, full trust.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="pd-label bad">❌ Different Handles — Messy &amp; Confusing Poster</div>
+        <div class="pcard">
+          <div class="pb vb"><div class="pb-title">My Tech Talk on Azure AutoML</div><div class="pb-handle">@ravikumar2024</div></div>
+          <div class="pb-body">
+            <div class="pb-name">Ravi Kumar · Cloud &amp; DevOps Leader</div>
+            <div class="pb-tags"><span class="p-tag bad">LinkedIn: @ravi.kumar.tech</span><span class="p-tag bad">Twitter: @ravikumar2024</span><span class="p-tag bad">GitHub: @rk_dev_official</span></div>
+            <p class="pb-cap">Which handle do I search? The poster says one thing, the bio says another. Brand confusion kills trust instantly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TASKS 0–7 ══════════════ -->
+<section id="tasks" class="sec">
+  <div class="wrap">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-bottom:56px" class="r">
+      <div>
+        <div class="tag rose">Mandatory Onboarding</div>
+        <h2 class="sec-title">Task 0 → Task 7</h2>
+        <p class="sec-sub">Every task is mandatory. No shortcuts. No exceptions. Complete all to unlock your personalized career plan.</p>
+      </div>
+      <div style="display:inline-flex;align-items:center;gap:6px;background:var(--rose-light);color:var(--rose);border:1px solid var(--rose-mid);font-size:12px;font-weight:700;padding:8px 18px;border-radius:100px;font-family:'DM Mono',monospace">⚠ All Tasks Mandatory</div>
+    </div>
+
+    <div class="tl">
+
+      <!-- ── TASK 0 ── -->
+      <div class="ti r">
+        <div class="tb-badge c0">T0</div>
+        <div class="tc">
+          <div class="tc-top"><div class="tc-title">Personal Details &amp; Forms</div><span class="chip mand">Mandatory</span></div>
+          <div class="tc-desc">The starting point. Fill the Onboarding Google Form so the architect can build your personalised <strong>career plan</strong>, <strong>technical growth plan</strong>, <strong>freelancing plan</strong>, and <strong>leadership connection strategy</strong>.</div>
+          <div class="info-box">📝 After Tasks 0–7 are completed, the architect will create your personalised plans. This form is the starting point.</div>
+          <a href="https://forms.gle/BWGkaWMdxkYf8fhs5" target="_blank" class="sky-link">📝 Fill the Onboarding Form →</a>
+          <br>
+          <a href="https://lnkd.in/eKAYKNwe" target="_blank" class="sky-link" style="margin-top:8px">🎤 Future Speakers Form (Optional) →</a>
+        </div>
+      </div>
+
+      <!-- ── TASK 1 ── -->
+      <div class="ti r">
+        <div class="tb-badge c1">T1</div>
+        <div class="tc">
+          <div class="tc-top"><div class="tc-title">Gmail Account</div><span class="chip mand">Mandatory</span></div>
+          <div class="tc-desc">Use your <strong>existing Gmail account</strong> for all CareerByteCode activities — personal branding, content creation, and learning platforms. If you already have a Gmail, you do not need to create a new one. Do <strong>NOT</strong> use multiple Gmail IDs.</div>
+          <div class="tip-box">✅ If you already have a Gmail account, simply use it. No need to create a new one.</div>
+          <div class="warn-box">❌ Avoid long confusing addresses like: <code>swethakrishnanaccountant@gmail.com</code><br>✅ Keep it short, simple, and professional.</div>
+          <a href="https://drive.google.com/file/d/1755S4hgD3sd796ElumT8JLTerT6Ci13g/view?usp=drive_link" target="_blank" class="sky-link">📹 Watch: Gmail Account Setup Video →</a>
+        </div>
+      </div>
+
+      <!-- ── TASK 2 ── -->
+      <div class="ti r">
+        <div class="tb-badge c2">T2</div>
+        <div class="tc">
+          <div class="tc-top"><div class="tc-title">Create a New Chrome Profile</div><span class="chip mand">Mandatory</span></div>
+          <div class="tc-desc">Many people keep multiple email IDs open in the same Chrome profile — this leads to confusion and wasted time. A dedicated Chrome profile enforces brand discipline and professional focus.</div>
+          <div class="steps">
+            <div class="step">Open <strong>Google Chrome</strong></div>
+            <div class="step">Create a <strong>new Chrome profile</strong></div>
+            <div class="step">Log in using your <strong>CareerByteCode Gmail account</strong></div>
+          </div>
+          <div class="gold-box">🎯 Purpose: Professional focus · Clean environment · Brand discipline</div>
+        </div>
+      </div>
+
+      <!-- ── TASK 3 ── -->
+      <div class="ti r">
+        <div class="tb-badge c3">T3</div>
+        <div class="tc" style="border-color:var(--violet-mid)">
+          <div class="tc-top"><div class="tc-title">Decide &amp; Align Your Social Media Handle (≤ 11 Characters)</div><span class="chip crit">Critical</span></div>
+          <div class="tc-desc">Using the <strong>same handle across all platforms</strong> is non-negotiable for personal branding and CareerByteCode onboarding. One identity means easy search, discovery, and trust everywhere you show up.</div>
+          <div class="steps">
+            <div class="step">Choose a unique handle of <strong>max 11 characters</strong> — no numbers or special characters preferred</div>
+            <div class="step">First check availability on Medium, GitHub, and Instagram</div>
+            <div class="step">Once confirmed, register on LinkedIn, Facebook, and X (Twitter)</div>
+            <div class="step">Create the same handle on: Medium · GitHub · Instagram · X · Facebook · LinkedIn · YouTube</div>
+          </div>
+          <p style="font-size:12.5px;color:var(--muted);margin-top:8px">See the full handle guide in the section above ↑ for all platform video links and URL examples.</p>
+        </div>
+      </div>
+
+      <!-- ── TASK 4 ── -->
+      <div class="ti r">
+        <div class="tb-badge c4">T4</div>
+        <div class="tc">
+          <div class="tc-top"><div class="tc-title">Self-Speech Video</div><span class="chip mand">Mandatory</span></div>
+          <div class="tc-desc">Your self-speech video is your digital handshake. It transforms you from a text profile into a confident, real person — fundamentally changing how leaders, recruiters, and collaborators perceive you.</div>
+          <div class="gold-box">🎯 Purpose: Camera confidence · Leadership communication · Authentic presence</div>
+          <div class="steps">
+            <div class="step">Install the <strong>Prompter Pal</strong> teleprompter app on your phone</div>
+            <div class="step">Watch the step-by-step demo video</div>
+            <div class="step">Film, edit, and post your self-speech video on LinkedIn</div>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.solid.teleprompter" target="_blank" class="sky-link">📱 Download Prompter Pal (Teleprompter App) →</a>
+          <br>
+          <a href="https://drive.google.com/file/d/1rOjL5B8uBHd7jsW7eRAlVPsLnQyWl9G8/view" target="_blank" class="sky-link" style="margin-top:8px">📹 Watch: Self-Speech Video Demo →</a>
+        </div>
+      </div>
+
+      <!-- ── TASK 5 ── -->
+      <div class="ti r">
+        <div class="tb-badge c5">T5</div>
+        <div class="tc">
+          <div class="tc-top"><div class="tc-title">Learning &amp; Assignment Completion</div><span class="chip mand">Mandatory</span></div>
+          <div class="tc-desc">Complete both Class 3 and Class 4 — these training modules give you the AI, content creation, Canva, and design skills needed to build a powerful personal brand.</div>
+
+          <div style="margin-bottom:20px">
+            <div class="tag blue" style="margin-bottom:10px">📘 Class 3 — Generative AI for Content (Mandatory)</div>
+            <table class="vt">
+              <thead><tr><th>#</th><th>Topic</th><th>Video</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Introduction to Generative AI for Content</td><td><a href="https://drive.google.com/file/d/1CYMqXdNV0ulPGJ1ljI7ZpIvF4HZOKHGx/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>2</td><td>The 3-Part Prompt Writing Formula</td><td><a href="https://drive.google.com/file/d/1NjAU4Sha-DPSO8ZcCdxSAdBogHJRWSOG/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>3</td><td>Writing Social Media Content Using ChatGPT</td><td><a href="https://drive.google.com/file/d/1zov8u_RE38yBbkPNrrQR9BcjgtxrpyTh/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>4</td><td>Writing Interview Questions Using ChatGPT</td><td><a href="https://drive.google.com/file/d/1aM_qXR7RTuwAVBuz57aZe3K80aI1eWEz/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>5</td><td>Writing Job-Seeker Problem Statements</td><td><a href="https://drive.google.com/file/d/1Q9jfq7vC-hibx14EN2ldZmFRNM12aOq0/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>6</td><td>Storytelling Training (With Photos)</td><td><a href="https://drive.google.com/file/d/1J-2aUf74RkroVAoRm_3cczpSS8EcvWh-/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>7</td><td>Understanding Real-Time Content Examples</td><td><a href="https://drive.google.com/file/d/1NVrEtiWNaWSg0OB4fvV0VczRrNfNV22S/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>8</td><td>Daily Content Challenge – 30 Days</td><td><a href="https://drive.google.com/file/d/1MqH_x-c6hDTeZOQKZ92N_DkLbMty420Z/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>9</td><td>Profile Optimization Using ChatGPT</td><td><a href="https://drive.google.com/file/d/1LpQ7LNKZuL8WhLehTMcHof0brbvspIKb/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>10</td><td>Sample LinkedIn Posts</td><td><a href="https://drive.google.com/file/d/1Hj3Zt0_6fZqv0RWOZSOPj86yThPNjqdG/" target="_blank" class="vlink">Watch</a></td></tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/15Fcpqa1qs652rZOzthAeYh-DjoPxqH3Q/" target="_blank" class="res-link">🎯 Class 3 Assignments →</a>
+          </div>
+
+          <div>
+            <div class="tag green" style="margin-bottom:10px">🎨 Class 4 — Canva, Design &amp; Video Editing (Mandatory)</div>
+            <table class="vt">
+              <thead><tr><th>#</th><th>Topic</th><th>Video</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Introduction to Canva</td><td><a href="https://drive.google.com/file/d/1H8yiRVheUF--dWEoPSrpYjZc4b5r_NS9/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>2</td><td>Understanding Poster Sizes</td><td><a href="https://drive.google.com/file/d/1B09MD6ThXRSsXXFOKlcWqgLWRBGvhn3U/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>3</td><td>Branding Elements Training</td><td><a href="https://drive.google.com/file/d/1zUM9YVqfNLfSOOLzVMwHLEwCmiJCrw6w/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>4</td><td>Designing Different Posters</td><td><a href="https://drive.google.com/file/d/1_MxyBNQbpeXPnrOkK3xT3l_3LP_KsWQP/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>5</td><td>Video Editing Basics</td><td><a href="https://drive.google.com/file/d/1fOml0V2iwri-UmOnmfuCfvItavgmYpl5/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>6</td><td>Background Removal Training</td><td><a href="https://drive.google.com/file/d/1jCmdCV2NUeUm8TUTRjKxsmxTD87DN0gU/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>7</td><td>Adding Branding to Posters</td><td><a href="https://drive.google.com/file/d/1CUBb5lFBsl9OYr5vNFZV7iIcIKzC12ni/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>8</td><td>How to Share Existing Canva Files</td><td><a href="https://drive.google.com/file/d/1I6WCQVJavtr2s2grNrBdIH5Dr1c1jGIO/" target="_blank" class="vlink">Watch</a></td></tr>
+                <tr><td>9</td><td>How to Copy Canva Files for Your Use</td><td><a href="https://drive.google.com/file/d/17nq1TBQnzUEHUdMZ04Y63SsBLobcb10D/" target="_blank" class="vlink">Watch</a></td></tr>
+              </tbody>
+            </table>
+            <a href="https://drive.google.com/file/d/1W2B1dEB4n9LojZ8ZAeoAYnaNdQ1Qa6eV/" target="_blank" class="res-link">🎯 Class 4 Assignments →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TASK 6 ── -->
+      <div class="ti r">
+        <div class="tb-badge c6">T6</div>
+        <div class="tc">
+          <div class="tc-top"><div class="tc-title">1-Week Personal Branding LinkedIn Posting Plan</div><span class="chip mand">Mandatory</span></div>
+          <div class="tc-desc">Post every single day for a week following the structured theme calendar. Consistency matters more than perfection. This exercise builds your content muscle, LinkedIn visibility, and speaking confidence.</div>
+
+          <div class="info-box">📌 <strong>Before you start posting:</strong> Everyone must add the CareerByteCode community to their LinkedIn profile first. In all posts, <strong>tag Sangeetha B and the CareerByteCode community</strong>.</div>
+
+          <div style="margin-bottom:18px">
+            <div class="tag navy" style="margin-bottom:10px">👥 Community Members Who Have Done It (All Working in IT Companies)</div>
+            <div class="cm-grid">
+              <div class="cm-card"><div class="cm-name">Monisha Gangadhareshwara</div><div class="cm-role">Advisory Board Member</div><a href="https://www.linkedin.com/in/learnwithmona" target="_blank" class="cm-link">learnwithmona →</a></div>
+              <div class="cm-card"><div class="cm-name">Shruthi Chikkela</div><div class="cm-role">Global AIOps Community Leader</div><a href="https://www.linkedin.com/in/learnwithshruthi/" target="_blank" class="cm-link">learnwithshruthi →</a></div>
+              <div class="cm-card"><div class="cm-name">Kapil Lakhanpal</div><div class="cm-role">AI &amp; Telecom Global Leader</div><a href="https://www.linkedin.com/in/visionvibeswithkapil/" target="_blank" class="cm-link">visionvibeswithkapil →</a></div>
+              <div class="cm-card"><div class="cm-name">Navdeep Kaur</div><div class="cm-role">Global AI Leader</div><a href="https://www.linkedin.com/in/leadwithnav/" target="_blank" class="cm-link">leadwithnav →</a></div>
+              <div class="cm-card"><div class="cm-name">Daisy Grace Thomas</div><div class="cm-role">AI Re-Engineering Leader</div><a href="https://www.linkedin.com/in/daisywithai/" target="_blank" class="cm-link">daisywithai →</a></div>
+            </div>
+            <p style="font-size:12px;color:var(--muted);margin-top:8px">💡 If you are a job seeker, college student, have a career gap, or are from a non-IT background — discuss with the architect about what role/title to add.</p>
+          </div>
+
+          <div class="tag blue" style="margin-bottom:10px">📅 Weekly Posting Schedule</div>
+          <table class="wt">
+            <thead><tr><th>Day</th><th>Theme</th><th>Post Type</th><th>Goal</th></tr></thead>
+            <tbody>
+              <tr><td><span class="day-badge day-mon">Monday</span></td><td>Confidence &amp; Identity</td><td>Self-confidence photo — write about who you are and your domain</td><td>Build visibility &amp; personal identity</td></tr>
+              <tr><td><span class="day-badge day-tue">Tuesday</span></td><td>Interview / Knowledge</td><td>Text / carousel — share interview questions, concepts, or tips</td><td>Show expertise &amp; help others</td></tr>
+              <tr><td><span class="day-badge day-wed">Wednesday</span></td><td>Mentorship / Impact</td><td>Self-confidence photo + story — share mentoring impact</td><td>Build trust &amp; leadership image</td></tr>
+              <tr><td><span class="day-badge day-thu">Thursday</span></td><td>Real-Time Project</td><td>Project post — problem statement + what you built/learned</td><td>Show hands-on experience</td></tr>
+              <tr><td><span class="day-badge day-fri">Friday</span></td><td>Core Skill / Tech</td><td>Educational post — explain one core technology (deep or simple)</td><td>Establish technical credibility</td></tr>
+              <tr><td><span class="day-badge day-sat">Saturday</span></td><td>Advanced / Trending</td><td>Insight post — write about advanced or trending industry topics</td><td>Show industry awareness</td></tr>
+              <tr><td><span class="day-badge day-sun">Sunday</span></td><td>Motivation &amp; Self-Belief</td><td>Self-confidence photo — write a human, honest motivation post</td><td>Emotional connection &amp; community</td></tr>
+            </tbody>
+          </table>
+
+          <div style="margin-top:16px;padding:12px 16px;background:var(--navy-pale);border-radius:10px;border:1px solid var(--border)">
+            <strong style="font-size:13px;color:var(--navy)">🔁 Content by Domain:</strong>
+            <div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.7">
+              🔹 <strong>AI professional</strong> → AI journey, ML models, GenAI tools, RAG, AI agents<br>
+              🔹 <strong>Java developer</strong> → Core Java, Spring Boot, Microservices, System Design<br>
+              🔹 <strong>Any domain</strong> → Same structure, different topic. <strong>Consistency matters more than perfection. Post every day.</strong>
+            </div>
+          </div>
+
+          <div style="margin-top:18px">
+            <div class="tag navy" style="margin-bottom:12px">📌 Week Exercise Sample Posts</div>
+            <div class="sp-links" style="margin-bottom:12px">
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7436351150876053504/" target="_blank" class="sp-link">Sample Post A</a>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437368231230726144/" target="_blank" class="sp-link">Sample Post B</a>
+            </div>
+
+            <div class="tag blue" style="margin-bottom:12px">📚 Sample LinkedIn Posts by Type</div>
+            <div class="sp-section">
+              <div class="sp-group">
+                <div class="sp-group-title">📸 1. Self-Confidence Photo — Introduction Post</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/infantusgodfrey_careerbytecode-2025reflections-professionalgrowth-activity-7412479049731735552-rdsG/" target="_blank" class="sp-link">Sample 1</a>
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7414501043323121664" target="_blank" class="sp-link">Sample 2</a>
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7413059863951515648" target="_blank" class="sp-link">Sample 3</a>
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7413821605484703744" target="_blank" class="sp-link">Sample 4</a>
+                  <a href="https://www.linkedin.com/posts/learnwithshruthi_careergrowth-womenintech-leadershipjourney-activity-7415271122658684928-a0AU/" target="_blank" class="sp-link">Sample 5</a>
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7393905353765068800" target="_blank" class="sp-link">Sample 6</a>
+                </div>
+              </div>
+              <div class="sp-group">
+                <div class="sp-group-title">📊 2. Text / Carousel Post — Knowledge Sharing</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/vjcloudops_ansible-concepts-activity-7350790880171053056-vW-1" target="_blank" class="sp-link">Ansible Concepts</a>
+                  <a href="https://www.linkedin.com/posts/infantusgodfrey_azure-devops-boards-activity-7374664792587845632-Wnzk" target="_blank" class="sp-link">Azure DevOps Boards</a>
+                  <a href="https://www.linkedin.com/posts/hannahmorgan_you-can-tell-a-lot-about-a-role-by-the-questions-activity-7404885693115629569-R6nA" target="_blank" class="sp-link">Interview Questions Insight</a>
+                </div>
+              </div>
+              <div class="sp-group">
+                <div class="sp-group-title">🤝 3. Self-Confidence Photo + Story — Mentorship Impact</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/vjcloudops_devops-automation-operationalexcellence-activity-7359883331708080129-iYFj" target="_blank" class="sp-link">Mentorship &amp; DevOps Impact</a>
+                </div>
+              </div>
+              <div class="sp-group">
+                <div class="sp-group-title">🔨 4. Project Post — Problem &amp; Solution</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/vjcloudops_from-bare-metal-to-build-ready-setting-up-activity-7381302448730116097-y77C" target="_blank" class="sp-link">From Bare Metal to Build Ready</a>
+                </div>
+              </div>
+              <div class="sp-group">
+                <div class="sp-group-title">📚 5. Educational Post — Core Technology Explanation</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/vjcloudops_aws-s3-cloudsecurity-activity-7354808525899927552-_XTd" target="_blank" class="sp-link">AWS S3 &amp; Cloud Security</a>
+                </div>
+              </div>
+              <div class="sp-group">
+                <div class="sp-group-title">💡 6. Insight Post — Advanced / Trending Topics</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/vjcloudops_%F0%9D%90%88%F0%9D%90%A7%F0%9D%90%9F%F0%9D%90%AB%F0%9D%90%9A%F0%9D%90%9C%F0%9D%90%A8%F0%9D%90%9D%F0%9D%90%9E%F0%9D%90%9B%F0%9D%90%9A%F0%9D%90%AC%F0%9D%90%9E-%F0%9D%90%83%F0%9D%90%9E%F0%9D%90%AF%F0%9D%90%8E%F0%9D%90%A9%F0%9D%90%AC-activity-7401131893645160448--DJA" target="_blank" class="sp-link">Infrastructure &amp; DevOps Insights</a>
+                </div>
+              </div>
+              <div class="sp-group">
+                <div class="sp-group-title">🌟 7. Self-Confidence Photo — Human &amp; Motivation Post</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/vjcloudops_mindset-motivation-careers-activity-7375370696488644608-mmgm" target="_blank" class="sp-link">Mindset &amp; Career Growth</a>
+                  <a href="https://www.linkedin.com/posts/learnwithshruthi_careergrowth-womenintech-leadershipjourney-activity-7415271122658684928-a0AU/" target="_blank" class="sp-link">Women in Tech Leadership</a>
+                </div>
+              </div>
+              <div class="sp-group">
+                <div class="sp-group-title">✍️ 8. Blog / Long-Form LinkedIn Post</div>
+                <div class="sp-links">
+                  <a href="https://www.linkedin.com/posts/infantusgodfrey_dev-community-activity-7394603680467050497-vdGj/" target="_blank" class="sp-link">Dev Community Blog</a>
+                  <a href="https://www.linkedin.com/posts/infantusgodfrey_zero-downtime-aks-node-patching-activity-7413795134653427712-s7fk" target="_blank" class="sp-link">Zero Downtime AKS Node Patching</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TASK 7 ── -->
+      <div class="ti r">
+        <div class="tb-badge c7">T7</div>
+        <div class="tc" style="background:var(--navy-pale);border-color:var(--border-mid)">
+          <div class="tc-top"><div class="tc-title">Canva Use-Case Presentation</div><span class="chip gate">Final Gate</span></div>
+          <div class="tc-desc">The architect needs to <strong>observe your communication skills</strong> — including stage fear, speaking confidence, and presentation ability. This assessment enables the architect to build a personalised <strong>job search + self-visibility plan</strong> tailored to ease your job search and attract freelancing opportunities.</div>
+          <div class="steps">
+            <div class="step">Study and practice the Canva use-case linked below</div>
+            <div class="step">Present live to the architect — demonstrate design storytelling and communication</div>
+            <div class="step">Completing this unlocks your personalized freelancing + leadership growth plan</div>
+          </div>
+          <div class="gold-box">🎯 Purpose: Real-world branding usage · Design storytelling · Consistent visual identity</div>
+          <a href="https://www.canva.com/design/DAG9z4EupPM/wR0__vk9WSUa1A09kSmLAw/edit" target="_blank" class="sky-link">🎨 Open Canva Use-Case →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ GROWTH STAGES ══════════════ -->
+<section id="stages" class="sec sec-alt">
+  <div class="wrap">
+    <div class="r" style="text-align:center">
+      <div class="tag gold">Your Growth Roadmap</div>
+      <h2 class="sec-title">12 Stages: Invisible → <em>Industry Leader</em></h2>
+      <p class="sec-sub" style="margin:14px auto 0">After completing onboarding, this is how CareerByteCode members grow from invisible to industry-recognized leaders.</p>
+      <div class="gold-box" style="max-width:640px;margin:20px auto 0;text-align:left">💡 <em>"Many opportunities never reach job boards. They come through conversations, referrals, and reputation."</em> — Speaking at tech events transforms how the market sees you.</div>
+    </div>
+    <div class="sg r">
+      <div class="sc"><div class="sc-num">01</div><span class="sc-icon">🔧</span><h4>Optimise LinkedIn Profile</h4><p>Foundation of your digital identity.</p><div class="sc-bar" style="width:100%"></div></div>
+      <div class="sc"><div class="sc-num">02</div><span class="sc-icon">🎨</span><h4>Design LinkedIn Banner</h4><p>First visual impression — make it unforgettable.</p><div class="sc-bar" style="width:92%"></div></div>
+      <div class="sc"><div class="sc-num">03</div><span class="sc-icon">✅</span><h4>Update Profile Fully</h4><p>100% complete — all sections, all keywords.</p><div class="sc-bar" style="width:84%"></div></div>
+      <div class="sc"><div class="sc-num">04</div><span class="sc-icon">⭐</span><h4>20–25 Recommendations</h4><p>Social proof from real connections.</p><div class="sc-bar" style="width:76%"></div></div>
+      <div class="sc"><div class="sc-num">05</div><span class="sc-icon">✍️</span><h4>Start LinkedIn Posting</h4><p>Consistency over perfection. Begin now.</p><div class="sc-bar" style="width:68%"></div></div>
+      <div class="sc"><div class="sc-num">06</div><span class="sc-icon">📸</span><h4>Post With Your Face</h4><p>Storytelling posts — technical or personal career journey.</p><div class="sc-bar" style="width:60%"></div></div>
+      <div class="sc"><div class="sc-num">07</div><span class="sc-icon">🎬</span><h4>Self-Speech Videos Regularly</h4><p>Regular video multiplies trust and reach.</p><div class="sc-bar" style="width:52%"></div></div>
+      <div class="sc"><div class="sc-num">08</div><span class="sc-icon">📊</span><h4>Gamma &amp; Canva Documents</h4><p>Professional docs for LinkedIn — visual credibility.</p><div class="sc-bar" style="width:44%"></div></div>
+      <div class="sc"><div class="sc-num">09</div><span class="sc-icon">🎤</span><h4>Deliver Tech Sessions</h4><p>CBC LinkedIn Lives &amp; Meetup — your first global stage. Get page access from the architect.</p><div class="sc-bar" style="width:36%"></div></div>
+      <div class="sc"><div class="sc-num">10</div><span class="sc-icon">🎙️</span><h4>Podcasts With Leaders</h4><p>Engage top leaders. Borrow authority. Grow network.</p><div class="sc-bar" style="width:28%"></div></div>
+      <div class="sc"><div class="sc-num">11</div><span class="sc-icon">🏙️</span><h4>Local Tech Events</h4><p>Deliver sessions in nearby cities. Meet decision-makers.</p><div class="sc-bar" style="width:20%"></div></div>
+      <div class="sc" style="border-top:3px solid var(--gold)"><div class="sc-num">12</div><span class="sc-icon">🌍</span><h4>Conference Speaker — Global</h4><p>The pinnacle. Speak anywhere in the world. The market comes to you.</p><div class="sc-bar" style="width:100%;background:linear-gradient(90deg,var(--gold),#fbbf24)"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SPEAK / INTERNAL TEAM ══════════════ -->
+<section id="speak" class="sec sec-navy">
+  <div class="wrap">
+    <div class="r" style="text-align:center;margin-bottom:64px">
+      <div class="tag white">🎤 Speaker &amp; Internal Team — Invitation Open</div>
+      <h2 class="sec-title wh" style="margin-top:16px">Share Your Voice.<br>Shape the <em>Future of Tech</em>.</h2>
+      <p class="sec-sub wh" style="margin:16px auto 0;max-width:640px">CareerByteCode is inviting passionate tech professionals, mentors, and real-world practitioners to join as internal team members with a leader focus — reaching 242K+ learners across 105+ countries through LinkedIn Lives, webinars, and global spotlight sessions.</p>
+      <div style="display:flex;justify-content:center;gap:44px;flex-wrap:wrap;margin-top:40px">
+        <div style="text-align:center"><span style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:#fff;display:block;line-height:1"><em style="font-style:normal;color:#93c5fd">242K</em>+</span><div style="font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:5px">Global Learners</div></div>
+        <div style="text-align:center"><span style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:#fff;display:block;line-height:1"><em style="font-style:normal;color:#93c5fd">105</em>+</span><div style="font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:5px">Countries</div></div>
+        <div style="text-align:center"><span style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:#fff;display:block;line-height:1"><em style="font-style:normal;color:#93c5fd">300</em>+</span><div style="font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:5px">Earning Opportunities</div></div>
+        <div style="text-align:center"><span style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:#fff;display:block;line-height:1"><em style="font-style:normal;color:#93c5fd">FREE</em></span><div style="font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:5px">All Platform Access</div></div>
+      </div>
+    </div>
+
+    <div class="r" style="text-align:center;margin-bottom:0">
+      <div class="tag white">🎁 What Internal Team Leaders Get</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:#fff;margin-top:12px;letter-spacing:-.8px">Real Perks. Real Visibility. <span style="color:#93c5fd">Real Growth.</span></h3>
+      <p style="font-size:15px;color:rgba(255,255,255,.6);max-width:560px;margin:12px auto 0;line-height:1.75">Those who join with a leader focus grow faster in IT careers AND unlock diverse freelancing opportunities — completely free.</p>
+    </div>
+
+    <div class="bg-grid-ben r">
+      <div class="bc"><span class="bc-icon">🏅</span><h4>Verified Digital Speaker Badge</h4><p>A credible mark of your industry presence. Flaunt it on LinkedIn and your resume — an instant authority signal that opens doors and starts conversations.</p><span class="bc-pill">Career Accelerator</span></div>
+      <div class="bc"><span class="bc-icon">🌍</span><h4>Global Reach — 105+ Countries</h4><p>Be seen by 242K+ learners across LinkedIn, Meetup, and global community networks. One session creates weeks of sustained visibility flywheel.</p><span class="bc-pill">Brand Amplification</span></div>
+      <div class="bc"><span class="bc-icon">🆓</span><h4>Full Free Platform Access</h4><p>Real-time projects, live events, and all training resources — completely free for team members. No paywalls, no hidden fees, ever.</p><span class="bc-pill">Zero Cost</span></div>
+      <div class="bc"><span class="bc-icon">📈</span><h4>Follower Growth &amp; Personal Branding</h4><p>Boost your LinkedIn presence through global amplification. Your expertise gets shared with a massive engaged audience of IT professionals.</p><span class="bc-pill">Visibility Engine</span></div>
+      <div class="bc"><span class="bc-icon">💰</span><h4>300+ Passive Earning Opportunities</h4><p>Consulting, freelancing, entrepreneurship, paid talks, collaborations, and affiliate invites. Grow your IT career AND build multiple freelancing income streams.</p><span class="bc-pill">Income Multiplier</span></div>
+      <div class="bc"><span class="bc-icon">🤝</span><h4>Leaders Circle Entry</h4><p>Join our private network of high-impact mentors, trainers, and industry decision-makers. Opportunities here never reach job boards.</p><span class="bc-pill">Elite Network Access</span></div>
+    </div>
+
+    <div class="r" style="margin-top:48px">
+      <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:700;margin-bottom:14px">🎯 We're Looking for Voices In</div>
+      <div class="d-pills">
+        <span class="dp">☁️ Cloud / Azure / AWS / GCP</span>
+        <span class="dp">⚙️ DevOps / Kubernetes</span>
+        <span class="dp">🤖 AI / ML / GenAI / LLM / NLP</span>
+        <span class="dp">🔐 Cybersecurity &amp; Ethical Hacking</span>
+        <span class="dp">💻 Frontend / Backend / Full-Stack</span>
+        <span class="dp">📄 Resume &amp; LinkedIn Branding</span>
+        <span class="dp">🎯 Interview Mentors &amp; Career Coaches</span>
+        <span class="dp">🌟 Job Seekers with Inspiring Comebacks</span>
+        <span class="dp">💡 Anyone with Real Experience + Genuine Passion</span>
+      </div>
+    </div>
+
+    <div class="navy-cta r">
+      <div>
+        <h3>Ready to Share Your Story?</h3>
+        <p>Real-world experience + genuine passion to uplift others = a perfect CareerByteCode internal leader. Apply now — it's completely free, and the growth you unlock is unlimited.</p>
+      </div>
+      <div class="navy-cta-btns">
+        <a href="https://lnkd.in/eKAYKNwe" target="_blank" class="btn-white">📝 Apply to Speak Now →</a>
+        <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank" class="btn-ghost">💼 Follow on LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ COMPLETION ══════════════ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="completion r">
+      <span class="completion-icon">🚀</span>
+      <h2>You Are ONBOARDED When...</h2>
+      <p>A member is considered fully onboarded only after every criteria below is met. This is how CareerByteCode builds world-class tech leaders. No shortcuts. No exceptions.</p>
+      <div class="cl">
+        <div class="cp">Tasks 0–7 Fully Completed</div>
+        <div class="cp">Google Onboarding Form Submitted</div>
+        <div class="cp">Social Handles Aligned on All Platforms</div>
+        <div class="cp">Self-Speech Video Submitted</div>
+        <div class="cp">Minimum 1-Week LinkedIn Content Posted</div>
+        <div class="cp">CareerByteCode Added to LinkedIn Profile</div>
+      </div>
+      <a href="https://forms.gle/BWGkaWMdxkYf8fhs5" target="_blank" class="btn-navy" style="display:inline-flex;margin:0 auto">Begin Onboarding Now →</a>
+      <div class="completion-note">
+        CareerByteCode builds LEADERS, not just contributors.<br>
+        If you can execute these tasks — you are ready to scale globally with us. 🌍
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:44px" class="r">
+      <a href="https://www.careerbytecode.com/" target="_blank" style="display:block;background:var(--surface);border:1.5px solid var(--border);border-radius:15px;padding:26px;text-align:center;text-decoration:none;box-shadow:var(--sh-sm);transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-lg)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--sh-sm)'">
+        <div style="font-size:26px;margin-bottom:8px">🌐</div>
+        <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px">Visit Website</div>
+        <div style="font-size:12px;color:var(--muted)">careerbytecode.com</div>
+      </a>
+      <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank" style="display:block;background:var(--surface);border:1.5px solid var(--border);border-radius:15px;padding:26px;text-align:center;text-decoration:none;box-shadow:var(--sh-sm);transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-lg)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--sh-sm)'">
+        <div style="font-size:26px;margin-bottom:8px">💼</div>
+        <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px">Follow on LinkedIn</div>
+        <div style="font-size:12px;color:var(--muted)">242K+ community</div>
+      </a>
+      <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/" target="_blank" style="display:block;background:var(--surface);border:1.5px solid var(--border);border-radius:15px;padding:26px;text-align:center;text-decoration:none;box-shadow:var(--sh-sm);transition:all .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='var(--sh-lg)'" onmouseout="this.style.transform='none';this.style.boxShadow='var(--sh-sm)'">
+        <div style="font-size:26px;margin-bottom:8px">📍</div>
+        <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px">Join on Meetup</div>
+        <div style="font-size:12px;color:var(--muted)">Free live events</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="font-size:22px;margin-bottom:14px">⚡</div>
+  <strong>CareerByteCode</strong> — The World's Largest Real-Time Tech Projects &amp; Leadership Platform<br>
+  <span style="margin-top:5px;display:block">2.4M+ Learners · 103 Countries · One Mission: Build Future Tech Leaders</span>
+  <div class="footer-links">
+    <a href="https://www.careerbytecode.com/" target="_blank">🌐 Website</a>
+    <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank">💼 LinkedIn</a>
+    <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/" target="_blank">📍 Meetup</a>
+    <a href="https://github.com/careerbytecode" target="_blank">🐙 GitHub</a>
+  </div>
+</footer>
+
+<script>
+const pb = document.getElementById('pb');
+window.addEventListener('scroll', () => {
+  const s = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+  pb.style.width = (h > 0 ? (s/h)*100 : 0) + '%';
+}, { passive: true });
+
+const rio = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); rio.unobserve(e.target); } });
+}, { threshold: 0.05, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.r').forEach(el => rio.observe(el));
+
+setTimeout(() => {
+  document.querySelectorAll('.hero .r').forEach((el, i) => setTimeout(() => el.classList.add('vis'), i * 110));
+}, 60);
+</script>
+</body>
+</html>
