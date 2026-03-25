@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SheLeads — CareerByteCode Women Digital Empowerment Program. 12-class journey covering personal branding, LinkedIn mastery, AI content & more.">
+<meta property="og:title" content="SheLeads — CareerByteCode Women Digital Empowerment Program">
+<meta property="og:description" content="12-class women digital empowerment program. Personal branding, LinkedIn mastery, AI content & more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/sheleads.html">
+<meta property="og:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5f7fb">
+<meta name="color-scheme" content="light only">
+<link rel="canonical" href="https://careerbytecode.github.io/sheleads.html">
+<title>SheLeads — CareerByteCode Women Digital Empowerment Program</title>
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #0a1628;
+  --navy-mid:   #0d2047;
+  --navy-light: #1a3a6b;
+  --navy-soft:  #e8edf5;
+  --rose:       #c8195a;
+  --rose-light: #f0789b;
+  --gold:       #c7922a;
+  --gold-light: #f0c060;
+  --teal:       #0a7e6e;
+  --teal-light: #4ec9b5;
+  --bg:         #f5f7fb;
+  --bg2:        #eef1f8;
+  --bg3:        #ffffff;
+  --surface2:   #f0f4fc;
+  --text:       #0a1628;
+  --text2:      #3a4a6b;
+  --text3:      #7a8aaa;
+  --border:     rgba(10,22,40,.1);
+  --border2:    rgba(10,22,40,.06);
+  --shadow-sm:  0 2px 12px rgba(10,22,40,.07);
+  --shadow-md:  0 8px 32px rgba(10,22,40,.1);
+  --shadow-lg:  0 20px 60px rgba(10,22,40,.12);
+  --radius:     18px;
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:  'Plus Jakarta Sans',sans-serif;
+  --font-mono:  'JetBrains Mono',monospace;
+  --glass: rgba(255,255,255,0.65);
+  --glass2: rgba(255,255,255,0.48);
+  --glass-border: rgba(255,255,255,0.7);
+  --glass-border2: rgba(255,255,255,0.45);
+  --shadow-glass: 0 4px 24px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* PROGRESS */
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:1000;background:linear-gradient(90deg,var(--rose),var(--navy-light),var(--teal));transition:width .1s linear}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:900;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(245,247,251,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 20px rgba(10,22,40,.08)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);flex-shrink:0}
+.logo-mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.72rem;font-weight:700;font-family:var(--font-mono);flex-shrink:0}
+.nav-links{display:flex;gap:26px;font-size:.83rem;font-weight:500;color:var(--text2)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--navy);color:#fff;padding:8px 20px;border-radius:100px;font-size:.82rem;font-weight:600;box-shadow:0 4px 14px rgba(10,22,40,.2);transition:background .2s,transform .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--navy-light);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);transition:.3s;border-radius:2px}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--bg3);z-index:850;flex-direction:column;align-items:center;justify-content:center;gap:22px;font-family:var(--font-display)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:1.3rem;font-weight:700;color:var(--navy);padding:6px 0;transition:color .2s}
+.mobile-nav a:hover{color:var(--rose)}
+.mobile-cta{background:var(--navy)!important;color:#fff!important;padding:12px 36px!important;border-radius:100px;font-size:1rem!important;margin-top:8px}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:120px 5% 100px;overflow:hidden;background:var(--navy)}
+.hero-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.deco-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06)}
+.dc1{width:600px;height:600px;top:-200px;right:-100px}
+.dc2{width:420px;height:420px;top:-60px;right:60px}
+.dc3{width:260px;height:260px;top:40px;right:180px}
+.deco-blob{position:absolute;border-radius:60% 40% 55% 45% / 50% 60% 40% 50%;filter:blur(80px);opacity:.32}
+.db1{width:500px;height:500px;top:-80px;right:-80px;background:var(--rose);animation:morph 16s ease-in-out infinite}
+.db2{width:400px;height:400px;bottom:-60px;left:30%;background:var(--navy-light);animation:morph 20s ease-in-out infinite reverse}
+.db3{width:300px;height:300px;bottom:60px;right:20%;background:var(--teal);animation:morph 12s ease-in-out infinite;opacity:.18}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:28px 28px}
+.hero-cut{position:absolute;bottom:-2px;left:0;width:100%;height:80px;background:var(--bg);clip-path:polygon(0 100%,100% 0,100% 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);border:1px solid rgba(240,192,96,.25);background:rgba(240,192,96,.08);padding:6px 14px;border-radius:100px;margin-bottom:20px}
+.hero-h1{font-family:var(--font-display);font-size:clamp(3.4rem,7vw,5.8rem);font-weight:700;line-height:.93;letter-spacing:-.03em;color:#fff;margin-bottom:12px}
+.hero-h1 em{font-style:italic;background:linear-gradient(135deg,var(--rose-light),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:rgba(255,255,255,.52);margin-bottom:16px}
+.hero-desc{font-size:.94rem;color:rgba(255,255,255,.6);max-width:500px;line-height:1.9;margin-bottom:30px}
+.hero-desc strong{color:#fff;font-weight:600}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.btn-primary{background:linear-gradient(135deg,var(--rose),#9b1244);color:#fff;padding:12px 24px;border-radius:100px;font-size:.85rem;font-weight:600;box-shadow:0 6px 22px rgba(200,25,90,.35);transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,25,90,.45)}
+.btn-outline-inv{border:1.5px solid rgba(255,255,255,.22);color:rgba(255,255,255,.75);padding:11px 22px;border-radius:100px;font-size:.85rem;font-weight:500;transition:border-color .2s,color .2s,background .2s;white-space:nowrap}
+.btn-outline-inv:hover{border-color:rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.06)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:7px}
+.pill{font-size:.72rem;font-weight:500;padding:4px 12px;border-radius:100px;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.52);background:rgba(255,255,255,.05)}
+/* Hero card */
+.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:20px;padding:26px;backdrop-filter:blur(20px)}
+.hero-card-title{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hero-card-title::before{content:'✦';color:var(--gold-light);font-size:.72rem}
+.class-list{display:flex;flex-direction:column;gap:7px}
+.class-item{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:9px 11px;transition:background .2s}
+.class-item:hover{background:rgba(255,255,255,.09)}
+.class-num-badge{font-family:var(--font-mono);font-size:.6rem;font-weight:600;background:rgba(200,25,90,.22);color:var(--rose-light);padding:2px 7px;border-radius:5px;white-space:nowrap;border:1px solid rgba(200,25,90,.18)}
+.class-item-text{font-size:.78rem;color:rgba(255,255,255,.7);font-weight:500}
+.class-item-out{font-family:var(--font-mono);font-size:.6rem;color:rgba(255,255,255,.3);margin-left:auto;white-space:nowrap}
+
+/* STATS */
+.stats-strip{background:var(--bg3);border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);max-width:1200px;margin:0 auto}
+.stat-box{padding:30px 18px;text-align:center;border-right:1px solid var(--border2);transition:background .2s}
+.stat-box:last-child{border-right:none}
+.stat-box:hover{background:var(--surface2)}
+.stat-n{display:block;font-family:var(--font-mono);font-size:1.9rem;font-weight:700;line-height:1;margin-bottom:7px}
+.s1 .stat-n{color:var(--navy)}
+.s2 .stat-n{color:var(--rose)}
+.s3 .stat-n{color:var(--gold)}
+.s4 .stat-n{color:var(--teal)}
+.stat-l{font-size:.7rem;color:var(--text3);letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+
+/* SECTIONS */
+section{padding:84px 5%}
+.sec-inner{max-width:1200px;margin:0 auto}
+.sec-tag{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--rose);margin-bottom:9px;display:block;font-weight:600}
+.sec-h{font-family:var(--font-display);font-size:clamp(1.85rem,3.8vw,2.85rem);font-weight:700;line-height:1.1;color:var(--navy);margin-bottom:12px}
+.sec-h span{font-style:italic;background:linear-gradient(135deg,var(--rose),var(--navy-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec-lead{font-size:.95rem;color:var(--text2);max-width:560px;line-height:1.9;margin-bottom:44px}
+.sec-divider{width:42px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--rose),var(--navy-light));margin-bottom:16px}
+
+/* ABOUT */
+.about-section{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.quote-block{position:relative;padding:20px 24px;background:var(--navy);border-radius:13px;margin-bottom:20px;overflow:hidden}
+.quote-block::before{content:'\201C';position:absolute;top:-10px;left:12px;font-size:5.5rem;font-family:var(--font-display);color:rgba(255,255,255,.06);line-height:1;pointer-events:none}
+.quote-block p{font-family:var(--font-display);font-style:italic;font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,.9);position:relative;z-index:1}
+.about-body p{font-size:.92rem;color:var(--text2);line-height:1.9;margin-bottom:11px}
+.about-body strong{color:var(--navy);font-weight:600}
+.feat-stack{display:flex;flex-direction:column;gap:13px}
+.feat{display:flex;align-items:flex-start;gap:13px;background:var(--bg3);border:1px solid var(--glass-border2);border-radius:13px;padding:17px;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.feat:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg),0 0 30px rgba(200,25,90,0.06)}
+.feat-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--navy-soft),#dce3f0);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;border:1px solid var(--border)}
+.feat-title{font-weight:700;font-size:.86rem;color:var(--navy);margin-bottom:3px}
+.feat-desc{font-size:.79rem;color:var(--text2);line-height:1.62}
+
+/* RULES */
+.rules-section{background:var(--bg2)}
+.rules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px}
+.rule-card{background:var(--bg3);border:1px solid var(--glass-border2);border-radius:var(--radius);padding:18px;display:flex;gap:12px;align-items:flex-start;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.rule-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg),0 0 30px rgba(200,25,90,0.06)}
+.rule-icon{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.rule-text strong{display:block;font-size:.84rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.rule-text span{font-size:.77rem;color:var(--text2);line-height:1.6}
+
+/* ROADMAP */
+.roadmap-section{background:var(--navy)}
+.roadmap-section .sec-tag{color:var(--gold-light)}
+.roadmap-section .sec-h{color:#fff}
+.roadmap-section .sec-h span{background:linear-gradient(135deg,var(--rose-light),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.roadmap-section .sec-lead{color:rgba(255,255,255,.5)}
+.roadmap-section .sec-divider{background:linear-gradient(90deg,var(--rose-light),var(--gold-light))}
+.roadmap{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:14px}
+.class-card{background:rgba(255,255,255,.05);border:1px solid var(--glass-border2);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,background .25s;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.class-card::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--rose-light),var(--gold-light));transition:width .35s}
+.class-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.17);background:rgba(255,255,255,.07);box-shadow:var(--shadow-lg),0 0 30px rgba(200,25,90,0.06)}
+.class-card:hover::after{width:100%}
+.class-num-tag{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-light);margin-bottom:8px;display:block;font-weight:600}
+.class-title{font-family:var(--font-display);font-size:.98rem;font-weight:700;color:#fff;margin-bottom:6px}
+.class-desc{font-size:.77rem;color:rgba(255,255,255,.46);line-height:1.62;margin-bottom:11px}
+.class-output{display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--teal-light);font-family:var(--font-mono)}
+.class-output::before{content:'→';color:var(--rose-light)}
+
+/* HANDLE */
+.handle-section{background:var(--bg)}
+.handle-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+.handle-card{background:var(--bg3);border:1px solid var(--glass-border2);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-md);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.handle-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:16px}
+.handle-platforms{display:flex;flex-direction:column;gap:6px}
+.platform-row{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;transition:background .2s}
+.platform-row:hover{background:var(--navy-soft)}
+.platform-name{display:flex;align-items:center;gap:7px;font-size:.79rem;font-weight:600;color:var(--navy)}
+.platform-url{font-family:var(--font-mono);font-size:.64rem;color:var(--rose)}
+.handle-rules-card{background:var(--navy);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+.handle-rules-card h3{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;margin-bottom:14px}
+.handle-rule{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.8rem;color:rgba(255,255,255,.7)}
+.handle-rule:last-child{border-bottom:none}
+.handle-rule .tag{font-family:var(--font-mono);font-size:.61rem;background:rgba(240,192,96,.13);color:var(--gold-light);padding:2px 7px;border-radius:5px;white-space:nowrap;border:1px solid rgba(240,192,96,.2)}
+.why-card{background:linear-gradient(135deg,rgba(10,126,110,.07),rgba(10,22,40,.04));border:1px solid rgba(10,126,110,.17);border-radius:12px;padding:17px}
+.why-label{font-family:var(--font-mono);font-size:.61rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px;display:block;font-weight:600}
+.why-card p{font-size:.82rem;color:var(--text2);line-height:1.8}
+.why-card strong{color:var(--navy);font-weight:700}
+
+/* FOUNDERS */
+.founders-section{background:var(--bg2)}
+.founders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:18px}
+.founder-card{background:var(--bg3);border:1px solid var(--glass-border);border-radius:var(--radius);text-align:left;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.founder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--rose),var(--navy-light))}
+.founder-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg),0 0 30px rgba(200,25,90,0.06)}
+.founder-av{width:100%;height:260px;overflow:hidden;background:rgba(245,247,251,0.5);}
+.founder-av img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .4s;}
+.founder-card:hover .founder-av img{transform:scale(1.05);}
+.founder-card-info{padding:22px 24px;}
+.founder-av-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--navy-light));font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff}
+.founder-name{font-family:var(--font-display);font-size:.98rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.founder-role{font-size:.7rem;color:var(--rose);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.founder-loc{font-size:.72rem;color:var(--text3);margin-bottom:13px}
+.founder-linkedin{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:600;background:rgba(10,22,40,.06);border:1px solid var(--border);color:var(--navy);padding:5px 13px;border-radius:100px;transition:background .2s,color .2s,border-color .2s}
+.founder-linkedin:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.li-icon{flex-shrink:0}
+
+/* CTA */
+.cta-section{background:var(--navy);text-align:center;position:relative;overflow:hidden;padding:88px 5%}
+.cta-deco{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:32px 32px}
+.cta-blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.17}
+.cb1{width:480px;height:480px;top:-100px;left:-100px;background:var(--rose)}
+.cb2{width:380px;height:380px;bottom:-100px;right:-80px;background:var(--teal)}
+.cta-section .sec-inner{position:relative;z-index:2}
+.cta-section .sec-tag{color:var(--gold-light)}
+.cta-section .sec-h{color:#fff}
+.cta-section .sec-h span{font-style:italic;background:linear-gradient(135deg,var(--rose-light),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-section .sec-divider{background:linear-gradient(90deg,var(--rose-light),var(--gold-light));margin:0 auto 16px}
+.cta-desc{color:rgba(255,255,255,.55);font-size:.94rem;margin:0 auto 38px;max-width:460px;line-height:1.9;font-style:italic;font-family:var(--font-display)}
+/* Leader contact strip */
+.cta-connect-label{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:14px;display:block}
+.cta-leaders{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.leader-contact{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);border-radius:13px;padding:13px 17px;transition:background .2s,border-color .2s,transform .2s;text-align:left;flex:1;min-width:180px;max-width:240px}
+.leader-contact:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.22);transform:translateY(-2px)}
+.leader-av{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.95rem;font-weight:700;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.25);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
+.leader-av img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;image-rendering:auto;}
+.leader-info{flex:1;min-width:0}
+.leader-name{font-family:var(--font-display);font-size:.88rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.leader-tag{font-family:var(--font-mono);font-size:.58rem;color:rgba(255,255,255,.38);letter-spacing:.07em;text-transform:uppercase}
+.leader-li-icon{flex-shrink:0;opacity:.38}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#a07020);color:#fff;padding:12px 26px;border-radius:100px;font-size:.86rem;font-weight:700;letter-spacing:.04em;box-shadow:0 6px 20px rgba(199,146,42,.27);transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(199,146,42,.4)}
+
+/* FOOTER */
+footer{background:var(--navy-mid);padding:40px 5% 26px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-brand{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#fff}
+.footer-brand span{color:var(--rose-light)}
+.footer-tagline{font-size:.75rem;color:rgba(255,255,255,.3);margin-top:4px}
+.footer-links{display:flex;gap:18px;font-size:.79rem;color:rgba(255,255,255,.4);flex-wrap:wrap}
+.footer-links a{transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.73rem;color:rgba(255,255,255,.2)}
+.footer-badges{display:flex;gap:7px;flex-wrap:wrap}
+.fbadge{padding:3px 9px;border-radius:5px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.26);font-family:var(--font-mono);font-size:.61rem}
+
+/* ANIMATIONS */
+@keyframes morph{0%,100%{border-radius:60% 40% 55% 45%/50% 60% 40% 50%}33%{border-radius:40% 60% 40% 60%/60% 40% 60% 40%}66%{border-radius:55% 45% 60% 40%/45% 55% 45% 55%}}
+.r{opacity:0;transform:translateY(20px);transition:opacity .58s ease,transform .58s ease}
+.r.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+
+/* RESPONSIVE TABLET */
+@media(max-width:1000px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .handle-grid{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero{padding:100px 5% 80px}
+}
+
+/* RESPONSIVE MOBILE */
+@media(max-width:640px){
+  section{padding:60px 5%}
+  .cta-section{padding:60px 5%}
+  .hero{padding:88px 4% 68px;min-height:auto}
+  .hero-h1{font-size:3rem}
+  .hero-sub{font-size:.95rem}
+  .hero-desc{font-size:.88rem}
+  .hero-btns{flex-direction:column;gap:9px}
+  .btn-primary,.btn-outline-inv{text-align:center;width:100%;max-width:320px}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-box{padding:22px 12px}
+  .stat-n{font-size:1.6rem}
+  .roadmap{grid-template-columns:1fr}
+  .rules-grid{grid-template-columns:1fr}
+  .founders-grid{grid-template-columns:repeat(2,1fr)}
+  .cta-leaders{flex-direction:column;align-items:center}
+  .leader-contact{min-width:unset;width:100%;max-width:100%}
+  .cta-btns{flex-direction:column;align-items:center}
+  .btn-gold,.btn-outline-inv{text-align:center;width:100%;max-width:300px}
+  .sec-h{font-size:1.7rem}
+  .footer-top{flex-direction:column;gap:18px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  nav{padding:12px 4%}
+  .hero-pills{gap:6px}
+  .pill{font-size:.68rem;padding:4px 10px}
+  .handle-platforms .platform-url{display:none}
+}
+@media(max-width:400px){
+  .founders-grid{grid-template-columns:1fr}
+  .hero-h1{font-size:2.6rem}
+  .stats-inner{grid-template-columns:1fr 1fr}
+}
+
+/* Floating orbs */
+.orb{position:fixed;border-radius:50%;pointer-events:none;filter:blur(100px);z-index:0;}
+.orb-1{width:700px;height:700px;top:-200px;left:-150px;background:rgba(200,25,90,0.1);animation:of1 22s ease-in-out infinite;}
+.orb-2{width:500px;height:500px;top:30%;right:-100px;background:rgba(10,126,110,0.08);animation:of2 28s ease-in-out infinite;}
+.orb-3{width:600px;height:600px;bottom:10%;left:20%;background:rgba(199,146,42,0.06);animation:of3 25s ease-in-out infinite;}
+.orb-4{width:400px;height:400px;top:60%;right:10%;background:rgba(10,22,40,0.05);animation:of4 20s ease-in-out infinite;}
+@keyframes of1{0%,100%{transform:translate(0,0);}50%{transform:translate(50px,40px);}}
+@keyframes of2{0%,100%{transform:translate(0,0);}50%{transform:translate(-40px,50px);}}
+@keyframes of3{0%,100%{transform:translate(0,0);}50%{transform:translate(40px,-30px);}}
+@keyframes of4{0%,100%{transform:translate(0,0);}50%{transform:translate(-30px,40px);}}
+
+/* Backdrop-filter fallback */
+@supports not (backdrop-filter:blur(1px)){
+  nav,.rule-card,.class-card,.feature-card,.founder-card,.platform-card,.cta-card,.stats-strip{
+    background:rgba(255,255,255,0.88);border:1px solid rgba(200,205,220,0.6);
+  }
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+  .orb{display:none;}
+}
+
+/* UPGRADED FOOTER */
+footer{background:var(--navy);padding:64px 0 40px;text-align:center;position:relative;z-index:1;}
+.foot-inner{max-width:800px;margin:0 auto;padding:0 24px;}
+.foot-title{font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:8px;}
+.foot-title span{color:var(--rose-light);}
+.foot-sub{font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:24px;}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:24px;}
+.foot-links a{font-family:var(--font-mono);font-size:0.6rem;color:rgba(255,255,255,0.35);letter-spacing:0.06em;transition:color 0.2s;text-decoration:none;}
+.foot-links a:hover{color:var(--rose-light);}
+.foot-copy{font-family:var(--font-mono);font-size:0.56rem;color:rgba(255,255,255,0.18);}
+/* Back to Top */
+.btt{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#c8195a,#0a7e6e);color:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(200,25,90,0.3);opacity:0;visibility:hidden;transform:translateY(10px);transition:all 0.3s;z-index:999;}
+.btt.show{opacity:1;visibility:visible;transform:translateY(0);}
+.btt:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(200,25,90,0.45);}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"SheLeads — Women Digital Empowerment Program","description":"12-class women digital empowerment program by CareerByteCode. Personal branding, LinkedIn mastery, AI content.","url":"https://careerbytecode.github.io/sheleads.html","publisher":{"@type":"Organization","name":"CareerByteCode","url":"https://www.careerbytecode.com"}}
+</script>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="orb orb-4"></div>
+
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo">
+    <img src="cbc - logo.png" alt="CareerByteCode" style="width:38px;height:38px;border-radius:10px;overflow:hidden;object-fit:cover;">
+    CareerByteCode
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#identity">Handle</a></li>
+    <li><a href="#founders">Founders</a></li>
+    <li><a href="onboarding.html">Onboarding</a></li>
+  </ul>
+  <a class="nav-cta" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener noreferrer">Join SheLeads</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-hidden="true">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="events.html" class="mobile-link">Events</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#rules" class="mobile-link">Rules</a>
+  <a href="#roadmap" class="mobile-link">Roadmap</a>
+  <a href="#identity" class="mobile-link">Handle</a>
+  <a href="#founders" class="mobile-link">Founders</a>
+  <a href="onboarding.html" class="mobile-link">Onboarding</a>
+  <a href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener noreferrer" class="mobile-link mobile-cta">Join SheLeads</a>
+</div>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-deco">
+    <div class="deco-circle dc1"></div>
+    <div class="deco-circle dc2"></div>
+    <div class="deco-circle dc3"></div>
+    <div class="deco-blob db1"></div>
+    <div class="deco-blob db2"></div>
+    <div class="deco-blob db3"></div>
+    <div class="hero-dots"></div>
+  </div>
+  <div class="hero-cut"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag r">CareerByteCode · Est. 2015 · Top European Tech Brand</div>
+      <h1 class="hero-h1 r rd1">She<em>Leads</em></h1>
+      <p class="hero-sub r rd2">Women Digital Empowerment Program</p>
+      <p class="hero-desc r rd2">From <strong>Self-Awareness</strong> to a <strong>Powerful Personal Brand</strong> — step by step. Not theory. Real steps. <strong>Real digital presence.</strong></p>
+      <div class="hero-btns r rd3">
+        <a class="btn-primary" href="#roadmap">View 12-Class Roadmap</a>
+        <a class="btn-outline-inv" href="#founders">Meet the Founders</a>
+      </div>
+      <div class="hero-pills r rd4">
+        <span class="pill">12 Classes</span>
+        <span class="pill">Personal Branding</span>
+        <span class="pill">LinkedIn Mastery</span>
+        <span class="pill">AI Content</span>
+        <span class="pill">Blogging</span>
+        <span class="pill">Digital Identity</span>
+      </div>
+    </div>
+    <div class="hero-visual r rd2">
+      <div class="hero-card">
+        <div class="hero-card-title">Program at a Glance</div>
+        <div class="class-list">
+          <div class="class-item"><span class="class-num-badge">Class 0</span><span class="class-item-text">Personal Clarity</span><span class="class-item-out">Notepad</span></div>
+          <div class="class-item"><span class="class-num-badge">Class 1</span><span class="class-item-text">Professional Gmail</span><span class="class-item-out">Email ✓</span></div>
+          <div class="class-item"><span class="class-num-badge">Class 1.1</span><span class="class-item-text">Unified Handle</span><span class="class-item-out">10 platforms</span></div>
+          <div class="class-item"><span class="class-num-badge">Class 3</span><span class="class-item-text">AI + ChatGPT</span><span class="class-item-out">30-day plan</span></div>
+          <div class="class-item"><span class="class-num-badge">Class 4</span><span class="class-item-text">Canva Design</span><span class="class-item-out">9 posters</span></div>
+          <div class="class-item"><span class="class-num-badge">Class 8</span><span class="class-item-text">Blogging (3 platforms)</span><span class="class-item-out">6 blogs</span></div>
+          <div class="class-item"><span class="class-num-badge">Class 11</span><span class="class-item-text">Advanced LinkedIn</span><span class="class-item-out">8 formats</span></div>
+          <div class="class-item"><span class="class-num-badge">Class 12</span><span class="class-item-text">Review &amp; Improve</span><span class="class-item-out">Final ✓</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-box s1"><span class="stat-n" data-val="2.4M+">—</span><span class="stat-l">Tech Professionals</span></div>
+    <div class="stat-box s2"><span class="stat-n" data-val="105+">—</span><span class="stat-l">Countries</span></div>
+    <div class="stat-box s3"><span class="stat-n" data-val="12">—</span><span class="stat-l">Program Classes</span></div>
+    <div class="stat-box s4"><span class="stat-n" data-val="10">—</span><span class="stat-l">Platforms Covered</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="sec-inner">
+    <div class="about-grid">
+      <div class="about-text r">
+        <span class="sec-tag">✦ Why SheLeads</span>
+        <div class="sec-divider"></div>
+        <h2 class="sec-h">This is not <span>theory.</span><br>Every class has a <span>real output.</span></h2>
+        <div class="quote-block">
+          <p>"Every woman in this program will leave with a real digital presence."</p>
+        </div>
+        <div class="about-body">
+          <p>SheLeads is a structured, 12-class women digital empowerment program by <strong>CareerByteCode</strong> — a global tech learning ecosystem serving 2.4M+ professionals across 105+ countries.</p>
+          <p>You'll build your professional Gmail, unified digital handle, LinkedIn profile, AI-powered content, blogs, presentations, and much more. Step by step. Output by output.</p>
+        </div>
+      </div>
+      <div class="feat-stack r">
+        <div class="feat"><div class="feat-icon">🎯</div><div><div class="feat-title">Goal-Oriented Structure</div><div class="feat-desc">Each class has clear steps and mandatory outputs. No fluff — only real digital deliverables.</div></div></div>
+        <div class="feat"><div class="feat-icon">🌍</div><div><div class="feat-title">Global Community</div><div class="feat-desc">Join driven women professionals across 105+ countries building their digital presence together.</div></div></div>
+        <div class="feat"><div class="feat-icon">🤖</div><div><div class="feat-title">AI-Powered Content</div><div class="feat-desc">Leverage ChatGPT for a 30-day content plan, LinkedIn optimization, and personal branding.</div></div></div>
+        <div class="feat"><div class="feat-icon">📈</div><div><div class="feat-title">LinkedIn Mastery</div><div class="feat-desc">Master all 8 LinkedIn content types: text, photo, PDF, articles, newsletters, videos, reposts, comments.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="rules-section" id="rules">
+  <div class="sec-inner">
+    <span class="sec-tag r">✦ Before You Start</span>
+    <div class="sec-divider r"></div>
+    <h2 class="sec-h r">Mandatory <span>Program Rules</span></h2>
+    <p class="sec-lead r">Every participant must follow ALL rules without exception. These ensure maximum learning and a consistent professional experience.</p>
+    <div class="rules-grid">
+      <div class="rule-card r"><div class="rule-icon">💻</div><div class="rule-text"><strong>Device</strong><span>Laptop or Desktop ONLY. Mobile phones are not suitable for class work.</span></div></div>
+      <div class="rule-card r"><div class="rule-icon">🌐</div><div class="rule-text"><strong>Browser</strong><span>Google Chrome ONLY for all class work and assignments.</span></div></div>
+      <div class="rule-card r"><div class="rule-icon">🔒</div><div class="rule-text"><strong>Chrome Usage</strong><span>No WhatsApp Web, personal Gmail, or social media inside your CareerByteCode Chrome profile.</span></div></div>
+      <div class="rule-card r"><div class="rule-icon">📡</div><div class="rule-text"><strong>Internet</strong><span>Stable broadband or Wi-Fi only. No mobile hotspot during class.</span></div></div>
+      <div class="rule-card r"><div class="rule-icon">🔑</div><div class="rule-text"><strong>Digital Identity</strong><span>One Gmail · One Username · Same handle everywhere. Consistency is non-negotiable.</span></div></div>
+      <div class="rule-card r"><div class="rule-icon">🗄️</div><div class="rule-text"><strong>Credentials</strong><span>Store your username, password, and recovery email safely at all times.</span></div></div>
+      <div class="rule-card r"><div class="rule-icon">🖥️</div><div class="rule-text"><strong>Screen Sharing</strong><span>Know how to share full screen and a Chrome-only window before every class.</span></div></div>
+      <div class="rule-card r"><div class="rule-icon">🌍</div><div class="rule-text"><strong>Africa Exception</strong><span>Dev.to alone is acceptable if stable broadband is unavailable in your region.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="roadmap-section" id="roadmap">
+  <div class="sec-inner">
+    <span class="sec-tag r">✦ 12-Class Journey</span>
+    <div class="sec-divider r"></div>
+    <h2 class="sec-h r">Program <span>Roadmap</span></h2>
+    <p class="sec-lead r">From zero to a fully built digital presence. Every class builds on the last — ending with a real, shareable output.</p>
+    <div class="roadmap">
+      <div class="class-card r"><span class="class-num-tag">Class 0</span><div class="class-title">Personal Clarity &amp; Self-Awareness</div><div class="class-desc">No internet. No AI. Pure honest self-reflection with a notepad only. This is your foundation.</div><div class="class-output">Class0_Personal_Details.txt</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 1</span><div class="class-title">Professional Gmail Account</div><div class="class-desc">Create your first professional digital asset. Naming rules, labels, credential storage.</div><div class="class-output">New professional Gmail</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 1.1</span><div class="class-title">Unified Digital Identity</div><div class="class-desc">One handle. All platforms. No exceptions. Max 11 characters. Consistent across 10+ platforms.</div><div class="class-output">Handle on 10 platforms</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 2</span><div class="class-title">Chrome Profile Setup</div><div class="class-desc">Dedicate your Chrome browser to CareerByteCode. Separate professional from personal browsing.</div><div class="class-output">CareerByteCode Chrome profile</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 3</span><div class="class-title">AI Content with ChatGPT</div><div class="class-desc">Build a 30-day content plan. Optimize your profile. Use AI as a superpower — not a crutch.</div><div class="class-output">30-day content plan</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 4</span><div class="class-title">Canva &amp; Visual Design</div><div class="class-desc">Create 9 professional branded posters. Canva templates, brand colors, design fundamentals.</div><div class="class-output">9 professional posters</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 5</span><div class="class-title">LinkedIn Consistency</div><div class="class-desc">Build the posting habit. 7-day streak. Captions, hashtags, storytelling — done correctly.</div><div class="class-output">7-day posting streak</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 6</span><div class="class-title">Google Forms &amp; Slides</div><div class="class-desc">Create 2 professional data collection forms and slides. Digital productivity essentials.</div><div class="class-output">2 professional forms</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 7</span><div class="class-title">PPT Creation</div><div class="class-desc">Build 2 full presentations using Canva and Gamma.app. Structure, design, storytelling.</div><div class="class-output">2 full presentations</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 8</span><div class="class-title">Blogging (3 Platforms)</div><div class="class-desc">Publish 2 blogs each on Medium, Hashnode, and Dev.to. SEO, tone, platform writing styles.</div><div class="class-output">6 published blogs</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 9</span><div class="class-title">Docs · Meetings · Events</div><div class="class-desc">Google Docs, Sheets, Meet, Zoom, event poster, and podcast idea. Real collaboration tools.</div><div class="class-output">Full productivity stack</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 10</span><div class="class-title">LinkedIn Profile Optimization</div><div class="class-desc">Headline, banner, about section, intro video. Build a recruiter-ready profile.</div><div class="class-output">Optimized profile + video</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 11</span><div class="class-title">Advanced Content Creation</div><div class="class-desc">Master all 8 LinkedIn content types. The 3-line comment rule. Hooks, structure, hashtags.</div><div class="class-output">8 content types mastered</div></div>
+      <div class="class-card r"><span class="class-num-tag">Class 12</span><div class="class-title">Review &amp; Improve</div><div class="class-desc">Live corrections. Rewriting practice. Post better — with clarity, confidence, consistency.</div><div class="class-output">Corrected &amp; improved content</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HANDLE -->
+<section class="handle-section" id="identity">
+  <div class="sec-inner">
+    <span class="sec-tag r">✦ Class 1.1 Deep Dive</span>
+    <div class="sec-divider r"></div>
+    <h2 class="sec-h r">One Handle.<br><span>All Platforms.</span></h2>
+    <p class="sec-lead r">Your handle is your digital fingerprint. Keep it identical everywhere so recruiters and clients can find and trust you instantly.</p>
+    <div class="handle-grid">
+      <div class="handle-card r">
+        <h3>🔗 Your Handle Across Platforms</h3>
+        <p style="font-size:.78rem;color:var(--text2);margin-bottom:13px">Replace <code style="color:var(--rose);background:rgba(200,25,90,.07);padding:2px 6px;border-radius:4px;font-family:var(--font-mono);font-size:.74rem">yourhandle</code> with your own (max 11 chars).</p>
+        <div class="handle-platforms">
+          <div class="platform-row"><span class="platform-name">🐙 GitHub</span><span class="platform-url">github.com/yourhandle</span></div>
+          <div class="platform-row"><span class="platform-name">💼 LinkedIn</span><span class="platform-url">linkedin.com/in/yourhandle</span></div>
+          <div class="platform-row"><span class="platform-name">✍️ Medium</span><span class="platform-url">medium.com/@yourhandle</span></div>
+          <div class="platform-row"><span class="platform-name">📝 Hashnode</span><span class="platform-url">hashnode.com/@yourhandle</span></div>
+          <div class="platform-row"><span class="platform-name">👩‍💻 Dev.to</span><span class="platform-url">dev.to/yourhandle</span></div>
+          <div class="platform-row"><span class="platform-name">📸 Instagram</span><span class="platform-url">instagram.com/yourhandle</span></div>
+          <div class="platform-row"><span class="platform-name">🐦 X (Twitter)</span><span class="platform-url">x.com/yourhandle</span></div>
+          <div class="platform-row"><span class="platform-name">📺 YouTube</span><span class="platform-url">youtube.com/@yourhandle</span></div>
+        </div>
+      </div>
+      <div class="handle-right r">
+        <div class="handle-rules-card">
+          <h3>📏 Handle Selection Rules</h3>
+          <div class="handle-rule"><span class="tag">Length</span> Maximum <strong style="color:#fff">11 characters</strong></div>
+          <div class="handle-rule"><span class="tag">Format</span> Simple, professional, memorable</div>
+          <div class="handle-rule"><span class="tag">Numbers</span> Avoid whenever possible</div>
+          <div class="handle-rule"><span class="tag">Symbols</span> No special characters</div>
+          <div class="handle-rule"><span class="tag">Rule #1</span> Same on ALL platforms — always</div>
+        </div>
+        <div class="why-card">
+          <span class="why-label">Why it matters</span>
+          <p>If people cannot easily verify you across platforms, they will <strong>not trust you.</strong> A consistent handle builds instant credibility and makes you discoverable by recruiters and clients globally.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders-section" id="founders">
+  <div class="sec-inner">
+    <span class="sec-tag r">✦ The Team</span>
+    <div class="sec-divider r"></div>
+    <h2 class="sec-h r">The <span>leaders</span> behind CareerByteCode</h2>
+    <p class="sec-lead r">Built with ❤️ by a diverse global team of tech professionals, advocates, and community builders.</p>
+    <div class="founders-grid">
+      <div class="founder-card r">
+        <div class="founder-av"><img src="images/siva-sankari.jpg" alt="Siva Sankari" loading="lazy"></div>
+        <div class="founder-card-info"><div class="founder-name">Siva Sankari</div>
+        <div class="founder-role">Co-Founder</div>
+        <div class="founder-loc">📍 Singapore</div>
+        <a class="founder-linkedin" href="https://www.linkedin.com/in/learnwithsankari/" target="_blank" rel="noopener noreferrer">
+          <svg class="li-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        </div>
+      </div>
+      <div class="founder-card r">
+        <div class="founder-av"><img src="images/anitha-d.jpg" alt="Anitha D" loading="lazy"></div>
+        <div class="founder-card-info"><div class="founder-name">Anitha D</div>
+        <div class="founder-role">Co-Founder</div>
+        <div class="founder-loc">📍 Tirupur, India</div>
+        <a class="founder-linkedin" href="https://www.linkedin.com/in/anidigitalhub/" target="_blank" rel="noopener noreferrer">
+          <svg class="li-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        </div>
+      </div>
+      <div class="founder-card r">
+        <div class="founder-av"><img src="images/sonali-kurade.jpg" alt="Sonali Kurade" loading="lazy"></div>
+        <div class="founder-card-info"><div class="founder-name">Sonali Kurade</div>
+        <div class="founder-role">Co-Founder</div>
+        <div class="founder-loc">📍 Pune, India</div>
+        <a class="founder-linkedin" href="https://www.linkedin.com/in/techopsbysonali/" target="_blank" rel="noopener noreferrer">
+          <svg class="li-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        </div>
+      </div>
+      <div class="founder-card r">
+        <div class="founder-av"><img src="images/raghavendra-r.jpg" alt="Raghavendra R" loading="lazy"></div>
+        <div class="founder-card-info"><div class="founder-name">Raghavendra R</div>
+        <div class="founder-role">Platform Owner</div>
+        <div class="founder-loc">📍 Belgium, Europe</div>
+        <a class="founder-linkedin" href="https://www.linkedin.com/in/architectraghu/" target="_blank" rel="noopener noreferrer">
+          <svg class="li-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-deco"></div>
+  <div class="cta-blob cb1"></div>
+  <div class="cta-blob cb2"></div>
+  <div class="sec-inner">
+    <span class="sec-tag r" style="display:block;text-align:center">✦ Ready to Begin?</span>
+    <div class="sec-divider r" style="margin:0 auto 16px"></div>
+    <h2 class="sec-h r" style="text-align:center"><span>Trust the process</span> —<br>your dedication is building your future.</h2>
+    <p class="cta-desc r">"Growth happens when feedback is applied, not ignored. Post better — with clarity, confidence, and consistency."</p>
+
+    <!-- 3 Leader LinkedIn contacts -->
+    <span class="cta-connect-label r">Connect directly with our co-founders</span>
+    <div class="cta-leaders r">
+      <a class="leader-contact" href="https://www.linkedin.com/in/learnwithsankari/" target="_blank" rel="noopener noreferrer">
+        <div class="leader-av"><img src="images/siva-sankari.jpg" alt="Siva Sankari"></div>
+        <div class="leader-info">
+          <div class="leader-name">Siva Sankari</div>
+          <div class="leader-tag">Co-Founder · Singapore</div>
+        </div>
+        <svg class="leader-li-icon" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a class="leader-contact" href="https://www.linkedin.com/in/anidigitalhub/" target="_blank" rel="noopener noreferrer">
+        <div class="leader-av"><img src="images/anitha-d.jpg" alt="Anitha D"></div>
+        <div class="leader-info">
+          <div class="leader-name">Anitha D</div>
+          <div class="leader-tag">Co-Founder · Tirupur</div>
+        </div>
+        <svg class="leader-li-icon" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a class="leader-contact" href="https://www.linkedin.com/in/techopsbysonali/" target="_blank" rel="noopener noreferrer">
+        <div class="leader-av"><img src="images/sonali-kurade.jpg" alt="Sonali Kurade"></div>
+        <div class="leader-info">
+          <div class="leader-name">Sonali Kurade</div>
+          <div class="leader-tag">Co-Founder · Pune</div>
+        </div>
+        <svg class="leader-li-icon" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+    </div>
+
+    <div class="cta-btns r">
+      <a class="btn-gold" href="https://github.com/careerbytecode/woman-empowerment" target="_blank" rel="noopener noreferrer">Join the Program</a>
+      <a class="btn-outline-inv" href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">Follow CareerByteCode</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-title">We don't just teach tech &mdash; <span>we empower women leaders</span></div>
+    <div class="foot-sub">CareerByteCode &middot; SheLeads Program &middot; Top European Tech Brand &middot; 105+ Countries</div>
+    <div class="foot-links">
+      <a href="https://www.careerbytecode.com" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://blog.careerbytecode.com" target="_blank" rel="noopener noreferrer">Blog</a>
+      <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://medium.com/careerbytecode" target="_blank" rel="noopener noreferrer">Medium</a>
+      <a href="mailto:community@careerbytecode.com">community@careerbytecode.com</a>
+    </div>
+    <div class="foot-copy">&copy; 2015&ndash;2026 CareerByteCode. All rights reserved.</div>
+  </div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+<script>
+// Progress bar
+const pb = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const s = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+  pb.style.width = (h > 0 ? (s / h) * 100 : 0) + '%';
+}, { passive: true });
+
+// Nav scrolled state
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+// Hamburger / mobile nav
+const hb = document.getElementById('hamburger'), mn = document.getElementById('mobile-nav');
+hb.addEventListener('click', () => {
+  const o = mn.classList.toggle('open');
+  hb.classList.toggle('open');
+  hb.setAttribute('aria-expanded', String(o));
+  mn.setAttribute('aria-hidden', String(!o));
+  document.body.style.overflow = o ? 'hidden' : '';
+});
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+  mn.classList.remove('open');
+  hb.classList.remove('open');
+  hb.setAttribute('aria-expanded', 'false');
+  mn.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}));
+
+// Scroll reveal
+const rio = new IntersectionObserver(entries => {
+  entries.forEach(x => { if (x.isIntersecting) { x.target.classList.add('visible'); rio.unobserve(x.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.r').forEach(el => rio.observe(el));
+// Hero staggered reveal
+setTimeout(() => {
+  document.querySelectorAll('.hero .r').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 80 + i * 130));
+}, 40);
+
+// Counter animation
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(x => {
+    if (!x.isIntersecting) return;
+    const el = x.target, raw = el.dataset.val, num = parseFloat(raw);
+    if (isNaN(num)) { el.textContent = raw; cio.unobserve(el); return; }
+    const sfx = raw.replace(/[\d.]/g, ''), dec = raw.includes('.') ? 1 : 0;
+    let st = null;
+    const anim = ts => {
+      if (!st) st = ts;
+      const p = Math.min((ts - st) / 1800, 1), ez = 1 - Math.pow(1 - p, 4);
+      el.textContent = (num * ez).toFixed(dec) + sfx;
+      if (p < 1) requestAnimationFrame(anim);
+    };
+    requestAnimationFrame(anim);
+    cio.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-val]').forEach(el => cio.observe(el));
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('show',window.scrollY>400);},{passive:true});
+btt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>

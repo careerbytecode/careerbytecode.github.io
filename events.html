@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerByteCode Events — Global Tech Leadership & Community Ecosystem. Free sessions, panels, and workshops for 1,000+ senior tech experts across Europe & India.">
+<meta property="og:title" content="CareerByteCode Events — Global Tech Leadership & Community Ecosystem">
+<meta property="og:description" content="Free tech leadership events, panels, and workshops. 1,000+ senior experts across Europe & India.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/events.html">
+<meta property="og:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f0f2ff">
+<meta name="color-scheme" content="light only">
+<link rel="canonical" href="https://careerbytecode.github.io/events.html">
+<title>CareerByteCode Events — Global Tech Leadership & Community Ecosystem</title>
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme:light only;
+  --bg:#f0f2ff;--bg2:#e8ebfa;--bg3:#dfe3f5;
+  --dark:#0c1b3a;--dark2:#111f42;--dark3:#162650;
+  --blue:#2563eb;--blue2:#1d4ed8;--sky:#06b6d4;--sky2:#22d3ee;
+  --indigo:#6366f1;--purple:#8b5cf6;--green:#10b981;--gold:#f59e0b;
+  --pink:#ec4899;--rose:#fb7185;
+  --glass:rgba(255,255,255,0.65);--glass2:rgba(255,255,255,0.48);
+  --glass3:rgba(255,255,255,0.25);
+  --glass-border:rgba(255,255,255,0.7);--glass-border2:rgba(255,255,255,0.45);
+  --text:#0f172a;--text2:#475569;--text3:#64748b;--muted:#94a3b8;
+  --sans:'Outfit',sans-serif;--mono:'JetBrains Mono',monospace;
+  --radius:20px;--radius-sm:12px;--radius-xs:8px;
+  --shadow:0 4px 24px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03);
+  --shadow-lg:0 12px 40px rgba(0,0,0,0.06),0 2px 8px rgba(0,0,0,0.04);
+  --shadow-glow:0 0 40px rgba(37,99,235,0.08);
+  /* legacy aliases */
+  --navy:#0c1b3a;--navy-mid:#111f42;--blue-accent:#1d4ed8;
+  --cyan:#06b6d4;--emerald:#10b981;--violet:#8b5cf6;
+  --text-dark:#0f172a;--text-muted:#64748b;
+  --border:rgba(255,255,255,0.7);--card-shadow:var(--shadow);--card-hover:var(--shadow-lg);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NOISE */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px;}
+
+/* FLOATING ORBS */
+.orb{position:fixed;border-radius:50%;pointer-events:none;filter:blur(100px);z-index:0;}
+.orb-1{width:700px;height:700px;top:-200px;left:-150px;background:rgba(37,99,235,0.12);animation:of1 22s ease-in-out infinite;}
+.orb-2{width:500px;height:500px;top:30%;right:-100px;background:rgba(6,182,212,0.1);animation:of2 28s ease-in-out infinite;}
+.orb-3{width:600px;height:600px;bottom:10%;left:20%;background:rgba(139,92,246,0.08);animation:of3 25s ease-in-out infinite;}
+.orb-4{width:400px;height:400px;top:60%;right:10%;background:rgba(236,72,153,0.06);animation:of4 20s ease-in-out infinite;}
+@keyframes of1{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,40px)}}
+@keyframes of2{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,50px)}}
+@keyframes of3{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}
+@keyframes of4{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;z-index:999;background:linear-gradient(90deg,var(--blue),var(--sky),var(--purple));width:0%;border-radius:0 2px 2px 0;}
+
+/* GLASS BASE */
+.glass{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:var(--radius);box-shadow:var(--shadow);}
+.glass:hover{box-shadow:var(--shadow-lg),var(--shadow-glow);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(240,242,255,0.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.5);transition:all .3s;}
+nav.scrolled{padding:10px 48px;box-shadow:0 4px 24px rgba(0,0,0,0.06);background:rgba(240,242,255,0.85);}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-icon{width:38px;height:38px;border-radius:10px;overflow:hidden;object-fit:cover;box-shadow:0 4px 12px rgba(37,99,235,.3);}
+.logo-text{font-size:1.05rem;font-weight:800;letter-spacing:-0.03em;color:var(--dark);}
+.logo-text span{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center;}
+.nav-links a{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);transition:all .3s;position:relative;text-decoration:none;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--sky));border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.nav-links a:hover{color:var(--blue);}
+.nav-links a:hover::after{transform:scaleX(1);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:1000;position:relative;}
+.hamburger span{width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all .3s;display:block;}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(240,242,255,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s;}
+.mobile-menu.open{display:flex;opacity:1;pointer-events:all;}
+.mobile-menu a{font-family:var(--mono);font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text2);transition:color .2s;text-decoration:none;padding:10px 14px;}
+.mobile-menu a:hover{color:var(--blue);}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);overflow:hidden;}
+.hero-grid{display:none;}
+.hero-mesh{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+.hero-mesh .mesh-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.5;}
+.hero-mesh .mesh-orb:nth-child(1){width:600px;height:600px;top:-100px;left:-100px;background:radial-gradient(circle,rgba(37,99,235,0.2),transparent 70%);}
+.hero-mesh .mesh-orb:nth-child(2){width:500px;height:500px;bottom:-50px;right:-80px;background:radial-gradient(circle,rgba(6,182,212,0.15),transparent 70%);}
+.hero-mesh .mesh-orb:nth-child(3){width:400px;height:400px;top:30%;left:50%;background:radial-gradient(circle,rgba(139,92,246,0.1),transparent 70%);}
+.hero-body{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 48px 80px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);color:var(--blue);font-family:var(--mono);font-size:0.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:8px 20px;border-radius:100px;margin-bottom:28px;}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;line-height:1.08;letter-spacing:-0.04em;max-width:800px;margin-bottom:24px;color:var(--dark);}
+.hero h1 .accent{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-tag{font-size:1.05rem;color:var(--text2);max-width:560px;margin-bottom:40px;font-weight:400;line-height:1.7;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.btn-primary{background:var(--blue);color:#fff;padding:13px 30px;border-radius:var(--radius-sm);font-weight:600;font-size:0.85rem;text-decoration:none;box-shadow:0 6px 20px rgba(37,99,235,.25);transition:all .3s;}
+.btn-primary:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,99,235,.35);}
+.btn-outline{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--text);padding:13px 30px;border-radius:var(--radius-sm);font-weight:600;font-size:0.85rem;text-decoration:none;border:1px solid var(--glass-border);transition:all .3s;}
+.btn-outline:hover{background:rgba(255,255,255,0.8);transform:translateY(-2px);box-shadow:var(--shadow);}
+
+/* STATS */
+.stats-bar{background:var(--dark);padding:28px 48px;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;position:relative;z-index:1;}
+.stat-item{text-align:center;padding:12px 40px;border-right:1px solid rgba(255,255,255,0.1);}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-size:2rem;font-weight:800;line-height:1;margin-bottom:4px;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-item:nth-child(1) .stat-num{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;background-clip:text;}
+.stat-item:nth-child(2) .stat-num{background:linear-gradient(135deg,var(--green),var(--sky2));-webkit-background-clip:text;background-clip:text;}
+.stat-item:nth-child(3) .stat-num{background:linear-gradient(135deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;}
+.stat-item:nth-child(4) .stat-num{background:linear-gradient(135deg,var(--gold),#fb923c);-webkit-background-clip:text;background-clip:text;}
+.stat-item:nth-child(5) .stat-num{background:linear-gradient(135deg,var(--rose),var(--pink));-webkit-background-clip:text;background-clip:text;}
+.stat-label{font-size:0.68rem;color:rgba(255,255,255,0.45);font-weight:500;text-transform:uppercase;letter-spacing:.08em;font-family:var(--mono);}
+
+/* SECTION HEADERS */
+.section{padding:80px 48px;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.section-header{text-align:center;margin-bottom:52px;}
+.section-tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;background:none;padding:0;border-radius:0;}
+.section-tag::before{content:'';width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--sky));}
+.slabel{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;}
+.slabel::before{content:'';width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--sky));}
+.sec-h{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:44px;color:var(--dark);}
+.sec-h span{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.section-header h2{font-size:clamp(2rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-0.04em;color:var(--dark);margin-bottom:12px;line-height:1.1;}
+.section-header h2 span,.section-header h2 .accent{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.section-header p{font-size:1rem;color:var(--text2);max-width:540px;margin:0 auto;}
+
+/* ABOUT CARDS */
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.about-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius);padding:32px;border:1px solid var(--glass-border);box-shadow:var(--shadow);transition:all .3s;position:relative;overflow:hidden;}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.about-card.blue::before{background:linear-gradient(90deg,var(--blue),var(--sky));}
+.about-card.gold::before{background:linear-gradient(90deg,var(--gold),#fbbf24);}
+.about-card.emerald::before{background:linear-gradient(90deg,var(--green),#34d399);}
+.about-card.violet::before{background:linear-gradient(90deg,var(--purple),#a78bfa);}
+.about-card.rose::before{background:linear-gradient(90deg,var(--rose),#fb7185);}
+.about-card.navy::before{background:linear-gradient(90deg,var(--dark),var(--blue));}
+.about-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg),var(--shadow-glow);}
+.card-icon{width:52px;height:52px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;}
+.card-icon.blue{background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(6,182,212,0.15));}
+.card-icon.gold{background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(251,191,36,0.15));}
+.card-icon.emerald{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(52,211,153,0.15));}
+.card-icon.violet{background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(167,139,250,0.15));}
+.card-icon.rose{background:linear-gradient(135deg,rgba(251,113,133,0.15),rgba(236,72,153,0.15));}
+.card-icon.navy{background:linear-gradient(135deg,rgba(37,99,235,0.15),rgba(99,102,241,0.15));}
+.about-card h3{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:10px;}
+.about-card p{font-size:0.88rem;color:var(--text2);line-height:1.7;}
+
+/* WHO WE ARE */
+.who-section{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);padding:80px 0;position:relative;z-index:1;}
+.who-inner{max-width:1200px;margin:0 auto;padding:0 48px;}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.who-left h2{font-size:2.4rem;font-weight:800;letter-spacing:-0.04em;margin-bottom:20px;line-height:1.15;color:var(--dark);}
+.who-left h2 span{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.who-left p{color:var(--text2);font-size:0.95rem;margin-bottom:28px;line-height:1.8;}
+.who-quote{border-left:3px solid var(--sky);padding:16px 20px;background:rgba(6,182,212,0.06);border-radius:0 var(--radius-xs) var(--radius-xs) 0;font-size:0.95rem;color:var(--text2);font-style:italic;}
+.who-right{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.audience-chip{background:var(--glass2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border2);border-radius:var(--radius-sm);padding:18px;transition:all .2s;}
+.audience-chip:hover{background:rgba(255,255,255,0.7);transform:scale(1.02);box-shadow:var(--shadow);}
+.chip-icon{font-size:22px;margin-bottom:8px;}
+.chip-title{font-size:0.82rem;font-weight:600;color:var(--dark);}
+.chip-sub{font-size:0.7rem;color:var(--muted);margin-top:2px;}
+
+/* TECH */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;}
+.tech-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius);padding:24px 20px;border:1px solid var(--glass-border);text-align:center;transition:all .3s;box-shadow:var(--shadow);}
+.tech-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg),var(--shadow-glow);}
+.tech-icon{font-size:32px;margin-bottom:12px;display:block;}
+.tech-card h4{font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:8px;}
+.tech-tags{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;}
+.tech-tag{font-size:0.62rem;font-weight:600;font-family:var(--mono);padding:2px 8px;border-radius:4px;background:rgba(37,99,235,0.08);color:var(--blue);}
+
+/* EVENTS */
+.events-section{padding:80px 48px;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.events-tabs{display:flex;gap:8px;margin-bottom:32px;border-bottom:2px solid rgba(255,255,255,0.5);}
+.events-tab{padding:10px 20px;font-size:0.88rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;border-radius:6px 6px 0 0;}
+.events-tab.active{color:var(--blue);border-bottom-color:var(--blue);}
+.events-tab:hover:not(.active){color:var(--dark);background:rgba(255,255,255,0.4);}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;align-items:center;}
+.filter-label{font-size:0.82rem;color:var(--text3);font-weight:600;}
+.filter-chip{padding:5px 14px;border-radius:100px;font-size:0.75rem;font-weight:600;cursor:pointer;border:1.5px solid var(--glass-border);background:var(--glass);color:var(--text3);transition:all .2s;}
+.filter-chip.active,.filter-chip:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.events-table-wrap{border-radius:var(--radius);overflow:hidden;border:1px solid var(--glass-border);box-shadow:var(--shadow);background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+table{width:100%;border-collapse:collapse;background:transparent;}
+thead tr{background:var(--dark);color:#fff;}
+th{padding:14px 16px;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-align:left;font-family:var(--mono);}
+tbody tr{border-bottom:1px solid rgba(255,255,255,0.5);transition:background .15s;}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:rgba(255,255,255,0.4);}
+td{padding:13px 16px;font-size:0.82rem;color:var(--text);vertical-align:middle;}
+.event-link{display:inline-flex;align-items:center;gap:4px;color:var(--blue);text-decoration:none;font-weight:600;font-size:0.75rem;padding:4px 10px;border-radius:6px;border:1px solid rgba(37,99,235,0.2);background:rgba(37,99,235,0.06);transition:all .2s;}
+.event-link:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.domain-badge{display:inline-block;font-size:0.62rem;font-weight:700;padding:3px 9px;border-radius:100px;white-space:nowrap;}
+.domain-cloud{background:rgba(37,99,235,0.1);color:var(--blue);}
+.domain-k8s{background:rgba(16,185,129,0.1);color:#065f46;}
+.domain-ai{background:rgba(139,92,246,0.1);color:#5b21b6;}
+.domain-career{background:rgba(245,158,11,0.1);color:#92400e;}
+.domain-leadership{background:rgba(236,72,153,0.1);color:#9d174d;}
+.domain-sap{background:rgba(251,146,60,0.1);color:#9a3412;}
+.platform-badge{display:inline-flex;align-items:center;gap:4px;font-size:0.7rem;font-weight:600;padding:3px 10px;border-radius:100px;}
+.platform-li{background:rgba(37,99,235,0.1);color:var(--blue);}
+.platform-mu{background:rgba(236,72,153,0.1);color:#be185d;}
+
+/* UPCOMING EVENTS */
+.upcoming-section{padding:80px 48px;position:relative;z-index:1;}
+.upcoming-inner{max-width:1200px;margin:0 auto;}
+.upcoming-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px;}
+.upcoming-header h2{font-size:2rem;font-weight:800;color:var(--dark);letter-spacing:-0.04em;}
+.upcoming-header h2 span{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.register-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:11px 24px;border-radius:var(--radius-sm);font-weight:600;font-size:0.82rem;cursor:pointer;border:none;transition:all .2s;text-decoration:none;box-shadow:0 4px 16px rgba(37,99,235,.2);}
+.register-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.3);background:var(--blue2);}
+.upcoming-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;}
+.event-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius);padding:24px;border:1px solid var(--glass-border);box-shadow:var(--shadow);transition:all .3s;position:relative;overflow:hidden;}
+.event-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;border-radius:4px 0 0 4px;}
+.event-card.cloud::before{background:linear-gradient(180deg,var(--blue),var(--sky));}
+.event-card.k8s::before{background:linear-gradient(180deg,var(--green),#34d399);}
+.event-card.ai::before{background:linear-gradient(180deg,var(--purple),#a78bfa);}
+.event-card.career::before{background:linear-gradient(180deg,var(--gold),#fbbf24);}
+.event-card.leadership::before{background:linear-gradient(180deg,var(--rose),#fb7185);}
+.event-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg),var(--shadow-glow);}
+.event-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;padding-left:14px;}
+.event-date-badge{display:flex;flex-direction:column;align-items:center;background:var(--dark);color:#fff;border-radius:var(--radius-xs);padding:8px 14px;min-width:56px;text-align:center;}
+.event-date-badge .month{font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.7;font-family:var(--mono);}
+.event-date-badge .day{font-size:1.35rem;font-weight:800;line-height:1.1;}
+.event-card h4{font-size:0.95rem;font-weight:700;color:var(--dark);line-height:1.4;padding-left:14px;margin-bottom:10px;}
+.event-meta{padding-left:14px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center;}
+.event-meta-item{display:flex;align-items:center;gap:4px;font-size:0.75rem;color:var(--muted);font-weight:500;}
+.event-actions{padding-left:14px;display:flex;gap:8px;flex-wrap:wrap;}
+.event-view-btn{display:inline-flex;align-items:center;gap:6px;background:var(--glass2);color:var(--text3);padding:7px 16px;border-radius:var(--radius-xs);font-size:0.75rem;font-weight:600;text-decoration:none;transition:all .2s;border:1px solid var(--glass-border2);}
+.event-view-btn:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.event-register-btn{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;padding:8px 18px;border-radius:var(--radius-xs);font-size:0.75rem;font-weight:700;text-decoration:none;transition:all .2s;box-shadow:0 4px 12px rgba(37,99,235,.2);}
+.event-register-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.3);background:var(--blue2);}
+.event-upcoming-tag{display:inline-flex;align-items:center;gap:4px;background:rgba(16,185,129,0.12);color:#15803d;font-size:0.62rem;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;margin-left:14px;}
+
+/* ADD EVENT GUIDE */
+.add-event-guide{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:2px dashed var(--glass-border2);border-radius:var(--radius);padding:32px;text-align:center;margin-top:28px;}
+.add-event-guide h3{font-size:1rem;color:var(--dark);font-weight:700;margin-bottom:8px;}
+.add-event-guide p{font-size:0.88rem;color:var(--text2);margin-bottom:20px;}
+.propose-fields{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:24px;}
+.propose-field{display:inline-flex;align-items:center;gap:6px;background:var(--glass2);border:1px solid var(--glass-border2);border-radius:var(--radius-xs);padding:8px 14px;font-size:0.82rem;font-weight:500;color:var(--text);}
+.propose-field small{color:var(--muted);font-weight:400;}
+.propose-email{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:12px 28px;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:700;letter-spacing:.02em;user-select:all;margin-bottom:14px;box-shadow:0 4px 16px rgba(37,99,235,.2);}
+.propose-note{font-size:0.82rem;color:var(--muted);font-style:italic;margin:0;}
+
+/* FLOW */
+.flow-section{padding:80px 0;position:relative;z-index:1;}
+.flow-inner{max-width:1200px;margin:0 auto;padding:0 48px;}
+.flow-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
+.flow-steps::before{content:'';position:absolute;top:40px;left:calc(16.66% + 20px);right:calc(16.66% + 20px);height:2px;background:linear-gradient(90deg,var(--blue),var(--sky));z-index:0;}
+.flow-step{text-align:center;padding:0 24px;position:relative;z-index:1;}
+.step-num{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 20px;box-shadow:var(--shadow-lg);}
+.flow-step:nth-child(1) .step-num{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border);}
+.flow-step:nth-child(2) .step-num{background:var(--dark);color:#fff;}
+.flow-step:nth-child(3) .step-num{background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);}
+.flow-step h4{font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:8px;}
+.flow-step p{font-size:0.82rem;color:var(--text2);line-height:1.7;}
+.flow-bullets{list-style:none;margin-top:10px;text-align:left;}
+.flow-bullets li{font-size:0.75rem;color:var(--text2);padding:3px 0;display:flex;align-items:flex-start;gap:6px;}
+.flow-bullets li::before{content:'\2192';color:var(--blue);font-weight:700;flex-shrink:0;}
+
+/* LEADERS */
+.leaders-section{padding:80px 48px;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.leaders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;}
+.leader-card{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius);overflow:hidden;border:1px solid var(--glass-border);box-shadow:var(--shadow);transition:all .3s;}
+.leader-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg),var(--shadow-glow);}
+.leader-photo-wrap{position:relative;width:100%;height:260px;overflow:hidden;background:rgba(240,242,255,0.5);}
+.leader-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .4s;}
+.leader-card:hover .leader-photo{transform:scale(1.05);}
+.leader-accent{position:absolute;bottom:0;left:0;right:0;height:3px;}
+.leader-info{padding:22px 24px;}
+.leader-info h3{font-size:1.1rem;font-weight:800;color:var(--dark);margin-bottom:4px;}
+.leader-info .role{font-size:0.82rem;font-weight:600;margin-bottom:4px;}
+.leader-info .location{font-size:0.75rem;color:var(--muted);margin-bottom:12px;}
+.leader-info p{font-size:0.82rem;color:var(--text2);line-height:1.65;margin-bottom:16px;}
+.leader-li-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:var(--radius-xs);font-size:0.75rem;font-weight:700;text-decoration:none;transition:all .2s;}
+.leader-li-btn:hover{opacity:.85;transform:translateY(-1px);}
+
+/* ARCHIVE CTA */
+.archive-cta-section{padding:48px;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.archive-cta-banner{background:var(--dark);border-radius:var(--radius);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;}
+.archive-cta-banner::before{content:'\1F4CB';position:absolute;right:40px;top:50%;transform:translateY(-50%);font-size:90px;opacity:.06;pointer-events:none;}
+.archive-cta-left{display:flex;align-items:center;gap:20px;}
+.archive-cta-icon{font-size:42px;flex-shrink:0;}
+.archive-cta-title{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px;}
+.archive-cta-sub{font-size:0.82rem;color:rgba(255,255,255,.5);line-height:1.5;max-width:460px;}
+.archive-cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:13px 28px;border-radius:var(--radius-sm);font-size:0.88rem;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(37,99,235,.25);transition:all .2s;flex-shrink:0;}
+.archive-cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,99,235,.35);background:var(--blue2);}
+
+/* CONNECT */
+.connect-section{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);color:var(--text);padding:80px 48px;text-align:center;position:relative;overflow:hidden;z-index:1;}
+.connect-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;}
+.connect-section h2{font-size:2.4rem;font-weight:800;letter-spacing:-0.04em;margin-bottom:16px;color:var(--dark);}
+.connect-section h2 span{background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.connect-section p{font-size:1rem;color:var(--text2);margin-bottom:36px;}
+.connect-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.connect-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:var(--radius-sm);font-size:0.88rem;font-weight:700;text-decoration:none;transition:all .2s;}
+.connect-btn.li{background:#0077b5;color:#fff;box-shadow:0 4px 16px rgba(0,119,181,.3);}
+.connect-btn.li:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,119,181,.4);}
+.connect-btn.mu{background:#f64060;color:#fff;box-shadow:0 4px 16px rgba(246,64,96,.3);}
+.connect-btn.mu:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(246,64,96,.4);}
+.connect-btn.web{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--dark);border:1px solid var(--glass-border);box-shadow:var(--shadow);}
+.connect-btn.web:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+
+/* SPEAKER SECTION */
+.speaker-section{padding:80px 0;position:relative;overflow:hidden;z-index:1;}
+.speaker-section::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(37,99,235,0.06) 0%,transparent 70%);}
+.speaker-section::after{content:'';position:absolute;bottom:-60px;left:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(16,185,129,0.06) 0%,transparent 70%);}
+.speaker-inner{max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:2;}
+.speaker-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:56px;}
+.speaker-left{}
+.speaker-invite-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.12);color:#92400e;font-family:var(--mono);font-size:0.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px;border:1px solid rgba(245,158,11,0.25);}
+.speaker-left h2{font-size:clamp(1.9rem,3vw,2.7rem);font-weight:800;letter-spacing:-0.04em;color:var(--dark);line-height:1.2;margin-bottom:16px;}
+.speaker-left h2 .accent{background:linear-gradient(135deg,var(--gold),#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.speaker-left p{font-size:0.95rem;color:var(--text2);line-height:1.8;margin-bottom:28px;}
+.speaker-apply-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),#f97316);color:#fff;padding:14px 32px;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:700;text-decoration:none;box-shadow:0 6px 24px rgba(245,158,11,.25);transition:all .3s;}
+.speaker-apply-btn:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(245,158,11,.35);}
+.speaker-apply-btn .btn-arrow{font-size:18px;transition:transform .2s;}
+.speaker-apply-btn:hover .btn-arrow{transform:translateX(4px);}
+.speaker-domains-wrap{margin-top:28px;}
+.speaker-domains-title{font-size:0.75rem;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;font-family:var(--mono);}
+.speaker-domains{display:flex;flex-wrap:wrap;gap:8px;}
+.spk-domain{display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:600;padding:6px 14px;border-radius:var(--radius-xs);border:1.5px solid;transition:all .2s;cursor:default;}
+.spk-domain:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+.spk-d1{background:rgba(37,99,235,0.06);color:#1d4ed8;border-color:rgba(37,99,235,0.2);}
+.spk-d2{background:rgba(139,92,246,0.06);color:#5b21b6;border-color:rgba(139,92,246,0.2);}
+.spk-d3{background:rgba(245,158,11,0.06);color:#92400e;border-color:rgba(245,158,11,0.2);}
+.spk-d4{background:rgba(16,185,129,0.06);color:#065f46;border-color:rgba(16,185,129,0.2);}
+.spk-d5{background:rgba(236,72,153,0.06);color:#9d174d;border-color:rgba(236,72,153,0.2);}
+.spk-d6{background:rgba(251,146,60,0.06);color:#9a3412;border-color:rgba(251,146,60,0.2);}
+.spk-d7{background:rgba(16,185,129,0.04);color:#15803d;border-color:rgba(16,185,129,0.15);}
+.spk-d8{background:rgba(6,182,212,0.06);color:#0369a1;border-color:rgba(6,182,212,0.2);}
+
+/* Benefits grid */
+.speaker-benefits{background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius);padding:36px 32px;border:1px solid var(--glass-border);box-shadow:var(--shadow);}
+.speaker-benefits-title{font-size:1rem;font-weight:800;color:var(--dark);margin-bottom:6px;}
+.speaker-benefits-sub{font-size:0.82rem;color:var(--text2);margin-bottom:24px;}
+.benefits-list{display:flex;flex-direction:column;gap:14px;}
+.benefit-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:var(--radius-sm);border:1px solid var(--glass-border2);transition:all .2s;background:var(--glass2);}
+.benefit-item:hover{transform:translateX(4px);border-color:var(--blue);background:rgba(37,99,235,0.04);}
+.benefit-icon{width:40px;height:40px;border-radius:var(--radius-xs);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.benefit-icon.gold{background:rgba(245,158,11,0.12);}
+.benefit-icon.blue{background:rgba(37,99,235,0.1);}
+.benefit-icon.green{background:rgba(16,185,129,0.1);}
+.benefit-icon.violet{background:rgba(139,92,246,0.1);}
+.benefit-icon.rose{background:rgba(251,113,133,0.1);}
+.benefit-icon.teal{background:rgba(6,182,212,0.1);}
+.benefit-body .benefit-title{font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:2px;}
+.benefit-body .benefit-desc{font-size:0.75rem;color:var(--text2);line-height:1.5;}
+
+/* Speaker CTA banner */
+.speaker-cta-banner{background:var(--dark);border-radius:var(--radius);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;margin-top:12px;}
+.speaker-cta-banner::before{content:'\1F3A4';position:absolute;right:48px;top:50%;transform:translateY(-50%);font-size:96px;opacity:.06;}
+.speaker-cta-text h3{font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:6px;}
+.speaker-cta-text p{font-size:0.88rem;color:rgba(255,255,255,.5);}
+.speaker-cta-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.spk-apply-big{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),#f97316);color:#fff;padding:14px 32px;border-radius:var(--radius-sm);font-size:0.95rem;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(245,158,11,.3);transition:all .2s;white-space:nowrap;}
+.spk-apply-big:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(245,158,11,.4);}
+.spk-share{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.15);color:#fff;padding:14px 24px;border-radius:var(--radius-sm);font-size:0.88rem;font-weight:600;text-decoration:none;transition:all .2s;}
+.spk-share:hover{background:rgba(255,255,255,.15);}
+
+/* FOOTER */
+footer{background:var(--dark);text-align:center;padding:52px 32px 56px;position:relative;z-index:1;}
+footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:2px;background:linear-gradient(90deg,transparent,var(--sky),transparent);}
+.foot-title{font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:8px;}
+.foot-title span{color:var(--sky2);}
+.foot-sub{font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:24px;}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:24px;}
+.foot-links a{font-family:var(--mono);font-size:0.6rem;color:rgba(255,255,255,0.35);letter-spacing:0.06em;transition:color .2s;text-decoration:none;}
+.foot-links a:hover{color:var(--sky2);}
+.foot-copy{font-family:var(--mono);font-size:0.56rem;color:rgba(255,255,255,0.18);}
+footer a{color:var(--sky2);text-decoration:none;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{animation:fadeUp .5s ease both;}
+.hero h1{animation:fadeUp .6s .1s ease both;}
+.hero-tag{animation:fadeUp .6s .2s ease both;}
+.hero-cta{animation:fadeUp .6s .3s ease both;}
+
+/* Intersection observer reveal */
+.rio{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+.rio.visible{opacity:1;transform:none;}
+
+/* ── TABLET ── */
+@media(max-width:960px){
+  nav{padding:12px 20px;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .mobile-menu{display:flex;}
+  .who-grid{grid-template-columns:1fr;gap:40px;}
+  .speaker-top{grid-template-columns:1fr;gap:32px;}
+  .leaders-grid{grid-template-columns:repeat(2,1fr);}
+  .flow-steps{grid-template-columns:1fr;gap:32px;}
+  .flow-steps::before{display:none;}
+}
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+  nav{padding:10px 16px;}
+  .hero-body{padding:120px 18px 60px;}
+  .hero h1{font-size:2rem;letter-spacing:-0.03em;}
+  .hero-tag{font-size:0.92rem;margin-bottom:28px;}
+  .hero-cta{flex-direction:column;align-items:center;gap:10px;}
+  .btn-primary,.btn-outline{width:100%;max-width:280px;text-align:center;justify-content:center;padding:12px 20px;font-size:0.82rem;}
+
+  .stats-bar{padding:0;flex-direction:row;flex-wrap:wrap;}
+  .stat-item{flex:1 1 45%;padding:16px 12px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);text-align:center;}
+  .stat-item:nth-child(odd){border-right:1px solid rgba(255,255,255,0.08);}
+  .stat-item:last-child{border-bottom:none;}
+  .stat-num{font-size:1.6rem;}
+
+  .section{padding:48px 18px;}
+  .events-section{padding:48px 18px;}
+  .leaders-section{padding:48px 18px;}
+  .section-header{margin-bottom:32px;}
+  .section-header h2{font-size:1.5rem;}
+
+  .about-grid{grid-template-columns:1fr;gap:16px;}
+  .about-card{padding:22px 20px;}
+
+  .who-section{padding:48px 0;}
+  .who-inner{padding:0 18px;}
+  .who-grid{grid-template-columns:1fr;gap:32px;}
+  .who-left h2{font-size:1.8rem;}
+  .who-right{grid-template-columns:1fr 1fr;gap:10px;}
+  .audience-chip{padding:12px;}
+
+  .tech-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .tech-card{padding:18px 14px;}
+  .tech-icon{font-size:26px;}
+
+  .flow-section{padding:48px 0;}
+  .flow-inner{padding:0 18px;}
+  .flow-steps{grid-template-columns:1fr;gap:28px;}
+  .flow-steps::before{display:none;}
+  .step-num{width:60px;height:60px;font-size:22px;}
+
+  .events-tabs{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:0;gap:4px;}
+  .events-tab{font-size:0.75rem;padding:8px 14px;flex-shrink:0;}
+  .filter-bar{gap:6px;}
+  .filter-chip{font-size:0.7rem;padding:4px 10px;}
+
+  .events-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  table{min-width:560px;}
+  th,td{padding:10px 12px;font-size:0.75rem;}
+
+  .upcoming-section{padding:48px 18px;}
+  .upcoming-header{flex-direction:column;align-items:flex-start;gap:12px;}
+  .upcoming-header h2{font-size:1.5rem;}
+  .register-btn{width:100%;justify-content:center;font-size:0.82rem;}
+  .upcoming-grid{grid-template-columns:1fr;gap:14px;}
+  .event-card{padding:18px 16px;}
+  .add-event-guide{padding:20px 16px;}
+  .propose-fields{gap:8px;}
+  .propose-field{font-size:0.75rem;padding:6px 10px;}
+  .propose-email{font-size:0.82rem;padding:10px 18px;}
+
+  .leaders-grid{grid-template-columns:1fr;gap:16px;}
+  .leader-photo-wrap{height:280px;}
+
+  .speaker-section{padding:48px 0;}
+  .speaker-inner{padding:0 18px;}
+  .speaker-top{grid-template-columns:1fr;gap:28px;}
+  .speaker-left h2{font-size:1.7rem;}
+  .speaker-apply-btn{width:100%;justify-content:center;font-size:0.88rem;padding:12px 20px;}
+  .speaker-benefits{padding:24px 18px;}
+  .speaker-cta-banner{padding:24px 20px;flex-direction:column;align-items:flex-start;gap:18px;border-radius:14px;}
+  .speaker-cta-banner::before{display:none;}
+  .speaker-cta-text h3{font-size:1.2rem;}
+  .speaker-cta-actions{flex-direction:column;width:100%;gap:10px;}
+  .spk-apply-big,.spk-share{width:100%;justify-content:center;padding:12px 20px;font-size:0.82rem;}
+  .spk-domain{font-size:0.7rem;padding:5px 10px;}
+
+  .archive-cta-section{padding:24px 18px;}
+  .archive-cta-banner{padding:24px 20px;border-radius:14px;flex-direction:column;}
+  .archive-cta-banner::before{display:none;}
+  .archive-cta-btn{width:100%;justify-content:center;}
+
+  .connect-section{padding:48px 18px;}
+  .connect-section h2{font-size:1.8rem;}
+  .connect-links{flex-direction:column;align-items:center;gap:10px;}
+  .connect-btn{width:100%;max-width:280px;justify-content:center;font-size:0.82rem;}
+
+  footer{padding:32px 18px 36px;}
+}
+
+/* ═══════════════ SPEAKERS SECTION ═══════════════ */
+.spk-section{padding:80px 0;position:relative;z-index:1;}
+.spk-wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
+.spk-h-accent{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+.spk-meta-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;margin-top:28px;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);}
+.spk-meta-item{text-align:center;padding:0 28px;}
+.spk-meta-item strong{display:block;font-size:1.75rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;}
+.spk-meta-item span{font-size:0.68rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-family:var(--mono);}
+.spk-meta-div{width:1px;height:38px;background:var(--glass-border2);}
+
+.spk-cat{margin-bottom:52px;}
+.spk-cat-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;cursor:pointer;transition:opacity .2s;user-select:none;}
+.spk-cat-head:hover{opacity:.8;}
+.spk-cat-head::after{content:'\25BE';margin-left:auto;font-size:16px;color:var(--muted);transition:transform .3s;}
+.spk-cat-collapsed .spk-cat-head::after{transform:rotate(-90deg);}
+.spk-cat-collapsed .spk-grid{display:none;}
+.spk-cat-pill{font-size:0.82rem;font-weight:700;padding:7px 18px;border-radius:100px;border:1.5px solid;}
+.spk-cat-count{font-size:0.75rem;color:var(--muted);font-weight:600;}
+
+.spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;}
+
+.spk-card{display:flex;flex-direction:column;align-items:center;text-align:center;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:var(--radius);border:1px solid var(--glass-border);padding:28px 16px 20px;text-decoration:none;color:inherit;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;box-shadow:var(--shadow);}
+.spk-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--spk-grad);}
+.spk-card::after{content:'';position:absolute;inset:0;background:var(--spk-light);opacity:0;transition:opacity .25s;pointer-events:none;}
+.spk-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg),var(--shadow-glow);border-color:transparent;}
+.spk-card:hover::after{opacity:.15;}
+
+.spk-av-init{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;margin-bottom:16px;font-family:var(--mono);box-shadow:0 6px 18px rgba(0,0,0,.15);position:relative;z-index:1;flex-shrink:0;}
+.spk-av-wrap{width:80px;height:80px;position:relative;margin-bottom:16px;flex-shrink:0;z-index:1;}
+.spk-av-img{width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:top center;display:block;box-shadow:0 6px 18px rgba(0,0,0,.15);}
+.spk-av-ring{position:absolute;inset:-3px;border-radius:50%;z-index:-1;opacity:.3;}
+
+.spk-card-body{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;position:relative;z-index:1;}
+.spk-badges{margin-bottom:6px;}
+.spk-cofound-badge{display:inline-block;font-size:0.6rem;font-weight:700;background:var(--dark);color:#fff;padding:4px 10px;border-radius:100px;letter-spacing:.03em;}
+.spk-ev-badge{display:inline-block;font-size:0.6rem;font-weight:700;background:rgba(245,158,11,0.12);color:#92400e;padding:4px 10px;border-radius:100px;border:1px solid rgba(245,158,11,0.25);}
+.spk-name{font-size:0.88rem;font-weight:800;color:var(--text);line-height:1.3;margin-bottom:2px;}
+.spk-role{font-size:0.75rem;color:var(--text3);font-weight:500;line-height:1.4;margin-bottom:9px;}
+.spk-dtag{font-size:0.65rem;font-weight:700;padding:4px 11px;border-radius:100px;border:1.5px solid;margin-bottom:12px;white-space:nowrap;}
+.spk-li{display:inline-flex;align-items:center;gap:5px;font-size:0.72rem;font-weight:600;color:var(--blue);padding:6px 14px;border-radius:var(--radius-xs);background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.15);transition:all .2s;}
+.spk-card:hover .spk-li{background:var(--blue);color:#fff;border-color:var(--blue);}
+
+.spk-footer-banner{background:var(--dark);border-radius:var(--radius);padding:38px 44px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:8px;position:relative;overflow:hidden;}
+.spk-footer-banner::before{content:'\1F399\FE0F';position:absolute;right:44px;top:50%;transform:translateY(-50%);font-size:96px;opacity:.06;pointer-events:none;}
+.spk-footer-left{display:flex;align-items:center;gap:20px;}
+.spk-footer-icon{font-size:44px;flex-shrink:0;}
+.spk-footer-title{font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:5px;}
+.spk-footer-sub{font-size:0.82rem;color:rgba(255,255,255,.5);line-height:1.6;max-width:460px;}
+.spk-footer-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),#f97316);color:#fff;padding:14px 30px;border-radius:var(--radius-sm);font-size:0.88rem;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 6px 20px rgba(245,158,11,.3);transition:all .2s;flex-shrink:0;}
+.spk-footer-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(245,158,11,.4);}
+
+@media(max-width:960px){.spk-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:600px){
+  .spk-wrap{padding:0 18px;}
+  .spk-section{padding:48px 0;}
+  .spk-meta-row{padding:14px 8px;}
+  .spk-meta-item{padding:6px 12px;}
+  .spk-meta-item strong{font-size:1.4rem;}
+  .spk-meta-div{height:26px;}
+  .spk-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .spk-card{padding:20px 12px 16px;}
+  .spk-av-init,.spk-av-wrap,.spk-av-img{width:62px;height:62px;font-size:19px;}
+  .spk-name{font-size:0.78rem;}
+  .spk-role{font-size:0.7rem;}
+  .spk-dtag{font-size:0.6rem;padding:3px 8px;}
+  .spk-footer-banner{padding:24px 20px;border-radius:14px;flex-direction:column;}
+  .spk-footer-banner::before{display:none;}
+  .spk-footer-btn{width:100%;justify-content:center;}
+}
+
+/* BACKDROP-FILTER FALLBACK */
+@supports not (backdrop-filter:blur(1px)){
+  .glass,.about-card,.tech-card,.event-card,.leader-card,.spk-card,.speaker-benefits,.events-table-wrap,.add-event-guide,.spk-meta-row{background:rgba(255,255,255,0.82);border:1px solid rgba(200,205,220,0.6);}
+  .who-section,.connect-section{background:rgba(255,255,255,0.9);}
+  .audience-chip,.benefit-item{background:rgba(255,255,255,0.75);border:1px solid rgba(200,205,220,0.5);}
+  .mobile-menu{background:rgba(240,242,255,0.98);}
+  nav{background:rgba(240,242,255,0.92);}
+}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
+  .orb{display:none !important;}
+  .rio{opacity:1;transform:none;}
+}
+/* Back to Top */
+.btt{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,99,235,0.3);opacity:0;visibility:hidden;transform:translateY(10px);transition:all 0.3s;z-index:999;}
+.btt.show{opacity:1;visibility:visible;transform:translateY(0);}
+.btt:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,99,235,0.45);}
+
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"CareerByteCode Events","description":"Global Tech Leadership & Community Ecosystem. Free sessions, panels, and workshops.","url":"https://careerbytecode.github.io/events.html","publisher":{"@type":"Organization","name":"CareerByteCode","url":"https://www.careerbytecode.com"}}
+</script>
+</head>
+<body>
+<!-- FLOATING ORBS -->
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- SVG DEFS -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></symbol>
+</svg>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="logo">
+    <img src="cbc - logo.png" alt="CareerByteCode" class="logo-icon">
+    <div class="logo-text">Career<span>ByteCode</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#speak">Speak</a>
+    <a href="#tech">Tech Stack</a>
+    <a href="#upcoming">Upcoming</a>
+    <a href="event-archive.html">All Events</a>
+    <a href="#leaders">Leaders</a>
+    <a href="#speakers">Speakers</a>
+    <a href="sheleads.html">SheLeads</a>
+    <a href="onboarding.html">Onboarding</a>
+    <a href="#connect">Connect</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#speak" class="mobile-link">Speak with Us</a>
+  <a href="#tech" class="mobile-link">Tech Stack</a>
+  <a href="#upcoming" class="mobile-link">Upcoming Events</a>
+  <a href="event-archive.html" class="mobile-link">All Events</a>
+  <a href="#leaders" class="mobile-link">Leaders</a>
+  <a href="#speakers" class="mobile-link">Speakers</a>
+  <a href="sheleads.html" class="mobile-link">SheLeads</a>
+  <a href="onboarding.html" class="mobile-link">Onboarding</a>
+  <a href="#connect" class="mobile-link">Connect</a>
+</div>
+
+<main>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-mesh">
+    <div class="mesh-orb"></div>
+    <div class="mesh-orb"></div>
+    <div class="mesh-orb"></div>
+  </div>
+  <div class="hero-body">
+    <div class="hero-badge">Active across Europe &amp; India</div>
+    <h1>A Global <span class="accent">Tech Leadership</span><br>&amp; Community Ecosystem</h1>
+    <p class="hero-tag">Powered by 1,000+ senior tech experts, architects, and passionate IT professionals shaping the future of technology.</p>
+    <div class="hero-cta">
+      <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank" class="btn-primary">Follow on LinkedIn</a>
+      <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/" target="_blank" class="btn-outline">Join on Meetup</a>
+      <a href="https://www.careerbytecode.com/" target="_blank" class="btn-outline">Visit Website</a>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">1,000+</div><div class="stat-label">Senior Experts</div></div>
+  <div class="stat-item"><div class="stat-num">58+</div><div class="stat-label">Events Hosted</div></div>
+  <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Continents</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Free Sessions</div></div>
+  <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Tech Domains</div></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="rio">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">About</div>
+      <h2>What We Do &amp; Why It Matters</h2>
+      <p>We operate at the intersection of Technology Leadership, Industry Collaboration, and Community-Driven Visibility.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card blue"><div class="card-icon blue">🎤</div><h3>Leadership-Level Conversations</h3><p>We facilitate high-quality fireside chats, industry panels, and leadership roundtables with senior tech professionals — not marketing pitches.</p></div>
+      <div class="about-card gold"><div class="card-icon gold">🔥</div><h3>Industry Panel Discussions</h3><p>Panel discussions and fireside chats with CTOs, architects, and engineers sharing real-world experiences and architectural decisions.</p></div>
+      <div class="about-card emerald"><div class="card-icon emerald">🧩</div><h3>Community-Driven Tech Events</h3><p>Roundtables, AMA sessions, and hands-on workshops designed by and for the community — insight-driven, leadership-focused, always free.</p></div>
+      <div class="about-card violet"><div class="card-icon violet">💬</div><h3>Executive Conversations</h3><p>Leadership conversations shared across professional networks — LinkedIn, Meetup, GitHub — building sustained professional visibility.</p></div>
+      <div class="about-card rose"><div class="card-icon rose">🚀</div><h3>Ecosystem Trust Building</h3><p>We help organizations be seen as genuine community contributors. One engagement creates weeks of professional visibility and lasting brand trust.</p></div>
+      <div class="about-card navy"><div class="card-icon navy">🌐</div><h3>Global Reach, Local Impact</h3><p>Active across Europe &amp; India, connecting senior leaders, cloud architects, AI engineers, founders, and product decision-makers worldwide.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKER SECTION -->
+<section id="speak" class="speaker-section rio">
+  <div class="speaker-inner">
+
+    <div class="speaker-top">
+
+      <!-- LEFT: intro + domains -->
+      <div class="speaker-left">
+        <div class="speaker-invite-tag">&#x1F3A4; Speaker Invitation Open</div>
+        <h2>Share Your Voice.<br>Shape the <span class="accent">Future of Tech.</span></h2>
+        <p>CareerByteCode is inviting passionate tech professionals, mentors, and real-world practitioners to join us as speakers for our upcoming <strong>LinkedIn Lives, webinars, and global spotlight sessions</strong> &mdash; reaching 242K+ learners across 105+ countries.</p>
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHiV6sDPparVgocbWXnGAzWdRF9LkSJ7k-ZT7npe_GbUDVg/viewform?usp=dialog" target="_blank" class="speaker-apply-btn">
+          &#x1F4DD; Apply Now to Speak <span class="btn-arrow">&rarr;</span>
+        </a>
+
+        <div class="speaker-domains-wrap">
+          <div class="speaker-domains-title">&#x1F3AF; We&apos;re Looking for Voices In</div>
+          <div class="speaker-domains">
+            <span class="spk-domain spk-d1">&#x2601;&#xFE0F; Cloud / Azure / AWS / GCP</span>
+            <span class="spk-domain spk-d1">&#x2699;&#xFE0F; DevOps / Kubernetes</span>
+            <span class="spk-domain spk-d2">&#x1F916; AI / ML / GenAI / LLM / NLP</span>
+            <span class="spk-domain spk-d3">&#x1F510; Cybersecurity &amp; Ethical Hacking</span>
+            <span class="spk-domain spk-d4">&#x1F4BB; Frontend / Backend / Full-Stack</span>
+            <span class="spk-domain spk-d5">&#x1F4C4; Resume &amp; LinkedIn Branding</span>
+            <span class="spk-domain spk-d6">&#x1F3AF; Interview Mentors &amp; Career Coaches</span>
+            <span class="spk-domain spk-d7">&#x1F31F; Job Seekers with Inspiring Comebacks</span>
+            <span class="spk-domain spk-d8">&#x1F4A1; Anyone with Real Experience + Genuine Passion</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: benefits -->
+      <div class="speaker-benefits">
+        <div class="speaker-benefits-title">&#x1F381; What Do Speakers Get?</div>
+        <div class="speaker-benefits-sub">Real perks. Real visibility. Real impact.</div>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon gold">&#x1F396;</div>
+            <div class="benefit-body">
+              <div class="benefit-title">Verified Digital Speaker Badge</div>
+              <div class="benefit-desc">Flaunt it on LinkedIn and your resume &mdash; a credible mark of your industry presence.</div>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon blue">&#x1F30D;</div>
+            <div class="benefit-body">
+              <div class="benefit-title">Global Reach &mdash; 105+ Countries</div>
+              <div class="benefit-desc">Be seen by 242K+ learners across our LinkedIn, Meetup, and global community network.</div>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon green">&#x1F193;</div>
+            <div class="benefit-body">
+              <div class="benefit-title">Full Free Platform Access</div>
+              <div class="benefit-desc">Real-time projects, live events, and training resources &mdash; completely free for speakers.</div>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon violet">&#x1F4C8;</div>
+            <div class="benefit-body">
+              <div class="benefit-title">Follower Growth &amp; Personal Branding</div>
+              <div class="benefit-desc">Boost your visibility and LinkedIn presence through our global amplification network.</div>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon rose">&#x1F4B8;</div>
+            <div class="benefit-body">
+              <div class="benefit-title">300+ Passive Earning Opportunities</div>
+              <div class="benefit-desc">Consulting, freelancing, entrepreneurship model, paid talks, collabs &amp; affiliate invites.</div>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon teal">&#x1F91D;</div>
+            <div class="benefit-body">
+              <div class="benefit-title">Leaders Circle Entry</div>
+              <div class="benefit-desc">Join our private network of high-impact mentors, trainers, and industry decision-makers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA BANNER -->
+    <div class="speaker-cta-banner">
+      <div class="speaker-cta-text">
+        <h3>Ready to Share Your Story?</h3>
+        <p>Real-world experience + genuine passion to uplift others = a perfect CBC speaker. Apply now &mdash; it&apos;s free.</p>
+      </div>
+      <div class="speaker-cta-actions">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHiV6sDPparVgocbWXnGAzWdRF9LkSJ7k-ZT7npe_GbUDVg/viewform?usp=dialog" target="_blank" class="spk-apply-big">&#x1F4DD; Apply to Speak Now &rarr;</a>
+        <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank" class="spk-share">&#x1F4BC; Share on LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- WHO WE ARE -->
+<section id="community" class="who-section rio">
+  <div class="who-inner">
+    <div class="who-grid">
+      <div class="who-left">
+        <div class="section-tag" style="background:rgba(59,130,246,.2);color:#93c5fd;">Community</div>
+        <h2 style="margin-top:12px">Who <span>We Connect</span></h2>
+        <p>CareerByteCode is where like-minded, growth-oriented IT professionals come together. We believe in learning through real-world execution, growing through peer leadership, and scaling impact through community trust.</p>
+        <p>Our ecosystem thrives on knowledge-sharing tech leaders who want to give back while growing their own influence.</p>
+        <div class="who-quote">💡 "One community. One ecosystem. One mission — build confident tech leaders."</div>
+      </div>
+      <div class="who-right">
+        <div class="audience-chip"><div class="chip-icon">👩‍💼</div><div class="chip-title">Senior Tech Leaders</div><div class="chip-sub">CTOs, Directors & VPs</div></div>
+        <div class="audience-chip"><div class="chip-icon">☁️</div><div class="chip-title">Cloud Architects</div><div class="chip-sub">AWS, Azure, GCP</div></div>
+        <div class="audience-chip"><div class="chip-icon">⚙️</div><div class="chip-title">DevOps Engineers</div><div class="chip-sub">Platform & SRE</div></div>
+        <div class="audience-chip"><div class="chip-icon">🤖</div><div class="chip-title">AI Engineers</div><div class="chip-sub">ML & AI Systems</div></div>
+        <div class="audience-chip"><div class="chip-icon">🚀</div><div class="chip-title">Founders & CTOs</div><div class="chip-sub">Tech Entrepreneurs</div></div>
+        <div class="audience-chip"><div class="chip-icon">🏗️</div><div class="chip-title">Architects</div><div class="chip-sub">Systems & Platform</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section id="tech" class="rio">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Technology</div>
+      <h2>What Technologies We Focus On</h2>
+      <p>Production-first, not tutorial-first. Real-world technologies that build platforms, scale systems, and create tech leaders.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card"><span class="tech-icon">☁️</span><h4>Cloud Platforms</h4><div class="tech-tags"><span class="tech-tag">Azure</span><span class="tech-tag">AWS</span><span class="tech-tag">GCP</span></div></div>
+      <div class="tech-card"><span class="tech-icon">⚙️</span><h4>DevOps & Platform</h4><div class="tech-tags"><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Jenkins</span><span class="tech-tag">GitLab</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🏗️</span><h4>IaC & Automation</h4><div class="tech-tags"><span class="tech-tag">Terraform</span><span class="tech-tag">Ansible</span><span class="tech-tag">Bicep</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🐳</span><h4>Containers & K8s</h4><div class="tech-tags"><span class="tech-tag">Docker</span><span class="tech-tag">AKS</span><span class="tech-tag">EKS</span><span class="tech-tag">GKE</span></div></div>
+      <div class="tech-card"><span class="tech-icon">📈</span><h4>SRE & Observability</h4><div class="tech-tags"><span class="tech-tag">Prometheus</span><span class="tech-tag">Grafana</span><span class="tech-tag">Loki</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🤖</span><h4>AI, ML & Python</h4><div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">ML Pipelines</span><span class="tech-tag">AI Agents</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🧩</span><h4>Microservices</h4><div class="tech-tags"><span class="tech-tag">API Gateways</span><span class="tech-tag">Event-Driven</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🔐</span><h4>Security & DevSecOps</h4><div class="tech-tags"><span class="tech-tag">SonarQube</span><span class="tech-tag">Zero-Trust</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🛠️</span><h4>Platform Engineering</h4><div class="tech-tags"><span class="tech-tag">Backstage</span><span class="tech-tag">IDPs</span><span class="tech-tag">Golden Paths</span></div></div>
+      <div class="tech-card"><span class="tech-icon">💰</span><h4>FinOps & Cost Optimization</h4><div class="tech-tags"><span class="tech-tag">FinOps</span><span class="tech-tag">Infracost</span><span class="tech-tag">Cost Governance</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🧠</span><h4>MLOps & AI Platforms</h4><div class="tech-tags"><span class="tech-tag">MLflow</span><span class="tech-tag">Kubeflow</span><span class="tech-tag">Azure AI Foundry</span></div></div>
+      <div class="tech-card"><span class="tech-icon">✨</span><h4>Generative AI & LLMs</h4><div class="tech-tags"><span class="tech-tag">GPT</span><span class="tech-tag">Claude</span><span class="tech-tag">RAG</span><span class="tech-tag">AI Agents</span></div></div>
+      <div class="tech-card"><span class="tech-icon">📊</span><h4>Data & AI Platforms</h4><div class="tech-tags"><span class="tech-tag">Databricks</span><span class="tech-tag">Spark</span><span class="tech-tag">Kafka</span><span class="tech-tag">ETL</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🛡️</span><h4>AI Security & Governance</h4><div class="tech-tags"><span class="tech-tag">Guardrails</span><span class="tech-tag">Responsible AI</span><span class="tech-tag">Content Safety</span></div></div>
+      <div class="tech-card"><span class="tech-icon">🏛️</span><h4>Architecture & Solution Design</h4><div class="tech-tags"><span class="tech-tag">Landing Zones</span><span class="tech-tag">HA/DR</span><span class="tech-tag">Scalability</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT FLOW -->
+<div class="flow-section rio">
+  <div class="flow-inner">
+    <div class="section-header">
+      <div class="section-tag">Visibility Flow</div>
+      <h2>One Engagement → Weeks of Visibility</h2>
+      <p>Every collaboration creates a sustained visibility flywheel — before, during, and after the event.</p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-num">🔔</div>
+        <h4>Before Engagement</h4>
+        <ul class="flow-bullets">
+          <li>Collaboration announcement</li>
+          <li>Leadership introduction posts</li>
+          <li>Community awareness building</li>
+        </ul>
+      </div>
+      <div class="flow-step">
+        <div class="step-num" style="color:#fff">🎙️</div>
+        <h4>During Engagement</h4>
+        <ul class="flow-bullets">
+          <li>Live event highlights</li>
+          <li>Leadership moments captured</li>
+          <li>Community interaction snapshots</li>
+        </ul>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">📣</div>
+        <h4>After Engagement</h4>
+        <ul class="flow-bullets">
+          <li>Insight summaries published</li>
+          <li>Gratitude &amp; reflection posts</li>
+          <li>Continued industry visibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UPCOMING EVENTS -->
+<section id="upcoming" class="upcoming-section rio">
+  <div class="upcoming-inner">
+    <div class="upcoming-header">
+      <div>
+        <div class="section-tag">📅 What&#x27;s Next</div>
+        <h2 style="margin-top:10px">Upcoming <span>Events</span></h2>
+      </div>
+      <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/" target="_blank" class="register-btn">🎯 Join Meetup Community</a>
+    </div>
+
+    <!--
+    ════════════════════════════════════════════════════════════
+    HOW TO ADD A NEW UPCOMING EVENT:
+    1. Copy one event-card block below
+    2. Change class: cloud | k8s | ai | career | leadership
+    3. Update month, day, title, speaker, platform badge, link
+    4. For PAST events: use class="event-view-btn" + href to event
+       For UPCOMING events: use class="event-register-btn" + href
+    ════════════════════════════════════════════════════════════
+    -->
+    <div class="upcoming-grid" id="upcoming-grid">
+
+      <!-- ✅ UPCOMING – Meetup event (use event-register-btn) -->
+      <div class="event-card cloud">
+        <div class="event-upcoming-tag">🟢 Upcoming · Free</div>
+        <div class="event-card-top">
+          <div class="event-date-badge"><span class="month">Mar</span><span class="day">22</span></div>
+          <span class="domain-badge domain-cloud">Cloud DevOps</span>
+        </div>
+        <h4>Azure VNet Peering Across Regions – Secure the Cloud Backbone</h4>
+        <div class="event-meta">
+          <span class="event-meta-item">👤 Arun Vaidhyanathan</span>
+          <span class="platform-badge platform-mu">📍 Meetup</span>
+        </div>
+        <div class="event-actions">
+          <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/" target="_blank" class="event-register-btn">Register Free →</a>
+        </div>
+      </div>
+
+      <!-- ✅ UPCOMING – LinkedIn event (use event-register-btn) -->
+      <div class="event-card k8s">
+        <div class="event-upcoming-tag">🟢 Upcoming · Free</div>
+        <div class="event-card-top">
+          <div class="event-date-badge"><span class="month">Apr</span><span class="day">02</span></div>
+          <span class="domain-badge domain-k8s">Kubernetes</span>
+        </div>
+        <h4>Build Your Own Kubernetes Cluster – Hands-On</h4>
+        <div class="event-meta">
+          <span class="event-meta-item">👤 Bavithran M</span>
+          <span class="platform-badge platform-li">💼 LinkedIn</span>
+        </div>
+        <div class="event-actions">
+          <a href="https://www.linkedin.com/events/buildyourownkubernetescluster7312393349166993408/" target="_blank" class="event-register-btn">Register Free →</a>
+        </div>
+      </div>
+
+      <!-- ✅ COMPLETED – Show "View Event" button -->
+      <div class="event-card ai">
+        <div class="event-card-top">
+          <div class="event-date-badge"><span class="month">Feb</span><span class="day">21</span></div>
+          <span class="domain-badge domain-ai">Cloud DevOps</span>
+        </div>
+        <h4>Secure the Cloud Backbone: Azure VNet Peering – Feb Edition</h4>
+        <div class="event-meta">
+          <span class="event-meta-item">👤 Arun Vaidhyanathan</span>
+          <span class="platform-badge platform-mu">📍 Meetup</span>
+        </div>
+        <div class="event-actions">
+          <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/313342349/" target="_blank" class="event-view-btn">View Event ↗</a>
+        </div>
+      </div>
+
+      <!-- ✅ COMPLETED -->
+      <div class="event-card career">
+        <div class="event-card-top">
+          <div class="event-date-badge"><span class="month">Feb</span><span class="day">02</span></div>
+          <span class="domain-badge domain-career">Career Guidance</span>
+        </div>
+        <h4>DevOps Career Meetup: Real Stories, Real Guidance &amp; Real Growth</h4>
+        <div class="event-meta">
+          <span class="event-meta-item">👤 Sonali Kurade</span>
+          <span class="platform-badge platform-mu">📍 Meetup</span>
+        </div>
+        <div class="event-actions">
+          <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/313077402/" target="_blank" class="event-view-btn">View Event ↗</a>
+        </div>
+      </div>
+
+      <!-- ✅ COMPLETED -->
+      <div class="event-card cloud">
+        <div class="event-card-top">
+          <div class="event-date-badge"><span class="month">Jan</span><span class="day">31</span></div>
+          <span class="domain-badge domain-cloud">Cloud DevOps</span>
+        </div>
+        <h4>High Availability Made Easy with Azure Load Balancer</h4>
+        <div class="event-meta">
+          <span class="event-meta-item">👤 Arun Vaidhyanathan</span>
+          <span class="platform-badge platform-mu">📍 Meetup</span>
+        </div>
+        <div class="event-actions">
+          <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/313063962/" target="_blank" class="event-view-btn">View Event ↗</a>
+        </div>
+      </div>
+
+      <!-- ✅ COMPLETED -->
+      <div class="event-card leadership">
+        <div class="event-card-top">
+          <div class="event-date-badge"><span class="month">Dec</span><span class="day">29</span></div>
+          <span class="domain-badge domain-leadership">Leadership</span>
+        </div>
+        <h4>IC to Leader Transition – Leadership Podcast</h4>
+        <div class="event-meta">
+          <span class="event-meta-item">👤 Sonali Kurade</span>
+          <span class="platform-badge platform-li">💼 LinkedIn</span>
+        </div>
+        <div class="event-actions">
+          <a href="https://www.linkedin.com/events/thetransitionfromindividualcont7410311190524076032/" target="_blank" class="event-view-btn">View Event ↗</a>
+        </div>
+      </div>
+
+    </div><!-- /upcoming-grid -->
+
+    <!-- PROPOSE AN EVENT -->
+    <div class="add-event-guide">
+      <h3>&#x1F4A1; Got an Event Idea? We'd Love to Hear It!</h3>
+      <p>Share your event proposal with us &mdash; just drop an email with the details below. Our team will review it and get back to you to make it happen.</p>
+      <div class="propose-fields">
+        <span class="propose-field">&#x1F4CC; Event Title</span>
+        <span class="propose-field">&#x1F464; Speaker Name</span>
+        <span class="propose-field">&#x1F4C5; Preferred Date</span>
+        <span class="propose-field">&#x1F3AF; Domain <small>(Cloud, Kubernetes, AI, Career, Leadership)</small></span>
+        <span class="propose-field">&#x1F4F1; Platform <small>(LinkedIn Live / Meetup)</small></span>
+        <span class="propose-field">&#x1F517; Event or Registration Link <small>(if available)</small></span>
+      </div>
+      <div class="propose-email">&#x2709;&#xFE0F; support@careerbytecode.com</div>
+      <p class="propose-note">We'll review your proposal and connect with you within 48 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT ARCHIVE CTA -->
+<section id="events" class="archive-cta-section rio">
+  <div class="archive-cta-banner">
+    <div class="archive-cta-left">
+      <span class="archive-cta-icon">📋</span>
+      <div>
+        <div class="archive-cta-title">Explore Our Complete Event History</div>
+        <div class="archive-cta-sub">58+ LinkedIn events and 10+ Meetup sessions covering Cloud DevOps, Kubernetes, AI, Career Growth, and Leadership — all in one place.</div>
+      </div>
+    </div>
+    <a href="event-archive.html" class="archive-cta-btn">Browse All Events →</a>
+  </div>
+</section>
+
+<!-- LEADERS -->
+<section id="leaders" class="leaders-section rio">
+  <div class="section-header">
+    <div class="section-tag">Team</div>
+    <h2>The Leaders Behind CBC</h2>
+    <p>Visionary technologists, educators, and community builders who believe in leadership-first learning and real-world execution.</p>
+  </div>
+  <div class="leaders-grid">
+
+      <div class="leader-card">
+        <div class="leader-photo-wrap" style="border-color:#3b82f620;">
+          <img loading="lazy" src="images/siva-sankari.jpg" alt="Siva Sankari" class="leader-photo">
+          <div class="leader-accent" style="background:#3b82f6;"></div>
+        </div>
+        <div class="leader-info">
+          <h3>Siva Sankari</h3>
+          <div class="role" style="color:#3b82f6;">Co-Founder</div>
+          <div class="location">📍 Singapore</div>
+          <p>Cloud architect and community builder driving the CBC mission. Active in Singapore, empowering engineers across Europe & India through real-world production-grade learning.</p>
+          <a href="https://www.linkedin.com/in/learnwithsankari/" target="_blank" class="leader-li-btn" style="background:#dbeafe;color:#3b82f6;">
+            <svg width="14" height="14"><use href="#icon-linkedin"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-photo-wrap" style="border-color:#8b5cf620;">
+          <img loading="lazy" src="images/anitha-d.jpg" alt="Anitha D" class="leader-photo">
+          <div class="leader-accent" style="background:#8b5cf6;"></div>
+        </div>
+        <div class="leader-info">
+          <h3>Anitha D</h3>
+          <div class="role" style="color:#8b5cf6;">Co-Founder</div>
+          <div class="location">📍 Tirupur, India</div>
+          <p>AI Educator and community co-lead passionate about integrating AI engineering into real-world systems and empowering the next generation of AI practitioners.</p>
+          <a href="https://www.linkedin.com/in/anidigitalhub/" target="_blank" class="leader-li-btn" style="background:#ede9fe;color:#8b5cf6;">
+            <svg width="14" height="14"><use href="#icon-linkedin"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-photo-wrap" style="border-color:#10b98120;">
+          <img loading="lazy" src="images/sonali-kurade.jpg" alt="Sonali Kurade" class="leader-photo">
+          <div class="leader-accent" style="background:#10b981;"></div>
+        </div>
+        <div class="leader-info">
+          <h3>Sonali Kurade</h3>
+          <div class="role" style="color:#10b981;">Co-Founder</div>
+          <div class="location">📍 Pune, India</div>
+          <p>Senior DevOps Coach and co-founder helping engineers evolve into confident tech leaders through peer-driven, hands-on learning and mentorship.</p>
+          <a href="https://www.linkedin.com/in/techopsbysonali/" target="_blank" class="leader-li-btn" style="background:#d1fae5;color:#10b981;">
+            <svg width="14" height="14"><use href="#icon-linkedin"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="leader-card">
+        <div class="leader-photo-wrap" style="border-color:#f59e0b20;">
+          <img loading="lazy" src="images/raghavendra-r.jpg" alt="Raghavendra R" class="leader-photo">
+          <div class="leader-accent" style="background:#f59e0b;"></div>
+        </div>
+        <div class="leader-info">
+          <h3>Raghavendra R</h3>
+          <div class="role" style="color:#f59e0b;">Platform Owner</div>
+          <div class="location">📍 Belgium, Europe</div>
+          <p>Platform Owner and Cloud architect based in Belgium, Europe. CI/CD specialist and cloud strategy leader driving enterprise-grade platform engineering.</p>
+          <a href="https://www.linkedin.com/in/architectraghu/" target="_blank" class="leader-li-btn" style="background:#fef3c7;color:#f59e0b;">
+            <svg width="14" height="14"><use href="#icon-linkedin"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- SPEAKERS SECTION -->
+<section id="speakers" class="spk-section rio">
+  <div class="spk-wrap">
+
+    <div class="section-header">
+      <div class="section-tag">🎙️ Event Speakers</div>
+      <h2>The Voices <span class="spk-h-accent">Behind Our Events</span></h2>
+      <p>Real engineers, architects, and leaders who have spoken at CareerByteCode LinkedIn Lives, webinars, and global sessions &mdash; sharing real-world expertise freely with our global community.</p>
+      <div class="spk-meta-row">
+        <div class="spk-meta-item"><strong>16</strong><span>Total Speakers</span></div>
+        <div class="spk-meta-div"></div>
+        <div class="spk-meta-item"><strong>58+</strong><span>Events Hosted</span></div>
+        <div class="spk-meta-div"></div>
+        <div class="spk-meta-item"><strong>105+</strong><span>Countries Reached</span></div>
+        <div class="spk-meta-div"></div>
+        <div class="spk-meta-item"><strong>242K+</strong><span>Learners</span></div>
+      </div>
+    </div>
+
+    <div class="spk-cat">
+      <div class="spk-cat-head" onclick="toggleCat(this)">
+        <span class="spk-cat-pill" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">☁️ Cloud, DevOps &amp; Platform</span>
+        <span class="spk-cat-count">11 speakers</span>
+      </div>
+      <div class="spk-grid"><a href="https://www.linkedin.com/in/learnwithsankari/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-wrap"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAB4AHgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKrXt/b6fay3Nw+2KJS7t/dAGSfyoAW9vrTTrV7q9uYbaBPvSTOFUfia821r46+GtOnaGwgutSZTgvEAkZ+hbk/lXi/j/wCIGoeNdVZmZ4tOiY/ZrUHgD+83qx/TpXHZmPO04+lK47Hs2u/tB6nKwXRdKgtkxy903mMfwGBV3wt8fZ5b1bfxHYwrCxx9otQQU9ypJyPoa8Ny/RwfyqRdqnPNK47H3BbXMF5bR3NtKksMqh0kQ5DA9CDUtfNXwl8fXWg6xBo11OZNLuZAgVm/1LnoR6AnqK+k0dXQOpypGQaaYmrDqKKKYgooooAKKKKACiiigBrMFXNeGfG7xqYCPC9k5VyBJeup7HlU/HqfwrsvizrmveHtGsb3RHVd1yIZdyBvvAhcZ6HNfPFha3viXWJtR1OaSZnk3SSOcmRqmTstS4xcnZBomiS6k4kk+SL6YzXa23hmzjjAEKE+pFXrDT1jVdpUAcACtyCzJxzxXDUqNs9KlTjFHNyeF7SVNr2yH0OK5zV/CvlITbpgj+H1r1c2yhce1UL/AE0zIdr4J9RmojUlFmkoRkrNHhCwul1tVsEMASO1fUnwq8VS+IfCirekG7tH8iR/7/HDH6j9a8G8U+EryB2vbXD93VBg/Wtf4R67d2l/f6XBD5z30aiPdLsVHBxuJ+hruhNSV0ebUpuDsz6foqG1WZLWJbhlaYKA5XoTU1amAUUUUAFFFFABRRRQB5v8Z7u2h8EyQ3AO95VMTYJxIASv4/8A168ctrO0tbK0tbkSSs6gCJCRvY8npyTXt/xY09LrwTNI67lhuYpT7DcFP8681j0mKYBzneDwRXPWlbc68PDm1RztuNGkuClqksU0eSV3MMY69a6zSdQ/eJbk5DD5T60yLRY4XaVYyHYYZgACfqetLptrGl/u4AThVXotc85JnXGDiaOqX/2FRGqnhe3QCuTuNSspZAZ72aLJ4KybfyrsdTtEu24Ocrg+4rDuvCkF0kaSndGmdiMpGM9eQazpuPUucW9itZ+TIwa11CaYHqkz7wwqbwH4dLeOdWgt1IZ412/KMRI/LMfoMgAdSfatGLRUilW4fDyIgRWxjCjgD6V1Hw6sBJ4n1S+KYEUUcYPqSP8AAVrRledkYYiP7vU9OHAooorvPNCiiigAooooAKKKjmbbCx74oA8++JWvNBpf2PciWc+VndsZZRzhc8Dnua4fSbxHiidWDow4YdDVDxzc3ninXLuNf3VlpybCrHBOT973yf0Fcv4Z1xbWeTSrpgm1z5DHp7r/AIVhVhzK500J8rsz0bULqRolit1JB++y9foKq6ddJFc/vLJox0BPINUJ4pbxIzBcPEynPy9z7+1JBNqFu586ZQfR4zg/lXJbQ9GN5M6WWR5px/ojqjch1cAD6jrV62kCKY5CGI71zUNzqEg2pIhJ7hDgfjT45Li2DLc3HmNu4OAKytY0atoa+o3cUEDyMwCKpY5PAAro/hndQyabdBeZDN+8bvnGR+GGBHqCK8T8a+KQIjpVnLmZ8ee6n7g/u/U16F8E7eaKG9u3fMV55bAEkncu5ST9a68PTa95nn4mope6j2eigUV2HCFFFFABRRWZ4g1yz8N6Fd6tfPtgt03EZ5Y9lHuTgUAaTMqKWZgqjkknAFcrrvjvwrp0UkVz4isIpgD8qyB2B+i5NfM/ivxzrvi+8eXULyRbYsTHaRMRFGPTHc+5rmCi4PGPpQM9C8UeN9Mu9ba409pnVUaLzF3YlU+obBHOfzrhJjJq2qubaHa0rZCD+H3qukDSyLGgLMxwFA5J9K9Q8P8Ags6ZZmSdla6kGXI/h9qzqTjTRrSpSqPyL1hI8KRP947QG9+Oa3YtRtmABjYn025qhaWe0mKRenI9xWxHbRoB1FcEpHpQVhWuwY8Q25/EbRWRewMY3eSTc5BxjgLWw5jXgDJ9K5HxtrH9m6W0CN/pV0Ci46ovc/0rOKcpWRc2oxuzylYgHJD5yx5PfmvafhRrF0ttHZ2pVkikYSxHgsCMjB/DpXixPOB2q1p2q3mmTrLazvE6nOVPcV6jR5F0fatjexX1uJYifQqwwQferVeF+C/jNZF4LbXQbdxhTcIuUb3YDkfrXtVhqVlqlol1YXUNzA3SSJww/SqTIasWqKKKYgrwD4/+J3l1Ky8NwviGBBdXAB6uchAfoMn/AIEK9/r44+IWonVPiDrt0zbl+1vGp/2U+Uf+g0Ac7knj15NBOTnsOlIM49zWho2k3GuaxaaZaLma4kWNfbPUn2AyfwoGdd8PPDjXNx/a1zGfKQkQbhwzdCfw6fWvS2i25rrZvCsVjoVnZ6bHxYR+UFA5kXqT9c5P4muccbgRjkdfavPr357s9LDtclkV4rZQVkIGRSTFVfA6mpecYqErhy3esTchu7iOztJJ2HCKWNeHa9q8msarNdsSVJ2xj0WvQPiBrPkaZ9jhbDznaf8AdHX/AA/GvLRy2fSuzD07LmZxYqpd8qDGBikbCgd2PankhQTUS95G/Cuo4xwB6mtLR9d1bRLnz9J1C5s37tC5Ab6jofxrLXMh54Udak3cddopAfQPwv8AitrPiDxDBoOtLbzGWJ2juVXY5ZRnBA4OQD0x0oryHwFqQ0vx5od3nCLeIrt/st8h/RqKEDPsG4mFvbSzN92NC5/AZr4cuZ2uruadzlpXaQn6nP8AWvsnxvf/ANmeBtcu+8dlLj6lSB+pr4xUcgegqkIkXrk17X8CfDB+0XPiO5j4QGC2JHU/xMP5fnXjun2M+pajb2NshaaeRY4wPUnFfXnhzR4dA0Oz0yD/AFdvGEz/AHj3P4nJqZFRNleEHqTmql7pFjqB3TwAv/z0Q7W/MdatbuKN2azaT3LTa1Rz8ng+1J/d3k6D0ZVb/CoZPCthbRNJPdXEoA+6uFya6auK+JfiFdB8LXUyMBLs2RD1duF/Lk/hUqlC+xbrTtufPfjzUrfUPFV2LJQtpbHyIgpznb95s98tmubUdKTqRkkk96cPWt7GF77kchyQoPWmSNyEHapAMyZ9KiHMv40CJOm1B+NGd7k/wioycuxzSg5HPCdh60ATxyurq0XBQghvQiiohJnheB7UUij6d+O2tpp3gI6eswW41GZY1THLRqdz/hwPzr5jQ8saKKZJ6t8D9DW88Q3OrTJlLKPbET/z0bv+C5/OvoMEAYooqXuUhwalBoopFCFgASTgd6+cvjN4l/tPxAmlQvmG0+eTB4MhHA/Bf50UVSJZ5mO/5U4nAoopiG9BmoV4cmiigRGTwfc08AHljxRRTAeHxwoxRRRSA//Z" alt="Siva Sankari" class="spk-av-img"><div class="spk-av-ring" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);"></div></div><div class="spk-card-body"><div class="spk-badges"><span class="spk-cofound-badge">🏛 Co-Founder</span></div><div class="spk-name">Siva Sankari</div><div class="spk-role">Co-Founder</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Co-Founder</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/techopsbysonali/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-wrap"><img src="data:image/jpeg;base64,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" alt="Sonali Kurade" class="spk-av-img"><div class="spk-av-ring" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);"></div></div><div class="spk-card-body"><div class="spk-badges"><span class="spk-cofound-badge">🏛 Co-Founder</span></div><div class="spk-name">Sonali Kurade</div><div class="spk-role">Co-Founder & Sr DevOps Coach</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Co-Founder & DevOps</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/arunvtechno/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">AV</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Arun Vaidyanathan</div><div class="spk-role">Cloud Migration</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Cloud Migration</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/bavicnative/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">BM</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Bavithran M</div><div class="spk-role">Cloud Architect</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Cloud Architect</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/geethascloud/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">GS</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Geetha S</div><div class="spk-role">Azure Mentor</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Azure & Cloud</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/manojwithdevopsai" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">MS</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Manoj Savukar</div><div class="spk-role">DevOps + AI</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">DevOps + AI</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/clouddevopswithpradnya/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">PD</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Pradnya Deshpande</div><div class="spk-role">Cloud Architect</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Cloud Architect</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/architectraghu/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-wrap"><img src="data:image/jpeg;base64,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" alt="Raghavendra Ramesh" class="spk-av-img"><div class="spk-av-ring" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);"></div></div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Raghavendra Ramesh</div><div class="spk-role">Cloud Architect</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Cloud & CI/CD</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/rakshitabelwal/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">RB</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Rakshita Belwal</div><div class="spk-role">AI Consultant</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">AI Consultant</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/cloudbyvenkat/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">SV</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Subbareddy Vundela</div><div class="spk-role">DevOps Architect</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">DevOps Architect</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/vjcloudops/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#3b82f6,#06b6d4);--spk-light:#dbeafe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#3b82f6,#06b6d4);">VV</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Vijesh Vijayan</div><div class="spk-role">Reliability Eng</div><span class="spk-dtag" style="background:#eff6ff;color:#1e40af;border-color:#bfdbfe;">Reliability Eng</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a></div>
+    </div>
+
+    <div class="spk-cat spk-cat-collapsed">
+      <div class="spk-cat-head" onclick="toggleCat(this)">
+        <span class="spk-cat-pill" style="background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;">🤖 AI, ML &amp; Data Engineering</span>
+        <span class="spk-cat-count">5 speakers</span>
+      </div>
+      <div class="spk-grid"><a href="https://www.linkedin.com/in/anidigitalhub/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#8b5cf6,#a78bfa);--spk-light:#ede9fe;"><div class="spk-av-wrap"><img src="data:image/jpeg;base64,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" alt="Anitha" class="spk-av-img"><div class="spk-av-ring" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);"></div></div><div class="spk-card-body"><div class="spk-badges"><span class="spk-cofound-badge">🏛 Co-Founder</span></div><div class="spk-name">Anitha</div><div class="spk-role">Co-Founder & AI Educator</div><span class="spk-dtag" style="background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;">Co-Founder & AI</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/askdharshiniai/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#8b5cf6,#a78bfa);--spk-light:#ede9fe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">DK</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Dharshini K</div><div class="spk-role">Data & AI Mentor</div><span class="spk-dtag" style="background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;">Data & AI Mentor</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/aiwithkiruthiga/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#8b5cf6,#a78bfa);--spk-light:#ede9fe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">KR</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Kiruthiga Ravi</div><div class="spk-role">AI Expert</div><span class="spk-dtag" style="background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;">AI Engineer</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/kruthicawithai/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#8b5cf6,#a78bfa);--spk-light:#ede9fe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">KT</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Kruthica T</div><div class="spk-role">AI Global Leader</div><span class="spk-dtag" style="background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;">AI Global Leader</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a><a href="https://www.linkedin.com/in/swathi-priya-d-g-curious2upgrade/" target="_blank" rel="noopener" class="spk-card" style="--spk-grad:linear-gradient(135deg,#8b5cf6,#a78bfa);--spk-light:#ede9fe;"><div class="spk-av-init" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa);">SP</div><div class="spk-card-body"><div class="spk-badges"><span class="spk-ev-badge">🎤 Event Speaker</span></div><div class="spk-name">Swathipriya D.G</div><div class="spk-role">AI Global Leader</div><span class="spk-dtag" style="background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;">AI Engineer</span><div class="spk-li"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 6.5 3.2a1.77 1.77 0 0 1 0 3.53zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.36 20 7.2 20 12.3V19z"/></svg> LinkedIn Profile</div></div></a></div>
+    </div>
+
+    <div class="spk-footer-banner">
+      <div class="spk-footer-left">
+        <div class="spk-footer-icon">🎤</div>
+        <div>
+          <div class="spk-footer-title">Want to Speak at CareerByteCode?</div>
+          <div class="spk-footer-sub">Join our growing speaker network and share your expertise with 242K+ learners across 105+ countries. Apply now &mdash; it&apos;s completely free.</div>
+        </div>
+      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdGHiV6sDPparVgocbWXnGAzWdRF9LkSJ7k-ZT7npe_GbUDVg/viewform?usp=dialog" target="_blank" class="spk-footer-btn">Apply to Speak &rarr;</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- CONNECT -->
+<section id="connect" class="connect-section rio">
+  <div class="connect-inner">
+    <h2>Join the Ecosystem 🚀</h2>
+    <p>Follow us, join the community, and never miss a free hands-on session, career insight, or leadership conversation.</p>
+    <div class="connect-links">
+      <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank" class="connect-btn li">💼 Follow on LinkedIn</a>
+      <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/" target="_blank" class="connect-btn mu">📍 Join on Meetup</a>
+      <a href="https://www.careerbytecode.com/" target="_blank" class="connect-btn web">🌐 Visit Website</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="foot-title">We don't just host events &mdash; <span>we create leaders</span></div>
+  <div class="foot-sub">CareerByteCode &middot; Global Tech Leadership &amp; Community Ecosystem &middot; Active across Europe &amp; India</div>
+  <div class="foot-links">
+    <a href="https://www.careerbytecode.com" target="_blank" rel="noopener noreferrer">Website</a>
+    <a href="https://blog.careerbytecode.com" target="_blank" rel="noopener noreferrer">Blog</a>
+    <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://medium.com/careerbytecode" target="_blank" rel="noopener noreferrer">Medium</a>
+    <a href="mailto:community@careerbytecode.com">community@careerbytecode.com</a>
+  </div>
+  <div class="foot-copy">&copy; 2015&ndash;2026 CareerByteCode. All rights reserved.</div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+<script>
+// Scroll progress bar
+const pb=document.querySelector('.scroll-progress');
+window.addEventListener('scroll',()=>{const s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(h>0?(s/h)*100:0)+'%';},{passive:true});
+
+// Nav scroll effect
+const nav=document.getElementById('main-nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();const el=document.querySelector(a.getAttribute('href'));if(el)el.scrollIntoView({behavior:'smooth',block:'start'});});
+});
+
+// Hamburger menu
+const hbtn=document.getElementById('hamburger');
+const mmenu=document.getElementById('mobile-menu');
+hbtn.addEventListener('click',()=>{
+  const o=mmenu.classList.toggle('open');
+  hbtn.classList.toggle('open');
+  hbtn.setAttribute('aria-expanded',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+document.querySelectorAll('.mobile-link').forEach(a=>{
+  a.addEventListener('click',()=>{
+    mmenu.classList.remove('open');
+    hbtn.classList.remove('open');
+    hbtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+  });
+});
+
+// Intersection Observer for fade-in
+const rio=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');rio.unobserve(x.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rio').forEach(el=>rio.observe(el));
+
+// Counter animation for stats
+const cio=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target,raw=el.textContent.trim(),num=parseFloat(raw.replace(/,/g,''));if(isNaN(num)){cio.unobserve(el);return;}const sfx=raw.replace(/[\d.,]/g,''),hasComma=raw.includes(',');let st=null;const anim=ts=>{if(!st)st=ts;const p=Math.min((ts-st)/1600,1),ez=1-Math.pow(1-p,3),v=ez*num;let txt=Math.floor(v);if(hasComma)txt=txt.toLocaleString();el.textContent=txt+sfx;if(p<1)requestAnimationFrame(anim);else el.textContent=raw;};requestAnimationFrame(anim);cio.unobserve(el);});},{threshold:0.3});
+document.querySelectorAll('.stat-num').forEach(el=>cio.observe(el));
+
+// Speaker category accordion
+function toggleCat(el){el.parentElement.classList.toggle('spk-cat-collapsed');}
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('show',window.scrollY>400);},{passive:true});
+btt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
