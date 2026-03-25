@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerByteCode Revenue Sharing Model — Industry-leading 55%+ revenue share for trainers, service providers & vendors via Stripe Connect.">
+<meta property="og:title" content="CareerByteCode — Revenue Sharing Model">
+<meta property="og:description" content="Industry-leading 55%+ revenue share for trainers, service providers & vendors via Stripe Connect.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/revenue-models.html">
+<meta property="og:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CareerByteCode — Revenue Sharing Model">
+<meta name="twitter:description" content="Industry-leading 55%+ revenue share for trainers, service providers & vendors via Stripe Connect.">
+<meta name="twitter:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="theme-color" content="#f0f2ff">
+<meta name="color-scheme" content="light only">
+<link rel="canonical" href="https://careerbytecode.github.io/revenue-models.html">
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<title>Revenue Sharing Model | CareerByteCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"CareerByteCode",
+  "url":"https://www.careerbytecode.com",
+  "logo":"https://careerbytecode.github.io/cbc - logo.png",
+  "description":"Global Tech Learning & Innovation Ecosystem serving 2.4M+ professionals across 105+ countries.",
+  "sameAs":[
+    "https://www.linkedin.com/company/careerbytecode",
+    "https://github.com/careerbytecode",
+    "https://youtube.com/@CareerByteCode",
+    "https://medium.com/careerbytecode"
+  ]
+}
+</script>
+<style>
+:root {
+  color-scheme: light only;
+  --bg:#f0f2ff; --bg2:#e8ebfa; --bg3:#dfe3f5;
+  --dark:#0c1b3a; --dark2:#111f42; --dark3:#162650;
+  --blue:#2563eb; --blue2:#1d4ed8; --sky:#06b6d4; --sky2:#22d3ee;
+  --indigo:#6366f1; --purple:#8b5cf6; --green:#10b981; --gold:#f59e0b;
+  --pink:#ec4899; --rose:#fb7185;
+  --glass:rgba(255,255,255,0.65); --glass2:rgba(255,255,255,0.48);
+  --glass3:rgba(255,255,255,0.25);
+  --glass-border:rgba(255,255,255,0.7); --glass-border2:rgba(255,255,255,0.45);
+  --text:#0f172a; --text2:#475569; --text3:#64748b; --muted:#94a3b8;
+  --sans:'Outfit',sans-serif; --mono:'JetBrains Mono',monospace;
+  --radius:20px; --radius-sm:12px; --radius-xs:8px;
+  --shadow:0 4px 24px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-lg:0 12px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-glow:0 0 40px rgba(37,99,235,0.08);
+}
+*,*::before,*::after { margin:0;padding:0;box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--bg); color:var(--text); font-family:var(--sans);
+  overflow-x:hidden; line-height:1.7; -webkit-font-smoothing:antialiased;
+}
+a { text-decoration:none; color:inherit; }
+
+/* NOISE */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.018;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat:repeat; background-size:256px;
+}
+
+/* AMBIENT ORBS */
+.orb { position:fixed; border-radius:50%; pointer-events:none; filter:blur(100px); z-index:0; }
+.orb-1 { width:700px;height:700px;top:-200px;left:-150px;background:rgba(37,99,235,0.12);animation:of1 22s ease-in-out infinite; }
+.orb-2 { width:500px;height:500px;top:30%;right:-100px;background:rgba(6,182,212,0.1);animation:of2 28s ease-in-out infinite; }
+.orb-3 { width:600px;height:600px;bottom:10%;left:20%;background:rgba(139,92,246,0.08);animation:of3 25s ease-in-out infinite; }
+.orb-4 { width:400px;height:400px;top:60%;right:10%;background:rgba(236,72,153,0.06);animation:of4 20s ease-in-out infinite; }
+@keyframes of1 { 0%,100%{transform:translate(0,0)}50%{transform:translate(50px,40px)} }
+@keyframes of2 { 0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,50px)} }
+@keyframes of3 { 0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)} }
+@keyframes of4 { 0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)} }
+
+/* SCROLL PROGRESS */
+.scroll-progress { position:fixed;top:0;left:0;height:3px;z-index:999;background:linear-gradient(90deg,var(--blue),var(--sky),var(--purple));width:0%;border-radius:0 2px 2px 0; }
+
+/* NAV */
+nav { position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px 48px;background:rgba(240,242,255,0.7);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,0.5);transition:all 0.3s; }
+nav.scrolled { padding:10px 48px;box-shadow:0 4px 24px rgba(0,0,0,0.06);background:rgba(240,242,255,0.85); }
+.nav-logo { display:flex;align-items:center;gap:10px; }
+.nav-logo img { height:34px;width:auto; }
+.nav-logo span { font-weight:800;font-size:1.05rem;letter-spacing:-0.03em;color:var(--dark); }
+.nav-links { display:flex;gap:28px;list-style:none;align-items:center; }
+.nav-links a { font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);transition:all 0.3s;position:relative; }
+.nav-links a::after { content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--sky));border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform 0.3s; }
+.nav-links a:hover,.nav-links a.active { color:var(--blue); }
+.nav-links a:hover::after,.nav-links a.active::after { transform:scaleX(1); }
+.nav-cta { font-family:var(--mono);font-size:0.74rem;font-weight:600;letter-spacing:0.06em;padding:11px 26px;border-radius:var(--radius-sm);background:var(--blue);color:#fff;transition:all 0.3s; }
+.nav-cta:hover { background:var(--blue2);box-shadow:0 6px 20px rgba(37,99,235,0.25);transform:translateY(-1px); }
+.hamburger { display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px; }
+.hamburger span { width:22px;height:2px;background:var(--dark);border-radius:2px;transition:all 0.3s; }
+.hamburger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+.mobile-nav { display:none;position:fixed;inset:0;background:rgba(240,242,255,0.97);backdrop-filter:blur(20px);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.3s; }
+.mobile-nav.open { opacity:1;pointer-events:all; }
+.mobile-nav a { font-family:var(--mono);font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text2);transition:color 0.2s; }
+.mobile-nav a:hover { color:var(--blue); }
+
+/* LAYOUT */
+.wrap { position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:0 32px; }
+.sec { padding:110px 0; }
+.sec-scroll { scroll-margin-top:80px; }
+
+/* LABELS & HEADINGS */
+.slabel { display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px; }
+.slabel::before { content:'';width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--sky)); }
+.sec-h { font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:44px;color:var(--dark); }
+.sec-h span { background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.sec-sub { font-size:1.05rem;color:var(--text2);max-width:700px;margin-top:-30px;margin-bottom:48px;line-height:1.8; }
+
+/* HERO */
+.rev-hero { min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 0 80px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 50%,var(--dark3) 100%); }
+.rev-hero::before { content:'';position:absolute;inset:0;background-image:
+  linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:60px 60px;pointer-events:none; }
+.rev-hero::after { content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(37,99,235,0.15),transparent 70%);pointer-events:none; }
+.rev-hero-content { position:relative;z-index:2;max-width:860px;margin:0 auto; }
+.rev-hero-tag { display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sky2);border:1.5px solid rgba(34,211,238,0.3);background:rgba(34,211,238,0.08);padding:7px 20px;border-radius:100px;margin-bottom:20px;backdrop-filter:blur(12px); }
+.rev-hero-tag .dot { width:6px;height:6px;border-radius:50%;background:var(--sky2);box-shadow:0 0 10px var(--sky2);animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.5} }
+.rev-hero h1 { font-size:clamp(2.5rem,7vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-0.04em;margin-bottom:16px;color:#fff; }
+.rev-hero h1 em { font-style:normal;background:linear-gradient(135deg,var(--sky),var(--sky2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.rev-hero-sub { font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:12px;font-weight:300; }
+.rev-hero-link { font-family:var(--mono);font-size:0.78rem;color:var(--sky2);letter-spacing:0.06em; }
+.rev-stats { display:grid;grid-template-columns:repeat(3,1fr);margin-top:48px;border-radius:var(--radius-sm);overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);backdrop-filter:blur(12px); }
+.rev-stat { padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);transition:background 0.3s; }
+.rev-stat:last-child { border-right:none; }
+.rev-stat:hover { background:rgba(255,255,255,0.04); }
+.rev-stat-n { font-family:var(--mono);font-size:2rem;font-weight:700;display:block;line-height:1; }
+.rs1 .rev-stat-n { color:var(--sky2);text-shadow:0 0 30px rgba(34,211,238,0.4); }
+.rs2 .rev-stat-n { color:var(--green);text-shadow:0 0 30px rgba(16,185,129,0.4); }
+.rs3 .rev-stat-n { color:var(--gold);text-shadow:0 0 30px rgba(245,158,11,0.4); }
+.rev-stat-l { font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-top:8px;display:block; }
+
+/* GLASS CARD */
+.glass-card { background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:28px; }
+
+/* TABLES */
+.tbl-wrap { overflow-x:auto;-webkit-overflow-scrolling:touch; }
+.tbl { width:100%;border-collapse:collapse;min-width:600px; }
+.tbl th { background:var(--dark);color:#fff;font-family:var(--mono);font-size:0.76rem;letter-spacing:0.08em;text-transform:uppercase;padding:14px 20px;text-align:left;font-weight:600;white-space:nowrap; }
+.tbl td { padding:14px 20px;font-size:0.92rem;color:var(--text);border-bottom:1px solid var(--glass-border2);line-height:1.6; }
+.tbl tr:nth-child(even) td { background:var(--glass2); }
+.tbl tr:nth-child(odd) td { background:var(--glass); }
+.tbl tr:hover td { background:rgba(37,99,235,0.04); }
+.tbl td:first-child { font-family:var(--mono);font-size:0.82rem;font-weight:600;color:var(--dark);white-space:nowrap; }
+
+/* NOTE & HIGHLIGHT BOXES */
+.note-box { padding:20px 28px;border-radius:var(--radius-sm);margin-top:20px;margin-bottom:20px;font-size:0.92rem;line-height:1.7;color:var(--text2); }
+.note-box.info { background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.15); }
+.note-box.info strong { color:var(--blue); }
+.note-box.warn { background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15); }
+.note-box.warn strong { color:var(--gold); }
+.note-box.success { background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15); }
+.note-box.success strong { color:var(--green); }
+.highlight-box { background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(6,182,212,0.08));border:1px solid rgba(37,99,235,0.2);border-radius:var(--radius-sm);padding:28px 32px;margin:28px 0; }
+.highlight-box h4 { font-family:var(--mono);font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px; }
+.highlight-box p { font-size:0.95rem;color:var(--text2);line-height:1.8; }
+.callout-box { background:linear-gradient(135deg,var(--dark),var(--dark2));border-radius:var(--radius);padding:36px 40px;margin:32px 0;position:relative;overflow:hidden; }
+.callout-box::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky),var(--green)); }
+.callout-box h4 { font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:10px; }
+.callout-box p { font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.8; }
+
+/* TABS */
+.tabs { margin-bottom:32px; }
+.tab-btns { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px; }
+.tab-btn { font-family:var(--mono);font-size:0.78rem;font-weight:600;letter-spacing:0.06em;padding:12px 24px;border-radius:var(--radius-sm);border:1px solid var(--glass-border2);background:var(--glass);color:var(--text3);cursor:pointer;transition:all 0.3s;backdrop-filter:blur(12px); }
+.tab-btn:hover { border-color:rgba(37,99,235,0.3);color:var(--blue); }
+.tab-btn.active { background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 16px rgba(37,99,235,0.25); }
+.tab-panel { display:none;animation:fadeTab 0.4s ease; }
+.tab-panel.active { display:block; }
+@keyframes fadeTab { from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none} }
+
+/* ACCORDION */
+.accordion { margin-bottom:20px; }
+.acc-item { background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow);transition:all 0.3s; }
+.acc-item:hover { box-shadow:var(--shadow-lg); }
+.acc-head { display:flex;align-items:center;justify-content:space-between;padding:20px 28px;cursor:pointer;user-select:none;transition:background 0.2s; }
+.acc-head:hover { background:rgba(37,99,235,0.02); }
+.acc-head h4 { font-size:1.02rem;font-weight:700;color:var(--dark);display:flex;align-items:center;gap:10px; }
+.acc-head h4 .acc-icon { font-size:1.1rem; }
+.acc-arrow { width:28px;height:28px;border-radius:8px;background:var(--glass2);border:1px solid var(--glass-border2);display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:var(--muted);transition:all 0.3s;flex-shrink:0; }
+.acc-item.open .acc-arrow { transform:rotate(180deg);background:rgba(37,99,235,0.08);color:var(--blue);border-color:rgba(37,99,235,0.2); }
+.acc-body { max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(0.16,1,0.3,1); }
+.acc-body-inner { padding:0 28px 28px; }
+
+/* STEPS */
+.steps { display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0; }
+.step { background:var(--glass2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--glass-border2);border-radius:var(--radius-sm);padding:20px 18px;text-align:center;transition:all 0.3s; }
+.step:hover { border-color:rgba(37,99,235,0.3);transform:translateY(-3px);box-shadow:var(--shadow-lg); }
+.step-num { font-family:var(--mono);font-size:0.68rem;color:var(--blue);letter-spacing:0.16em;margin-bottom:6px; }
+.step-icon { font-size:1.5rem;margin-bottom:8px; }
+.step-text { font-size:0.88rem;font-weight:600;color:var(--dark);line-height:1.4; }
+
+/* CTA SECTION */
+.cta-sec { text-align:center;padding:80px 0 60px; }
+.cta-sec h2 { font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--dark);letter-spacing:-0.03em;margin-bottom:24px; }
+.cta-sec h2 span { background:linear-gradient(135deg,var(--blue),var(--sky));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.cta-links { display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:20px; }
+.cta-link { display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;padding:14px 32px;border-radius:var(--radius-sm);transition:all 0.3s; }
+.cta-link.primary { background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(37,99,235,0.2); }
+.cta-link.primary:hover { background:var(--blue2);box-shadow:0 8px 28px rgba(37,99,235,0.3);transform:translateY(-2px); }
+.cta-link.secondary { border:1px solid var(--glass-border2);color:var(--dark);background:var(--glass);backdrop-filter:blur(12px); }
+.cta-link.secondary:hover { border-color:rgba(37,99,235,0.3);color:var(--blue);box-shadow:0 6px 20px rgba(37,99,235,0.08);transform:translateY(-2px); }
+.cta-disclaimer { font-size:0.82rem;color:var(--muted);max-width:600px;margin:20px auto 0;line-height:1.7; }
+
+/* FOOTER */
+footer { background:var(--dark);text-align:center;padding:52px 32px 56px;position:relative; }
+footer::before { content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:2px;background:linear-gradient(90deg,transparent,var(--sky),transparent); }
+.foot-title { font-size:1.3rem;font-weight:800;color:#fff;letter-spacing:-0.02em;margin-bottom:8px; }
+.foot-title span { color:var(--sky2); }
+.foot-sub { font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:24px; }
+.foot-links { display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:24px; }
+.foot-links a { font-family:var(--mono);font-size:0.6rem;color:rgba(255,255,255,0.35);letter-spacing:0.06em;transition:color 0.2s; }
+.foot-links a:hover { color:var(--sky2); }
+.foot-copy { font-family:var(--mono);font-size:0.56rem;color:rgba(255,255,255,0.18); }
+
+/* ANIMATIONS */
+.r { opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.r.visible { opacity:1;transform:none; }
+.rd1 { transition-delay:0.08s; } .rd2 { transition-delay:0.16s; } .rd3 { transition-delay:0.24s; } .rd4 { transition-delay:0.32s; }
+
+/* BACK TO TOP */
+.btt{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,99,235,0.3);opacity:0;visibility:hidden;transform:translateY(10px);transition:all 0.3s;z-index:999;}
+.btt.show{opacity:1;visibility:visible;transform:translateY(0);}
+.btt:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(37,99,235,0.45);}
+
+/* RESPONSIVE */
+@media(max-width:960px) {
+  nav { padding:12px 20px; }
+  .nav-links,.nav-cta { display:none; }
+  .hamburger { display:flex; }
+  .mobile-nav { display:flex; }
+  .rev-stats { grid-template-columns:repeat(3,1fr); }
+  .steps { grid-template-columns:repeat(2,1fr); }
+  .callout-box { padding:28px 24px; }
+}
+@media(max-width:600px) {
+  .wrap { padding:0 18px; }
+  .rev-stats { grid-template-columns:1fr; }
+  .rev-hero h1 { font-size:2.2rem; }
+  .rev-hero { padding:120px 0 60px; }
+  .steps { grid-template-columns:1fr; }
+  .tab-btns { flex-direction:column; }
+  .tab-btn { width:100%;text-align:center; }
+  .callout-box { padding:24px 18px; }
+  .highlight-box { padding:20px 18px; }
+}
+@supports not (backdrop-filter:blur(1px)) {
+  nav { background:rgba(240,242,255,0.95); }
+  .glass-card,.acc-item,.tab-btn,.step { background:rgba(255,255,255,0.82);border:1px solid rgba(200,205,220,0.6); }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:0.01ms !important;transition-duration:0.01ms !important; }
+  .r { opacity:1;transform:none; }
+}
+@media print {
+  nav,.scroll-progress,.mobile-nav,.orb,.btt { display:none !important; }
+  body::before { display:none; }
+  .r { opacity:1;transform:none; }
+  body { background:#fff;color:#000; }
+  .rev-hero { min-height:auto;padding:40px 0; }
+  .sec { padding:30px 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html" aria-label="CareerByteCode home">
+    <img src="cbc - logo.png" alt="CBC" class="nav-logo-img" width="34" height="34">
+    <span>CareerByteCode</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#payment" data-section="payment">Payment</a></li>
+    <li><a href="#stakeholders" data-section="stakeholders">Stakeholders</a></li>
+    <li><a href="#training" data-section="training">Training</a></li>
+    <li><a href="#services" data-section="services">Services</a></li>
+    <li><a href="#vendor" data-section="vendor">Vendor</a></li>
+    <li><a href="#terms" data-section="terms">Terms</a></li>
+    <li><a href="events.html">Events</a></li>
+  </ul>
+  <a class="nav-cta" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener" aria-label="Join CareerByteCode on LinkedIn">Join Now</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="#payment" class="mobile-link">Payment</a>
+  <a href="#stakeholders" class="mobile-link">Stakeholders</a>
+  <a href="#training" class="mobile-link">Training</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#vendor" class="mobile-link">Vendor</a>
+  <a href="#terms" class="mobile-link">Terms</a>
+  <a href="events.html" class="mobile-link">Events</a>
+  <a href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener" class="nav-cta" style="display:inline-flex;margin-top:12px;">Join Now</a>
+</div>
+
+<main>
+<div class="wrap">
+
+<!-- HERO -->
+<section class="rev-hero">
+  <div class="rev-hero-content">
+    <div class="rev-hero-tag r"><span class="dot"></span>Cloudnloud Technologies SRL, Belgium</div>
+    <h1 class="r rd1">Revenue <em>Sharing</em> Model</h1>
+    <p class="rev-hero-sub r rd2">A platform by Cloudnloud Technologies SRL, Belgium</p>
+    <p class="rev-hero-link r rd3">www.careerbytecode.com</p>
+    <div class="rev-stats r rd3">
+      <div class="rev-stat rs1"><span class="rev-stat-n" data-val="55%+">&#8212;</span><span class="rev-stat-l">Revenue Share</span></div>
+      <div class="rev-stat rs2"><span class="rev-stat-n" data-val="Stripe Connect">&#8212;</span><span class="rev-stat-l">Payment Platform</span></div>
+      <div class="rev-stat rs3"><span class="rev-stat-n" data-val="105+">&#8212;</span><span class="rev-stat-l">Countries Served</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT ARCHITECTURE -->
+<section class="sec sec-scroll r" id="payment">
+  <div class="slabel">payment architecture</div>
+  <h2 class="sec-h">How <span>Payments</span> Work on CareerByteCode</h2>
+  <p class="sec-sub">All payments processed via Stripe Connect Marketplace. CareerByteCode never holds or controls funds.</p>
+
+  <div class="glass-card r">
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Step</th><th>What Happens</th><th>Handled By</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Customer pays the listed price plus applicable taxes at checkout</td><td>Stripe</td></tr>
+          <tr><td>2</td><td>Stripe Tax calculates VAT, GST, sales tax, or no tax based on customer location</td><td>Stripe Tax</td></tr>
+          <tr><td>3</td><td>Stripe deducts its processing fee</td><td>Stripe</td></tr>
+          <tr><td>4</td><td>Net revenue is split automatically to all stakeholder connected accounts</td><td>Stripe Connect</td></tr>
+          <tr><td>5</td><td>Platform share collected as Stripe application fee</td><td>Stripe Connect</td></tr>
+          <tr><td>6</td><td>Each stakeholder receives their share directly in their Stripe account</td><td>Stripe</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-box warn r">
+    <strong>Refund Policy:</strong> Three-tier framework &mdash; digital content waiver (EU Article 16(m)) / service completion / 14-day full refund for marketplace services. All refunds processed via Stripe.
+  </div>
+
+  <div class="note-box info r">
+    <strong>Important:</strong> CareerByteCode is the deemed supplier for tax purposes. Stripe Tax handles location-based tax. The platform never holds customer or seller funds.
+  </div>
+</section>
+
+<!-- STAKEHOLDERS -->
+<section class="sec sec-scroll r" id="stakeholders">
+  <div class="slabel">stakeholders</div>
+  <h2 class="sec-h">Revenue Sharing: How It <span>Works</span></h2>
+  <p class="sec-sub">How revenue is distributed across all course and service models</p>
+
+  <div class="glass-card r">
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Role</th><th>Share</th><th>Condition</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Trainer / Service Owner</td><td>55%+ of net revenue</td><td>Always receives. The actual share is higher than 55%.</td></tr>
+          <tr><td>Sourcing Bonus</td><td>Additional bonus</td><td>Goes to whoever sources the student (trainer or reseller)</td></tr>
+          <tr><td>Reseller</td><td>Commission per sale</td><td>Receives commission when they source the student/customer</td></tr>
+          <tr><td>Expert Assistance Fee</td><td>&euro;150 fixed</td><td>Direct to expert trainer via Stripe Connect (self-paced courses only)</td></tr>
+          <tr><td>Platform Maintenance Fee</td><td>Remainder</td><td>Covers platform operations, infrastructure, development, and maintenance</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="highlight-box r">
+    <h4>How It Works</h4>
+    <p>If you source the student yourself, you earn an even higher share. Your earnings increase when you actively market your courses and services.</p>
+  </div>
+
+  <div class="note-box info r">
+    <strong>Stripe Requirement:</strong> All stakeholders must have a Stripe connected account to receive payouts. Payments split automatically at point of transaction.
+  </div>
+
+  <div class="callout-box r">
+    <h4>Industry-Leading Revenue Share</h4>
+    <p>CareerByteCode offers more than 55% revenue share to content creators and service providers, one of the highest payouts in the industry. The actual percentage is even higher. Reach out to us for the real numbers.</p>
+  </div>
+</section>
+
+<!-- TRAINING MODELS -->
+<section class="sec sec-scroll r" id="training">
+  <div class="slabel">create &amp; sell training</div>
+  <h2 class="sec-h">Training <span>Revenue</span> Models</h2>
+
+  <div class="tabs">
+    <div class="tab-btns r">
+      <button class="tab-btn active" data-tab="self-paced">Self-Paced Course</button>
+      <button class="tab-btn" data-tab="realtime">Real-Time Use Cases</button>
+      <button class="tab-btn" data-tab="online">Online Training (Live)</button>
+    </div>
+
+    <!-- TAB 1: SELF-PACED -->
+    <div class="tab-panel active" id="tab-self-paced">
+      <h3 class="r" style="font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:20px;">Self-Paced Course Pricing</h3>
+      <div class="glass-card r">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>Item</th><th>Without Expert</th><th>With Expert</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Net Course Fee</td><td>&euro;200</td><td>&euro;350</td></tr>
+              <tr><td>Expert Assistance Fee</td><td>&mdash;</td><td>&euro;150 (direct to expert)</td></tr>
+              <tr><td>Revenue Base</td><td>&euro;200</td><td>&euro;200 (after expert fee)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="r" style="font-size:1.1rem;font-weight:700;color:var(--dark);margin:28px 0 20px;">Revenue Distribution</h3>
+      <div class="glass-card r">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>Scenario</th><th>Trainer Share</th><th>Additional Bonus</th><th>Total to Trainer</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>You source the student</td><td>&euro;110+</td><td>Sourcing bonus</td><td>Higher combined share</td></tr>
+              <tr><td>Reseller sources the student</td><td>&euro;110+</td><td>Reseller receives commission</td><td>&euro;110+ (trainer share only)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="r" style="font-size:1.1rem;font-weight:700;color:var(--dark);margin:28px 0 20px;">All 8 Scenarios (Self-Paced)</h3>
+      <div class="glass-card r">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>#</th><th>Course Type</th><th>Fee</th><th>Who Sources</th><th>Expert?</th><th>Trainer Gets</th><th>Sourcer Gets</th><th>Expert Gets</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Self-Paced</td><td>&euro;200</td><td>Trainer</td><td>No</td><td>&euro;110+ (share + bonus)</td><td>&mdash;</td><td>&mdash;</td></tr>
+              <tr><td>2</td><td>Self-Paced</td><td>&euro;200</td><td>Reseller</td><td>No</td><td>&euro;110+</td><td>Commission</td><td>&mdash;</td></tr>
+              <tr><td>3</td><td>Self-Paced</td><td>&euro;350</td><td>Trainer</td><td>Yes</td><td>&euro;110+ (share + bonus)</td><td>&mdash;</td><td>&euro;150</td></tr>
+              <tr><td>4</td><td>Self-Paced</td><td>&euro;350</td><td>Reseller</td><td>Yes</td><td>&euro;110+</td><td>Commission</td><td>&euro;150</td></tr>
+              <tr><td>5</td><td>Real-Time</td><td>&euro;350</td><td>Trainer</td><td>&mdash;</td><td>&euro;192+ (share + bonus)</td><td>&mdash;</td><td>&mdash;</td></tr>
+              <tr><td>6</td><td>Real-Time</td><td>&euro;350</td><td>Reseller</td><td>&mdash;</td><td>&euro;192+</td><td>Commission</td><td>&mdash;</td></tr>
+              <tr><td>7</td><td>Real-Time</td><td>&euro;350</td><td>Trainer (shared)</td><td>&mdash;</td><td>&euro;192+ (share + bonus)</td><td>&mdash;</td><td>&mdash;</td></tr>
+              <tr><td>8</td><td>Real-Time</td><td>&euro;350</td><td>Reseller (shared)</td><td>&mdash;</td><td>&euro;192+</td><td>Commission</td><td>&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="r" style="font-size:1.1rem;font-weight:700;color:var(--dark);margin:28px 0 20px;">Key Difference: Self-Paced vs Real-Time</h3>
+      <div class="glass-card r">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>Attribute</th><th>Self-Paced</th><th>Real-Time</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base Fee</td><td>&euro;200</td><td>&euro;350</td></tr>
+              <tr><td>Expert Add-On</td><td>&euro;150 (optional, goes direct to expert)</td><td>Not applicable</td></tr>
+              <tr><td>Revenue Base</td><td>&euro;200 (expert fee excluded)</td><td>Full &euro;350</td></tr>
+              <tr><td>Trainer Share</td><td>55%+ of &euro;200</td><td>55%+ of &euro;350</td></tr>
+              <tr><td>Delivery</td><td>Pre-recorded content</td><td>Live instructor-led sessions</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: REAL-TIME USE CASES -->
+    <div class="tab-panel" id="tab-realtime">
+      <h3 class="r" style="font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:20px;">Real-Time Course &mdash; All 8 Scenarios</h3>
+      <div class="glass-card r">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>#</th><th>Scenario</th><th>Fee</th><th>Who Sources</th><th>Trainer Gets</th><th>Sourcer Gets</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Solo trainer, self-sourced</td><td>&euro;350</td><td>Trainer</td><td>&euro;192+ (share + bonus)</td><td>&mdash;</td></tr>
+              <tr><td>2</td><td>Solo trainer, reseller-sourced</td><td>&euro;350</td><td>Reseller</td><td>&euro;192+</td><td>Commission</td></tr>
+              <tr><td>3</td><td>Shared trainer, self-sourced</td><td>&euro;350</td><td>Trainer</td><td>&euro;192+ (share + bonus)</td><td>&mdash;</td></tr>
+              <tr><td>4</td><td>Shared trainer, reseller-sourced</td><td>&euro;350</td><td>Reseller</td><td>&euro;192+</td><td>Commission</td></tr>
+              <tr><td>5</td><td>Solo trainer, internal member</td><td>&euro;350</td><td>Internal Member</td><td>&euro;192+</td><td>Member commission</td></tr>
+              <tr><td>6</td><td>Shared trainer, internal member</td><td>&euro;350</td><td>Internal Member</td><td>&euro;192+</td><td>Member commission</td></tr>
+              <tr><td>7</td><td>Solo trainer, vendor-sourced</td><td>&euro;350</td><td>Vendor</td><td>&euro;192+</td><td>Vendor commission</td></tr>
+              <tr><td>8</td><td>Shared trainer, vendor-sourced</td><td>&euro;350</td><td>Vendor</td><td>&euro;192+</td><td>Vendor commission</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="note-box info r">
+        <strong>No Expert Pass-Through:</strong> Real-time courses use the full &euro;350 as the revenue base. There is no separate expert assistance fee. All sharing is based on full course fee.
+      </div>
+
+      <h3 class="r" style="font-size:1.1rem;font-weight:700;color:var(--dark);margin:28px 0 20px;">Key Difference: Self-Paced vs Real-Time</h3>
+      <div class="glass-card r">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>Attribute</th><th>Self-Paced</th><th>Real-Time</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base Fee</td><td>&euro;200</td><td>&euro;350</td></tr>
+              <tr><td>Expert Add-On</td><td>&euro;150 (optional, goes direct to expert)</td><td>Not applicable</td></tr>
+              <tr><td>Revenue Base</td><td>&euro;200 (expert fee excluded)</td><td>Full &euro;350</td></tr>
+              <tr><td>Trainer Share</td><td>55%+ of &euro;200</td><td>55%+ of &euro;350</td></tr>
+              <tr><td>Delivery</td><td>Pre-recorded content</td><td>Live instructor-led sessions</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: ONLINE TRAINING (LIVE) -->
+    <div class="tab-panel" id="tab-online">
+      <h3 class="r" style="font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:20px;">Online Training (Live Sessions)</h3>
+      <p style="color:var(--text2);margin-bottom:20px;font-size:0.95rem;">Single trainer delivers live sessions. Course fee is &euro;200. No expert assistance fee applies.</p>
+      <div class="glass-card r">
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>Scenario</th><th>Fee</th><th>Who Sources</th><th>Trainer Gets</th><th>Sourcer Gets</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Trainer sells directly</td><td>&euro;200</td><td>Trainer</td><td>&euro;110+ (share + bonus)</td><td>&mdash;</td></tr>
+              <tr><td>Reseller sells</td><td>&euro;200</td><td>Reseller</td><td>&euro;110+</td><td>Commission</td></tr>
+              <tr><td>Internal member sells</td><td>&euro;200</td><td>Internal Member</td><td>&euro;110+</td><td>Member commission</td></tr>
+              <tr><td>Vendor sells</td><td>&euro;200</td><td>Vendor</td><td>&euro;110+</td><td>Vendor commission</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="note-box success r">
+        <strong>Simple Model:</strong> Single trainer, &euro;200 course fee, no expert assistance. Revenue is shared based on the same 55%+ model. You earn more when you source students directly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES & E-STORE -->
+<section class="sec sec-scroll r" id="services">
+  <div class="slabel">list your own services</div>
+  <h2 class="sec-h">Products, Services &amp; <span>E-Store</span></h2>
+
+  <!-- PRODUCTS & SERVICES -->
+  <h3 class="r" style="font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:10px;">&#128188; Products &amp; Services</h3>
+  <p style="color:var(--text2);margin-bottom:20px;font-size:0.95rem;">Consulting, mock interviews, career guidance, resume writing. You set your own price. Example: &euro;300</p>
+
+  <div class="glass-card r">
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Scenario</th><th>Price</th><th>Your Share</th><th>Sourcer Gets</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>You sell directly</td><td>&euro;300</td><td>&euro;165+</td><td>You also receive sourcing bonus</td></tr>
+          <tr><td>Reseller sells</td><td>&euro;300</td><td>&euro;165+</td><td>Reseller receives commission</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="highlight-box r">
+    <h4>Sell Directly, Earn More</h4>
+    <p>You earn MORE selling directly. You set your own price. No platform-imposed pricing.</p>
+  </div>
+
+  <!-- E-STORE DIGITAL CONTENT -->
+  <h3 class="r" style="font-size:1.2rem;font-weight:700;color:var(--dark);margin:40px 0 10px;">&#128214; E-Store Digital Content</h3>
+  <p style="color:var(--text2);margin-bottom:20px;font-size:0.95rem;">E-books, templates, cheat sheets, code repos, interview banks. You set your own price. Example: &euro;50</p>
+
+  <div class="glass-card r">
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Scenario</th><th>Price</th><th>Your Share</th><th>Sourcer Gets</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>You sell directly</td><td>&euro;50</td><td>&euro;27.50+</td><td>You also receive sourcing bonus</td></tr>
+          <tr><td>Reseller sells</td><td>&euro;50</td><td>&euro;27.50+</td><td>Reseller receives commission</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-box success r">
+    <strong>Passive Income:</strong> Create once, sell repeatedly. Your content, your price. Passive income from every sale.
+  </div>
+
+  <!-- COURSE RESALE -->
+  <h3 class="r" style="font-size:1.2rem;font-weight:700;color:var(--dark);margin:40px 0 10px;">&#128279; Course Resale</h3>
+  <p style="color:var(--text2);margin-bottom:20px;font-size:0.95rem;">Earn commissions by reselling courses from other trainers on the platform.</p>
+
+  <div class="steps r">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-icon">&#128270;</div>
+      <div class="step-text">Browse available courses on the platform</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 02</div>
+      <div class="step-icon">&#128279;</div>
+      <div class="step-text">Share your unique referral link with your network</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-icon">&#128176;</div>
+      <div class="step-text">Student purchases through your link</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 04</div>
+      <div class="step-icon">&#127881;</div>
+      <div class="step-text">Earn commission automatically via Stripe</div>
+    </div>
+  </div>
+
+  <div class="note-box info r">
+    <strong>Zero Content Creation:</strong> No content creation required. Your network is your asset. Simply share and earn.
+  </div>
+</section>
+
+<!-- VENDOR MODEL -->
+<section class="sec sec-scroll r" id="vendor">
+  <div class="slabel">build a vendor network</div>
+  <h2 class="sec-h">Vendor <span>Model</span></h2>
+
+  <div class="accordion">
+    <!-- VENDOR SELLS OWN SERVICES -->
+    <div class="acc-item open">
+      <div class="acc-head" onclick="toggleAccordion(this)">
+        <h4><span class="acc-icon">&#127970;</span> Vendor Sells Own Services</h4>
+        <div class="acc-arrow">&#9660;</div>
+      </div>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          <div class="glass-card">
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr><th>Stakeholder</th><th>Share</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Vendor</td><td>55%+ of net revenue</td><td>Always receives the majority share</td></tr>
+                  <tr><td>Internal Member</td><td>Commission</td><td>Receives commission when they source the customer</td></tr>
+                  <tr><td>Platform</td><td>Maintenance fee</td><td>Covers operations, infrastructure, and development</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h4 style="font-size:1rem;font-weight:700;color:var(--dark);margin:20px 0 12px;">Example: &euro;500 Service</h4>
+          <div class="glass-card">
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr><th>Step</th><th>Description</th><th>Amount</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Customer pays &euro;500 + applicable tax at checkout</td><td>&euro;500 + tax</td></tr>
+                  <tr><td>2</td><td>Stripe deducts processing fee</td><td>Stripe fee</td></tr>
+                  <tr><td>3</td><td>Vendor receives 55%+ of net revenue</td><td>&euro;275+</td></tr>
+                  <tr><td>4</td><td>Internal member receives commission (if applicable)</td><td>Commission</td></tr>
+                  <tr><td>5</td><td>Platform receives remainder as maintenance fee</td><td>Remainder</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENDOR RESELLS PLATFORM TRAINER SERVICES -->
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggleAccordion(this)">
+        <h4><span class="acc-icon">&#128101;</span> Vendor Resells Platform Trainer Services</h4>
+        <div class="acc-arrow">&#9660;</div>
+      </div>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          <div class="glass-card">
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr><th>Stakeholder</th><th>Share</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Trainer</td><td>Majority of trainer's listed price</td><td>Trainer always gets their full share based on listed price</td></tr>
+                  <tr><td>Vendor</td><td>Commission on sale</td><td>Earns commission for sourcing the customer</td></tr>
+                  <tr><td>Internal Member</td><td>Commission</td><td>Receives share when they source the vendor or customer</td></tr>
+                  <tr><td>Platform</td><td>Maintenance fee</td><td>Covers operations, infrastructure, and development</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h4 style="font-size:1rem;font-weight:700;color:var(--dark);margin:20px 0 12px;">Example: Trainer lists at &euro;200, Vendor sells at &euro;300</h4>
+          <div class="glass-card">
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr><th>Step</th><th>Description</th><th>Amount</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Customer pays &euro;300 + applicable tax at checkout</td><td>&euro;300 + tax</td></tr>
+                  <tr><td>2</td><td>Stripe deducts processing fee</td><td>Stripe fee</td></tr>
+                  <tr><td>3</td><td>Trainer receives their share based on &euro;200 listed price</td><td>&euro;110+</td></tr>
+                  <tr><td>4</td><td>Vendor earns commission from the markup and sourcing</td><td>Commission</td></tr>
+                  <tr><td>5</td><td>Internal member receives commission (if applicable)</td><td>Commission</td></tr>
+                  <tr><td>6</td><td>Platform receives remainder as maintenance fee</td><td>Remainder</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY RULES -->
+  <h3 class="r" style="font-size:1.2rem;font-weight:700;color:var(--dark);margin:32px 0 20px;">Key Rules</h3>
+  <div class="glass-card r">
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Rule</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pricing Floor</td><td>Vendors cannot sell below trainer's listed price. No maximum markup.</td></tr>
+          <tr><td>Platform Service Listing</td><td>Vendors may optionally list CareerByteCode courses in their catalog (voluntary).</td></tr>
+          <tr><td>Partner Incentives</td><td>Vendors who opt to list platform courses may receive Partner Badge, priority listing, and cross-promotion.</td></tr>
+          <tr><td>Internal Member as Vendor</td><td>Gets BOTH internal member commission + vendor share. Higher combined earning.</td></tr>
+          <tr><td>Multiple Internal Members</td><td>Internal member commission split equally among all assigned members.</td></tr>
+          <tr><td>Vendor Employees</td><td>Paid by vendor from vendor's share. Compensation handled externally.</td></tr>
+          <tr><td>Vendor Types</td><td>Training institutes, colleges, mid-sized companies, individuals. From any country.</td></tr>
+          <tr><td>Tax Handling</td><td>Stripe Tax calculates applicable tax based on customer location. Platform is deemed supplier.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATIONAL TERMS -->
+<section class="sec sec-scroll r" id="terms">
+  <div class="slabel">operational terms</div>
+  <h2 class="sec-h">Payments, Refunds &amp; <span>Key Rules</span></h2>
+
+  <div class="glass-card r">
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Term</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Payment Processing</td><td>All payments via Stripe Connect Marketplace. Split automatically at point of transaction.</td></tr>
+          <tr><td>Stripe Accounts</td><td>All stakeholders must have a Stripe connected account to receive payouts.</td></tr>
+          <tr><td>Tax Collection</td><td>Stripe Tax calculates and collects applicable tax based on customer location.</td></tr>
+          <tr><td>Refund: Digital Content</td><td>Tier 1: Checkout waiver per EU Article 16(m). Customer consents to immediate access and waives 14-day withdrawal.</td></tr>
+          <tr><td>Refund: Live Services</td><td>Tier 2: 14-day withdrawal right until service is performed. Express consent for early performance.</td></tr>
+          <tr><td>Refund: Marketplace</td><td>Tier 3: Full 14-day withdrawal. Full refund, no deductions. Platform absorbs Stripe fee.</td></tr>
+          <tr><td>Abuse Protection</td><td>Consumption tracking, pattern detection, account restrictions for repeat abusers.</td></tr>
+          <tr><td>Fund Control</td><td>CareerByteCode never holds, stores, or controls customer or seller funds at any point.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="cta-sec r">
+  <h2>Ready to <span>Earn</span> with CareerByteCode?</h2>
+  <div class="cta-links">
+    <a class="cta-link primary" href="mailto:support@careerbytecode.com">&#9993; support@careerbytecode.com</a>
+    <a class="cta-link secondary" href="https://www.careerbytecode.com" target="_blank" rel="noopener">&#127760; www.careerbytecode.com</a>
+  </div>
+  <p class="cta-disclaimer">All figures are illustrative minimums. Actual revenue share is higher. Consult a tax advisor for jurisdiction-specific guidance.</p>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="foot-title">We don't just teach tech &mdash; <span>we create leaders</span></div>
+  <div class="foot-sub">CareerByteCode &middot; Top European Tech Brand &middot; Remote-first &middot; Serving 105+ Countries</div>
+  <div class="foot-links">
+    <a href="https://www.careerbytecode.com" target="_blank" rel="noopener noreferrer">Website</a>
+    <a href="https://blog.careerbytecode.com" target="_blank" rel="noopener noreferrer">Blog</a>
+    <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://medium.com/careerbytecode" target="_blank" rel="noopener noreferrer">Medium</a>
+    <a href="mailto:community@careerbytecode.com">community@careerbytecode.com</a>
+  </div>
+  <div class="foot-copy">&copy; 2015&ndash;2026 CareerByteCode. All rights reserved.</div>
+</footer>
+
+<button class="btt" id="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+
+<script>
+/* Scroll progress bar */
+const pb=document.querySelector('.scroll-progress');
+window.addEventListener('scroll',()=>{const s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;pb.style.width=(h>0?(s/h)*100:0)+'%';},{passive:true});
+
+/* Nav scroll effect */
+const nav=document.getElementById('main-nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+
+/* Hamburger toggle */
+const hb=document.getElementById('hamburger'),mn=document.getElementById('mobile-nav');
+hb.addEventListener('click',()=>{const o=mn.classList.toggle('open');hb.classList.toggle('open');hb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});
+document.querySelectorAll('.mobile-link').forEach(l=>{l.addEventListener('click',()=>{mn.classList.remove('open');hb.classList.remove('open');hb.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
+
+/* Intersection Observer for .r elements */
+const rio=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');rio.unobserve(x.target);}});},{threshold:0.05,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>rio.observe(el));
+
+/* Active nav highlighting */
+const secs=document.querySelectorAll('.sec-scroll');
+const nls=document.querySelectorAll('.nav-links a[data-section]');
+const aio=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const id=x.target.id;nls.forEach(l=>{l.classList.toggle('active',l.dataset.section===id);});}});},{threshold:0.15,rootMargin:'-80px 0px -50% 0px'});
+secs.forEach(s=>aio.observe(s));
+
+/* Counter animation for hero stats */
+const cio=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting)return;const el=x.target,raw=el.dataset.val;if(!raw)return;const num=parseFloat(raw);if(isNaN(num)){el.textContent=raw;cio.unobserve(el);return;}const sfx=raw.replace(/[\d.]/g,''),dec=raw.includes('.')?1:0;let st=null;const anim=ts=>{if(!st)st=ts;const p=Math.min((ts-st)/1600,1),ez=1-Math.pow(1-p,3),v=ez*num;el.textContent=(dec?v.toFixed(1):Math.floor(v))+sfx;if(p<1)requestAnimationFrame(anim);};requestAnimationFrame(anim);cio.unobserve(el);});},{threshold:0.3,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev-stat-n[data-val]').forEach(el=>cio.observe(el));
+
+/* Back to top */
+const btt=document.getElementById('btt');
+window.addEventListener('scroll',()=>{btt.classList.toggle('show',window.scrollY>400);},{passive:true});
+btt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+
+/* Tabs */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const target=btn.dataset.tab;
+    btn.closest('.tabs').querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    btn.closest('.tabs').parentElement.querySelectorAll('.tab-panel').forEach(p=>{
+      p.classList.toggle('active',p.id==='tab-'+target);
+    });
+  });
+});
+
+/* Accordion */
+function toggleAccordion(head){
+  const item=head.parentElement;
+  const wasOpen=item.classList.contains('open');
+  /* Close all sibling accordions */
+  item.closest('.accordion').querySelectorAll('.acc-item').forEach(ai=>{
+    ai.classList.remove('open');
+    ai.querySelector('.acc-body').style.maxHeight=null;
+  });
+  /* Open clicked if it was closed */
+  if(!wasOpen){
+    item.classList.add('open');
+    const body=item.querySelector('.acc-body');
+    body.style.maxHeight=body.scrollHeight+'px';
+  }
+}
+
+/* Initialize open accordion items */
+document.querySelectorAll('.acc-item.open').forEach(item=>{
+  const body=item.querySelector('.acc-body');
+  body.style.maxHeight=body.scrollHeight+'px';
+});
+</script>
+</body>
+</html>
