@@ -299,6 +299,13 @@ nav.scrolled { padding:10px 48px;box-shadow:0 4px 24px rgba(0,0,0,0.06);backgrou
 .ob-pill{font-family:var(--mono);font-size:0.78rem;padding:8px 16px;border-radius:var(--radius-xs);background:var(--glass2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--glass-border2);color:var(--text2);font-weight:500;cursor:default;}
 .ob-cta-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#2563eb,#0891b2);color:#fff;padding:14px 32px;border-radius:var(--radius-sm);font-family:var(--mono);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;text-decoration:none;box-shadow:0 6px 20px rgba(37,99,235,0.3);transition:all 0.3s;}
 .ob-cta-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(37,99,235,0.4);}
+.rev-sec{position:relative;overflow:hidden;padding:0;margin-bottom:80px;}
+.rev-sec .rev-orb1{position:absolute;width:500px;height:500px;top:-100px;right:-80px;background:radial-gradient(circle,rgba(245,158,11,0.1),transparent 60%);filter:blur(80px);pointer-events:none;}
+.rev-sec .rev-orb2{position:absolute;width:400px;height:400px;bottom:-80px;left:-100px;background:radial-gradient(circle,rgba(16,185,129,0.08),transparent 60%);filter:blur(80px);pointer-events:none;}
+.rev-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:36px;}
+.rev-pill{font-family:var(--mono);font-size:0.78rem;padding:8px 16px;border-radius:var(--radius-xs);background:var(--glass2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--glass-border2);color:var(--text2);font-weight:500;cursor:default;}
+.rev-cta-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#f59e0b,#10b981);color:#fff;padding:14px 32px;border-radius:var(--radius-sm);font-family:var(--mono);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;text-decoration:none;box-shadow:0 6px 20px rgba(245,158,11,0.3);transition:all 0.3s;}
+.rev-cta-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(245,158,11,0.4);}
 
 /* JOIN CTA */
 .join-sec { position:relative;overflow:hidden;padding:0; }
@@ -444,6 +451,7 @@ footer::before { content:'';position:absolute;top:0;left:50%;transform:translate
     <li><a href="#stack" data-section="stack">Stack</a></li>
     <li><a href="#mentors" data-section="mentors">Mentors</a></li>
     <li><a href="#speak" data-section="speak">Speak</a></li>
+    <li><a href="#revenue" data-section="revenue">Revenue</a></li>
     <li><a href="#sheleads" data-section="sheleads">SheLeads</a></li>
     <li><a href="#join" data-section="join">Join Us</a></li>
     <li><a href="#onboard" data-section="onboard">Onboard</a></li>
@@ -455,7 +463,7 @@ footer::before { content:'';position:absolute;top:0;left:50%;transform:translate
 <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
   <a href="#founders" class="mobile-link">Founders</a><a href="#pillars" class="mobile-link">Pillars</a>
   <a href="#stack" class="mobile-link">Stack</a><a href="#mentors" class="mobile-link">Mentors</a>
-  <a href="#speak" class="mobile-link">Speak</a><a href="#sheleads" class="mobile-link">SheLeads</a><a href="#join" class="mobile-link">Join Us</a><a href="#onboard" class="mobile-link">Onboard</a><a href="#connect" class="mobile-link">Connect</a>
+  <a href="#speak" class="mobile-link">Speak</a><a href="#revenue" class="mobile-link">Revenue</a><a href="#sheleads" class="mobile-link">SheLeads</a><a href="#join" class="mobile-link">Join Us</a><a href="#onboard" class="mobile-link">Onboard</a><a href="#connect" class="mobile-link">Connect</a>
   <a href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener" class="nav-cta" style="display:inline-flex;margin-top:12px;">Join Now</a>
 </div>
 
@@ -696,6 +704,30 @@ footer::before { content:'';position:absolute;top:0;left:50%;transform:translate
       <div class="join-cta-area r">
         <a class="spk-cta-btn" href="events.html">Look for Speaker Opportunities &rarr;</a>
         <p class="join-note">Apply to speak at our upcoming LinkedIn Lives, Meetups &amp; global sessions &mdash; it's completely free</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE MODEL -->
+<section class="rev-sec sec sec-scroll" id="revenue">
+  <div class="rev-orb1"></div><div class="rev-orb2"></div>
+  <div class="wrap">
+    <div class="join-border">
+      <div class="join-top">
+        <h2 class="join-h r">Earn With CareerByteCode<br><span>Industry-Leading Revenue Sharing</span></h2>
+        <p class="join-sub r rd1">55%+ revenue share for trainers, service providers &amp; vendors &mdash; one of the highest payouts in the industry. Sell courses, offer services, resell content, or build a vendor network. All payments via Stripe Connect.</p>
+      </div>
+      <div class="rev-pills r">
+        <span class="rev-pill">&#x1F4B0; 55%+ Revenue Share</span>
+        <span class="rev-pill">&#x1F4B3; Stripe Connect</span>
+        <span class="rev-pill">&#x1F393; Sell Courses</span>
+        <span class="rev-pill">&#x1F6CD;&#xFE0F; E-Store</span>
+        <span class="rev-pill">&#x1F91D; Vendor Network</span>
+      </div>
+      <div class="join-cta-area r">
+        <a class="rev-cta-btn" href="revenue-models.html">Explore Revenue Model &rarr;</a>
+        <p class="join-note">Your skills, your price, your earnings &mdash; we just amplify</p>
       </div>
     </div>
   </div>
