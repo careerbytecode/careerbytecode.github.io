@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://careerbytecode.github.io/events.html">
 <title>CareerByteCode Events - Global Tech Leadership & Community Ecosystem</title>
 <link rel="icon" href="cbc - logo.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=optional" rel="stylesheet">
 <link rel="stylesheet" href="shared-premium.css">
 <style>
 /* ── ABOUT CARD COLOR VARIANTS ── */
@@ -134,10 +134,10 @@
 /* ── LEADERS ── */
 .leaders-section{padding:var(--sp-10) var(--sp-6);max-width:var(--max-w);margin:0 auto;position:relative;z-index:1;}
 .leaders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--sp-3);}
-.leader-card{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--glass-border);box-shadow:var(--sh-sm);transition:all var(--dur-normal) ease;}
+.leader-card{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--glass-border);box-shadow:var(--sh-sm);transition:all var(--dur-normal) ease;isolation:isolate;}
 .leader-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg),var(--sh-glow);}
 .leader-photo-wrap{position:relative;width:100%;height:260px;overflow:hidden;background:var(--bg-sunken);}
-.leader-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.4s var(--ease-out-expo);}
+.leader-photo{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 0.4s var(--ease-out-expo);image-rendering:auto;}
 .leader-card:hover .leader-photo{transform:scale(1.05);}
 .leader-accent{position:absolute;bottom:0;left:0;right:0;height:3px;}
 .leader-info{padding:22px 24px;}
@@ -915,6 +915,6 @@
 <button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
 
 <!-- SHARED JS -->
-<script src="shared-premium.js"></script>
+<script src="shared-premium.js" defer></script>
 </body>
 </html>

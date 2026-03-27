@@ -154,7 +154,7 @@
   function initReveal(){
     const els = $$('.reveal');
     if(!els.length) return;
-    if(prefersReducedMotion){
+    if(prefersReducedMotion || isTouch){
       els.forEach(el=>{ el.classList.add('reveal--visible'); });
       return;
     }
@@ -271,6 +271,11 @@
   function initCounters(){
     const els = $$('[data-count-to]');
     if(!els.length) return;
+    /* On mobile: show final values immediately, skip animation */
+    if(isTouch){
+      els.forEach(el=>{ el.textContent = el.dataset.countTo; });
+      return;
+    }
     const observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(!entry.isIntersecting) return;
