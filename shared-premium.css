@@ -148,7 +148,7 @@ small,.text-sm{font-size:0.875rem;}
 .nav__mobile a{font-size:1.2rem;font-weight:600;color:var(--text);padding:var(--sp-1) var(--sp-3);border-radius:var(--r-sm);transition:all var(--dur-fast) ease;}
 .nav__mobile a:hover{color:var(--accent);background:var(--accent-light);}
 /* Dark mode toggle */
-.theme-toggle{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--r-full);background:var(--surface);border:1px solid var(--border-2);cursor:pointer;transition:all var(--dur-normal) ease;font-size:1rem;z-index:101;}
+.theme-toggle{display:none;align-items:center;justify-content:center;width:36px;height:36px;border-radius:var(--r-full);background:var(--surface);border:1px solid var(--border-2);cursor:pointer;transition:all var(--dur-normal) ease;font-size:1rem;z-index:101;}
 .theme-toggle:hover{background:var(--accent-light);border-color:var(--accent);transform:rotate(15deg);}
 
 /* 8. HERO SYSTEM */
