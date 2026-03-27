@@ -450,4 +450,29 @@
   } else {
     init();
   }
+
+  /* ============================================
+     CONTENT PROTECTION
+     ============================================ */
+
+  /* Protection 1: Disable right-click context menu */
+  document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+
+  /* Protection 3: Disable keyboard shortcuts */
+  document.addEventListener('keydown', function(e){
+    /* Block Ctrl+C (copy), Ctrl+U (view source), Ctrl+S (save), Ctrl+P (print) */
+    if(e.ctrlKey && ['c','u','s','p'].includes(e.key.toLowerCase())){ e.preventDefault(); }
+    /* Block F12 (DevTools) */
+    if(e.key === 'F12'){ e.preventDefault(); }
+    /* Block Ctrl+Shift+I (DevTools), Ctrl+Shift+J (Console) */
+    if(e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())){ e.preventDefault(); }
+    /* Block Ctrl+A (select all) */
+    if(e.ctrlKey && e.key.toLowerCase() === 'a'){ e.preventDefault(); }
+  });
+
+  /* Protection 5: Disable image drag */
+  document.addEventListener('dragstart', function(e){
+    if(e.target.tagName === 'IMG'){ e.preventDefault(); }
+  });
+
 })();

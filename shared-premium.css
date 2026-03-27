@@ -505,3 +505,59 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .speaker-card__avatar{width:64px;height:64px;border-radius:var(--r-full);background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;color:var(--accent);margin:0 auto var(--sp-2);}
 .speaker-card h4{font-size:0.9rem;margin-bottom:4px;}
 .speaker-card p{font-size:0.75rem;color:var(--text-3);}
+
+/* ============================================
+   38. CONTENT PROTECTION
+   ============================================ */
+
+/* Protection 2: Disable text selection */
+body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+
+/* Protection 5: Disable image drag */
+img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;}
+img.content-img,
+.card__photo img,
+.leader-photo,
+.founder-photo,
+.contact-card__photo img,
+.collab-person__photo{pointer-events:none;}
+
+/* Protection 6: Subtle on-screen watermark (invisible to eye, visible in screenshots) */
+body::after{
+  content:'CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode  CareerByteCode';
+  position:fixed;inset:0;
+  display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:40px;
+  font-size:14px;font-weight:700;letter-spacing:4px;
+  color:rgba(255,255,255,0.015);
+  transform:rotate(-30deg) scale(1.5);
+  pointer-events:none;
+  z-index:99999;
+  word-spacing:60px;
+  line-height:4;
+  overflow:hidden;
+}
+
+/* Protection 4 & 7: Print protection - hide content, show watermark */
+@media print{
+  body *{visibility:hidden !important;}
+  body::before{
+    visibility:visible !important;
+    content:'CareerByteCode - Protected Content - Unauthorized reproduction prohibited';
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:2.5rem;font-weight:800;
+    color:rgba(0,0,0,0.15);
+    transform:rotate(-30deg);
+    z-index:999999;
+    text-align:center;
+    line-height:1.4;
+  }
+  body::after{
+    visibility:visible !important;
+    content:'This content is protected by CareerByteCode. Visit careerbytecode.github.io';
+    position:fixed;bottom:20px;left:0;right:0;
+    display:block;text-align:center;
+    font-size:1rem;color:rgba(0,0,0,0.3);
+    z-index:999999;
+  }
+}
