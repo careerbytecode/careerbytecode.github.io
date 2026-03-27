@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerByteCode Revenue Sharing Model - Industry-leading 55%+ revenue share for trainers, service providers & vendors via Stripe Connect.">
+<meta property="og:title" content="CareerByteCode - Revenue Sharing Model">
+<meta property="og:description" content="Industry-leading 55%+ revenue share for trainers, service providers & vendors via Stripe Connect.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/revenue-models.html">
+<meta property="og:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CareerByteCode - Revenue Sharing Model">
+<meta name="twitter:description" content="Industry-leading 55%+ revenue share for trainers, service providers & vendors via Stripe Connect.">
+<meta name="twitter:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1220" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://careerbytecode.github.io/revenue-models.html">
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<title>Revenue Sharing Model | CareerByteCode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared-premium.css">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"CareerByteCode",
+  "url":"https://www.careerbytecode.com",
+  "logo":"https://careerbytecode.github.io/cbc - logo.png",
+  "description":"Global Tech Learning & Innovation Ecosystem serving 2.4M+ professionals across 105+ countries.",
+  "sameAs":[
+    "https://www.linkedin.com/company/careerbytecode",
+    "https://github.com/careerbytecode",
+    "https://youtube.com/@CareerByteCode",
+    "https://medium.com/careerbytecode"
+  ]
+}
+</script>
+<style>
+/* PAGE-SPECIFIC: Revenue Models */
+
+/* Hero dark variant overrides */
+.rev-hero{min-height:60vh;padding:calc(var(--nav-h) + var(--sp-10)) var(--sp-6) var(--sp-10);}
+.rev-hero .hero__badge .dot{width:6px;height:6px;border-radius:50%;background:#93c5fd;box-shadow:0 0 10px #93c5fd;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:0.5}}
+.rev-hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent-2),#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.rev-hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);margin-bottom:12px;font-weight:300;}
+.rev-hero-link{font-family:var(--font-mono);font-size:0.78rem;color:#93c5fd;letter-spacing:0.06em;}
+
+/* Hero stats bar inside hero */
+.rev-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:var(--sp-6);border-radius:var(--r-md);overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);backdrop-filter:blur(12px);}
+.rev-stat{padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.06);transition:background 0.3s;}
+.rev-stat:last-child{border-right:none;}
+.rev-stat:hover{background:rgba(255,255,255,0.04);}
+.rev-stat-n{font-family:var(--font-mono);font-size:2rem;font-weight:700;display:block;line-height:1;}
+.rs1 .rev-stat-n{color:#38bdf8;text-shadow:0 0 30px rgba(56,189,248,0.4);}
+.rs2 .rev-stat-n{color:var(--success);text-shadow:0 0 30px rgba(16,185,129,0.4);}
+.rs3 .rev-stat-n{color:var(--warning);text-shadow:0 0 30px rgba(245,158,11,0.4);}
+.rev-stat-l{font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-top:8px;display:block;}
+
+/* Section labels */
+.slabel{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.slabel::before{content:'';width:24px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+.sec-h{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:44px;color:var(--text);}
+.sec-h span{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sec-sub{font-size:1.05rem;color:var(--text-2);max-width:700px;margin-top:-30px;margin-bottom:48px;line-height:1.8;}
+
+/* Note & Highlight boxes */
+.note-box{padding:20px 28px;border-radius:var(--r-md);margin-top:20px;margin-bottom:20px;font-size:0.92rem;line-height:1.7;color:var(--text-2);}
+.note-box.info{background:var(--accent-light);border:1px solid rgba(37,99,235,0.15);}
+.note-box.info strong{color:var(--accent);}
+.note-box.warn{background:var(--warning-light);border:1px solid rgba(245,158,11,0.15);}
+.note-box.warn strong{color:var(--warning);}
+.note-box.success{background:var(--success-light);border:1px solid rgba(16,185,129,0.15);}
+.note-box.success strong{color:var(--success);}
+.highlight-box{background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(14,165,233,0.08));border:1px solid rgba(37,99,235,0.2);border-radius:var(--r-md);padding:28px 32px;margin:28px 0;}
+.highlight-box h4{font-family:var(--font-mono);font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.highlight-box p{font-size:0.95rem;color:var(--text-2);line-height:1.8;}
+.callout-box{background:linear-gradient(135deg,#0a1628,#0d2147);border-radius:var(--r-xl);padding:36px 40px;margin:32px 0;position:relative;overflow:hidden;}
+.callout-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--success));}
+.callout-box h4{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:10px;}
+.callout-box p{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.8;}
+
+/* Steps grid */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;}
+.step{background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:var(--r-md);padding:20px 18px;text-align:center;transition:all 0.3s;}
+.step:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--sh-lg);}
+.step-num{font-family:var(--font-mono);font-size:0.68rem;color:var(--accent);letter-spacing:0.16em;margin-bottom:6px;}
+.step-icon{font-size:1.5rem;margin-bottom:8px;}
+.step-text{font-size:0.88rem;font-weight:600;color:var(--text);line-height:1.4;}
+
+/* CTA section */
+.cta-sec{text-align:center;padding:80px 0 60px;}
+.cta-sec h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--text);letter-spacing:-0.03em;margin-bottom:24px;}
+.cta-sec h2 span{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.cta-links{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-bottom:20px;}
+.cta-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:0.82rem;font-weight:600;letter-spacing:0.04em;padding:14px 32px;border-radius:var(--r-md);transition:all 0.3s;}
+.cta-link.primary{background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(37,99,235,0.2);}
+.cta-link.primary:hover{box-shadow:0 8px 28px rgba(37,99,235,0.3);transform:translateY(-2px);}
+.cta-link.secondary{border:1px solid var(--border);color:var(--text);background:var(--surface);backdrop-filter:blur(12px);}
+.cta-link.secondary:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 6px 20px rgba(37,99,235,0.08);transform:translateY(-2px);}
+.cta-disclaimer{font-size:0.82rem;color:var(--text-3);max-width:600px;margin:20px auto 0;line-height:1.7;}
+
+/* Responsive */
+@media(max-width:960px){
+  .rev-stats{grid-template-columns:repeat(3,1fr);}
+  .steps{grid-template-columns:repeat(2,1fr);}
+  .callout-box{padding:28px 24px;}
+}
+@media(max-width:640px){
+  .rev-stats{grid-template-columns:1fr;}
+  .rev-hero h1{font-size:2.2rem;}
+  .rev-hero{padding:calc(var(--nav-h) + var(--sp-6)) var(--sp-3) var(--sp-6);}
+  .steps{grid-template-columns:1fr;}
+  .tabs{flex-direction:column;}
+  [data-tab-btn]{width:100%;text-align:center;}
+  .callout-box{padding:24px 18px;}
+  .highlight-box{padding:20px 18px;}
+}
+@media print{
+  .nav,.scroll-progress,.nav__mobile,.orb,.btt,.noise{display:none !important;}
+  .reveal{opacity:1;transform:none;}
+  body{background:#fff;color:#000;}
+  .rev-hero{min-height:auto;padding:40px 0;}
+  .section{padding:30px 0;}
+}
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a class="nav__logo" href="index.html" aria-label="CareerByteCode home">
+    <img src="cbc - logo.png" alt="CBC" class="nav__logo-icon" width="36" height="36">
+    <span class="nav__logo-text">CareerByteCode</span>
+  </a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="sheleads.html">SheLeads</a>
+    <a href="revenue-models.html" class="active">Revenue</a>
+    <a href="onboarding.html">Onboarding</a>
+    <a href="collaborate.html">Collaborate</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+    <a class="nav__cta" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener" aria-label="Join CareerByteCode on LinkedIn">Join Now</a>
+  </div>
+  <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="sheleads.html">SheLeads</a>
+  <a href="revenue-models.html" class="active">Revenue</a>
+  <a href="onboarding.html">Onboarding</a>
+  <a href="collaborate.html">Collaborate</a>
+  <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top:12px;"></button>
+  <a class="nav__cta" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener" style="display:inline-flex;margin-top:12px;">Join Now</a>
+</div>
+
+<main>
+<div class="container">
+
+<!-- HERO -->
+<section class="hero hero--dark rev-hero reveal">
+  <div class="hero__grid"></div>
+  <div style="position:relative;z-index:2;max-width:860px;margin:0 auto;text-align:center;">
+    <div class="hero__badge"><span class="dot"></span>CareerByteCode, Belgium</div>
+    <h1>Revenue <em>Sharing</em> Model</h1>
+    <p class="rev-hero-sub">A platform by CareerByteCode, Belgium</p>
+    <p class="rev-hero-link">www.careerbytecode.com</p>
+    <div class="rev-stats">
+      <div class="rev-stat rs1"><span class="rev-stat-n" data-count-to="55%+">&#8212;</span><span class="rev-stat-l">Revenue Share</span></div>
+      <div class="rev-stat rs2"><span class="rev-stat-n" data-count-to="Stripe Connect">&#8212;</span><span class="rev-stat-l">Payment Platform</span></div>
+      <div class="rev-stat rs3"><span class="rev-stat-n" data-count-to="105+">&#8212;</span><span class="rev-stat-l">Countries Served</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT ARCHITECTURE -->
+<section class="section reveal" id="payment" style="scroll-margin-top:80px;">
+  <div class="slabel">payment architecture</div>
+  <h2 class="sec-h">How <span>Payments</span> Work on CareerByteCode</h2>
+  <p class="sec-sub">All payments processed via Stripe Connect Marketplace. CareerByteCode never holds or controls funds.</p>
+
+  <div class="card card--glass reveal">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Step</th><th>What Happens</th><th>Handled By</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Customer pays the listed price plus applicable taxes at checkout</td><td>Stripe</td></tr>
+          <tr><td>2</td><td>Stripe Tax calculates VAT, GST, sales tax, or no tax based on customer location</td><td>Stripe Tax</td></tr>
+          <tr><td>3</td><td>Stripe deducts its processing fee</td><td>Stripe</td></tr>
+          <tr><td>4</td><td>Net revenue is split automatically to all stakeholder connected accounts</td><td>Stripe Connect</td></tr>
+          <tr><td>5</td><td>Platform share collected as Stripe application fee</td><td>Stripe Connect</td></tr>
+          <tr><td>6</td><td>Each stakeholder receives their share directly in their Stripe account</td><td>Stripe</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-box warn reveal">
+    <strong>Refund Policy:</strong> Three-tier framework - digital content waiver (EU Article 16(m)) / service completion / 14-day full refund for marketplace services. All refunds processed via Stripe.
+  </div>
+
+  <div class="note-box info reveal">
+    <strong>Important:</strong> CareerByteCode is the deemed supplier for tax purposes. Stripe Tax handles location-based tax. The platform never holds customer or seller funds.
+  </div>
+</section>
+
+<!-- STAKEHOLDERS -->
+<section class="section reveal" id="stakeholders" style="scroll-margin-top:80px;">
+  <div class="slabel">stakeholders</div>
+  <h2 class="sec-h">Revenue Sharing: How It <span>Works</span></h2>
+  <p class="sec-sub">How revenue is distributed across all course and service models</p>
+
+  <div class="card card--glass reveal">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Role</th><th>Share</th><th>Condition</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Trainer / Service Owner</td><td>55%+ of net revenue</td><td>Always receives. The actual share is higher than 55%.</td></tr>
+          <tr><td>Sourcing Bonus</td><td>Additional bonus</td><td>Goes to whoever sources the student (trainer or reseller)</td></tr>
+          <tr><td>Reseller</td><td>Commission per sale</td><td>Receives commission when they source the student/customer</td></tr>
+          <tr><td>Expert Assistance Fee</td><td>&euro;150 fixed</td><td>Direct to expert trainer via Stripe Connect (self-paced courses only)</td></tr>
+          <tr><td>Platform Maintenance Fee</td><td>Remainder</td><td>Covers platform operations, infrastructure, development, and maintenance</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="highlight-box reveal">
+    <h4>How It Works</h4>
+    <p>If you source the student yourself, you earn an even higher share. Your earnings increase when you actively market your courses and services.</p>
+  </div>
+
+  <div class="note-box info reveal">
+    <strong>Stripe Requirement:</strong> All stakeholders must have a Stripe connected account to receive payouts. Payments split automatically at point of transaction.
+  </div>
+
+  <div class="callout-box reveal">
+    <h4>Industry-Leading Revenue Share</h4>
+    <p>CareerByteCode offers more than 55% revenue share to content creators and service providers, one of the highest payouts in the industry. The actual percentage is even higher. Reach out to us for the real numbers.</p>
+  </div>
+</section>
+
+<!-- TRAINING MODELS -->
+<section class="section reveal" id="training" style="scroll-margin-top:80px;">
+  <div class="slabel">create &amp; sell training</div>
+  <h2 class="sec-h">Training <span>Revenue</span> Models</h2>
+
+  <div>
+    <div class="tabs reveal">
+      <button data-tab-btn="self-paced" class="active">Self-Paced Course</button>
+      <button data-tab-btn="realtime">Real-Time Use Cases</button>
+      <button data-tab-btn="online">Online Training (Live)</button>
+    </div>
+
+    <!-- TAB 1: SELF-PACED -->
+    <div data-tab-panel="self-paced" class="active">
+      <h3 class="reveal" style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:20px;">Self-Paced Course Pricing</h3>
+      <div class="card card--glass reveal">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Item</th><th>Without Expert</th><th>With Expert</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Net Course Fee</td><td>&euro;200</td><td>&euro;350</td></tr>
+              <tr><td>Expert Assistance Fee</td><td>-</td><td>&euro;150 (direct to expert)</td></tr>
+              <tr><td>Revenue Base</td><td>&euro;200</td><td>&euro;200 (after expert fee)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="reveal" style="font-size:1.1rem;font-weight:700;color:var(--text);margin:28px 0 20px;">Revenue Distribution</h3>
+      <div class="card card--glass reveal">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Scenario</th><th>Trainer Share</th><th>Additional Bonus</th><th>Total to Trainer</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>You source the student</td><td>&euro;110+</td><td>Sourcing bonus</td><td>Higher combined share</td></tr>
+              <tr><td>Reseller sources the student</td><td>&euro;110+</td><td>Reseller receives commission</td><td>&euro;110+ (trainer share only)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="reveal" style="font-size:1.1rem;font-weight:700;color:var(--text);margin:28px 0 20px;">All 8 Scenarios (Self-Paced)</h3>
+      <div class="card card--glass reveal">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Course Type</th><th>Fee</th><th>Who Sources</th><th>Expert?</th><th>Trainer Gets</th><th>Sourcer Gets</th><th>Expert Gets</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Self-Paced</td><td>&euro;200</td><td>Trainer</td><td>No</td><td>&euro;110+ (share + bonus)</td><td>-</td><td>-</td></tr>
+              <tr><td>2</td><td>Self-Paced</td><td>&euro;200</td><td>Reseller</td><td>No</td><td>&euro;110+</td><td>Commission</td><td>-</td></tr>
+              <tr><td>3</td><td>Self-Paced</td><td>&euro;350</td><td>Trainer</td><td>Yes</td><td>&euro;110+ (share + bonus)</td><td>-</td><td>&euro;150</td></tr>
+              <tr><td>4</td><td>Self-Paced</td><td>&euro;350</td><td>Reseller</td><td>Yes</td><td>&euro;110+</td><td>Commission</td><td>&euro;150</td></tr>
+              <tr><td>5</td><td>Real-Time</td><td>&euro;350</td><td>Trainer</td><td>-</td><td>&euro;192+ (share + bonus)</td><td>-</td><td>-</td></tr>
+              <tr><td>6</td><td>Real-Time</td><td>&euro;350</td><td>Reseller</td><td>-</td><td>&euro;192+</td><td>Commission</td><td>-</td></tr>
+              <tr><td>7</td><td>Real-Time</td><td>&euro;350</td><td>Trainer (shared)</td><td>-</td><td>&euro;192+ (share + bonus)</td><td>-</td><td>-</td></tr>
+              <tr><td>8</td><td>Real-Time</td><td>&euro;350</td><td>Reseller (shared)</td><td>-</td><td>&euro;192+</td><td>Commission</td><td>-</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3 class="reveal" style="font-size:1.1rem;font-weight:700;color:var(--text);margin:28px 0 20px;">Key Difference: Self-Paced vs Real-Time</h3>
+      <div class="card card--glass reveal">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Attribute</th><th>Self-Paced</th><th>Real-Time</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base Fee</td><td>&euro;200</td><td>&euro;350</td></tr>
+              <tr><td>Expert Add-On</td><td>&euro;150 (optional, goes direct to expert)</td><td>Not applicable</td></tr>
+              <tr><td>Revenue Base</td><td>&euro;200 (expert fee excluded)</td><td>Full &euro;350</td></tr>
+              <tr><td>Trainer Share</td><td>55%+ of &euro;200</td><td>55%+ of &euro;350</td></tr>
+              <tr><td>Delivery</td><td>Pre-recorded content</td><td>Live instructor-led sessions</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: REAL-TIME USE CASES -->
+    <div data-tab-panel="realtime">
+      <h3 class="reveal" style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:20px;">Real-Time Course - All 8 Scenarios</h3>
+      <div class="card card--glass reveal">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>#</th><th>Scenario</th><th>Fee</th><th>Who Sources</th><th>Trainer Gets</th><th>Sourcer Gets</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Solo trainer, self-sourced</td><td>&euro;350</td><td>Trainer</td><td>&euro;192+ (share + bonus)</td><td>-</td></tr>
+              <tr><td>2</td><td>Solo trainer, reseller-sourced</td><td>&euro;350</td><td>Reseller</td><td>&euro;192+</td><td>Commission</td></tr>
+              <tr><td>3</td><td>Shared trainer, self-sourced</td><td>&euro;350</td><td>Trainer</td><td>&euro;192+ (share + bonus)</td><td>-</td></tr>
+              <tr><td>4</td><td>Shared trainer, reseller-sourced</td><td>&euro;350</td><td>Reseller</td><td>&euro;192+</td><td>Commission</td></tr>
+              <tr><td>5</td><td>Solo trainer, internal member</td><td>&euro;350</td><td>Internal Member</td><td>&euro;192+</td><td>Member commission</td></tr>
+              <tr><td>6</td><td>Shared trainer, internal member</td><td>&euro;350</td><td>Internal Member</td><td>&euro;192+</td><td>Member commission</td></tr>
+              <tr><td>7</td><td>Solo trainer, vendor-sourced</td><td>&euro;350</td><td>Vendor</td><td>&euro;192+</td><td>Vendor commission</td></tr>
+              <tr><td>8</td><td>Shared trainer, vendor-sourced</td><td>&euro;350</td><td>Vendor</td><td>&euro;192+</td><td>Vendor commission</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="note-box info reveal">
+        <strong>No Expert Pass-Through:</strong> Real-time courses use the full &euro;350 as the revenue base. There is no separate expert assistance fee. All sharing is based on full course fee.
+      </div>
+
+      <h3 class="reveal" style="font-size:1.1rem;font-weight:700;color:var(--text);margin:28px 0 20px;">Key Difference: Self-Paced vs Real-Time</h3>
+      <div class="card card--glass reveal">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Attribute</th><th>Self-Paced</th><th>Real-Time</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Base Fee</td><td>&euro;200</td><td>&euro;350</td></tr>
+              <tr><td>Expert Add-On</td><td>&euro;150 (optional, goes direct to expert)</td><td>Not applicable</td></tr>
+              <tr><td>Revenue Base</td><td>&euro;200 (expert fee excluded)</td><td>Full &euro;350</td></tr>
+              <tr><td>Trainer Share</td><td>55%+ of &euro;200</td><td>55%+ of &euro;350</td></tr>
+              <tr><td>Delivery</td><td>Pre-recorded content</td><td>Live instructor-led sessions</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: ONLINE TRAINING (LIVE) -->
+    <div data-tab-panel="online">
+      <h3 class="reveal" style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:20px;">Online Training (Live Sessions)</h3>
+      <p style="color:var(--text-2);margin-bottom:20px;font-size:0.95rem;">Single trainer delivers live sessions. Course fee is &euro;200. No expert assistance fee applies.</p>
+      <div class="card card--glass reveal">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Scenario</th><th>Fee</th><th>Who Sources</th><th>Trainer Gets</th><th>Sourcer Gets</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Trainer sells directly</td><td>&euro;200</td><td>Trainer</td><td>&euro;110+ (share + bonus)</td><td>-</td></tr>
+              <tr><td>Reseller sells</td><td>&euro;200</td><td>Reseller</td><td>&euro;110+</td><td>Commission</td></tr>
+              <tr><td>Internal member sells</td><td>&euro;200</td><td>Internal Member</td><td>&euro;110+</td><td>Member commission</td></tr>
+              <tr><td>Vendor sells</td><td>&euro;200</td><td>Vendor</td><td>&euro;110+</td><td>Vendor commission</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="note-box success reveal">
+        <strong>Simple Model:</strong> Single trainer, &euro;200 course fee, no expert assistance. Revenue is shared based on the same 55%+ model. You earn more when you source students directly.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES & E-STORE -->
+<section class="section reveal" id="services" style="scroll-margin-top:80px;">
+  <div class="slabel">list your own services</div>
+  <h2 class="sec-h">Products, Services &amp; <span>E-Store</span></h2>
+
+  <!-- PRODUCTS & SERVICES -->
+  <h3 class="reveal" style="font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:10px;">&#128188; Products &amp; Services</h3>
+  <p style="color:var(--text-2);margin-bottom:20px;font-size:0.95rem;">Consulting, mock interviews, career guidance, resume writing. You set your own price. Example: &euro;300</p>
+
+  <div class="card card--glass reveal">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Price</th><th>Your Share</th><th>Sourcer Gets</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>You sell directly</td><td>&euro;300</td><td>&euro;165+</td><td>You also receive sourcing bonus</td></tr>
+          <tr><td>Reseller sells</td><td>&euro;300</td><td>&euro;165+</td><td>Reseller receives commission</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="highlight-box reveal">
+    <h4>Sell Directly, Earn More</h4>
+    <p>You earn MORE selling directly. You set your own price. No platform-imposed pricing.</p>
+  </div>
+
+  <!-- E-STORE DIGITAL CONTENT -->
+  <h3 class="reveal" style="font-size:1.2rem;font-weight:700;color:var(--text);margin:40px 0 10px;">&#128214; E-Store Digital Content</h3>
+  <p style="color:var(--text-2);margin-bottom:20px;font-size:0.95rem;">E-books, templates, cheat sheets, code repos, interview banks. You set your own price. Example: &euro;50</p>
+
+  <div class="card card--glass reveal">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Price</th><th>Your Share</th><th>Sourcer Gets</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>You sell directly</td><td>&euro;50</td><td>&euro;27.50+</td><td>You also receive sourcing bonus</td></tr>
+          <tr><td>Reseller sells</td><td>&euro;50</td><td>&euro;27.50+</td><td>Reseller receives commission</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note-box success reveal">
+    <strong>Passive Income:</strong> Create once, sell repeatedly. Your content, your price. Passive income from every sale.
+  </div>
+
+  <!-- COURSE RESALE -->
+  <h3 class="reveal" style="font-size:1.2rem;font-weight:700;color:var(--text);margin:40px 0 10px;">&#128279; Course Resale</h3>
+  <p style="color:var(--text-2);margin-bottom:20px;font-size:0.95rem;">Earn commissions by reselling courses from other trainers on the platform.</p>
+
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-num">STEP 01</div>
+      <div class="step-icon">&#128270;</div>
+      <div class="step-text">Browse available courses on the platform</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 02</div>
+      <div class="step-icon">&#128279;</div>
+      <div class="step-text">Share your unique referral link with your network</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 03</div>
+      <div class="step-icon">&#128176;</div>
+      <div class="step-text">Student purchases through your link</div>
+    </div>
+    <div class="step">
+      <div class="step-num">STEP 04</div>
+      <div class="step-icon">&#127881;</div>
+      <div class="step-text">Earn commission automatically via Stripe</div>
+    </div>
+  </div>
+
+  <div class="note-box info reveal">
+    <strong>Zero Content Creation:</strong> No content creation required. Your network is your asset. Simply share and earn.
+  </div>
+</section>
+
+<!-- VENDOR MODEL -->
+<section class="section reveal" id="vendor" style="scroll-margin-top:80px;">
+  <div class="slabel">build a vendor network</div>
+  <h2 class="sec-h">Vendor <span>Model</span></h2>
+
+  <div data-accordion-single>
+    <!-- VENDOR SELLS OWN SERVICES -->
+    <div data-accordion-item data-open>
+      <div data-accordion-head>
+        <span>&#127970; Vendor Sells Own Services</span>
+      </div>
+      <div data-accordion-body>
+        <div style="padding:0 var(--sp-3) var(--sp-3);">
+          <div class="card card--glass">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Stakeholder</th><th>Share</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Vendor</td><td>55%+ of net revenue</td><td>Always receives the majority share</td></tr>
+                  <tr><td>Internal Member</td><td>Commission</td><td>Receives commission when they source the customer</td></tr>
+                  <tr><td>Platform</td><td>Maintenance fee</td><td>Covers operations, infrastructure, and development</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h4 style="font-size:1rem;font-weight:700;color:var(--text);margin:20px 0 12px;">Example: &euro;500 Service</h4>
+          <div class="card card--glass">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Step</th><th>Description</th><th>Amount</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Customer pays &euro;500 + applicable tax at checkout</td><td>&euro;500 + tax</td></tr>
+                  <tr><td>2</td><td>Stripe deducts processing fee</td><td>Stripe fee</td></tr>
+                  <tr><td>3</td><td>Vendor receives 55%+ of net revenue</td><td>&euro;275+</td></tr>
+                  <tr><td>4</td><td>Internal member receives commission (if applicable)</td><td>Commission</td></tr>
+                  <tr><td>5</td><td>Platform receives remainder as maintenance fee</td><td>Remainder</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENDOR RESELLS PLATFORM TRAINER SERVICES -->
+    <div data-accordion-item>
+      <div data-accordion-head>
+        <span>&#128101; Vendor Resells Platform Trainer Services</span>
+      </div>
+      <div data-accordion-body>
+        <div style="padding:0 var(--sp-3) var(--sp-3);">
+          <div class="card card--glass">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Stakeholder</th><th>Share</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Trainer</td><td>Majority of trainer's listed price</td><td>Trainer always gets their full share based on listed price</td></tr>
+                  <tr><td>Vendor</td><td>Commission on sale</td><td>Earns commission for sourcing the customer</td></tr>
+                  <tr><td>Internal Member</td><td>Commission</td><td>Receives share when they source the vendor or customer</td></tr>
+                  <tr><td>Platform</td><td>Maintenance fee</td><td>Covers operations, infrastructure, and development</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h4 style="font-size:1rem;font-weight:700;color:var(--text);margin:20px 0 12px;">Example: Trainer lists at &euro;200, Vendor sells at &euro;300</h4>
+          <div class="card card--glass">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Step</th><th>Description</th><th>Amount</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1</td><td>Customer pays &euro;300 + applicable tax at checkout</td><td>&euro;300 + tax</td></tr>
+                  <tr><td>2</td><td>Stripe deducts processing fee</td><td>Stripe fee</td></tr>
+                  <tr><td>3</td><td>Trainer receives their share based on &euro;200 listed price</td><td>&euro;110+</td></tr>
+                  <tr><td>4</td><td>Vendor earns commission from the markup and sourcing</td><td>Commission</td></tr>
+                  <tr><td>5</td><td>Internal member receives commission (if applicable)</td><td>Commission</td></tr>
+                  <tr><td>6</td><td>Platform receives remainder as maintenance fee</td><td>Remainder</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY RULES -->
+  <h3 class="reveal" style="font-size:1.2rem;font-weight:700;color:var(--text);margin:32px 0 20px;">Key Rules</h3>
+  <div class="card card--glass reveal">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Rule</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Pricing Floor</td><td>Vendors cannot sell below trainer's listed price. No maximum markup.</td></tr>
+          <tr><td>Platform Service Listing</td><td>Vendors may optionally list CareerByteCode courses in their catalog (voluntary).</td></tr>
+          <tr><td>Partner Incentives</td><td>Vendors who opt to list platform courses may receive Partner Badge, priority listing, and cross-promotion.</td></tr>
+          <tr><td>Internal Member as Vendor</td><td>Gets BOTH internal member commission + vendor share. Higher combined earning.</td></tr>
+          <tr><td>Multiple Internal Members</td><td>Internal member commission split equally among all assigned members.</td></tr>
+          <tr><td>Vendor Employees</td><td>Paid by vendor from vendor's share. Compensation handled externally.</td></tr>
+          <tr><td>Vendor Types</td><td>Training institutes, colleges, mid-sized companies, individuals. From any country.</td></tr>
+          <tr><td>Tax Handling</td><td>Stripe Tax calculates applicable tax based on customer location. Platform is deemed supplier.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATIONAL TERMS -->
+<section class="section reveal" id="terms" style="scroll-margin-top:80px;">
+  <div class="slabel">operational terms</div>
+  <h2 class="sec-h">Payments, Refunds &amp; <span>Key Rules</span></h2>
+
+  <div class="card card--glass reveal">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Term</th><th>Details</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Payment Processing</td><td>All payments via Stripe Connect Marketplace. Split automatically at point of transaction.</td></tr>
+          <tr><td>Stripe Accounts</td><td>All stakeholders must have a Stripe connected account to receive payouts.</td></tr>
+          <tr><td>Tax Collection</td><td>Stripe Tax calculates and collects applicable tax based on customer location.</td></tr>
+          <tr><td>Refund: Digital Content</td><td>Tier 1: Checkout waiver per EU Article 16(m). Customer consents to immediate access and waives 14-day withdrawal.</td></tr>
+          <tr><td>Refund: Live Services</td><td>Tier 2: 14-day withdrawal right until service is performed. Express consent for early performance.</td></tr>
+          <tr><td>Refund: Marketplace</td><td>Tier 3: Full 14-day withdrawal. Full refund, no deductions. Platform absorbs Stripe fee.</td></tr>
+          <tr><td>Abuse Protection</td><td>Consumption tracking, pattern detection, account restrictions for repeat abusers.</td></tr>
+          <tr><td>Fund Control</td><td>CareerByteCode never holds, stores, or controls customer or seller funds at any point.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="cta-sec reveal">
+  <h2>Ready to <span>Earn</span> with CareerByteCode?</h2>
+  <div class="cta-links">
+    <a class="cta-link primary" href="mailto:support@careerbytecode.com">&#9993; support@careerbytecode.com</a>
+    <a class="cta-link secondary" href="https://www.careerbytecode.com" target="_blank" rel="noopener">&#127760; www.careerbytecode.com</a>
+  </div>
+  <p class="cta-disclaimer">All figures are illustrative minimums. Actual revenue share is higher. Consult a tax advisor for jurisdiction-specific guidance.</p>
+</section>
+
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer__title">We don't just teach tech - <em>we create leaders</em></div>
+  <div class="footer__sub">CareerByteCode &middot; Top European Tech Brand &middot; Remote-first &middot; Serving 105+ Countries</div>
+  <div class="footer__links">
+    <a href="https://www.careerbytecode.com" target="_blank" rel="noopener noreferrer">Website</a>
+    <a href="https://blog.careerbytecode.com" target="_blank" rel="noopener noreferrer">Blog</a>
+    <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://medium.com/careerbytecode" target="_blank" rel="noopener noreferrer">Medium</a>
+  </div>
+  <div class="footer__email"><a href="mailto:community@careerbytecode.com">community@careerbytecode.com</a></div>
+  <div class="footer__copy">&copy; 2015-2026 CareerByteCode. All rights reserved.</div>
+</footer>
+
+<button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+
+<script src="shared-premium.js"></script>
+</body>
+</html>

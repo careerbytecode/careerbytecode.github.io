@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Complete archive of 58+ LinkedIn and 10+ Meetup events by CareerByteCode covering Cloud DevOps, Kubernetes, AI, Career Growth, and Leadership.">
+<meta property="og:title" content="CareerByteCode - Event Archive">
+<meta property="og:description" content="Complete archive of 58+ LinkedIn and 10+ Meetup events covering Cloud DevOps, Kubernetes, AI, Career Growth, and Leadership.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/event-archive.html">
+<meta property="og:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1220" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://careerbytecode.github.io/event-archive.html">
+<title>CareerByteCode - Event Archive</title>
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared-premium.css">
+<style>
+/* PAGE HEADER */
+.page-header{position:relative;z-index:1;padding:calc(var(--nav-h) + var(--sp-8)) var(--sp-6) var(--sp-7);text-align:center;overflow:hidden;}
+.page-header::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 30% 40%,rgba(37,99,235,0.06) 0%,transparent 50%),radial-gradient(circle at 70% 60%,rgba(14,165,233,0.05) 0%,transparent 40%);}
+[data-theme="dark"] .page-header::before{background:radial-gradient(circle at 30% 40%,rgba(96,165,250,0.08) 0%,transparent 50%),radial-gradient(circle at 70% 60%,rgba(56,189,248,0.06) 0%,transparent 40%);}
+.page-header h1{margin-bottom:var(--sp-2);}
+.page-header p{font-size:1rem;color:var(--text-2);max-width:560px;margin:0 auto;}
+
+/* BREADCRUMB */
+.breadcrumb{display:inline-flex;align-items:center;gap:var(--sp-1);background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);font-family:var(--font-mono);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 20px;border-radius:var(--r-full);margin-bottom:var(--sp-3);color:var(--text-3);}
+.breadcrumb a{color:var(--accent);transition:color var(--dur-fast) ease;}
+.breadcrumb a:hover{color:var(--accent-2);}
+.breadcrumb .sep{color:var(--text-3);margin:0 4px;}
+.breadcrumb .current{color:var(--text-3);}
+
+/* EVENTS SECTION */
+.events-section{position:relative;z-index:1;padding:0 var(--sp-6) var(--sp-10);max-width:var(--max-w);margin:0 auto;}
+
+/* FILTER BAR & CHIPS */
+.filter-bar{display:flex;gap:var(--sp-1);flex-wrap:wrap;margin-bottom:var(--sp-3);align-items:center;}
+.filter-label{font-family:var(--font-mono);font-size:0.7rem;color:var(--text-3);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;}
+.filter-chip{padding:6px 16px;border-radius:var(--r-full);font-size:0.75rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text-2);transition:all var(--dur-fast) ease;}
+.filter-chip.active,.filter-chip:hover{background:var(--text);color:var(--bg);border-color:var(--text);box-shadow:var(--sh-sm);}
+
+/* TAB CONTENT PANELS */
+.tab-content{display:none;}
+.tab-content.active{display:block;animation:fade-in 0.4s ease;}
+
+/* EVENT LINK BUTTON */
+.event-link{display:inline-flex;align-items:center;gap:4px;color:var(--accent);font-family:var(--font-mono);font-weight:600;font-size:0.7rem;padding:5px 12px;border-radius:var(--r-sm);border:1px solid var(--accent-light);background:var(--accent-light);transition:all var(--dur-fast) ease;letter-spacing:0.04em;}
+.event-link:hover{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 4px 12px rgba(37,99,235,0.25);}
+
+/* DOMAIN BADGES */
+.domain-badge{display:inline-block;font-size:0.62rem;font-weight:700;padding:4px 10px;border-radius:var(--r-full);white-space:nowrap;letter-spacing:0.02em;}
+.domain-cloud{background:var(--accent-light);color:var(--accent);border:1px solid rgba(37,99,235,0.15);}
+.domain-k8s{background:var(--success-light);color:var(--success);border:1px solid rgba(16,185,129,0.15);}
+.domain-ai{background:var(--accent-3-light);color:var(--accent-3);border:1px solid rgba(139,92,246,0.15);}
+.domain-career{background:var(--warning-light);color:var(--gold);border:1px solid rgba(245,158,11,0.15);}
+.domain-leadership{background:var(--rose-light);color:var(--rose);border:1px solid rgba(236,72,153,0.15);}
+.domain-sap{background:rgba(249,115,22,0.08);color:#ea580c;border:1px solid rgba(249,115,22,0.15);}
+
+/* CONNECT */
+.connect-section{position:relative;z-index:1;padding:var(--sp-10) var(--sp-6);text-align:center;overflow:hidden;}
+.connect-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:var(--r-xl);padding:var(--sp-7) var(--sp-6);box-shadow:var(--sh-lg);}
+.connect-section h2{font-size:2rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:var(--sp-2);}
+.connect-section p{font-size:0.95rem;color:var(--text-2);margin-bottom:var(--sp-4);}
+.connect-links{display:flex;gap:var(--sp-2);justify-content:center;flex-wrap:wrap;}
+.connect-btn{display:inline-flex;align-items:center;gap:var(--sp-1);padding:12px 24px;border-radius:var(--r-md);font-size:0.82rem;font-weight:700;transition:all var(--dur-normal) var(--ease-out-expo);border:1px solid transparent;}
+.connect-btn.li{background:linear-gradient(135deg,#0077b5,#0e76a8);color:#fff;box-shadow:0 4px 16px rgba(0,119,181,0.25);}
+.connect-btn.li:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,119,181,0.35);}
+.connect-btn.mu{background:linear-gradient(135deg,#f64060,#e8365a);color:#fff;box-shadow:0 4px 16px rgba(246,64,96,0.25);}
+.connect-btn.mu:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(246,64,96,0.35);}
+.connect-btn.web{background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--text);border:1px solid var(--border);box-shadow:var(--sh-sm);}
+.connect-btn.web:hover{transform:translateY(-2px);box-shadow:var(--sh-lg);}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .page-header{padding:calc(var(--nav-h) + var(--sp-4)) var(--sp-3) var(--sp-5);}
+  .events-section{padding:0 var(--sp-3) var(--sp-7);}
+  .connect-section{padding:var(--sp-7) var(--sp-3);}
+  .connect-inner{padding:var(--sp-5) var(--sp-3);}
+}
+@media(max-width:640px){
+  .page-header{padding:calc(var(--nav-h) + var(--sp-3)) var(--sp-2) var(--sp-4);}
+  .breadcrumb{font-size:0.65rem;padding:6px 14px;}
+  .events-section{padding:0 var(--sp-2) var(--sp-5);}
+  .tabs{overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;}
+  [data-tab-btn]{flex-shrink:0;font-size:0.75rem;padding:8px 14px;}
+  .filter-bar{gap:6px;}
+  .filter-chip{font-size:0.68rem;padding:4px 10px;}
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  table{min-width:560px;}
+  th,td{padding:10px 12px;font-size:0.72rem;}
+  .connect-section{padding:var(--sp-5) var(--sp-2);}
+  .connect-inner{padding:var(--sp-4) var(--sp-2);}
+  .connect-section h2{font-size:1.6rem;}
+  .connect-links{flex-direction:column;align-items:center;gap:10px;}
+  .connect-btn{width:100%;max-width:280px;justify-content:center;font-size:0.78rem;}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"CareerByteCode Event Archive","description":"Complete archive of 58+ LinkedIn and 10+ Meetup events covering Cloud DevOps, Kubernetes, AI, Career Growth.","url":"https://careerbytecode.github.io/event-archive.html","publisher":{"@type":"Organization","name":"CareerByteCode","url":"https://www.careerbytecode.com"}}
+</script>
+</head>
+<body>
+
+<!-- NOISE TEXTURE -->
+<div class="noise"></div>
+
+<!-- FLOATING ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <a href="index.html" class="nav__logo">
+    <img src="cbc - logo.png" alt="CareerByteCode" class="nav__logo-icon">
+    <span class="nav__logo-text">Career<em>ByteCode</em></span>
+  </a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="events.html" class="active">Events</a>
+    <a href="sheleads.html">SheLeads</a>
+    <a href="revenue-models.html">Revenue</a>
+    <a href="onboarding.html">Onboarding</a>
+    <a href="collaborate.html">Collaborate</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+    <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank" rel="noopener noreferrer" class="nav__cta">Follow on LinkedIn</a>
+  </div>
+  <button class="nav__hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav__mobile">
+  <a href="index.html">Home</a>
+  <a href="events.html" class="active">Events</a>
+  <a href="sheleads.html">SheLeads</a>
+  <a href="revenue-models.html">Revenue</a>
+  <a href="onboarding.html">Onboarding</a>
+  <a href="collaborate.html">Collaborate</a>
+</div>
+
+<main>
+<!-- PAGE HEADER -->
+<header class="page-header reveal">
+  <div class="breadcrumb">
+    <a href="events.html">Events</a>
+    <span class="sep">/</span>
+    <span class="current">Event Archive</span>
+  </div>
+  <h1>Complete <span class="text-gradient">Event Archive</span></h1>
+  <p>58+ events across LinkedIn and Meetup covering Cloud, DevOps, Kubernetes, AI, and Leadership.</p>
+</header>
+
+<!-- EVENT ARCHIVE -->
+<section class="events-section reveal">
+  <div class="tabs">
+    <div data-tab-btn="linkedin" class="active" onclick="switchTab('linkedin',this)">LinkedIn Events (58)</div>
+    <div data-tab-btn="meetup" onclick="switchTab('meetup',this)">Meetup Events (10)</div>
+  </div>
+  <div class="filter-bar" id="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <span class="filter-chip active" onclick="filterEvents('all',this)">All</span>
+    <span class="filter-chip" onclick="filterEvents('cloud',this)">Cloud DevOps</span>
+    <span class="filter-chip" onclick="filterEvents('k8s',this)">Kubernetes</span>
+    <span class="filter-chip" onclick="filterEvents('ai',this)">AI</span>
+    <span class="filter-chip" onclick="filterEvents('career',this)">Career</span>
+    <span class="filter-chip" onclick="filterEvents('leadership',this)">Leadership</span>
+  </div>
+  <div class="tab-content active" id="tab-linkedin">
+    <div class="table-wrap">
+      <table id="linkedin-table">
+        <thead><tr><th>#</th><th>Event Name</th><th>Date</th><th>Speaker</th><th>Domain</th><th>Link</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="tab-content" id="tab-meetup">
+    <div class="table-wrap">
+      <table id="meetup-table">
+        <thead><tr><th>#</th><th>Event Name</th><th>Date</th><th>Speaker</th><th>Domain</th><th>Link</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" class="connect-section reveal">
+  <div class="connect-inner">
+    <h2>Join the <span class="text-gradient">Ecosystem</span></h2>
+    <p>Follow us, join the community, and never miss a free hands-on session, career insight, or leadership conversation.</p>
+    <div class="connect-links">
+      <a href="https://www.linkedin.com/company/careerbytecode/" target="_blank" rel="noopener noreferrer" class="connect-btn li">Follow on LinkedIn</a>
+      <a href="https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/" target="_blank" rel="noopener noreferrer" class="connect-btn mu">Join on Meetup</a>
+      <a href="https://www.careerbytecode.com/" target="_blank" rel="noopener noreferrer" class="connect-btn web">Visit Website</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__title">We don't just teach tech - <em>we create leaders</em></div>
+    <div class="footer__sub">CareerByteCode &middot; Top European Tech Brand &middot; Remote-first &middot; Serving 105+ Countries</div>
+    <div class="footer__links">
+      <a href="https://www.careerbytecode.com" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://blog.careerbytecode.com" target="_blank" rel="noopener noreferrer">Blog</a>
+      <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://medium.com/careerbytecode" target="_blank" rel="noopener noreferrer">Medium</a>
+    </div>
+    <a href="mailto:community@careerbytecode.com" class="footer__email">community@careerbytecode.com</a>
+    <div class="footer__copy">&copy; 2015-2026 CareerByteCode. All rights reserved.</div>
+  </div>
+</footer>
+
+<button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+
+<script>
+const linkedinEvents=[
+  {id:1,name:"Career Guidance",date:"2024-08-07",speaker:"Architects",domain:"Career Guidance",link:"https://www.linkedin.com/events/careerguidance7225781266334306304/"},
+  {id:2,name:"30 Weeks Cloud DevOps Hands-on Boot Camp",date:"2024-08-11",speaker:"Architects",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/30weeksclouddevopshandsonbootca7228126700142764032/"},
+  {id:3,name:"Struggling to Crack IT Interviews After Cloud & DevOps",date:"2024-09-18",speaker:"Architects",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/strugglingtocrackitinterviewsaf7240354507803545600/"},
+  {id:4,name:"Cloud DevOps FullStack Internship \u2013 Realtime Use Cases",date:"2024-10-01",speaker:"Architects",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/clouddevopsfullstackinternship-7246443439704145922/"},
+  {id:5,name:"Deploy AWS EC2 & Azure VMs Like a Pro",date:"2024-11-05",speaker:"Architects",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/deployawsec2-azurevmslikeapro7257075540703027200/"},
+  {id:6,name:"Learn to Deploy Your Web App on AWS or Azure",date:"2024-11-07",speaker:"Architects",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/learntodeployyourwebapponawsora7258893441458188288/"},
+  {id:7,name:"Master Your Online Training Skills",date:"2024-11-07",speaker:"Architects",domain:"Career Guidance",link:"https://www.linkedin.com/events/masteryouronlinetrainingskills7259968462796582913/"},
+  {id:8,name:"Kubernetes On-Premises Cluster Setup",date:"2024-11-11",speaker:"Rangaraj",domain:"Kubernetes",link:"https://www.linkedin.com/events/kuberneteson-premisesclusterset7260274525576032257/"},
+  {id:9,name:"Azure VMs for Dev & Testing Environments",date:"2024-11-19",speaker:"Architects",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/elevateyourdev-testingenvironme7261700105479544833/"},
+  {id:10,name:"Career Advice and Tips for Success",date:"2024-11-27",speaker:"Architects",domain:"Career Guidance",link:"https://www.linkedin.com/events/careeradviceandtipsforsuccess7266109691640823808/"},
+  {id:11,name:"Kubernetes StatefulSets \u2013 Free Hands-on Session",date:"2024-12-11",speaker:"Architects",domain:"Kubernetes",link:"https://www.linkedin.com/events/unlockthepowerofstatefulsets-jo7271617441493925888/"},
+  {id:12,name:"Python App Deployment with GitHub Actions & Azure Functions",date:"2025-01-27",speaker:"Bavithran M",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/streamlinepythonappdeploymentwi7287398119334363138/"},
+  {id:13,name:"Day 7: Live Kubernetes Event \u2013 Cluster to App Deployment",date:"2025-02-09",speaker:"Bavithran M",domain:"Kubernetes",link:"https://www.linkedin.com/events/day7-livekubernetesevent-fromcl7293235550369591296/"},
+  {id:14,name:"Build Your Own Kubernetes Cluster",date:"2025-04-02",speaker:"Bavithran M",domain:"Kubernetes",link:"https://www.linkedin.com/events/buildyourownkubernetescluster7312393349166993408/"},
+  {id:15,name:"AWS Serverless Monitoring",date:"2025-04-07",speaker:"Geetha S",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/serverlessmonitoring7312855087901458433/"},
+  {id:16,name:"Jenkins CI/CD in GCP \u2013 Live Workshop",date:"2025-06-27",speaker:"Sonali Kurade",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/build-test-deploy-jenkinsci-cdi7342204590055964672/"},
+  {id:17,name:"Hosting Static Website on Amazon S3",date:"2025-07-08",speaker:"Siva Sankari",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/hostingastaticwebsiteonamazons37348051102795280384/"},
+  {id:18,name:"Kubernetes HPA & VPA in Action",date:"2025-07-11",speaker:"Sonali Kurade",domain:"Kubernetes",link:"https://www.linkedin.com/events/auto-magicallyscaleyourapps-kub7342211212379635712/"},
+  {id:19,name:"Automating EC2 with Terraform",date:"2025-07-12",speaker:"Sonali Kurade",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/automatingec2instancecreationwi7347560833008226304/"},
+  {id:20,name:"Azure Site Recovery \u2013 Hands-on Demo",date:"2025-07-17",speaker:"Sonali Kurade",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/disasterrecovery-ahands-ondemot7350531486011310081/"},
+  {id:21,name:"Creating Azure VMs with Terraform",date:"2025-07-18",speaker:"Raghavendra R",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/creatingazurevmswithterraform7350177008460460032/"},
+  {id:22,name:"Web App Deployment on AWS EC2",date:"2025-07-21",speaker:"Siva Sankari",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/hands-oncloud-webapplicationdep7350874945515606016/"},
+  {id:23,name:"Production-Ready Kubernetes Cluster",date:"2025-07-23",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/buildaproduction-readykubernete7353480246421041152/"},
+  {id:24,name:"Unlock Your SAP Future",date:"2025-07-23",speaker:"Siva Sankari",domain:"SAP",link:"https://www.linkedin.com/events/unlockyoursapfuture-abap-clouds7353048387656564736/"},
+  {id:25,name:"Azure Site Recovery for Beginners",date:"2025-07-24",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/disasterrecoveryforbeginners-yo7353427913548926978/"},
+  {id:26,name:"Linux Security Hardening with Ansible",date:"2025-07-25",speaker:"Siva Sankari",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/automatelinuxserversecurityhard7353096146036088834/"},
+  {id:27,name:"Azure App Creation using Terraform",date:"2025-07-31",speaker:"Siva Sankari",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/azureapp-createandconfigureusin7355685257863434240/"},
+  {id:28,name:"Azure Image to Deployment Demo",date:"2025-08-04",speaker:"Siva Sankari",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/cloudhands-ondemo-fromimagecrea7356008437035483138/"},
+  {id:29,name:"CEO Insights \u2013 Women Empowerment",date:"2025-08-06",speaker:"Siva Sankari",domain:"Leadership",link:"https://www.linkedin.com/events/voicesofvision-ceoinsightsforwo7355905736742203392/"},
+  {id:30,name:"DevSecOps with Azure DevOps",date:"2025-08-06",speaker:"Vijesh Vijayan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/devsecopsinaction-hardenyourci-7354520521331429376/"},
+  {id:31,name:"Azure VNet Gateway Connections",date:"2025-08-08",speaker:"Subbareddy Vundela",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/buildsecuremulti-cloudnetworks-7358414784871964672/"},
+  {id:32,name:"Kubernetes Migration \u2013 Hands-on",date:"2025-08-09",speaker:"Siva Sankari",domain:"Kubernetes",link:"https://www.linkedin.com/events/rewireyourinfraskills-hands-onk7358497194577989634/"},
+  {id:33,name:"Jenkins + SonarQube + Nexus",date:"2025-08-17",speaker:"Sonali Kurade, Manoj Savukar",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/jenkinspipelinewithsonarqubeint7359999022092210176/"},
+  {id:34,name:"Docker Build & Push with Azure DevOps",date:"2025-09-06",speaker:"Pradnya Deshpande",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/automatingdockerimagebuilds-pus7367590684003868672/"},
+  {id:35,name:"Kubernetes Monitoring with Prometheus",date:"2025-09-13",speaker:"Subbareddy Vundela",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/kubernetesobservabilitymadeeasy7371582615667240960/"},
+  {id:36,name:"Docker Automation with Terraform",date:"2025-09-14",speaker:"Pradnya Deshpande",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/automatingdockerwithterraform-a7370504802922827778/"},
+  {id:37,name:"End-to-End CI/CD with AKS",date:"2025-09-15",speaker:"Sourabh Bhoyar",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/masterclass-end-to-endci-cdpipe7370691631093641216/"},
+  {id:38,name:"Kubernetes StatefulSets Deep Dive",date:"2025-09-16",speaker:"Sonali Kurade",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/masteringkubernetesstatefulsets7370871999411212288/"},
+  {id:39,name:"Cloud & DevOps Career Growth",date:"2025-09-27",speaker:"Sonali Kurade, Pradnya Deshpande, Rakshita Belwal",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/cloud-devopscareergrowth-real-w7377037244278390784/"},
+  {id:40,name:"Career Guidance",date:"2025-09-27",speaker:"Sonali Kurade, Manoj Savukar, Arun Vaidyanathan",domain:"Career Guidance",link:"https://www.linkedin.com/events/careerguidance7375753539672838145/"},
+  {id:41,name:"LinkedIn Optimization",date:"2025-10-04",speaker:"Sonali Kurade",domain:"Career Guidance",link:"https://www.linkedin.com/events/linkedinoptimization7378739654902149120/"},
+  {id:42,name:"AWS EC2 Provisioning with Terraform",date:"2025-10-05",speaker:"Siva Sankari",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/automatingawsec2instanceprovisi7378745867589263360/"},
+  {id:43,name:"3-Tier Infra with Terraform",date:"2025-10-11",speaker:"Pradnya Deshpande",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/master3-tierinfrawithterraform-7379026514270466048/"},
+  {id:44,name:"Multi-Region Load Balancing",date:"2025-11-09",speaker:"Manoj Savukar",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/masteringmulti-regionloadbalanc7392197859963564032/"},
+  {id:45,name:"Zero-Trust Secrets in AKS",date:"2025-11-16",speaker:"Sonali Kurade",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/zero-trustsecretsmanagementinak7390290145373011968/"},
+  {id:46,name:"AI Behind Plagiarism Detection",date:"2025-11-18",speaker:"Swathipriya D.G, Dharshini Karthikeyan",domain:"AI Mastering",link:"https://www.linkedin.com/events/theaibehindplagiarismchecks-con7396064435393658880/"},
+  {id:47,name:"Zero-Drift Azure Infra",date:"2025-11-23",speaker:"Manoj Savukar",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/zero-driftazureinfrastructure-m7396980946505252865/"},
+  {id:48,name:"DevOps for Beginners",date:"2025-12-06",speaker:"Anitha, Geetha S",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/introductiontodevops-abeginner-7401211012026195969/"},
+  {id:49,name:"Deploy Web App on Azure VM",date:"2025-12-07",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/hands-on-deployyourfirstwebappo7402401401336954880/"},
+  {id:50,name:"Build AI Agent \u2013 Live",date:"2025-12-07",speaker:"Kruthica T, Dharshini Karthikeyan",domain:"AI Mastering",link:"https://www.linkedin.com/events/buildyourownaiagentforemailsumm7402745943147917313/"},
+  {id:51,name:"Cloud-Ready Dev Environment",date:"2025-12-11",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/buildacloud-readydevenvironment7402739563716390912/"},
+  {id:52,name:"NLP Project \u2013 Music Mood",date:"2025-12-14",speaker:"Kiruthiga Ravi, Swathipriya D.G",domain:"AI Mastering",link:"https://www.linkedin.com/events/readingthemoodofmusic-nlp-apis-7405245954955677696/"},
+  {id:53,name:"Azure DevOps for Newbies",date:"2025-12-27",speaker:"Subbareddy Vundela",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/azuredevopsfornewbies-settingup7407922780429733906/"},
+  {id:54,name:"IC to Leader Transition",date:"2025-12-29",speaker:"Sonali Kurade",domain:"Leadership",link:"https://www.linkedin.com/events/thetransitionfromindividualcont7410311190524076032/"},
+  {id:55,name:"Cloud Dev Environment on Azure VM",date:"2026-01-10",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/buildacloud-readydevenvironment7412423540987199488/"},
+  {id:56,name:"Azure Site Recovery \u2013 Resilience",date:"2026-01-19",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/fromdowntimetoresilience-learna7416936401310633985/"},
+  {id:57,name:"DevOps Career Meetup",date:"2026-02-02",speaker:"Sonali Kurade",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/devopscareermeetup-realstories-7421893116602994688/"},
+  {id:58,name:"Secure the Cloud Backbone: Azure VNet Peering",date:"2026-02-21",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.linkedin.com/events/securethecloudbackbone-azurevne7429449836090871808/"},
+];
+const meetupEvents=[
+  {id:1,name:"Secure the Cloud Backbone: Azure VNet Peering Across Regions",date:"2026-02-21",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/313342349/"},
+  {id:2,name:"High Availability Made Easy with Azure Load Balancer",date:"2026-01-31",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/313063962/"},
+  {id:3,name:"From Downtime to Resilience: Learn Azure Site Recovery Hands-On",date:"2026-01-19",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/312954100/"},
+  {id:4,name:"Azure DevOps for Newbies: Setting Up Your First CI/CD Pipeline",date:"2025-12-27",speaker:"Subbareddy Vundela",domain:"Cloud DevOps",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/312564781/"},
+  {id:5,name:"AI + Security: Building Secure-by-Default Workflows",date:"2025-12-19",speaker:"Siva Sankari",domain:"AI Mastering",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/312263242/"},
+  {id:6,name:"Reading the Mood of Music: NLP + APIs + Visualization",date:"2025-12-14",speaker:"Kiruthiga Ravi, Swathipriya D.G",domain:"AI Mastering",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/312406681/"},
+  {id:7,name:"Build a Cloud-Ready Dev Environment on Azure VM",date:"2026-01-10",speaker:"Arun Vaidhyanathan",domain:"Cloud DevOps",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/312315073/"},
+  {id:8,name:"Build Your Own AI Agent for Email Summarization \u2014 LIVE",date:"2025-12-07",speaker:"Swathipriya D.G, Dharshini Karthikeyan",domain:"AI Mastering",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/312315294/"},
+  {id:9,name:"DevOps Career Meetup: Real Stories, Real Guidance & Real Growth",date:"2026-02-02",speaker:"Sonali Kurade",domain:"Career Guidance",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/313077402/"},
+  {id:10,name:"Leadership Podcast",date:"2025-12-29",speaker:"Sonali Kurade",domain:"Leadership",link:"https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/312572370/"},
+];
+function domainClass(d){const m={"Cloud DevOps":"domain-cloud","Kubernetes":"domain-k8s","AI Mastering":"domain-ai","Career Guidance":"domain-career","Leadership":"domain-leadership","SAP":"domain-sap"};return m[d]||"domain-cloud";}
+function domainKey(d){if(d==="Kubernetes")return"k8s";if(d.includes("AI"))return"ai";if(d.includes("Career"))return"career";if(d.includes("Leadership"))return"leadership";return"cloud";}
+function renderTable(tableId,events){
+  const tbody=document.querySelector(`#${tableId} tbody`);
+  tbody.innerHTML=events.map(e=>`<tr data-domain="${domainKey(e.domain)}"><td style="color:var(--text-3);font-weight:600;">${e.id}</td><td style="font-weight:600;max-width:300px;">${e.name}</td><td style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-3);">${e.date}</td><td style="font-size:0.78rem;">${e.speaker}</td><td><span class="domain-badge ${domainClass(e.domain)}">${e.domain}</span></td><td><a href="${e.link}" target="_blank" rel="noopener noreferrer" class="event-link">View &#x2197;</a></td></tr>`).join('');
+}
+renderTable('linkedin-table',linkedinEvents);
+renderTable('meetup-table',meetupEvents);
+function switchTab(tab,el){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('[data-tab-btn]').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  el.classList.add('active');
+}
+function filterEvents(filter,el){
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  const activeTab=document.querySelector('.tab-content.active');
+  activeTab.querySelectorAll('tbody tr').forEach(row=>{
+    row.style.display=(filter==='all'||row.dataset.domain===filter)?'':'none';
+  });
+}
+</script>
+<script src="shared-premium.js"></script>
+</body>
+</html>

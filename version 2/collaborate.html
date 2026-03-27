@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0c1220" media="(prefers-color-scheme:dark)">
+<meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme:light)">
+<title>Collaborate with CareerByteCode | Global Tech Growth Ecosystem</title>
+<meta name="description" content="One ecosystem where technology professionals build personal brands, grow global visibility, and turn expertise into income. Seven pillars. Six communities. 105+ countries.">
+<meta property="og:title" content="Collaborate with CareerByteCode">
+<meta property="og:description" content="One ecosystem where technology professionals build personal brands, grow global visibility, and turn expertise into income.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<link rel="canonical" href="https://careerbytecode.github.io/collaborate.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared-premium.css">
+<style>
+/* ===============================================
+   PAGE-SPECIFIC: Collaborate
+   =============================================== */
+
+/* ===== HERO - OPTION C: STACKED LAYERS / AURORA ===== */
+.collab-hero{min-height:100vh;padding:0;background:linear-gradient(180deg,#040810 0%,#0a1628 40%,#0d1f3c 100%);position:relative;overflow:hidden;}
+.collab-hero .hero__content{position:relative;z-index:5;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:100vh;padding:calc(var(--nav-h) + var(--sp-8)) var(--sp-6) var(--sp-8);max-width:1200px;margin:0 auto;text-align:left;}
+.collab-hero .hero__badge{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:#93c5fd;margin-bottom:var(--sp-4);align-self:flex-start;}
+.collab-hero h1{font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;color:#e2e8f0;margin-bottom:var(--sp-3);max-width:750px;}
+.collab-hero .hero__sub{font-size:clamp(0.92rem,1.6vw,1.05rem);color:rgba(255,255,255,0.45);line-height:1.85;max-width:600px;margin-bottom:var(--sp-5);}
+
+/* Inline stats inside hero */
+.hero-inline-stats{display:flex;gap:var(--sp-5);flex-wrap:wrap;margin-bottom:var(--sp-5);}
+.hero-inline-stat{display:flex;flex-direction:column;}
+.hero-inline-stat .hi-num{font-size:1.6rem;font-weight:800;letter-spacing:-0.03em;line-height:1;}
+.hero-inline-stat .hi-label{font-size:0.7rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;font-weight:500;}
+
+/* Divider line under stats */
+.hero-divider{width:80px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2),transparent);margin-bottom:var(--sp-4);border-radius:2px;}
+
+/* Aurora bands - horizontal gradient waves */
+.aurora{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
+.aurora-band{position:absolute;width:120%;height:120px;left:-10%;filter:blur(60px);opacity:0.35;border-radius:50%;will-change:transform;}
+.aurora-band--1{top:12%;background:linear-gradient(90deg,transparent 0%,rgba(37,99,235,0.5) 15%,rgba(14,165,233,0.4) 40%,rgba(6,182,212,0.3) 65%,transparent 100%);animation:aurora-wave-1 12s ease-in-out infinite;}
+.aurora-band--2{top:35%;background:linear-gradient(90deg,transparent 5%,rgba(139,92,246,0.4) 25%,rgba(99,102,241,0.35) 50%,rgba(37,99,235,0.2) 75%,transparent 100%);animation:aurora-wave-2 16s ease-in-out infinite;height:110px;}
+.aurora-band--3{top:58%;background:linear-gradient(90deg,transparent 0%,rgba(6,182,212,0.35) 20%,rgba(37,99,235,0.3) 45%,rgba(139,92,246,0.25) 70%,transparent 100%);animation:aurora-wave-3 20s ease-in-out infinite;height:90px;}
+.aurora-band--4{top:78%;background:linear-gradient(90deg,transparent 8%,rgba(14,165,233,0.3) 30%,rgba(37,99,235,0.25) 55%,rgba(139,92,246,0.15) 80%,transparent 95%);animation:aurora-wave-4 14s ease-in-out infinite;height:100px;opacity:0.3;}
+@keyframes aurora-wave-1{0%,100%{transform:translateX(0) scaleX(1);}50%{transform:translateX(5%) scaleX(1.1);}}
+@keyframes aurora-wave-2{0%,100%{transform:translateX(0) scaleX(1);}50%{transform:translateX(-4%) scaleX(0.95);}}
+@keyframes aurora-wave-3{0%,100%{transform:translateX(0) scaleY(1);}50%{transform:translateX(3%) scaleY(1.3);}}
+@keyframes aurora-wave-4{0%,100%{transform:translateX(0) scaleX(1);}50%{transform:translateX(-6%) scaleX(1.15);}}
+
+/* Subtle noise grain on hero */
+.collab-hero::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.03;pointer-events:none;z-index:2;}
+
+/* Text gradient for "Collaborate" and "ByteCode" with glow pulse */
+.collab-shimmer{
+  background:linear-gradient(135deg,#60a5fa,#38bdf8,#06b6d4);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 20px rgba(56,189,248,0.3));
+  animation:collab-glow 3s ease-in-out infinite alternate;
+}
+@keyframes collab-glow{0%{filter:drop-shadow(0 0 15px rgba(56,189,248,0.2));}100%{filter:drop-shadow(0 0 35px rgba(56,189,248,0.5));}}
+
+/* Pulsing ambient glow behind hero title area */
+.collab-hero .hero__content::before{
+  content:'';position:absolute;width:500px;height:300px;top:30%;left:-5%;
+  background:radial-gradient(ellipse,rgba(37,99,235,0.12),transparent 70%);
+  filter:blur(50px);pointer-events:none;animation:hero-ambient 8s ease-in-out infinite alternate;z-index:-1;
+}
+@keyframes hero-ambient{0%{opacity:0.5;transform:translate(0,0) scale(1);}100%{opacity:0.8;transform:translate(20px,-10px) scale(1.1);}}
+
+/* Particle network canvas */
+.particle-canvas{position:absolute;inset:0;z-index:2;pointer-events:none;}
+
+/* Mobile: hide particles */
+@media(max-width:640px){.particle-canvas{display:none;}}
+
+/* Scroll hint - stays centered at bottom */
+.collab-hero .scroll-hint{position:absolute;bottom:var(--sp-4);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:scroll-bounce 2s ease-in-out infinite;z-index:5;}
+.collab-hero .scroll-hint span{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.2);font-weight:500;}
+.collab-hero .scroll-line{width:1px;height:32px;background:linear-gradient(to bottom,rgba(96,165,250,0.4),transparent);}
+@keyframes scroll-bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+
+/* Hero pulse dot */
+.hero-pulse{width:6px;height:6px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;display:inline-block;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(0.8);}}
+
+/* Mobile hero */
+@media(max-width:640px){
+  .collab-hero .hero__content{padding:calc(var(--nav-h) + var(--sp-4)) var(--sp-3) var(--sp-6);}
+  .hero-inline-stats{gap:var(--sp-3);}
+  .hero-inline-stat .hi-num{font-size:1.3rem;}
+  .aurora-band{filter:blur(80px);opacity:0.25;}
+}
+@media(prefers-reduced-motion:reduce){
+  .aurora-band,.collab-shimmer,.collab-hero .hero__content::before{animation:none !important;}
+}
+
+/* ===== ECOSYSTEM GRID ===== */
+.ecosystem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);}
+.ecosystem-card{position:relative;background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:var(--sp-4);transition:all var(--dur-normal) var(--ease-out-expo);text-decoration:none;color:var(--text);overflow:hidden;cursor:pointer;box-shadow:var(--sh-sm);}
+.ecosystem-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;border-radius:var(--r-lg) var(--r-lg) 0 0;}
+.ecosystem-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);}
+.ecosystem-card h3{font-size:1.05rem;font-weight:700;margin-bottom:var(--sp-1);color:var(--text);}
+.ecosystem-card p{font-size:0.88rem;color:var(--text-2);line-height:1.7;}
+.ecosystem-card .card-arrow{position:absolute;top:var(--sp-3);right:var(--sp-3);font-size:1rem;opacity:0;transition:opacity 0.2s,transform 0.2s;color:var(--text-3);}
+.ecosystem-card:hover .card-arrow{opacity:1;transform:translateX(4px);}
+.eco-icon{font-size:1.6rem;margin-bottom:var(--sp-2);display:block;}
+
+/* Ecosystem card color variants */
+.ecosystem-card--blue::before{background:linear-gradient(90deg,var(--accent),var(--accent-2));}
+.ecosystem-card--green::before{background:linear-gradient(90deg,var(--success),#34d399);}
+.ecosystem-card--purple::before{background:linear-gradient(90deg,var(--accent-3),#a78bfa);}
+.ecosystem-card--rose::before{background:linear-gradient(90deg,var(--rose),#f472b6);}
+.ecosystem-card--gold::before{background:linear-gradient(90deg,var(--gold),#fbbf24);}
+.ecosystem-card--cyan::before{background:linear-gradient(90deg,var(--accent-2),#22d3ee);}
+
+@media(max-width:960px){.ecosystem-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.ecosystem-grid{grid-template-columns:1fr;}}
+
+/* ===== BENEFITS GRID (2x2 per audience section) ===== */
+.benefits-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);}
+@media(max-width:768px){.benefits-grid{grid-template-columns:1fr;}}
+
+/* Benefit card color accents */
+.card--blue::before{background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:1;}
+.card--purple::before{background:linear-gradient(90deg,var(--accent-3),#a78bfa);opacity:1;}
+.card--rose::before{background:linear-gradient(90deg,var(--rose),#f472b6);opacity:1;}
+.card--gold::before{background:linear-gradient(90deg,var(--gold),#fbbf24);opacity:1;}
+.card--green::before{background:linear-gradient(90deg,var(--success),#34d399);opacity:1;}
+
+/* ===== DIFFERENTIATORS GRID ===== */
+.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3);}
+.diff-card{position:relative;overflow:hidden;}
+.diff-num{position:absolute;top:-8px;right:var(--sp-3);font-family:var(--font-mono);font-size:4rem;font-weight:800;opacity:0.06;line-height:1;pointer-events:none;color:var(--text);}
+.diff-card h3{font-size:0.95rem;font-weight:700;margin-bottom:var(--sp-1);}
+.diff-card p{font-size:0.88rem;color:var(--text-2);line-height:1.7;}
+@media(max-width:768px){.diff-grid{grid-template-columns:1fr;}}
+
+/* ===== LEADERS GRID ===== */
+.leaders-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-3);}
+@media(max-width:960px){.leaders-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.leaders-grid{grid-template-columns:1fr;max-width:340px;margin:0 auto;}}
+
+/* ===== CTA SECTION ===== */
+.collab-cta{background:linear-gradient(135deg,#0a1628 0%,#0d2147 50%,#0f2d6e 100%);color:#fff;position:relative;overflow:hidden;border-radius:var(--r-xl);padding:var(--sp-10) var(--sp-6);text-align:center;}
+.collab-cta h2{color:#fff;font-size:clamp(1.6rem,3.5vw,2.4rem);max-width:800px;margin:0 auto var(--sp-3);}
+.collab-cta p{color:rgba(255,255,255,0.6);max-width:700px;margin:0 auto var(--sp-4);font-size:0.95rem;line-height:1.8;}
+.collab-cta .cta-footer{font-size:0.78rem;color:rgba(255,255,255,0.35);margin-top:var(--sp-4);}
+.collab-cta .cta-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:0.3;}
+.collab-cta .cta-orb-1{width:300px;height:300px;background:#2563eb;top:-15%;left:-10%;}
+.collab-cta .cta-orb-2{width:250px;height:250px;background:#06b6d4;bottom:-15%;right:-10%;}
+
+/* ===== SECTION ALT ===== */
+.section--alt{background:var(--surface);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:960px){
+  .collab-hero h1{font-size:clamp(2.2rem,8vw,3.5rem);}
+}
+@media(max-width:640px){
+  .collab-hero .hero__content{padding-top:calc(var(--nav-h) + var(--sp-6));}
+  .collab-hero h1{font-size:clamp(2rem,9vw,3rem);}
+  .collab-orb--1{width:300px;height:300px;}
+  .collab-orb--2{width:250px;height:250px;}
+  .collab-orb--3{width:200px;height:200px;}
+}
+
+/* Print */
+@media print{
+  .nav,.scroll-progress,.nav__mobile,.orb,.btt,.noise{display:none !important;}
+  .reveal{opacity:1;transform:none;}
+  body{background:#fff;color:#000;}
+  .collab-hero{min-height:auto;padding:40px 0;}
+  .section{padding:30px 0;}
+}
+</style>
+</head>
+<body>
+
+<div class="noise"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <a class="nav__logo" href="index.html">
+    <img class="nav__logo-icon" src="cbc - logo.png" alt="CBC" width="36" height="36">
+    <span class="nav__logo-text">Career<em>ByteCode</em></span>
+  </a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="sheleads.html">SheLeads</a>
+    <a href="revenue-models.html">Revenue</a>
+    <a href="onboarding.html">Onboarding</a>
+    <a href="collaborate.html" class="active">Collaborate</a>
+  </div>
+  <a class="nav__cta" href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">Join Free</a>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+  <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav__mobile" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="sheleads.html">SheLeads</a>
+  <a href="revenue-models.html">Revenue</a>
+  <a href="onboarding.html">Onboarding</a>
+  <a href="collaborate.html" class="active">Collaborate</a>
+  <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode"></button>
+  <a class="nav__cta" href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">Join Free</a>
+</div>
+
+<main>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero hero--dark collab-hero" id="hero">
+  <!-- Aurora bands - horizontal light waves -->
+  <div class="aurora">
+    <div class="aurora-band aurora-band--1"></div>
+    <div class="aurora-band aurora-band--2"></div>
+    <div class="aurora-band aurora-band--3"></div>
+    <div class="aurora-band aurora-band--4"></div>
+  </div>
+  <!-- Particle connections network -->
+  <canvas class="particle-canvas" id="particle-canvas"></canvas>
+  <div class="hero__content" data-parallax="0.1">
+    <div class="hero__badge reveal"><span class="hero-pulse"></span> Global Tech Growth Ecosystem</div>
+    <h1 class="reveal">Why Everyone Should <span class="collab-shimmer">Collaborate</span> with Career<span class="collab-shimmer">ByteCode</span></h1>
+    <p class="hero__sub reveal">One ecosystem where technology professionals build personal brands, grow global visibility, and turn expertise into income. Seven pillars. Six communities. 105+ countries.</p>
+    <div class="hero-inline-stats reveal">
+      <div class="hero-inline-stat">
+        <div class="hi-num text-gradient-2" data-count-to="2.4M+">&#8212;</div>
+        <div class="hi-label">Global Professionals</div>
+      </div>
+      <div class="hero-inline-stat">
+        <div class="hi-num" style="color:var(--success);" data-count-to="105+">&#8212;</div>
+        <div class="hi-label">Countries</div>
+      </div>
+      <div class="hero-inline-stat">
+        <div class="hi-num" style="color:var(--gold);" data-count-to="55%+">&#8212;</div>
+        <div class="hi-label">Revenue Share</div>
+      </div>
+      <div class="hero-inline-stat">
+        <div class="hi-num" style="color:var(--accent-3);" data-count-to="2015">&#8212;</div>
+        <div class="hi-label">Brussels, Europe</div>
+      </div>
+    </div>
+    <div class="hero-divider"></div>
+    <a class="btn btn--primary btn--magnetic" href="#ecosystem">Explore the Ecosystem &darr;</a>
+  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>SCROLL</span></div>
+</section>
+
+<!-- ==================== THE ECOSYSTEM ==================== -->
+<section class="section reveal" id="ecosystem">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">The Ecosystem</div>
+    <h2>Six Communities. One <span class="text-gradient">Growth Engine.</span></h2>
+    <p>CareerByteCode connects companies, engineers, speakers, career-restart professionals, students, and freelancers into one operational network. Each community strengthens the others. Learning feeds freelancing. Events build speaker brands. Consulting generates hiring leads. Nothing runs in isolation.</p>
+  </div>
+  <div class="ecosystem-grid reveal">
+
+    <a class="ecosystem-card ecosystem-card--blue" href="#companies">
+      <span class="card-arrow">&rarr;</span>
+      <span class="eco-icon">&#127970;</span>
+      <h3>Companies</h3>
+      <p>Hire engineers with production project portfolios. Get your product into real developer workflows through workshops, POCs, and beta programs. Build brand visibility across 105+ countries.</p>
+    </a>
+
+    <a class="ecosystem-card ecosystem-card--green" href="#engineers">
+      <span class="card-arrow">&rarr;</span>
+      <span class="eco-icon">&#128187;</span>
+      <h3>Engineers</h3>
+      <p>Work on production-grade projects across Cloud, DevOps, AI/ML, and Security. Earn through training, consulting, content creation, and freelancing. Build a professional identity that's visible beyond your employer's walls.</p>
+    </a>
+
+    <a class="ecosystem-card ecosystem-card--purple" href="#speakers">
+      <span class="card-arrow">&rarr;</span>
+      <span class="eco-icon">&#127908;</span>
+      <h3>Influencers and Speakers</h3>
+      <p>Host sessions, workshops, and LinkedIn Lives reaching practitioners in 105+ countries. Earn through paid engagements, course sales, and 55%+ revenue share. Move from speaker to recognized industry authority.</p>
+    </a>
+
+    <a class="ecosystem-card ecosystem-card--rose" href="#women">
+      <span class="card-arrow">&rarr;</span>
+      <span class="eco-icon">&#10024;</span>
+      <h3>Career Restart Women</h3>
+      <p>Re-enter tech through SheLeads, a free 12-class program covering personal branding, LinkedIn optimization, AI content creation, and visual design. Every class has a concrete deliverable. Earn from home through freelancing, training, and content creation.</p>
+    </a>
+
+    <a class="ecosystem-card ecosystem-card--gold" href="#students">
+      <span class="card-arrow">&rarr;</span>
+      <span class="eco-icon">&#127891;</span>
+      <h3>Students</h3>
+      <p>Graduate with a portfolio, a professional brand, and a network. Work on real-world projects with production tools. Build your digital identity before your first interview, not after.</p>
+    </a>
+
+    <a class="ecosystem-card ecosystem-card--cyan" href="#freelancers">
+      <span class="card-arrow">&rarr;</span>
+      <span class="eco-icon">&#128188;</span>
+      <h3>Freelancers</h3>
+      <p>Access continuous project flow, global clients, and 55%+ revenue share through Stripe Connect. Stop chasing gigs. Build a sustainable practice with diversified income and inbound demand.</p>
+    </a>
+
+  </div>
+</div>
+</section>
+
+<!-- ==================== FOR COMPANIES ==================== -->
+<section class="section section--alt reveal" id="companies">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">For Companies</div>
+    <h2>Skilled Talent. Product Adoption. <span class="text-gradient">Global Reach.</span></h2>
+    <p>Hiring companies get access to engineers who carry project portfolios, not just resumes. Product companies get their tools into real developer workflows through live workshops, POCs, and beta programs. Both get brand visibility across a global technical audience spanning 105+ countries.</p>
+  </div>
+  <div class="benefits-grid reveal">
+    <div class="card card--blue">
+      <div class="card__body">
+        <h3>Engineers With Production Experience</h3>
+        <p>Members work on real infrastructure: multi-cloud deployments, CI/CD pipelines, container orchestration, IaC, observability, and AI/ML systems. They're not fresh from a tutorial. They carry portfolios.</p>
+      </div>
+    </div>
+    <div class="card card--blue">
+      <div class="card__body">
+        <h3>Brand Visibility Across 105+ Countries</h3>
+        <p>Co-host webinars, sponsor tech events, run LinkedIn campaigns, and feature your brand through community platforms reaching a global network of technology professionals.</p>
+      </div>
+    </div>
+    <div class="card card--blue">
+      <div class="card__body">
+        <h3>Product Adoption Through Practice, Not Ads</h3>
+        <p>Your product gets integrated into training projects, live workshops, and hands-on developer sessions. Practitioners learn on your tool, then carry that preference into their organizations.</p>
+      </div>
+    </div>
+    <div class="card card--blue">
+      <div class="card__body">
+        <h3>Consulting and Partnership Opportunities</h3>
+        <p>Collaborate on cloud transformation, DevOps maturity, AI/ML integration, and infrastructure modernization. Engagement models include direct consulting, co-delivered training, and joint go-to-market programs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== FOR INFLUENCERS & SPEAKERS ==================== -->
+<section class="section reveal" id="speakers">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">For Influencers and Speakers</div>
+    <h2>Authority. Income. <span class="text-gradient">A Global Stage.</span></h2>
+    <p>CareerByteCode hosts LinkedIn Lives, webinars, meetups, and global spotlight sessions. Speakers don't perform for passive viewers. They engage with practitioners who implement what they learn, ask hard questions, and remember who taught them.</p>
+  </div>
+  <div class="benefits-grid reveal">
+    <div class="card card--purple">
+      <div class="card__body">
+        <h3>Regular Speaking Opportunities</h3>
+        <p>Host sessions across multiple formats: LinkedIn Lives, webinars, meetups, and in-person events. The audience spans developers, architects, DevOps engineers, and technical leads across 105+ countries.</p>
+      </div>
+    </div>
+    <div class="card card--purple">
+      <div class="card__body">
+        <h3>Earn From Your Expertise</h3>
+        <p>Paid speaking engagements, course creation and sales through the marketplace, content revenue sharing, and consulting referrals. 55%+ payout through Stripe Connect.</p>
+      </div>
+    </div>
+    <div class="card card--purple">
+      <div class="card__body">
+        <h3>From Speaker to Brand</h3>
+        <p>Consistent exposure through co-promoted events, community content channels, and platform endorsement. Build from individual talks to a sustained professional brand with inbound demand.</p>
+      </div>
+    </div>
+    <div class="card card--purple">
+      <div class="card__body">
+        <h3>Network With Decision Makers</h3>
+        <p>Direct connections with CTOs, senior architects, principal engineers, and technical leaders. These aren't LinkedIn cold adds. They're relationships built through shared events and content.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== FOR CAREER RESTART WOMEN ==================== -->
+<section class="section section--alt reveal" id="women">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">For Career Restart Women</div>
+    <h2>A Career Break Is a Pause. <span class="text-gradient-rose">Not a Reset.</span></h2>
+    <p>SheLeads is a free, structured 12-class program designed for women re-entering the professional world. It covers personal clarity, unified digital identity, AI-powered content creation, LinkedIn optimization, visual design, and blogging across three platforms. Every class produces a concrete deliverable. By the end, participants have a fully built professional digital presence.</p>
+  </div>
+  <div class="benefits-grid reveal">
+    <div class="card card--rose">
+      <div class="card__body">
+        <h3>Remote-First Learning Paths</h3>
+        <p>Structured programs across Cloud, DevOps/DevSecOps/MLOps, AI/ML, and Security. Designed for flexible schedules with clear milestones at each stage.</p>
+      </div>
+    </div>
+    <div class="card card--rose">
+      <div class="card__body">
+        <h3>Earn From Home</h3>
+        <p>Freelance projects, training delivery, and content creation through the marketplace. 55%+ revenue share. You set your price, work your hours.</p>
+      </div>
+    </div>
+    <div class="card card--rose">
+      <div class="card__body">
+        <h3>12 Classes, 12 Deliverables</h3>
+        <p>Personal branding, Gmail setup, Chrome profile, AI content plans, Canva design, LinkedIn optimization, blogging, and content strategy. Each class ends with something you've built, not just something you've watched.</p>
+      </div>
+    </div>
+    <div class="card card--rose">
+      <div class="card__body">
+        <h3>Mentorship and Peer Support</h3>
+        <p>Peer learning groups, mentorship circles, and a community of women who've made the same transition. Support that understands the specific challenges of a career restart.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== FOR COLLEGE STUDENTS ==================== -->
+<section class="section reveal" id="students">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">For College Students</div>
+    <h2>Graduate Job-Ready. <span class="text-gradient">Not Just Degree-Ready.</span></h2>
+    <p>Most graduates enter the job market with theoretical knowledge, a generic LinkedIn profile, and zero production experience. CareerByteCode closes all three gaps. Members work on real projects, build a visible professional identity, and develop a network before they interview.</p>
+  </div>
+  <div class="benefits-grid reveal">
+    <div class="card card--gold">
+      <div class="card__body">
+        <h3>Production-Level Projects</h3>
+        <p>Work with the same tools enterprise teams use: CI/CD pipelines, container orchestration, cloud infrastructure, IaC, and AI/ML systems. Build a portfolio of real work, not classroom exercises.</p>
+      </div>
+    </div>
+    <div class="card card--gold">
+      <div class="card__body">
+        <h3>Personal Brand Before Your First Interview</h3>
+        <p>The onboarding program builds your unified digital identity, LinkedIn presence, content strategy, and visual branding. When a recruiter searches your name, they find published work and a professional profile.</p>
+      </div>
+    </div>
+    <div class="card card--gold">
+      <div class="card__body">
+        <h3>Learn From Practitioners</h3>
+        <p>Direct access to working engineers, architects, and technical leads. Career guidance from people who hire, not people who teach hiring theory.</p>
+      </div>
+    </div>
+    <div class="card card--gold">
+      <div class="card__body">
+        <h3>Global Network From Day One</h3>
+        <p>Connect with professionals across 105+ countries through events, community projects, and mentorship programs. Opportunities arrive through relationships, not job boards.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== FOR FREELANCERS ==================== -->
+<section class="section section--alt reveal" id="freelancers">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">For Freelancers</div>
+    <h2>Stop Hunting. <span class="text-gradient">Start Building.</span></h2>
+    <p>Freelancing doesn't have to mean constant hustle for the next gig. CareerByteCode gives freelancers steady infrastructure: platform-driven projects, a global client network, 55%+ revenue share through Stripe Connect, and a community that keeps your skills and your profile competitive.</p>
+  </div>
+  <div class="benefits-grid reveal">
+    <div class="card card--green">
+      <div class="card__body">
+        <h3>Steady Pipeline</h3>
+        <p>Platform-driven project opportunities, client referrals, and consulting collaborations with enterprise partners. Reduce the gap between engagements.</p>
+      </div>
+    </div>
+    <div class="card card--green">
+      <div class="card__body">
+        <h3>Global Clients, No Marketing Overhead</h3>
+        <p>The network spans 105+ countries. Projects and client connections come through the platform. Your market isn't limited by geography or your personal outreach capacity.</p>
+      </div>
+    </div>
+    <div class="card card--green">
+      <div class="card__body">
+        <h3>55%+ Revenue Share</h3>
+        <p>You set your price. Payments are automated through Stripe Connect. No invoicing, no chasing payments, no hidden deductions. Multiple income channels: consulting, training, course sales, content resale, and vendor partnerships.</p>
+      </div>
+    </div>
+    <div class="card card--green">
+      <div class="card__body">
+        <h3>From Freelancer to Recognized Specialist</h3>
+        <p>The platform's growth roadmap, event speaking slots, and content co-promotion build your personal brand alongside your client work. Inbound demand replaces cold outreach over time.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ==================== WHAT SETS US APART ==================== -->
+<section class="section reveal" id="differentiators">
+<div class="container">
+  <div class="section-header">
+    <h2>What Makes This <span class="text-gradient">Different.</span></h2>
+    <p>CareerByteCode isn't a course catalog, a job board, or a freelancing marketplace. It's an ecosystem where all of those functions operate under one roof and feed each other.</p>
+  </div>
+  <div class="diff-grid reveal">
+
+    <div class="card diff-card">
+      <div class="diff-num">01</div>
+      <div class="card__body">
+        <h3>Visibility Is the Product, Not Just Skills</h3>
+        <p>Most platforms stop at skill-building. CareerByteCode's onboarding starts with personal branding: a unified handle across 10+ platforms, optimized LinkedIn, AI-assisted content, and visual design. Technical skill matters; invisible skill doesn't pay.</p>
+      </div>
+    </div>
+
+    <div class="card diff-card">
+      <div class="diff-num">02</div>
+      <div class="card__body">
+        <h3>Built-In Monetization</h3>
+        <p>Industry-leading 55%+ revenue sharing powered by Stripe Connect. Multiple income streams baked into every role in the ecosystem.</p>
+      </div>
+    </div>
+
+    <div class="card diff-card">
+      <div class="diff-num">03</div>
+      <div class="card__body">
+        <h3>Seven Pillars, Not One</h3>
+        <p>Learning, consulting, events, freelancing, women's empowerment, SaaS partnerships, and hiring all operate under one roof. A member can enter through any door and access the rest.</p>
+      </div>
+    </div>
+
+    <div class="card diff-card">
+      <div class="diff-num">04</div>
+      <div class="card__body">
+        <h3>Structured Growth Roadmap</h3>
+        <p>A 12-stage progression from Invisible to Industry Leader, with concrete milestones at each stage. Local visibility, LinkedIn authority, event speaking, podcast appearances, and eventually global conference stages. Not motivational language; a documented path with deliverables.</p>
+      </div>
+    </div>
+
+    <div class="card diff-card">
+      <div class="diff-num">05</div>
+      <div class="card__body">
+        <h3>Real Product Adoption</h3>
+        <p>Companies don't get survey feedback. They get their products integrated into live workshops, training projects, and developer sessions where practitioners actually use the tool to solve problems.</p>
+      </div>
+    </div>
+
+    <div class="card diff-card">
+      <div class="diff-num">06</div>
+      <div class="card__body">
+        <h3>SheLeads: 12 Classes, 12 Deliverables</h3>
+        <p>A free program for women re-entering tech. Not a support group; a structured build program. Personal branding, AI content, LinkedIn mastery, visual design, blogging. Every class produces something tangible.</p>
+      </div>
+    </div>
+
+    <div class="card diff-card">
+      <div class="diff-num">07</div>
+      <div class="card__body">
+        <h3>Brussels HQ, Global Operation</h3>
+        <p>Registered in Belgium since 2015. Backed by Cloudnloud Technologies SRL. EU-compliant payment infrastructure through Stripe Connect. A legal entity, not a side project.</p>
+      </div>
+    </div>
+
+    <div class="card diff-card">
+      <div class="diff-num">08</div>
+      <div class="card__body">
+        <h3>55%+ Revenue Share, Not Industry Standard</h3>
+        <p>Most platforms take 40-50%. CareerByteCode pays 55%+ to trainers, consultants, and service providers through Stripe Connect. You set your price. Payments are automated. The platform amplifies your reach; you keep the majority of what you earn.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ==================== THE FACES BEHIND CBC ==================== -->
+<section class="section section--alt reveal" id="leaders">
+<div class="container">
+  <div class="section-header">
+    <h2>Experts Who <span class="text-gradient">Inspire.</span></h2>
+    <p>Real professionals. Real experience. The CareerByteCode community is built by people who've been there and want to bring you there too.</p>
+  </div>
+  <div class="leaders-grid reveal">
+
+    <div class="card card--person">
+      <img class="card__photo" src="images/siva-sankari.jpg" alt="Siva Sankari" loading="lazy">
+      <div class="card__body">
+        <h3>Siva Sankari</h3>
+        <div class="card__role">SheLeads . Community Lead</div>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/learnwithsankari/" target="_blank" rel="noopener noreferrer" aria-label="Siva Sankari LinkedIn"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="card card--person">
+      <img class="card__photo" src="images/anitha-d.jpg" alt="Anitha D" loading="lazy">
+      <div class="card__body">
+        <h3>Anitha D</h3>
+        <div class="card__role">Speaker . DevOps Expert</div>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/intikianitha/" target="_blank" rel="noopener noreferrer" aria-label="Anitha D LinkedIn"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="card card--person">
+      <img class="card__photo" src="images/sonali-kurade.jpg" alt="Sonali Kurade" loading="lazy">
+      <div class="card__body">
+        <h3>Sonali Kurade</h3>
+        <div class="card__role">Career Restart Mentor</div>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/techopsbysonali/" target="_blank" rel="noopener noreferrer" aria-label="Sonali Kurade LinkedIn"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="card card--person">
+      <img class="card__photo" src="images/raghavendra-r.jpg" alt="Raghavendra R" loading="lazy">
+      <div class="card__body">
+        <h3>Raghavendra R</h3>
+        <div class="card__role">Tech Lead . Cloud Architect</div>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/intikirag/" target="_blank" rel="noopener noreferrer" aria-label="Raghavendra R LinkedIn"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="section reveal" id="cta">
+<div class="container">
+  <div class="collab-cta">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <h2>Don't Just Be Part of the Industry. Be Part of the Ecosystem That Builds It.</h2>
+    <p>Whether you're a company scaling delivery, a speaker building authority, a student launching a career, a freelancer building a practice, or a professional restarting after a break, the ecosystem has a path designed for you.</p>
+    <div style="display:flex;gap:var(--sp-2);justify-content:center;flex-wrap:wrap;">
+      <a class="btn btn--primary btn--lg btn--magnetic" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener noreferrer">Join CareerByteCode Today &rarr;</a>
+      <a class="btn btn--outline btn--lg btn--magnetic" href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+    </div>
+    <div class="cta-footer">Brussels, Belgium &middot; 2.4M+ Professionals &middot; 105+ Countries &middot; Est. 2015</div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="footer__title">We don't just teach tech - <em>we create leaders</em></div>
+  <div class="footer__sub">CareerByteCode &middot; Top European Tech Brand &middot; Remote-first &middot; Serving 105+ Countries</div>
+  <div class="footer__links">
+    <a href="https://www.careerbytecode.com" target="_blank" rel="noopener noreferrer">Website</a>
+    <a href="https://careerbytecode.github.io/" target="_blank" rel="noopener noreferrer">Blog</a>
+    <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://medium.com/careerbytecode" target="_blank" rel="noopener noreferrer">Medium</a>
+  </div>
+  <div class="footer__email"><a href="mailto:community@careerbytecode.com">community@careerbytecode.com</a></div>
+  <div class="footer__copy">&copy; 2015-2026 CareerByteCode. All rights reserved.</div>
+</footer>
+
+<button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+
+<script src="shared-premium.js"></script>
+<script>
+/* Particle connections network - dots float, lines draw between nearby ones */
+(function(){
+  var canvas=document.getElementById('particle-canvas');
+  if(!canvas||window.matchMedia('(max-width:640px)').matches||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var ctx=canvas.getContext('2d');
+  var particles=[];
+  var count=40;
+  var connectDist=120;
+  var mouse={x:null,y:null};
+
+  function resize(){
+    var hero=canvas.parentElement;
+    canvas.width=hero.offsetWidth;
+    canvas.height=hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize',resize);
+
+  /* Track mouse for interactive glow near cursor */
+  canvas.parentElement.addEventListener('mousemove',function(e){
+    var r=canvas.getBoundingClientRect();
+    mouse.x=e.clientX-r.left;
+    mouse.y=e.clientY-r.top;
+  });
+  canvas.parentElement.addEventListener('mouseleave',function(){mouse.x=null;mouse.y=null;});
+
+  /* Colors matching brand palette */
+  var colors=['rgba(96,165,250,','rgba(56,189,248,','rgba(6,182,212,','rgba(139,92,246,'];
+
+  /* Initialize particles */
+  for(var i=0;i<count;i++){
+    particles.push({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      vx:(Math.random()-0.5)*0.4,
+      vy:(Math.random()-0.5)*0.4,
+      r:Math.random()*2+1.5,
+      color:colors[Math.floor(Math.random()*colors.length)],
+      alpha:Math.random()*0.4+0.3
+    });
+  }
+
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    /* Update and draw particles */
+    for(var i=0;i<particles.length;i++){
+      var p=particles[i];
+      p.x+=p.vx;
+      p.y+=p.vy;
+
+      /* Bounce off edges */
+      if(p.x<0||p.x>canvas.width)p.vx*=-1;
+      if(p.y<0||p.y>canvas.height)p.vy*=-1;
+
+      /* Draw dot */
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=p.color+p.alpha+')';
+      ctx.fill();
+
+      /* Glow effect on dot */
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r*3,0,Math.PI*2);
+      ctx.fillStyle=p.color+(p.alpha*0.15)+')';
+      ctx.fill();
+
+      /* Draw connections to nearby particles */
+      for(var j=i+1;j<particles.length;j++){
+        var q=particles[j];
+        var dx=p.x-q.x;
+        var dy=p.y-q.y;
+        var dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<connectDist){
+          var opacity=(1-dist/connectDist)*0.15;
+          ctx.beginPath();
+          ctx.moveTo(p.x,p.y);
+          ctx.lineTo(q.x,q.y);
+          ctx.strokeStyle='rgba(96,165,250,'+opacity+')';
+          ctx.lineWidth=0.5;
+          ctx.stroke();
+        }
+      }
+
+      /* Brighter connections near mouse */
+      if(mouse.x!==null){
+        var mdx=p.x-mouse.x;
+        var mdy=p.y-mouse.y;
+        var mdist=Math.sqrt(mdx*mdx+mdy*mdy);
+        if(mdist<150){
+          var mopacity=(1-mdist/150)*0.3;
+          ctx.beginPath();
+          ctx.arc(p.x,p.y,p.r*1.5,0,Math.PI*2);
+          ctx.fillStyle=p.color+mopacity+')';
+          ctx.fill();
+        }
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+</script>
+</body>
+</html>
