@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL Roadmap for AI/Data/ML Jobs — careerbytecode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #0a1628;
+    --navy-mid:   #122040;
+    --navy-soft:  #1a3260;
+    --navy-light: #1e4080;
+    --blue-mid:   #2563b0;
+    --blue-bright:#1d72e8;
+    --sky:        #e8f0fb;
+    --sky-deep:   #d1e2f8;
+    --sky-pale:   #f0f5fd;
+    --white:      #ffffff;
+    --off-white:  #fafbfe;
+    --paper:      #f5f7fc;
+    --amber:      #e8750a;
+    --amber-light:#fff3e0;
+    --amber-pale: #fef9f1;
+    --green:      #0d6e3f;
+    --green-bg:   #e8f5ee;
+    --gold:       #c8930a;
+    --gold-bg:    #fffbec;
+    --purple:     #5b21b6;
+    --purple-bg:  #f3f0ff;
+    --text:       #0d1b2a;
+    --text2:      #3d5068;
+    --text3:      #7a92ad;
+    --border:     #d4e0f0;
+    --border2:    #bdd0e8;
+    --shadow:     rgba(10,22,40,0.08);
+    --shadow-md:  rgba(10,22,40,0.14);
+    --mono: 'JetBrains Mono', monospace;
+    --display: 'Playfair Display', serif;
+    --body: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--off-white);
+    color: var(--text);
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: radial-gradient(circle, rgba(10,22,40,0.055) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ══ HERO ══ */
+  .hero {
+    position: relative;
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 5rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 520px; height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(29,114,232,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,117,10,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-line {
+    position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--amber), var(--blue-bright), var(--amber));
+    background-size: 200% auto;
+    animation: lineShimmer 4s linear infinite;
+  }
+  @keyframes lineShimmer { to { background-position: 200% center; } }
+  .hero-stripe {
+    position: absolute; top: 0; right: 0;
+    width: 320px; height: 100%;
+    background: repeating-linear-gradient(-55deg,transparent,transparent 18px,rgba(255,255,255,0.018) 18px,rgba(255,255,255,0.018) 20px);
+    pointer-events: none;
+  }
+  .brand-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 100px;
+    padding: 7px 20px;
+    font-family: var(--mono); font-size: 0.7rem;
+    color: rgba(255,255,255,0.7); letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 2.2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .brand-pill-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero-title {
+    font-family: var(--display);
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 900; line-height: 1; letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-title .line1 { display: block; color: #fff; }
+  .hero-title .line2 { display: block; color: transparent; -webkit-text-stroke: 1.5px rgba(255,255,255,0.35); letter-spacing: 0.01em; }
+  .hero-title .accent-word { color: var(--amber); -webkit-text-stroke: 0; }
+
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,0.55);
+    max-width: 540px; margin: 1.8rem auto 2.4rem;
+    font-weight: 300; line-height: 1.8;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hbadge { font-family: var(--mono); font-size: 0.68rem; padding: 5px 14px; border-radius: 4px; letter-spacing: 0.06em; }
+  .hbadge-white { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.12); }
+  .hbadge-amber { background: rgba(232,117,10,0.15); color: #f5a040; border: 1px solid rgba(232,117,10,0.3); }
+
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.8s 0.4s ease both; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--amber); color: #fff;
+    padding: 13px 30px; border-radius: 6px;
+    font-family: var(--mono); font-size: 0.76rem; font-weight: 500;
+    letter-spacing: 0.06em; text-decoration: none;
+    transition: all 0.22s; box-shadow: 0 4px 20px rgba(232,117,10,0.4);
+  }
+  .btn-primary:hover { background: #d4680a; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,117,10,0.45); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: transparent; color: rgba(255,255,255,0.65);
+    padding: 13px 30px; border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.18);
+    font-family: var(--mono); font-size: 0.76rem;
+    letter-spacing: 0.06em; text-decoration: none; transition: all 0.22s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+
+  .scroll-cue {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.3); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .scroll-cue-bar { width: 1px; height: 44px; background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent); }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(10px)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ══ STATS ══ */
+  .stats-bar {
+    position: relative; z-index: 1;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    box-shadow: 0 4px 24px var(--shadow);
+  }
+  .stat-item { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid var(--border); transition: background 0.25s; }
+  .stat-item:last-child { border-right: none; }
+  .stat-item:hover { background: var(--sky-pale); }
+  .stat-num { font-family: var(--display); font-size: 2.6rem; font-weight: 900; color: var(--navy); line-height: 1; display: block; }
+  .stat-num span { color: var(--amber); }
+  .stat-label { font-family: var(--mono); font-size: 0.63rem; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 6px; display: block; }
+
+  /* ══ LAYOUT ══ */
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+  .section { padding: 6rem 0; }
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 0.68rem;
+    color: var(--navy-light); letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 1rem; font-weight: 500;
+  }
+  .section-eyebrow::before { content: ''; display: block; width: 28px; height: 2px; background: var(--amber); border-radius: 99px; }
+  .section-heading { font-family: var(--display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.08; color: var(--navy); margin-bottom: 0.9rem; }
+  .section-desc { color: var(--text2); max-width: 520px; font-size: 1rem; }
+
+  /* ══ INTRO ══ */
+  .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2.5rem; }
+  .intro-card { border-radius: 10px; padding: 1.8rem; border: 1px solid var(--border); }
+  .intro-card-yes { background: var(--sky-pale); border-color: var(--sky-deep); }
+  .intro-card-no  { background: var(--amber-pale); border-color: #f5d8b5; }
+  .intro-card-head { font-family: var(--body); font-size: 0.88rem; font-weight: 600; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+  .intro-card-yes .intro-card-head { color: var(--navy); }
+  .intro-card-no  .intro-card-head { color: var(--amber); }
+  .intro-item { font-size: 0.88rem; color: var(--text2); padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 8px; }
+  .intro-item:last-child { border-bottom: none; }
+  .intro-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+  .intro-card-yes .intro-dot { background: var(--navy); }
+  .intro-card-no  .intro-dot { background: var(--amber); }
+
+  /* ══ TOPICS ══ */
+  .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .topic-card {
+    background: var(--white); border-radius: 12px; border: 1px solid var(--border);
+    padding: 1.8rem; transition: all 0.25s;
+    box-shadow: 0 2px 12px var(--shadow);
+    position: relative; overflow: hidden;
+  }
+  .topic-card::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--navy), var(--blue-bright));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+  }
+  .topic-card:hover { border-color: var(--sky-deep); box-shadow: 0 8px 32px var(--shadow-md); transform: translateY(-3px); }
+  .topic-card:hover::after { transform: scaleX(1); }
+  .topic-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; }
+  .topic-emoji { font-size: 2rem; line-height: 1; }
+  .topic-num { font-family: var(--mono); font-size: 0.62rem; color: var(--text3); background: var(--paper); border: 1px solid var(--border); padding: 3px 10px; border-radius: 100px; }
+  .topic-title { font-family: var(--display); font-size: 1.12rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.3; }
+  .topic-desc { font-size: 0.87rem; color: var(--text2); margin-bottom: 1.1rem; line-height: 1.65; }
+  .topic-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.2rem; }
+  .topic-tag { font-family: var(--mono); font-size: 0.62rem; padding: 3px 9px; background: var(--sky); color: var(--navy-soft); border-radius: 4px; border: 1px solid var(--sky-deep); transition: all 0.2s; }
+  .topic-card:hover .topic-tag { background: var(--navy); color: rgba(255,255,255,0.85); border-color: var(--navy); }
+
+  .yt-links { display: flex; flex-direction: column; gap: 7px; }
+  .yt-link { display: flex; align-items: center; gap: 9px; text-decoration: none; padding: 8px 11px; border-radius: 7px; background: #fff5f5; border: 1px solid #ffd4d4; transition: all 0.2s; }
+  .yt-link:hover { background: #ffe8e8; border-color: #ff9999; transform: translateX(3px); }
+  .yt-icon { width: 24px; height: 24px; flex-shrink: 0; background: #cc0000; border-radius: 5px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(204,0,0,0.25); }
+  .yt-icon svg { width: 13px; height: 13px; fill: #fff; }
+  .yt-title { font-size: 0.79rem; color: var(--text); display: block; font-weight: 400; }
+  .yt-channel { font-family: var(--mono); font-size: 0.61rem; color: var(--text3); display: block; }
+
+  /* ══ CHEAT SHEET ══ */
+  .cheat-section { background: var(--navy); padding: 5.5rem 0; position: relative; overflow: hidden; }
+  .cheat-section::before {
+    content: 'SQL'; position: absolute; right: -40px; bottom: -60px;
+    font-family: var(--display); font-size: 28rem; font-weight: 900;
+    color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none; user-select: none;
+  }
+  .cheat-section .section-eyebrow { color: rgba(255,255,255,0.5); }
+  .cheat-section .section-eyebrow::before { background: var(--amber); }
+  .cheat-section .section-heading { color: #fff; }
+  .cheat-section .section-desc { color: rgba(255,255,255,0.45); }
+  .cheat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .cheat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; padding: 1.5rem; transition: background 0.25s; }
+  .cheat-card:hover { background: rgba(255,255,255,0.08); }
+  .cheat-title { font-family: var(--mono); font-size: 0.66rem; color: var(--amber); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 500; }
+  .cheat-code { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 1rem; font-family: var(--mono); font-size: 0.75rem; line-height: 1.85; overflow-x: auto; color: #c8daf0; }
+  .cheat-code .kw  { color: #7ec8e3; font-weight: 500; }
+  .cheat-code .fn  { color: #f5c842; }
+  .cheat-code .cm  { color: rgba(255,255,255,0.3); font-style: italic; }
+
+  /* ══ MATRIX ══ */
+  .matrix-section { background: var(--paper); padding: 5.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .matrix-wrap { overflow-x: auto; margin-top: 2.5rem; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 2px 16px var(--shadow); }
+  .matrix-table { width: 100%; border-collapse: collapse; background: var(--white); font-size: 0.9rem; }
+  .matrix-table th { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.75); padding: 14px 18px; background: var(--navy); text-align: left; white-space: nowrap; }
+  .matrix-table th:not(:first-child) { text-align: center; }
+  .matrix-table td { padding: 13px 18px; border-bottom: 1px solid var(--border); color: var(--text2); font-size: 0.88rem; }
+  .matrix-table tr:last-child td { border-bottom: none; }
+  .matrix-table td:first-child { color: var(--navy); font-weight: 500; }
+  .matrix-table td:not(:first-child) { text-align: center; }
+  .matrix-table tr:hover td { background: var(--sky-pale); }
+
+  .pill { display: inline-block; font-family: var(--mono); font-size: 0.6rem; padding: 4px 12px; border-radius: 100px; letter-spacing: 0.04em; white-space: nowrap; font-weight: 500; }
+  .pill-must { background: var(--green-bg);  color: var(--green);  border: 1px solid #b2dac6; }
+  .pill-imp  { background: var(--gold-bg);   color: var(--gold);   border: 1px solid #f0d87a; }
+  .pill-nice { background: var(--purple-bg); color: var(--purple); border: 1px solid #c4b5f4; }
+  .pill-legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+  /* ══ FOOTER ══ */
+  .footer { background: var(--navy); border-top: 4px solid var(--amber); padding: 3.5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .footer-brand { font-family: var(--display); font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 0.4rem; }
+  .footer-brand span { color: var(--amber); }
+  .footer-sub { color: rgba(255,255,255,0.4); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.07em; }
+  .footer-note { margin-top: 1.5rem; color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+
+  /* ══ ANIMATE ══ */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ══ RESPONSIVE ══ */
+  @media (max-width: 768px) {
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .intro-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: clamp(2.4rem, 11vw, 4rem); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-line"></div>
+  <div class="hero-stripe"></div>
+  <div class="brand-pill"><span class="brand-pill-dot"></span>careerbytecode</div>
+  <h1 class="hero-title">
+    <span class="line1">SQL Mastery</span>
+    <span class="line2">Road<span class="accent-word">map</span></span>
+  </h1>
+  <p class="hero-sub">Everything you need to crack SQL interviews and land AI, Data Science &amp; ML jobs — with curated YouTube resources for every topic.</p>
+  <div class="hero-badges">
+    <span class="hbadge hbadge-white">✓ 10 Core Topics</span>
+    <span class="hbadge hbadge-amber">▶ 30+ YouTube Links</span>
+    <span class="hbadge hbadge-white">⚡ Job-Ready Focus</span>
+    <span class="hbadge hbadge-white">SQLite Environment</span>
+  </div>
+  <div class="cta-row">
+    <a href="#topics" class="btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      START LEARNING
+    </a>
+    <a href="#matrix" class="btn-outline">VIEW PRIORITY MATRIX</a>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><div class="scroll-cue-bar"></div></div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">1<span>0</span></span><span class="stat-label">Topic Modules</span></div>
+  <div class="stat-item"><span class="stat-num">30<span>+</span></span><span class="stat-label">YouTube Resources</span></div>
+  <div class="stat-item"><span class="stat-num"><span>3</span></span><span class="stat-label">Job Roles Covered</span></div>
+  <div class="stat-item"><span class="stat-num"><span>∞</span></span><span class="stat-label">Career Growth</span></div>
+</div>
+
+<!-- INTRO -->
+<section class="section" style="background:var(--white);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <p class="section-eyebrow reveal">How to Use This Roadmap</p>
+    <h2 class="section-heading reveal">Study Smart, Not Hard</h2>
+    <p class="section-desc reveal">This roadmap covers every SQL skill you need for AI, Data Science, and ML roles — in the right priority order.</p>
+    <div class="intro-grid">
+      <div class="intro-card intro-card-yes reveal">
+        <div class="intro-card-head">✅ What You Need for AI/Data Jobs</div>
+        <div class="intro-item"><span class="intro-dot"></span>Strong SELECT queries, JOINs, Aggregations</div>
+        <div class="intro-item"><span class="intro-dot"></span>Subqueries &amp; Window Functions</div>
+        <div class="intro-item"><span class="intro-dot"></span>Data cleaning &amp; transformation</div>
+        <div class="intro-item"><span class="intro-dot"></span>BigQuery / Snowflake / Redshift / Synapse</div>
+        <div class="intro-item"><span class="intro-dot"></span>SQL + Python (pandas + SQLAlchemy)</div>
+      </div>
+      <div class="intro-card intro-card-no reveal">
+        <div class="intro-card-head">❌ Not Required (Unless Data Engineering)</div>
+        <div class="intro-item"><span class="intro-dot"></span>DBA-level backups &amp; replication</div>
+        <div class="intro-item"><span class="intro-dot"></span>Clustering &amp; physical sharding</div>
+        <div class="intro-item"><span class="intro-dot"></span>Storage engine internals</div>
+        <div class="intro-item"><span class="intro-dot"></span>High-availability failover config</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="section" id="topics" style="background:var(--off-white);">
+  <div class="container">
+    <p class="section-eyebrow reveal">Learning Modules</p>
+    <h2 class="section-heading reveal">10 Topics to Master</h2>
+    <p class="section-desc reveal">From zero to job-ready. Work through each module in order — they build on each other.</p>
+    <div class="topics-grid">
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">📐</span><span class="topic-num">01</span></div>
+        <div class="topic-title">SQL Basics &amp; Foundations</div>
+        <div class="topic-desc">DDL, DML, DQL, DCL, TCL — the five SQL command groups. Master SELECT, FROM, WHERE, ORDER BY, LIMIT, and aliases with AS.</div>
+        <div class="topic-tags"><span class="topic-tag">SELECT</span><span class="topic-tag">WHERE</span><span class="topic-tag">ORDER BY</span><span class="topic-tag">LIMIT</span><span class="topic-tag">AS</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Full Course for Beginners</span><span class="yt-channel">freeCodeCamp.org</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=9ylj9NR0Lcg" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Basics Crash Course — 1 Hour</span><span class="yt-channel">Programming with Mosh</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=27axs9dO7AE" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL for Data Analysis — SELECT &amp; WHERE</span><span class="yt-channel">Alex The Analyst</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">🔢</span><span class="topic-num">02</span></div>
+        <div class="topic-title">Aggregations &amp; Grouping</div>
+        <div class="topic-desc">COUNT, SUM, AVG, MIN, MAX with GROUP BY. The HAVING vs WHERE distinction is tested in 90% of data interviews.</div>
+        <div class="topic-tags"><span class="topic-tag">COUNT()</span><span class="topic-tag">SUM()</span><span class="topic-tag">GROUP BY</span><span class="topic-tag">HAVING</span><span class="topic-tag">DISTINCT</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=7mIQGnFGRTw" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Aggregate Functions Explained</span><span class="yt-channel">Alex The Analyst</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=FirI2A7Ue4s" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">GROUP BY and HAVING Clearly Explained</span><span class="yt-channel">Socratica</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">🔗</span><span class="topic-num">03</span></div>
+        <div class="topic-title">Joins — Critical for AI Jobs</div>
+        <div class="topic-desc">INNER, LEFT, RIGHT, FULL OUTER, SELF, CROSS JOIN. Multi-table joins are the backbone of ML feature engineering pipelines.</div>
+        <div class="topic-tags"><span class="topic-tag">INNER JOIN</span><span class="topic-tag">LEFT JOIN</span><span class="topic-tag">FULL OUTER</span><span class="topic-tag">SELF JOIN</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=9yeOJ0ZMUYw" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Joins — Inner, Left, Right, Full</span><span class="yt-channel">Programming with Mosh</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=2HVMiPPuPIM" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Joins Visual Guide for Beginners</span><span class="yt-channel">Caleb Curry</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=Jh_pvk48jHA" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">Advanced SQL Joins for Data Analysts</span><span class="yt-channel">Alex The Analyst</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">🔍</span><span class="topic-num">04</span></div>
+        <div class="topic-title">Subqueries &amp; Derived Tables</div>
+        <div class="topic-desc">Simple, correlated subqueries in WHERE/SELECT/FROM. CTEs with WITH make complex queries readable and testable.</div>
+        <div class="topic-tags"><span class="topic-tag">CTEs</span><span class="topic-tag">WITH</span><span class="topic-tag">EXISTS</span><span class="topic-tag">IN</span><span class="topic-tag">Correlated</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=3y_Kmf4KyoI" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Subqueries — Correlated, Nested, CTEs</span><span class="yt-channel">freeCodeCamp.org</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=K62wzvAb8qA" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL CTEs (Common Table Expressions) Tutorial</span><span class="yt-channel">Kahan Data Solutions</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">🪟</span><span class="topic-num">05</span></div>
+        <div class="topic-title">Window Functions</div>
+        <div class="topic-desc">CASE WHEN, COALESCE, ROW_NUMBER, RANK, DENSE_RANK, SUM() OVER(). Moving averages for IoT, stocks, and log time series.</div>
+        <div class="topic-tags"><span class="topic-tag">ROW_NUMBER</span><span class="topic-tag">RANK</span><span class="topic-tag">OVER()</span><span class="topic-tag">PARTITION BY</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=H6OTMoXjNiM" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">Window Functions ROW_NUMBER, RANK</span><span class="yt-channel">Alex The Analyst</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=Ww71knvhQ-s" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">Advanced SQL Window Functions Full Tutorial</span><span class="yt-channel">Kahan Data Solutions</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">✏️</span><span class="topic-num">06</span></div>
+        <div class="topic-title">Data Manipulation (DML)</div>
+        <div class="topic-desc">INSERT, UPDATE, DELETE, and MERGE (UPSERT operations). Essential for ETL pipelines and incremental feature store updates.</div>
+        <div class="topic-tags"><span class="topic-tag">INSERT</span><span class="topic-tag">UPDATE</span><span class="topic-tag">DELETE</span><span class="topic-tag">MERGE</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=OWUS8AeKMWQ" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL INSERT, UPDATE, DELETE Tutorial</span><span class="yt-channel">Programming with Mosh</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=6rnqbLSHB5A" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL MERGE Statement — UPSERT Explained</span><span class="yt-channel">Caleb Curry</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">∪</span><span class="topic-num">07</span></div>
+        <div class="topic-title">Set Operations</div>
+        <div class="topic-desc">UNION vs UNION ALL (deduplication tradeoff), INTERSECT, and EXCEPT/MINUS for set-based data comparisons.</div>
+        <div class="topic-tags"><span class="topic-tag">UNION ALL</span><span class="topic-tag">INTERSECT</span><span class="topic-tag">EXCEPT</span><span class="topic-tag">MINUS</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=rNMiXuX5GEU" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Set Operations — UNION, INTERSECT, EXCEPT</span><span class="yt-channel">Socratica</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=6xFcFt8RyTQ" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">UNION vs UNION ALL — What's the Difference?</span><span class="yt-channel">Alex The Analyst</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">🧹</span><span class="topic-num">08</span></div>
+        <div class="topic-title">Data Cleaning &amp; Transformation</div>
+        <div class="topic-desc">String functions, date/time manipulation, CAST/CONVERT, and PIVOT/UNPIVOT. 80% of a data scientist's real-world workload.</div>
+        <div class="topic-tags"><span class="topic-tag">TRIM</span><span class="topic-tag">CAST</span><span class="topic-tag">DATEADD</span><span class="topic-tag">PIVOT</span><span class="topic-tag">CONCAT</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=8rO7ztF4NtU" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Data Cleaning — String, Date, CAST</span><span class="yt-channel">Alex The Analyst</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=YqGBqN2bC1k" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL PIVOT and UNPIVOT Explained</span><span class="yt-channel">Kahan Data Solutions</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">⚡</span><span class="topic-num">09</span></div>
+        <div class="topic-title">Performance &amp; Optimization</div>
+        <div class="topic-desc">Indexes (clustered vs non-clustered), query execution plans, and EXPLAIN. Write fast queries on large ML datasets without being a DBA.</div>
+        <div class="topic-tags"><span class="topic-tag">EXPLAIN</span><span class="topic-tag">INDEX</span><span class="topic-tag">Execution Plan</span><span class="topic-tag">Clustered</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=BHwzDmr6d7s" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL Query Optimization — Indexes &amp; Plans</span><span class="yt-channel">Hussein Nasser</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=fsG1XaZEa78" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">How SQL Indexes Work — Beginner Friendly</span><span class="yt-channel">Socratica</span></div></a>
+        </div>
+      </div>
+
+      <div class="topic-card reveal">
+        <div class="topic-header"><span class="topic-emoji">🤖</span><span class="topic-num">10</span></div>
+        <div class="topic-title">AI/Data-Job Specific SQL</div>
+        <div class="topic-desc">Feature engineering, LAG/LEAD for time series, ETL workflows, data quality checks, Python+SQL integration, and cloud warehouses.</div>
+        <div class="topic-tags"><span class="topic-tag">Feature Eng.</span><span class="topic-tag">LAG/LEAD</span><span class="topic-tag">BigQuery</span><span class="topic-tag">Snowflake</span><span class="topic-tag">Pandas</span></div>
+        <div class="yt-links">
+          <a class="yt-link" href="https://www.youtube.com/watch?v=XGfBODX3EPE" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL for Data Science — Feature Engineering</span><span class="yt-channel">Ken Jee</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=3ys2atBh0tU" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">SQL LAG and LEAD for Time Series</span><span class="yt-channel">Alex The Analyst</span></div></a>
+          <a class="yt-link" href="https://www.youtube.com/watch?v=woKYyhLCVnU" target="_blank" rel="noopener"><div class="yt-icon"><svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg></div><div><span class="yt-title">Python + SQL — SQLAlchemy &amp; pandas</span><span class="yt-channel">Keith Galli</span></div></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHEAT SHEET -->
+<section class="cheat-section">
+  <div class="container">
+    <p class="section-eyebrow reveal">Quick Reference</p>
+    <h2 class="section-heading reveal">SQL Cheat Snippets</h2>
+    <p class="section-desc reveal">Copy-paste ready patterns for the most common SQL interview scenarios.</p>
+    <div class="cheat-grid">
+      <div class="cheat-card reveal">
+        <div class="cheat-title">Window Function</div>
+        <div class="cheat-code"><span class="kw">SELECT</span>
+  name, salary,
+  <span class="fn">RANK</span>() <span class="kw">OVER</span> (
+    <span class="kw">PARTITION BY</span> dept
+    <span class="kw">ORDER BY</span> salary <span class="kw">DESC</span>
+  ) <span class="kw">AS</span> rnk
+<span class="kw">FROM</span> employees;</div>
+      </div>
+      <div class="cheat-card reveal">
+        <div class="cheat-title">CTE + Join Pattern</div>
+        <div class="cheat-code"><span class="kw">WITH</span> top_users <span class="kw">AS</span> (
+  <span class="kw">SELECT</span> user_id,
+    <span class="fn">COUNT</span>(*) orders
+  <span class="kw">FROM</span> orders
+  <span class="kw">GROUP BY</span> user_id
+)
+<span class="kw">SELECT</span> u.name, t.orders
+<span class="kw">FROM</span> users u
+<span class="kw">JOIN</span> top_users t
+  <span class="kw">ON</span> u.id = t.user_id;</div>
+      </div>
+      <div class="cheat-card reveal">
+        <div class="cheat-title">7-Day Moving Average</div>
+        <div class="cheat-code"><span class="kw">SELECT</span> date, value,
+  <span class="fn">AVG</span>(value) <span class="kw">OVER</span> (
+    <span class="kw">ORDER BY</span> date
+    <span class="kw">ROWS BETWEEN</span>
+      6 <span class="kw">PRECEDING AND</span>
+      <span class="kw">CURRENT ROW</span>
+  ) <span class="kw">AS</span> ma_7day
+<span class="kw">FROM</span> timeseries;</div>
+      </div>
+      <div class="cheat-card reveal">
+        <div class="cheat-title">Data Quality Check</div>
+        <div class="cheat-code"><span class="cm">-- NULLs + duplicates</span>
+<span class="kw">SELECT</span>
+  <span class="fn">COUNT</span>(*) total,
+  <span class="fn">COUNT</span>(email) non_null,
+  <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> email) uniq
+<span class="kw">FROM</span> users;
+
+<span class="kw">SELECT</span> email, <span class="fn">COUNT</span>(*) cnt
+<span class="kw">FROM</span> users
+<span class="kw">GROUP BY</span> email
+<span class="kw">HAVING</span> cnt > 1;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MATRIX -->
+<section class="matrix-section" id="matrix">
+  <div class="container">
+    <p class="section-eyebrow reveal">Priority Matrix</p>
+    <h2 class="section-heading reveal">What to Focus On By Role</h2>
+    <p class="section-desc reveal">Not all SQL topics carry the same weight. Prioritise based on the job you're targeting.</p>
+    <div class="matrix-wrap reveal">
+      <table class="matrix-table">
+        <thead>
+          <tr><th>SQL Topic</th><th>Data Analyst</th><th>Data Scientist</th><th>ML Engineer</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SQL Basics</td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td></tr>
+          <tr><td>Aggregations</td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td></tr>
+          <tr><td>Joins</td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td></tr>
+          <tr><td>Subqueries &amp; CTEs</td><td><span class="pill pill-imp">Important</span></td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td></tr>
+          <tr><td>Window Functions</td><td><span class="pill pill-imp">Important</span></td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td></tr>
+          <tr><td>DML (Insert/Update)</td><td><span class="pill pill-imp">Important</span></td><td><span class="pill pill-imp">Important</span></td><td><span class="pill pill-imp">Important</span></td></tr>
+          <tr><td>Set Operations</td><td><span class="pill pill-imp">Important</span></td><td><span class="pill pill-imp">Important</span></td><td><span class="pill pill-nice">Nice to Have</span></td></tr>
+          <tr><td>Data Cleaning</td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-imp">Important</span></td></tr>
+          <tr><td>Performance Opt.</td><td><span class="pill pill-nice">Nice to Have</span></td><td><span class="pill pill-imp">Important</span></td><td><span class="pill pill-must">Must Have</span></td></tr>
+          <tr><td>AI/ML SQL Topics</td><td><span class="pill pill-nice">Nice to Have</span></td><td><span class="pill pill-must">Must Have</span></td><td><span class="pill pill-must">Must Have</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pill-legend reveal">
+      <span class="pill pill-must" style="font-size:.7rem;padding:5px 14px;">🟢 Must Have</span>
+      <span class="pill pill-imp"  style="font-size:.7rem;padding:5px 14px;">🟡 Important</span>
+      <span class="pill pill-nice" style="font-size:.7rem;padding:5px 14px;">🔵 Nice to Have</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">career<span>bytecode</span></div>
+  <div class="footer-sub">SQL Mastery Roadmap · AI · Data · ML Jobs</div>
+  <p class="footer-note">Run environment: SQLite (sqlite3) · Zero-config · Windows / Mac / Linux</p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 70);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
