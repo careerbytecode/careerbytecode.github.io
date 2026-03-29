@@ -475,4 +475,9 @@
     if(e.target.tagName === 'IMG'){ e.preventDefault(); }
   });
 
+  /* Security: Console Warning (like Facebook) */
+  console.log('%cStop!', 'color:red;font-size:40px;font-weight:bold;text-shadow:1px 1px 2px rgba(0,0,0,0.3)');
+  console.log('%cThis is a browser feature intended for developers. If someone told you to copy-paste something here to enable a feature or "hack" an account, it is a scam and will give them access to your information.', 'font-size:14px;color:#475569');
+  console.log('%cSee https://en.wikipedia.org/wiki/Self-XSS for more information.', 'font-size:12px;color:#64748b');
+
 })();
