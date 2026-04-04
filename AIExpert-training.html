@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Expert Master Training Plan — CareerByteCode</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy-900:#060f2b; --navy-800:#0d1f4f; --navy-700:#0f2860;
+  --navy-600:#1a3d82; --navy-500:#2554aa; --navy-400:#3b70cc;
+  --navy-300:#6b98e0; --navy-100:#dce8ff; --navy-50:#edf3ff; --navy-25:#f5f8ff;
+  --gold:#c98a12; --gold-lt:#fef3d0; --gold-md:#f5c842;
+  --m1:#1a3d82; --m1-lt:#dce8ff; --m1-mid:#2554aa;
+  --m2:#0a7060; --m2-lt:#ccf2ea; --m2-mid:#0f9d8a;
+  --m3:#5530a8; --m3-lt:#ede7ff; --m3-mid:#7046d6;
+  --m4:#156b40; --m4-lt:#ccf0de; --m4-mid:#1e9a5c;
+  --ink:#0d1117; --body:#2d3748; --muted:#64748b; --faint:#94a3b8;
+  --border:#c8d6f0; --bord2:#e2ebfa;
+  --white:#ffffff; --bg:#f4f7fd; --bg2:#eaeff9; --surface:#ffffff;
+  --font-d:'Fraunces',Georgia,serif;
+  --font-b:'Plus Jakarta Sans',sans-serif;
+  --font-m:'Fira Code','Courier New',monospace;
+  --sh-sm:0 1px 4px rgba(13,31,79,0.08);
+  --sh-md:0 4px 16px rgba(13,31,79,0.1);
+  --sh-lg:0 12px 40px rgba(13,31,79,0.14);
+  --sh-xl:0 24px 64px rgba(13,31,79,0.16);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-b);background:var(--bg);color:var(--body);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:500;height:58px;background:var(--white);border-bottom:2.5px solid var(--navy-700);display:flex;align-items:center;padding:0 2rem;justify-content:space-between;box-shadow:0 2px 12px rgba(13,31,79,0.09)}
+.topbar-logo{font-family:var(--font-d);font-size:1.2rem;font-weight:900;color:var(--navy-800);text-decoration:none;letter-spacing:-0.02em}
+.topbar-logo span{color:var(--gold)}
+.topbar-nav{display:flex;gap:2px;list-style:none}
+.topbar-nav a{font-size:.75rem;font-weight:700;color:var(--navy-700);text-decoration:none;padding:5px 11px;border-radius:6px;letter-spacing:.03em;transition:all .18s}
+.topbar-nav a:hover{background:var(--navy-50);color:var(--navy-500)}
+.topbar-cta{font-size:.78rem;font-weight:800;background:var(--navy-700);color:#fff;padding:8px 18px;border-radius:8px;text-decoration:none;letter-spacing:.04em;border:2px solid var(--navy-700);transition:all .2s}
+.topbar-cta:hover{background:var(--navy-500);border-color:var(--navy-500);transform:translateY(-1px);box-shadow:var(--sh-md)}
+@media(max-width:860px){.topbar-nav{display:none}}
+
+/* HERO */
+.hero{margin-top:58px;background:var(--white);border-bottom:1px solid var(--bord2);position:relative;overflow:hidden;min-height:calc(100vh - 58px);display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(37,84,170,.13) 1.5px,transparent 1.5px);background-size:26px 26px}
+.hero::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 60% at 100% 0%,rgba(26,61,130,.07),transparent),radial-gradient(ellipse 40% 50% at 0% 100%,rgba(197,140,20,.06),transparent)}
+.hero-strip{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--m1) 0%,var(--m2) 33%,var(--m3) 66%,var(--m4) 100%)}
+.hero-wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:4rem 2rem 3rem;width:100%;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center}
+@media(max-width:960px){.hero-wrap{grid-template-columns:1fr}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--navy-700);color:#fff;font-family:var(--font-m);font-size:.68rem;font-weight:500;letter-spacing:.15em;padding:5px 14px;border-radius:3px;margin-bottom:1.5rem}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-md);animation:dp 2s infinite}
+@keyframes dp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.hero h1{font-family:var(--font-d);font-size:clamp(3rem,6.5vw,5.5rem);font-weight:900;line-height:.95;color:var(--navy-900);letter-spacing:-.04em;margin-bottom:1rem}
+.hero h1 .hl{font-style:italic;background:linear-gradient(135deg,var(--navy-500) 0%,var(--m2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:520px;line-height:1.75;margin-bottom:2rem}
+.hero-sub b{color:var(--navy-700);font-weight:700}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:2.5rem}
+.pill{background:var(--navy-25);border:1.5px solid var(--bord2);border-radius:100px;padding:7px 16px;font-size:.82rem;font-weight:700;color:var(--navy-700);display:flex;align-items:center;gap:6px;box-shadow:var(--sh-sm);transition:all .2s}
+.pill:hover{background:var(--navy-50);border-color:var(--navy-300);transform:translateY(-2px)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-n{background:var(--navy-700);color:#fff;padding:13px 26px;border-radius:10px;font-size:.88rem;font-weight:800;text-decoration:none;letter-spacing:.04em;border:2px solid var(--navy-700);transition:all .22s;display:inline-flex;align-items:center;gap:8px}
+.btn-n:hover{background:var(--navy-500);border-color:var(--navy-500);transform:translateY(-2px);box-shadow:var(--sh-lg)}
+.btn-g{background:transparent;color:var(--navy-700);padding:13px 26px;border-radius:10px;font-size:.88rem;font-weight:800;text-decoration:none;letter-spacing:.04em;border:2px solid var(--navy-700);transition:all .22s;display:inline-flex;align-items:center;gap:8px}
+.btn-g:hover{background:var(--navy-25);transform:translateY(-2px)}
+
+/* Hero Card */
+.hcard{background:var(--white);border:2px solid var(--bord2);border-radius:20px;overflow:hidden;box-shadow:var(--sh-xl)}
+.hcard-hd{background:var(--navy-800);padding:1.1rem 1.4rem;display:flex;align-items:center;justify-content:space-between}
+.hcard-hd-t{font-family:var(--font-d);font-size:.95rem;color:#fff;font-weight:700}
+.hcard-dots{display:flex;gap:5px}
+.hcard-dots i{width:9px;height:9px;border-radius:50%;display:block}
+.hcard-dots i:nth-child(1){background:#ff5f57}
+.hcard-dots i:nth-child(2){background:#febc2e}
+.hcard-dots i:nth-child(3){background:#28c840}
+.hcard-bd{padding:1rem 1.25rem;display:flex;flex-direction:column;gap:.55rem}
+.hcm{display:flex;align-items:center;gap:10px;padding:.7rem .9rem;border-radius:10px;text-decoration:none;color:inherit;border:1.5px solid transparent;transition:all .22s}
+.hcm:hover{transform:translateX(4px)}
+.hcm.m1{background:var(--m1-lt);border-color:rgba(26,61,130,.18)}.hcm:hover.m1{border-color:var(--m1)}
+.hcm.m2{background:var(--m2-lt);border-color:rgba(10,112,96,.18)}.hcm:hover.m2{border-color:var(--m2)}
+.hcm.m3{background:var(--m3-lt);border-color:rgba(85,48,168,.18)}.hcm:hover.m3{border-color:var(--m3)}
+.hcm.m4{background:var(--m4-lt);border-color:rgba(21,107,64,.18)}.hcm:hover.m4{border-color:var(--m4)}
+.hcm-b{font-family:var(--font-m);font-size:.6rem;font-weight:500;padding:2px 8px;border-radius:3px;color:#fff;white-space:nowrap;flex-shrink:0}
+.m1 .hcm-b{background:var(--m1)}.m2 .hcm-b{background:var(--m2)}.m3 .hcm-b{background:var(--m3)}.m4 .hcm-b{background:var(--m4)}
+.hcm-i{flex:1}
+.hcm-t{font-size:.82rem;font-weight:700;color:var(--ink)}
+.hcm-s{font-size:.68rem;color:var(--muted)}
+.hcm-a{font-size:.75rem;color:var(--faint);transition:transform .2s,color .2s}
+.hcm:hover .hcm-a{transform:translateX(3px);color:var(--navy-500)}
+.hcard-ft{background:var(--bg2);border-top:1px solid var(--bord2);padding:.9rem 1.4rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.hcf{text-align:center}
+.hcf-n{font-family:var(--font-d);font-size:1.3rem;font-weight:900;color:var(--navy-700);line-height:1}
+.hcf-l{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint)}
+
+/* LAYOUT */
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.section{padding:5rem 0}
+.section.stripe{background:var(--bg2);border-top:1px solid var(--bord2);border-bottom:1px solid var(--bord2)}
+.section.white{background:var(--white);border-top:1px solid var(--bord2)}
+.rainbow{height:5px;background:linear-gradient(90deg,var(--m1) 0%,var(--m2) 33%,var(--m3) 66%,var(--m4) 100%)}
+.sec-lbl{font-family:var(--font-m);font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--navy-500);display:flex;align-items:center;gap:10px;margin-bottom:.5rem}
+.sec-lbl::before{content:'';display:block;width:20px;height:2.5px;background:var(--gold);border-radius:2px}
+.sec-ttl{font-family:var(--font-d);font-size:clamp(1.9rem,4vw,3rem);font-weight:900;color:var(--navy-900);line-height:1.08;letter-spacing:-.025em;margin-bottom:.75rem}
+.sec-dsc{color:var(--muted);font-size:.97rem;max-width:580px;line-height:1.75;margin-bottom:2.5rem}
+
+/* OUTCOMES */
+.oc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.oc{background:var(--white);border:1.5px solid var(--bord2);border-radius:14px;padding:1.2rem 1.4rem;display:flex;gap:1rem;align-items:flex-start;transition:all .28s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+.oc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--navy-600);opacity:0;transition:opacity .25s}
+.oc:hover{border-color:var(--navy-300);transform:translateY(-3px);box-shadow:var(--sh-md)}.oc:hover::after{opacity:1}
+.oc-i{font-size:1.75rem;flex-shrink:0}
+.oc-t{font-size:.88rem;font-weight:700;color:var(--navy-700);margin-bottom:3px}
+.oc-d{font-size:.78rem;color:var(--muted);line-height:1.55}
+
+/* TIMELINE */
+.tl-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+@media(max-width:700px){.tl-row{grid-template-columns:1fr 1fr}}
+.tl{border-radius:12px;padding:1.25rem;background:var(--white);border:1.5px solid var(--bord2);position:relative;overflow:hidden}
+.tl::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.tl.m1::before{background:var(--m1)}.tl.m2::before{background:var(--m2)}.tl.m3::before{background:var(--m3)}.tl.m4::before{background:var(--m4)}
+.tl-mo{font-family:var(--font-m);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem}
+.tl.m1 .tl-mo{color:var(--m1)}.tl.m2 .tl-mo{color:var(--m2)}.tl.m3 .tl-mo{color:var(--m3)}.tl.m4 .tl-mo{color:var(--m4)}
+.tl-t{font-size:.88rem;font-weight:700;color:var(--navy-800);line-height:1.3;margin-bottom:.3rem}
+.tl-s{font-size:.72rem;color:var(--faint)}
+
+/* COURSE CARDS */
+.cc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem}
+.cc{background:var(--white);border:1.5px solid var(--bord2);border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:all .32s cubic-bezier(.22,1,.36,1);box-shadow:var(--sh-sm)}
+.cc:hover{transform:translateY(-6px);box-shadow:var(--sh-xl);border-color:transparent}
+.cc-top{padding:1.5rem}
+.cc-nr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+.cc-nm{font-family:var(--font-d);font-size:3.5rem;font-weight:900;line-height:1;opacity:.1}
+.cc-badge{font-family:var(--font-m);font-size:.62rem;padding:3px 10px;border-radius:100px}
+.cc:nth-child(1) .cc-badge{background:var(--m1-lt);color:var(--m1)} .cc:nth-child(1) .cc-nm{color:var(--m1)}
+.cc:nth-child(2) .cc-badge{background:var(--m2-lt);color:var(--m2)} .cc:nth-child(2) .cc-nm{color:var(--m2)}
+.cc:nth-child(3) .cc-badge{background:var(--m3-lt);color:var(--m3)} .cc:nth-child(3) .cc-nm{color:var(--m3)}
+.cc:nth-child(4) .cc-badge{background:var(--m4-lt);color:var(--m4)} .cc:nth-child(4) .cc-nm{color:var(--m4)}
+.cc-title{font-size:1rem;font-weight:800;color:var(--navy-800);margin-bottom:.4rem;line-height:1.3}
+.cc-desc{font-size:.79rem;color:var(--muted);line-height:1.55}
+.cc-foot{padding:.9rem 1.5rem;background:var(--bg);border-top:1px solid var(--bord2);display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:space-between}
+.cc-tag{font-family:var(--font-m);font-size:.63rem;padding:3px 8px;border-radius:4px;background:var(--white);border:1px solid var(--border);color:var(--body)}
+.cc-go{font-size:.78rem;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:4px;transition:gap .2s}
+.cc:hover .cc-go{gap:9px}
+.cc:nth-child(1) .cc-go{color:var(--m1)}.cc:nth-child(2) .cc-go{color:var(--m2)}.cc:nth-child(3) .cc-go{color:var(--m3)}.cc:nth-child(4) .cc-go{color:var(--m4)}
+
+/* MONTH BLOCKS */
+.mb{padding:4.5rem 0;border-top:1px solid var(--bord2)}
+.mb.alt{background:var(--white)}
+.mhd{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:1.5rem;padding-bottom:1.75rem;margin-bottom:2rem;border-bottom:3px solid var(--bord2)}
+.mb.m1 .mhd{border-bottom-color:var(--m1)}.mb.m2 .mhd{border-bottom-color:var(--m2)}.mb.m3 .mhd{border-bottom-color:var(--m3)}.mb.m4 .mhd{border-bottom-color:var(--m4)}
+.mhd-k{font-family:var(--font-m);font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.35rem}
+.mb.m1 .mhd-k{color:var(--m1)}.mb.m2 .mhd-k{color:var(--m2)}.mb.m3 .mhd-k{color:var(--m3)}.mb.m4 .mhd-k{color:var(--m4)}
+.mhd-n{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--navy-900);line-height:1.05;letter-spacing:-.025em;margin-bottom:.35rem}
+.mhd-m{font-size:.83rem;color:var(--muted)}
+.mhd-m b{color:var(--body)}
+.mhd-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:9px;font-size:.8rem;font-weight:800;letter-spacing:.04em;text-decoration:none;transition:all .22s;white-space:nowrap;border:2px solid;align-self:flex-start;margin-top:.4rem}
+.mb.m1 .mhd-btn{color:var(--m1);border-color:var(--m1);background:var(--m1-lt)}
+.mb.m2 .mhd-btn{color:var(--m2);border-color:var(--m2);background:var(--m2-lt)}
+.mb.m3 .mhd-btn{color:var(--m3);border-color:var(--m3);background:var(--m3-lt)}
+.mb.m4 .mhd-btn{color:var(--m4);border-color:var(--m4);background:var(--m4-lt)}
+.mhd-btn:hover{transform:translateY(-2px);box-shadow:var(--sh-md);filter:brightness(1.05)}
+
+/* 16 CLASS GRID */
+.cls-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;flex-wrap:wrap;gap:.75rem}
+.cls-cnt{font-family:var(--font-m);font-size:.68rem;background:var(--m1);color:#fff;padding:4px 12px;border-radius:100px}
+.cg16{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:2.5rem}
+@media(max-width:1000px){.cg16{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.cg16{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.cg16{grid-template-columns:1fr}}
+.clsc{background:var(--white);border:1.5px solid var(--bord2);border-radius:12px;padding:1rem 1.1rem;display:flex;gap:.75rem;align-items:flex-start;text-decoration:none;color:inherit;transition:all .28s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden;min-height:90px}
+.clsc:hover{border-color:var(--m1);transform:translateY(-4px);box-shadow:var(--sh-md)}
+.clsc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--m1),var(--gold));opacity:0;transition:opacity .25s}
+.clsc:hover::after{opacity:1}
+.cls-n{font-family:var(--font-d);font-size:1.8rem;font-weight:900;color:var(--navy-800);opacity:.12;line-height:1;flex-shrink:0;min-width:32px;transition:opacity .2s}
+.clsc:hover .cls-n{opacity:.22}
+.cls-t{font-size:.79rem;font-weight:700;color:var(--navy-700);line-height:1.4;margin-bottom:5px}
+.cls-o{font-family:var(--font-m);font-size:.65rem;font-weight:500;color:var(--navy-400);display:flex;align-items:center;gap:4px;transition:gap .2s,color .2s}
+.clsc:hover .cls-o{gap:8px;color:var(--m1)}
+
+/* WEEKS ACCORDION */
+.wks{display:flex;flex-direction:column;gap:.7rem}
+.wk{background:var(--white);border:1.5px solid var(--bord2);border-radius:13px;overflow:hidden;transition:border-color .22s,box-shadow .22s}
+.wk:hover{border-color:var(--border)}
+.wk.open{box-shadow:var(--sh-md)}
+.mb.m1 .wk.open{border-color:var(--m1)}.mb.m2 .wk.open{border-color:var(--m2)}.mb.m3 .wk.open{border-color:var(--m3)}.mb.m4 .wk.open{border-color:var(--m4)}
+.wk-t{display:flex;align-items:center;justify-content:space-between;padding:.95rem 1.25rem;cursor:pointer;user-select:none;gap:1rem;transition:background .18s}
+.wk-t:hover{background:var(--bg)}
+.wt-l{display:flex;align-items:center;gap:.9rem}
+.wk-b{font-family:var(--font-m);font-size:.62rem;font-weight:500;letter-spacing:.1em;padding:3px 9px;border-radius:4px;white-space:nowrap;flex-shrink:0}
+.mb.m1 .wk-b{background:var(--m1-lt);color:var(--m1);border:1px solid rgba(26,61,130,.2)}
+.mb.m2 .wk-b{background:var(--m2-lt);color:var(--m2);border:1px solid rgba(10,112,96,.2)}
+.mb.m3 .wk-b{background:var(--m3-lt);color:var(--m3);border:1px solid rgba(85,48,168,.2)}
+.mb.m4 .wk-b{background:var(--m4-lt);color:var(--m4);border:1px solid rgba(21,107,64,.2)}
+.wk-ttl{font-size:.9rem;font-weight:700;color:var(--navy-800)}
+.wt-r{display:flex;align-items:center;gap:.9rem}
+.wk-dl{font-size:.73rem;color:var(--faint);white-space:nowrap}
+.wk-cv{width:22px;height:22px;border-radius:50%;flex-shrink:0;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:.58rem;color:var(--muted);transition:transform .28s,background .2s,color .2s}
+.wk.open .wk-cv{transform:rotate(180deg)}
+.mb.m1 .wk.open .wk-cv{background:var(--m1);color:#fff}
+.mb.m2 .wk.open .wk-cv{background:var(--m2);color:#fff}
+.mb.m3 .wk.open .wk-cv{background:var(--m3);color:#fff}
+.mb.m4 .wk.open .wk-cv{background:var(--m4);color:#fff}
+.wk-bd{display:none;border-top:1px solid var(--bord2)}
+.wk.open .wk-bd{display:block}
+.dt{width:100%;border-collapse:collapse}
+.dt th{font-family:var(--font-m);font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);text-align:left;padding:.55rem .9rem;background:var(--bg2);border-bottom:1px solid var(--bord2)}
+.dt td{padding:.62rem .9rem;font-size:.84rem;vertical-align:middle;border-bottom:1px solid rgba(0,0,0,.04)}
+.dt tr:last-child td{border-bottom:none}
+.dt tr:hover td{background:var(--bg)}
+.dt-d{font-family:var(--font-m);font-weight:500;font-size:.76rem;white-space:nowrap}
+.mb.m1 .dt-d{color:var(--m1)}.mb.m2 .dt-d{color:var(--m2)}.mb.m3 .dt-d{color:var(--m3)}.mb.m4 .dt-d{color:var(--m4)}
+.dt-tp{color:var(--ink);font-weight:600}
+.dt-ac{color:var(--muted);font-size:.79rem}
+.dt-lk a{font-family:var(--font-m);font-size:.68rem;font-weight:500;text-decoration:none;color:var(--navy-600);display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:5px;background:var(--navy-50);border:1px solid var(--navy-100);transition:all .18s;white-space:nowrap}
+.dt-lk a:hover{background:var(--navy-700);color:#fff;border-color:var(--navy-700)}
+.dt-lbl{font-family:var(--font-m);font-size:.66rem;color:var(--faint);padding:3px 9px;border-radius:5px;background:var(--bg2);border:1px solid var(--bord2);display:inline-block}
+
+/* SKILLS */
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.sk{background:var(--white);border:1.5px solid var(--bord2);border-radius:13px;padding:1.35rem;transition:all .25s}
+.sk:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:var(--navy-300)}
+.sk-i{font-size:1.7rem;margin-bottom:.6rem}
+.sk-t{font-size:.88rem;font-weight:800;color:var(--navy-700);margin-bottom:.2rem}
+.sk-d{font-size:.76rem;color:var(--muted);line-height:1.55}
+
+/* CAREERS */
+.ca-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:1rem}
+.ca{background:var(--white);border:1.5px solid var(--bord2);border-radius:13px;padding:1.4rem 1rem;text-align:center;transition:all .25s}
+.ca:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--navy-600)}
+.ca-i{font-size:1.9rem;margin-bottom:.6rem}
+.ca-t{font-size:.84rem;font-weight:800;color:var(--navy-700);margin-bottom:.2rem}
+.ca-l{font-size:.7rem;color:var(--faint)}
+
+/* FOOTER */
+footer{background:var(--navy-800);color:rgba(255,255,255,.7);padding:4rem 2rem 2rem}
+.ft{max-width:1200px;margin:0 auto}
+.ft-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:1.75rem}
+.ft-bn{font-family:var(--font-d);font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:.35rem}
+.ft-bn span{color:var(--gold-md)}
+.ft-tg{font-size:.8rem;color:rgba(255,255,255,.4)}
+.ft-col h4{font-family:var(--font-m);font-size:.65rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem}
+.ft-col a{display:block;color:rgba(255,255,255,.6);text-decoration:none;font-size:.8rem;margin-bottom:.38rem;transition:color .18s;line-height:1.4}
+.ft-col a:hover{color:var(--gold-md)}
+.ft-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+.ft-cp{font-size:.73rem;color:rgba(255,255,255,.25)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.22,1,.36,1)}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topbar">
+  <a href="#" class="topbar-logo">Career<span>Byte</span>Code</a>
+  <ul class="topbar-nav">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#month1">Python</a></li>
+    <li><a href="#month2">SQL</a></li>
+    <li><a href="#month3">Data Science</a></li>
+    <li><a href="#month4">Dashboards</a></li>
+    <li><a href="#careers">Careers</a></li>
+  </ul>
+  <a href="https://careerbytecode.substack.com" target="_blank" class="topbar-cta">Start Learning ↗</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-strip"></div>
+  <div class="hero-wrap">
+    <div class="reveal">
+      <div class="hero-eyebrow"><div class="hero-dot"></div>Complete AI Roadmap · CareerByteCode</div>
+      <h1>Become an<br><span class="hl">AI Expert</span><br>in 4 Months</h1>
+      <p class="hero-sub">Four expertly sequenced courses taking you from <b>Python beginner</b> to a fully job-ready <b>AI &amp; Data Engineer</b>. 147 days. 21 weeks. 16 Python classes. Zero fluff.</p>
+      <div class="hero-pills">
+        <div class="pill">📅 4 Months</div>
+        <div class="pill">📚 4 Courses</div>
+        <div class="pill">📆 147 Days</div>
+        <div class="pill">🗓 21 Weeks</div>
+        <div class="pill">🐍 16 Python Classes</div>
+        <div class="pill">🚀 10+ Projects</div>
+        <div class="pill">💼 Job-Ready</div>
+      </div>
+      <div class="hero-btns">
+        <a href="#month1" class="btn-n">Start Month 1 — Python ↓</a>
+        <a href="#overview" class="btn-g">View All Courses</a>
+      </div>
+    </div>
+    <div class="hcard reveal d2">
+      <div class="hcard-hd"><span class="hcard-hd-t">4-Month Journey</span><div class="hcard-dots"><i></i><i></i><i></i></div></div>
+      <div class="hcard-bd">
+        <a href="#month1" class="hcm m1"><span class="hcm-b">Month 1</span><div class="hcm-i"><div class="hcm-t">Python Administration</div><div class="hcm-s">16 Classes · Beginner to Scripting</div></div><span class="hcm-a">→</span></a>
+        <a href="#month2" class="hcm m2"><span class="hcm-b">Month 2</span><div class="hcm-i"><div class="hcm-t">SQL Mastery</div><div class="hcm-s">4 Weeks · AI-Ready Queries</div></div><span class="hcm-a">→</span></a>
+        <a href="#month3" class="hcm m3"><span class="hcm-b">Month 3</span><div class="hcm-i"><div class="hcm-t">Data Science &amp; ML</div><div class="hcm-s">6 Weeks · scikit-learn + Deploy</div></div><span class="hcm-a">→</span></a>
+        <a href="#month4" class="hcm m4"><span class="hcm-b">Month 4</span><div class="hcm-i"><div class="hcm-t">Raw Data → Dashboards</div><div class="hcm-s">50 Days · MySQL + Power BI</div></div><span class="hcm-a">→</span></a>
+      </div>
+      <div class="hcard-ft">
+        <div class="hcf"><div class="hcf-n">147</div><div class="hcf-l">Days</div></div>
+        <div class="hcf"><div class="hcf-n">21</div><div class="hcf-l">Weeks</div></div>
+        <div class="hcf"><div class="hcf-n">16</div><div class="hcf-l">Py Classes</div></div>
+        <div class="hcf"><div class="hcf-n">7</div><div class="hcf-l">Job Roles</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rainbow"></div>
+
+<!-- OUTCOMES -->
+<section class="section stripe" id="overview">
+  <div class="container reveal">
+    <div class="sec-lbl">what you will master</div>
+    <h2 class="sec-ttl">7 Expert Skills,<br>One Complete Plan</h2>
+    <p class="sec-dsc">Complete all 4 courses and you will hold the full AI engineering toolkit demanded by top companies worldwide.</p>
+    <div class="oc-grid">
+      <div class="oc"><div class="oc-i">🐍</div><div><div class="oc-t">Python Mastery</div><div class="oc-d">16 structured classes covering scripting, file automation, functions, OS module, error handling</div></div></div>
+      <div class="oc"><div class="oc-i">🗄️</div><div><div class="oc-t">SQL Expertise</div><div class="oc-d">CRUD, all 6 joins, CTEs, window functions, indexes, cloud data warehouses</div></div></div>
+      <div class="oc"><div class="oc-i">📊</div><div><div class="oc-t">Data Analysis &amp; EDA</div><div class="oc-d">NumPy, Pandas, Matplotlib, Seaborn — real-world data exploration</div></div></div>
+      <div class="oc"><div class="oc-i">📐</div><div><div class="oc-t">Statistics &amp; Probability</div><div class="oc-d">Distributions, hypothesis testing, CLT, correlation &amp; covariance</div></div></div>
+      <div class="oc"><div class="oc-i">🤖</div><div><div class="oc-t">Machine Learning</div><div class="oc-d">Regression, classification, clustering, NLP, PCA, model validation</div></div></div>
+      <div class="oc"><div class="oc-i">🌐</div><div><div class="oc-t">Web Scraping &amp; APIs</div><div class="oc-d">BeautifulSoup, Requests, JSON — build real automated data pipelines</div></div></div>
+      <div class="oc"><div class="oc-i">📈</div><div><div class="oc-t">Power BI Dashboards</div><div class="oc-d">MySQL-connected dashboards, DAX measures, multi-page BI reports</div></div></div>
+    </div>
+    <div class="tl-row">
+      <div class="tl m1"><div class="tl-mo">Month 1</div><div class="tl-t">Python Administration</div><div class="tl-s">4 Weeks · 16 Classes</div></div>
+      <div class="tl m2"><div class="tl-mo">Month 2</div><div class="tl-t">SQL Mastery for AI</div><div class="tl-s">4 Weeks · 28 Days</div></div>
+      <div class="tl m3"><div class="tl-mo">Month 3</div><div class="tl-t">Data Science &amp; ML</div><div class="tl-s">6 Weeks · 42 Days</div></div>
+      <div class="tl m4"><div class="tl-mo">Month 4</div><div class="tl-t">Raw Data → Dashboards</div><div class="tl-s">7 Weeks · 50 Days</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE CARDS -->
+<section class="section white">
+  <div class="container reveal">
+    <div class="sec-lbl">4 courses · full curriculum</div>
+    <h2 class="sec-ttl">Your Complete<br>Learning Path</h2>
+    <p class="sec-dsc">Four courses built so each one supercharges the next. Start at Course 1 and finish as an AI Expert.</p>
+    <div class="cc-grid">
+      <a href="https://careerbytecode.substack.com/p/python-class1-setting-up-your-environment-and-mastering-the-basics" target="_blank" class="cc">
+        <div class="cc-top"><div class="cc-nr"><div class="cc-nm">01</div><div class="cc-badge">Month 1 · 4 Weeks</div></div><div class="cc-title">Python Administration</div><div class="cc-desc">Beginner to admin-level Python scripting across 16 structured classes covering syntax to functions.</div></div>
+        <div class="cc-foot"><div style="display:flex;flex-wrap:wrap;gap:5px"><span class="cc-tag">Python</span><span class="cc-tag">VS Code</span><span class="cc-tag">OS Module</span></div><div class="cc-go">Open →</div></div>
+      </a>
+      <a href="https://careerbytecode.substack.com/p/sql-mastery-for-ai-data-engineers-complete-realtime-handson-training" target="_blank" class="cc">
+        <div class="cc-top"><div class="cc-nr"><div class="cc-nm">02</div><div class="cc-badge">Month 2 · 4 Weeks</div></div><div class="cc-title">SQL Mastery for AI Engineers</div><div class="cc-desc">Real-time hands-on SQL from basics to advanced analytics, built for AI jobs.</div></div>
+        <div class="cc-foot"><div style="display:flex;flex-wrap:wrap;gap:5px"><span class="cc-tag">MySQL</span><span class="cc-tag">SQLite</span><span class="cc-tag">SQLAlchemy</span></div><div class="cc-go">Open →</div></div>
+      </a>
+      <a href="https://careerbytecode.substack.com/p/python-for-data-science-analytics-a-complete-6-week-job-ready-program" target="_blank" class="cc">
+        <div class="cc-top"><div class="cc-nr"><div class="cc-nm">03</div><div class="cc-badge">Month 3 · 6 Weeks</div></div><div class="cc-title">Python for Data Science &amp; Analytics</div><div class="cc-desc">6-week job-ready: EDA, statistics, ML models, NLP, and Streamlit deployment.</div></div>
+        <div class="cc-foot"><div style="display:flex;flex-wrap:wrap;gap:5px"><span class="cc-tag">NumPy</span><span class="cc-tag">scikit-learn</span><span class="cc-tag">Streamlit</span></div><div class="cc-go">Open →</div></div>
+      </a>
+      <a href="https://careerbytecode.substack.com/p/mastering-data-sql-raw-data-to-real-time-dashboards-in-50-days" target="_blank" class="cc">
+        <div class="cc-top"><div class="cc-nr"><div class="cc-nm">04</div><div class="cc-badge">Month 4 · 7 Weeks</div></div><div class="cc-title">Raw Data to Real-Time Dashboards</div><div class="cc-desc">50 days: scrape, clean, query and visualise live data with MySQL + Power BI.</div></div>
+        <div class="cc-foot"><div style="display:flex;flex-wrap:wrap;gap:5px"><span class="cc-tag">MySQL</span><span class="cc-tag">Power BI</span><span class="cc-tag">BeautifulSoup</span></div><div class="cc-go">Open →</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="rainbow"></div>
+
+<!-- ══════════════════ MONTH 1 ══════════════════ -->
+<div class="mb m1" id="month1">
+  <div class="container">
+    <div class="mhd reveal">
+      <div>
+        <div class="mhd-k">Month 1 · Weeks 1–4 · Days 1–28 · 16 Classes</div>
+        <div class="mhd-n">Python Administration</div>
+        <div class="mhd-m">Beginner to Admin Scripting · <b>Python · VS Code · File I/O · OS Module</b></div>
+      </div>
+      <a href="https://careerbytecode.substack.com/p/python-class1-setting-up-your-environment-and-mastering-the-basics" target="_blank" class="mhd-btn">Access Full Course ↗</a>
+    </div>
+
+    <!-- ★ ALL 16 CLASSES GRID ★ -->
+    <div class="reveal">
+      <div class="cls-hd">
+        <div class="sec-lbl" style="margin-bottom:0">All 16 Python Classes — Click to Open</div>
+        <span class="cls-cnt">16 Classes · Click Any to Open</span>
+      </div>
+      <div class="cg16">
+        <a href="https://careerbytecode.substack.com/p/python-class1-setting-up-your-environment-and-mastering-the-basics" target="_blank" class="clsc">
+          <div class="cls-n">1</div><div><div class="cls-t">Installation &amp; Basics — Environment Setup, Identifiers, Keywords, Indentation</div><div class="cls-o">Open Class 1 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class2-mastering-python-syntax-single-line-multi-line-comments-made-easy" target="_blank" class="clsc">
+          <div class="cls-n">2</div><div><div class="cls-t">Mastering Python Syntax: Single-Line, Multi-Line &amp; Comments Made Easy</div><div class="cls-o">Open Class 2 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class3-essentials-get-comfortable-with-python-integer-float-complex-and-boolean-types" target="_blank" class="clsc">
+          <div class="cls-n">3</div><div><div class="cls-t">Essentials: Integer, Float, Complex, and Boolean Types</div><div class="cls-o">Open Class 3 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class4-python-administration-training-mastering-strings-and-mutable-immutable-concepts" target="_blank" class="clsc">
+          <div class="cls-n">4</div><div><div class="cls-t">Mastering Strings and Mutable / Immutable Concepts</div><div class="cls-o">Open Class 4 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class5-mastering-string-slicing-raw-strings-inbuilt-methods-in-python" target="_blank" class="clsc">
+          <div class="cls-n">5</div><div><div class="cls-t">Mastering String Slicing, Raw Strings, and In-built Methods</div><div class="cls-o">Open Class 5 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class6-unlock-the-magic-of-type-casting-boolean-and-list-data-structures" target="_blank" class="clsc">
+          <div class="cls-n">6</div><div><div class="cls-t">Type Casting, Boolean Data Types, and Lists</div><div class="cls-o">Open Class 6 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class7-python-dive-deep-into-tuples-and-sets-their-features-operations-and-limitations" target="_blank" class="clsc">
+          <div class="cls-n">7</div><div><div class="cls-t">Tuples and Sets: Immutable vs Mutable — Features, Operations &amp; Limitations</div><div class="cls-o">Open Class 7 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class8-python-administration-training-mastering-dictionaries-range-function-and-nonetype" target="_blank" class="clsc">
+          <div class="cls-n">8</div><div><div class="cls-t">Dictionaries, range(), and NoneType</div><div class="cls-o">Open Class 8 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/python-class9-harnessing-the-power-of-input-eval-and-print-for-smarter-coding" target="_blank" class="clsc">
+          <div class="cls-n">9</div><div><div class="cls-t">input(), eval(), and print() Functions for Smarter Coding</div><div class="cls-o">Open Class 9 →</div></div>
+        </a>
+        <a href="http://careerbytecode.substack.com/p/class10-master-file-handling-in-python-opening-reading-writing-and-more" target="_blank" class="clsc">
+          <div class="cls-n">10</div><div><div class="cls-t">File Handling: Opening, Reading, Writing and More</div><div class="cls-o">Open Class 10 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class11-python-file-handling-mastery-from-write-to-writelines-everything-you-need-to-know" target="_blank" class="clsc">
+          <div class="cls-n">11</div><div><div class="cls-t">File Writing and Appending — write() to writelines(), Everything You Need</div><div class="cls-o">Open Class 11 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class12-conditional-statements-demystified-a-deep-dive-into-if-elif-and-nested-if-in-python" target="_blank" class="clsc">
+          <div class="cls-n">12</div><div><div class="cls-t">Conditional Statements: if, elif, Nested if — Deep Dive</div><div class="cls-o">Open Class 12 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class13-python-administration-training-mastering-nested-if-and-looping-statements" target="_blank" class="clsc">
+          <div class="cls-n">13</div><div><div class="cls-t">Nested if and Looping Statements — for, while, Loop Control</div><div class="cls-o">Open Class 13 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class14-unlock-the-power-of-python-operators-arithmetic-comparison-and-assignment" target="_blank" class="clsc">
+          <div class="cls-n">14</div><div><div class="cls-t">Transfer Statements &amp; Operators — Arithmetic, Comparison, Assignment</div><div class="cls-o">Open Class 14 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class15-mastering-logical-bitwise-membership-and-identity-operators-in-python" target="_blank" class="clsc">
+          <div class="cls-n">15</div><div><div class="cls-t">Logical, Bitwise, Membership, and Identity Operators</div><div class="cls-o">Open Class 15 →</div></div>
+        </a>
+        <a href="https://careerbytecode.substack.com/p/class16-step-by-step-guide-to-python-functions-learn-how-to-create-and-use-them-like-a-python-expert" target="_blank" class="clsc">
+          <div class="cls-n">16</div><div><div class="cls-t">Python Functions: Built-In &amp; User-Defined — Step-by-Step Guide</div><div class="cls-o">Open Class 16 →</div></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Week breakdowns -->
+    <div class="reveal">
+      <div class="sec-lbl" style="margin-bottom:1rem">Week-by-Week Breakdown with Class Links</div>
+      <div class="wks">
+
+        <div class="wk open">
+          <div class="wk-t" onclick="tw(this)">
+            <div class="wt-l"><div class="wk-b">WEEK 01</div><div class="wk-ttl">Build Your Foundation — Classes 1–7</div></div>
+            <div class="wt-r"><div class="wk-dl">Days 1–7</div><div class="wk-cv">▼</div></div>
+          </div>
+          <div class="wk-bd"><table class="dt">
+            <tr><th>Day</th><th>Topic</th><th>Key Skill</th><th>Class Link</th></tr>
+            <tr><td class="dt-d">Day 1</td><td class="dt-tp">Environment Setup: VS Code + Python</td><td class="dt-ac">Identifiers, Keywords, Indentation</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/python-class1-setting-up-your-environment-and-mastering-the-basics" target="_blank">Class 1 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 2</td><td class="dt-tp">Python Syntax: Single-line, Multi-line, Comments</td><td class="dt-ac">Syntax mastery</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class2-mastering-python-syntax-single-line-multi-line-comments-made-easy" target="_blank">Class 2 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 3</td><td class="dt-tp">Data Types: Integer, Float, Complex, Boolean</td><td class="dt-ac">Number types &amp; usage</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class3-essentials-get-comfortable-with-python-integer-float-complex-and-boolean-types" target="_blank">Class 3 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 4</td><td class="dt-tp">Strings Part 1: Mutable vs Immutable, Basics</td><td class="dt-ac">String fundamentals</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class4-python-administration-training-mastering-strings-and-mutable-immutable-concepts" target="_blank">Class 4 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 5</td><td class="dt-tp">Strings Part 2: Slicing, Raw Strings, Membership</td><td class="dt-ac">String manipulation</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class5-mastering-string-slicing-raw-strings-inbuilt-methods-in-python" target="_blank">Class 5 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 6</td><td class="dt-tp">Type Casting, Booleans, Lists</td><td class="dt-ac">Type conversions &amp; Lists</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class6-unlock-the-magic-of-type-casting-boolean-and-list-data-structures" target="_blank">Class 6 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 7</td><td class="dt-tp">Tuples &amp; Sets — Immutable &amp; Unique Data</td><td class="dt-ac">Tuples, Sets, operations</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class7-python-dive-deep-into-tuples-and-sets-their-features-operations-and-limitations" target="_blank">Class 7 ↗</a></td></tr>
+          </table></div>
+        </div>
+
+        <div class="wk">
+          <div class="wk-t" onclick="tw(this)">
+            <div class="wt-l"><div class="wk-b">WEEK 02</div><div class="wk-ttl">Admin-Powered Coding + Data Handling — Classes 8–13</div></div>
+            <div class="wt-r"><div class="wk-dl">Days 8–14</div><div class="wk-cv">▼</div></div>
+          </div>
+          <div class="wk-bd"><table class="dt">
+            <tr><th>Day</th><th>Topic</th><th>Key Skill</th><th>Class Link</th></tr>
+            <tr><td class="dt-d">Day 8</td><td class="dt-tp">Dictionaries, Range, NoneType</td><td class="dt-ac">Key-value pairs, sequences</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class8-python-administration-training-mastering-dictionaries-range-function-and-nonetype" target="_blank">Class 8 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 9</td><td class="dt-tp">User Input/Output: input(), eval(), print()</td><td class="dt-ac">I/O functions</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/python-class9-harnessing-the-power-of-input-eval-and-print-for-smarter-coding" target="_blank">Class 9 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 10</td><td class="dt-tp">File Reading: open(), read()</td><td class="dt-ac">File handling basics</td><td class="dt-lk"><a href="http://careerbytecode.substack.com/p/class10-master-file-handling-in-python-opening-reading-writing-and-more" target="_blank">Class 10 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 11</td><td class="dt-tp">File Writing &amp; Appending: write(), writelines()</td><td class="dt-ac">File write modes</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class11-python-file-handling-mastery-from-write-to-writelines-everything-you-need-to-know" target="_blank">Class 11 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 12</td><td class="dt-tp">Conditional Logic: if, elif, else, nested if</td><td class="dt-ac">Decision-making</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class12-conditional-statements-demystified-a-deep-dive-into-if-elif-and-nested-if-in-python" target="_blank">Class 12 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 13</td><td class="dt-tp">Loops: for, while, Nested if + Loop control</td><td class="dt-ac">Iteration patterns</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class13-python-administration-training-mastering-nested-if-and-looping-statements" target="_blank">Class 13 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 14</td><td class="dt-tp">Practice: Combine loops, conditions, file I/O</td><td class="dt-ac">Applied coding drill</td><td class="dt-lk"><span class="dt-lbl">Practice</span></td></tr>
+          </table></div>
+        </div>
+
+        <div class="wk">
+          <div class="wk-t" onclick="tw(this)">
+            <div class="wt-l"><div class="wk-b">WEEK 03</div><div class="wk-ttl">Operators, Transfer Statements + Functions — Classes 14–16</div></div>
+            <div class="wt-r"><div class="wk-dl">Days 15–21</div><div class="wk-cv">▼</div></div>
+          </div>
+          <div class="wk-bd"><table class="dt">
+            <tr><th>Day</th><th>Topic</th><th>Key Skill</th><th>Class Link</th></tr>
+            <tr><td class="dt-d">Day 15</td><td class="dt-tp">Transfer Statements: break, continue, pass + Arithmetic, Comparison, Assignment Operators</td><td class="dt-ac">Control flow &amp; operators</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class14-unlock-the-power-of-python-operators-arithmetic-comparison-and-assignment" target="_blank">Class 14 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 16</td><td class="dt-tp">Logical, Bitwise, Membership, Identity Operators</td><td class="dt-ac">Advanced operators</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class15-mastering-logical-bitwise-membership-and-identity-operators-in-python" target="_blank">Class 15 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 17</td><td class="dt-tp">Python Functions: Built-In &amp; User-Defined</td><td class="dt-ac">Parameters, return, scope</td><td class="dt-lk"><a href="https://careerbytecode.substack.com/p/class16-step-by-step-guide-to-python-functions-learn-how-to-create-and-use-them-like-a-python-expert" target="_blank">Class 16 ↗</a></td></tr>
+            <tr><td class="dt-d">Day 18</td><td class="dt-tp">Error Handling: try, except, finally</td><td class="dt-ac">Robust script writing</td><td class="dt-lk"><span class="dt-lbl">Practice</span></td></tr>
+            <tr><td class="dt-d">Day 19</td><td class="dt-tp">OS Module: File System Operations</td><td class="dt-ac">Admin scripting</td><td class="dt-lk"><span class="dt-lbl">Practice</span></td></tr>
+            <tr><td class="dt-d">Day 20</td><td class="dt-tp">Review &amp; Coding Exercises</td><td class="dt-ac">Reinforce all Week 3 concepts</td><td class="dt-lk"><span class="dt-lbl">Practice</span></td></tr>
+            <tr><td class="dt-d">Day 21</td><td class="dt-tp">Mini Project: Python Admin Automation Script</td><td class="dt-ac">Build a real admin tool</td><td class="dt-lk"><span class="dt-lbl">Project</span></td></tr>
+          </table></div>
+        </div>
+
+        <div class="wk">
+          <div class="wk-t" onclick="tw(this)">
+            <div class="wt-l"><div class="wk-b">WEEK 04</div><div class="wk-ttl">Revision, Capstone Project &amp; Month 2 Prep</div></div>
+            <div class="wt-r"><div class="wk-dl">Days 22–28</div><div class="wk-cv">▼</div></div>
+          </div>
+          <div class="wk-bd"><table class="dt">
+            <tr><th>Day</th><th>Topic</th><th>Key Skill</th><th>Status</th></tr>
+            <tr><td class="dt-d">Day 22</td><td class="dt-tp">Revision: Variables, Data Types, Strings (Classes 1–5)</td><td class="dt-ac">Full review of fundamentals</td><td class="dt-lk"><span class="dt-lbl">Revision</span></td></tr>
+            <tr><td class="dt-d">Day 23</td><td class="dt-tp">Revision: File Handling, Loops, Conditions (Classes 10–13)</td><td class="dt-ac">Consolidate scripting skills</td><td class="dt-lk"><span class="dt-lbl">Revision</span></td></tr>
+            <tr><td class="dt-d">Day 24</td><td class="dt-tp">Revision: Functions, Operators, Error Handling (Classes 14–16)</td><td class="dt-ac">Code review &amp; best practices</td><td class="dt-lk"><span class="dt-lbl">Revision</span></td></tr>
+            <tr><td class="dt-d">Day 25</td><td class="dt-tp">Capstone Project: Python Admin Dashboard Script</td><td class="dt-ac">Multi-feature Python admin tool</td><td class="dt-lk"><span class="dt-lbl">Capstone</span></td></tr>
+            <tr><td class="dt-d">Day 26</td><td class="dt-tp">Code Review &amp; Documentation</td><td class="dt-ac">Write README, add docstrings</td><td class="dt-lk"><span class="dt-lbl">Capstone</span></td></tr>
+            <tr><td class="dt-d">Day 27</td><td class="dt-tp">Final Test &amp; Self-Assessment</td><td class="dt-ac">Evaluate Month 1 mastery</td><td class="dt-lk"><span class="dt-lbl">Assessment</span></td></tr>
+            <tr><td class="dt-d">Day 28</td><td class="dt-tp">Prep: Install MySQL + Jupyter Notebook for Month 2</td><td class="dt-ac">Ready for SQL month</td><td class="dt-lk"><span class="dt-lbl">Setup</span></td></tr>
+          </table></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="rainbow"></div>
+
+<!-- ══════════════════ MONTH 2 ══════════════════ -->
+<div class="mb m2 alt" id="month2">
+  <div class="container">
+    <div class="mhd reveal">
+      <div><div class="mhd-k">Month 2 · Weeks 5–8 · Days 29–56</div><div class="mhd-n">SQL Mastery for AI Engineers</div><div class="mhd-m">Complete SQL Curriculum · <b>MySQL · SQLite · SQLAlchemy · Pandas</b></div></div>
+      <a href="https://careerbytecode.substack.com/p/sql-mastery-for-ai-data-engineers-complete-realtime-handson-training" target="_blank" class="mhd-btn">Access Full Course ↗</a>
+    </div>
+    <div class="wks reveal">
+
+      <div class="wk open">
+        <div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 05</div><div class="wk-ttl">SQL Basics &amp; Core Queries</div></div><div class="wt-r"><div class="wk-dl">Days 29–35</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 29</td><td class="dt-tp">What is SQL? DDL, DML, DQL, DCL, TCL</td><td class="dt-ac">Understand all SQL command categories</td></tr>
+          <tr><td class="dt-d">Day 30</td><td class="dt-tp">Database Concepts: Tables, Rows, Primary &amp; Foreign Keys</td><td class="dt-ac">Schema design fundamentals</td></tr>
+          <tr><td class="dt-d">Day 31</td><td class="dt-tp">SELECT, FROM, WHERE — Core Filtering</td><td class="dt-ac">Write your first queries</td></tr>
+          <tr><td class="dt-d">Day 32</td><td class="dt-tp">Filtering: =, &lt;&gt;, BETWEEN, IN, LIKE, ORDER BY</td><td class="dt-ac">Advanced filter conditions</td></tr>
+          <tr><td class="dt-d">Day 33</td><td class="dt-tp">Aggregations: COUNT, SUM, AVG, MIN, MAX</td><td class="dt-ac">Group and summarise data</td></tr>
+          <tr><td class="dt-d">Day 34</td><td class="dt-tp">GROUP BY, HAVING vs WHERE</td><td class="dt-ac">Grouping &amp; conditional filtering</td></tr>
+          <tr><td class="dt-d">Day 35</td><td class="dt-tp">Practice: 10 SQL Queries on a mock dataset</td><td class="dt-ac">Hands-on query drill</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk">
+        <div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 06</div><div class="wk-ttl">Joins — Critical for AI Jobs</div></div><div class="wt-r"><div class="wk-dl">Days 36–42</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 36</td><td class="dt-tp">INNER JOIN, LEFT JOIN</td><td class="dt-ac">Most common join types</td></tr>
+          <tr><td class="dt-d">Day 37</td><td class="dt-tp">RIGHT JOIN, FULL OUTER JOIN</td><td class="dt-ac">Comprehensive joining</td></tr>
+          <tr><td class="dt-d">Day 38</td><td class="dt-tp">SELF JOIN, CROSS JOIN, Multi-table joins</td><td class="dt-ac">Advanced join patterns</td></tr>
+          <tr><td class="dt-d">Day 39</td><td class="dt-tp">Subqueries: WHERE, SELECT, FROM clauses</td><td class="dt-ac">Nested query logic</td></tr>
+          <tr><td class="dt-d">Day 40</td><td class="dt-tp">Correlated Subqueries, EXISTS vs IN</td><td class="dt-ac">Performance-aware querying</td></tr>
+          <tr><td class="dt-d">Day 41</td><td class="dt-tp">CTEs with WITH clause</td><td class="dt-ac">Readable, modular SQL</td></tr>
+          <tr><td class="dt-d">Day 42</td><td class="dt-tp">Feature Engineering Queries for ML</td><td class="dt-ac">Build ML-ready datasets</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk">
+        <div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 07</div><div class="wk-ttl">Window Functions + Data Transformation</div></div><div class="wt-r"><div class="wk-dl">Days 43–49</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 43</td><td class="dt-tp">CASE WHEN, COALESCE, NULLIF, NULL Handling</td><td class="dt-ac">Conditional SQL logic</td></tr>
+          <tr><td class="dt-d">Day 44</td><td class="dt-tp">ROW_NUMBER, RANK, DENSE_RANK</td><td class="dt-ac">Analytical ranking functions</td></tr>
+          <tr><td class="dt-d">Day 45</td><td class="dt-tp">SUM OVER, AVG OVER — Running totals &amp; Moving averages</td><td class="dt-ac">Time-series aggregation</td></tr>
+          <tr><td class="dt-d">Day 46</td><td class="dt-tp">String Functions: TRIM, SUBSTRING, CONCAT</td><td class="dt-ac">Data cleaning in SQL</td></tr>
+          <tr><td class="dt-d">Day 47</td><td class="dt-tp">Date Functions: DATEDIFF, EXTRACT, DATE_FORMAT</td><td class="dt-ac">Time-series manipulation</td></tr>
+          <tr><td class="dt-d">Day 48</td><td class="dt-tp">UNION, INTERSECT, EXCEPT — Set Operations</td><td class="dt-ac">Combining result sets</td></tr>
+          <tr><td class="dt-d">Day 49</td><td class="dt-tp">Pivoting &amp; Unpivoting Data</td><td class="dt-ac">Row/column transformation</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk">
+        <div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 08</div><div class="wk-ttl">AI-Specific SQL + Python Integration</div></div><div class="wt-r"><div class="wk-dl">Days 50–56</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 50</td><td class="dt-tp">Indexes: Clustered, Non-Clustered, EXPLAIN</td><td class="dt-ac">Query optimisation basics</td></tr>
+          <tr><td class="dt-d">Day 51</td><td class="dt-tp">SQL for Feature Engineering (ML prep)</td><td class="dt-ac">Real AI pipeline queries</td></tr>
+          <tr><td class="dt-d">Day 52</td><td class="dt-tp">SQL for Time Series: LAG, LEAD, Window</td><td class="dt-ac">IoT, stock, log analysis</td></tr>
+          <tr><td class="dt-d">Day 53</td><td class="dt-tp">SQL + Python: Pandas + SQLAlchemy integration</td><td class="dt-ac">Bridge SQL with Python</td></tr>
+          <tr><td class="dt-d">Day 54</td><td class="dt-tp">Data Quality Checks: duplicates, nulls, anomalies</td><td class="dt-ac">Data validation patterns</td></tr>
+          <tr><td class="dt-d">Day 55</td><td class="dt-tp">SQL in Data Warehouses: BigQuery, Snowflake, Redshift</td><td class="dt-ac">Cloud SQL overview</td></tr>
+          <tr><td class="dt-d">Day 56</td><td class="dt-tp">Capstone: Build a full AI-ready SQL dataset</td><td class="dt-ac">End-to-end SQL project ✅</td></tr>
+        </table></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="rainbow"></div>
+
+<!-- ══════════════════ MONTH 3 ══════════════════ -->
+<div class="mb m3" id="month3">
+  <div class="container">
+    <div class="mhd reveal">
+      <div><div class="mhd-k">Month 3 · Weeks 9–14 · Days 57–98 · 6-Week Job-Ready Program</div><div class="mhd-n">Python for Data Science &amp; Machine Learning</div><div class="mhd-m">6 Weeks · <b>NumPy · Pandas · Matplotlib · scikit-learn · NLP · Streamlit</b></div></div>
+      <a href="https://careerbytecode.substack.com/p/python-for-data-science-analytics-a-complete-6-week-job-ready-program" target="_blank" class="mhd-btn">Access Full Course ↗</a>
+    </div>
+    <div class="wks reveal">
+
+      <div class="wk open"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 09</div><div class="wk-ttl">Python for Data Science Foundations</div></div><div class="wt-r"><div class="wk-dl">Days 57–63</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 57</td><td class="dt-tp">Jupyter Notebook Setup, Variables, Data Types</td><td class="dt-ac">Data science environment</td></tr>
+          <tr><td class="dt-d">Day 58</td><td class="dt-tp">Conditionals, Loops, Loop Control</td><td class="dt-ac">Control flow in data scripts</td></tr>
+          <tr><td class="dt-d">Day 59</td><td class="dt-tp">Functions, Lambda, map(), filter(), reduce()</td><td class="dt-ac">Functional Python programming</td></tr>
+          <tr><td class="dt-d">Day 60</td><td class="dt-tp">Data Structures: Lists, Tuples, Sets, Dicts</td><td class="dt-ac">Indexing, slicing, nesting</td></tr>
+          <tr><td class="dt-d">Day 61</td><td class="dt-tp">File Handling &amp; Exception Handling</td><td class="dt-ac">Robust code &amp; real-world files</td></tr>
+          <tr><td class="dt-d">Day 62</td><td class="dt-tp">List/Dict Comprehensions, Enumerate, Zip</td><td class="dt-ac">Pythonic coding patterns</td></tr>
+          <tr><td class="dt-d">Day 63</td><td class="dt-tp">NumPy: Arrays, Indexing, Reshaping, Math</td><td class="dt-ac">Foundation for ML computations</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 10</div><div class="wk-ttl">Pandas &amp; Exploratory Data Analysis</div></div><div class="wt-r"><div class="wk-dl">Days 64–70</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 64</td><td class="dt-tp">Pandas: Series vs DataFrame, Import CSV/Excel</td><td class="dt-ac">Data loading &amp; inspection</td></tr>
+          <tr><td class="dt-d">Day 65</td><td class="dt-tp">Data Cleaning: Nulls, Duplicates, Type Conversion</td><td class="dt-ac">Data quality fundamentals</td></tr>
+          <tr><td class="dt-d">Day 66</td><td class="dt-tp">Data Transformation: apply(), map(), GroupBy</td><td class="dt-ac">Feature preparation</td></tr>
+          <tr><td class="dt-d">Day 67</td><td class="dt-tp">Merging, Joining, Concatenating DataFrames</td><td class="dt-ac">Multi-source data combining</td></tr>
+          <tr><td class="dt-d">Day 68</td><td class="dt-tp">Matplotlib: Line, Bar, Scatter, Histogram</td><td class="dt-ac">Visual data exploration</td></tr>
+          <tr><td class="dt-d">Day 69</td><td class="dt-tp">Seaborn: Pairplot, Heatmap, Boxplot, Themes</td><td class="dt-ac">Statistical visualisations</td></tr>
+          <tr><td class="dt-d">Day 70</td><td class="dt-tp">Mini Projects: Titanic + Netflix Dataset Analysis</td><td class="dt-ac">End-to-end EDA project</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 11</div><div class="wk-ttl">Statistics &amp; Probability</div></div><div class="wt-r"><div class="wk-dl">Days 71–77</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 71</td><td class="dt-tp">Descriptive Stats: Mean, Median, Mode, Std Dev</td><td class="dt-ac">Statistical summaries</td></tr>
+          <tr><td class="dt-d">Day 72</td><td class="dt-tp">Probability Basics, Independent vs Dependent Events</td><td class="dt-ac">Probability theory</td></tr>
+          <tr><td class="dt-d">Day 73</td><td class="dt-tp">Distributions: Normal, Binomial, Poisson, PDF</td><td class="dt-ac">Statistical distributions</td></tr>
+          <tr><td class="dt-d">Day 74</td><td class="dt-tp">Sampling Theory: Law of Large Numbers, CLT</td><td class="dt-ac">Inferential statistics</td></tr>
+          <tr><td class="dt-d">Day 75</td><td class="dt-tp">Correlation, Covariance, Scatter plots</td><td class="dt-ac">Relationship analysis</td></tr>
+          <tr><td class="dt-d">Day 76</td><td class="dt-tp">Hypothesis Testing: Z-test, T-test, Chi-square</td><td class="dt-ac">Statistical testing</td></tr>
+          <tr><td class="dt-d">Day 77</td><td class="dt-tp">Mini Project: Statistical Exploration — Titanic</td><td class="dt-ac">Apply stats to real dataset</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 12</div><div class="wk-ttl">Machine Learning with Scikit-Learn</div></div><div class="wt-r"><div class="wk-dl">Days 78–84</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 78</td><td class="dt-tp">ML Workflow: Preprocess, Train, Evaluate</td><td class="dt-ac">Supervised vs Unsupervised ML</td></tr>
+          <tr><td class="dt-d">Day 79</td><td class="dt-tp">Data Preprocessing: Scaling, Encoding, Missing Values</td><td class="dt-ac">Feature engineering prep</td></tr>
+          <tr><td class="dt-d">Day 80</td><td class="dt-tp">Linear Regression: Cost Function, R², MAE, MSE</td><td class="dt-ac">Regression modelling</td></tr>
+          <tr><td class="dt-d">Day 81</td><td class="dt-tp">Logistic Regression: Accuracy, Precision, Recall, F1</td><td class="dt-ac">Classification modelling</td></tr>
+          <tr><td class="dt-d">Day 82</td><td class="dt-tp">Decision Trees &amp; Random Forest: Ensemble Learning</td><td class="dt-ac">Tree-based algorithms</td></tr>
+          <tr><td class="dt-d">Day 83</td><td class="dt-tp">KNN Classifier &amp; K-Means Clustering</td><td class="dt-ac">Instance-based &amp; unsupervised</td></tr>
+          <tr><td class="dt-d">Day 84</td><td class="dt-tp">Mini Projects: Housing Price, Iris, Diabetes Risk</td><td class="dt-ac">Three ML model builds</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 13</div><div class="wk-ttl">Advanced Data Science Techniques</div></div><div class="wt-r"><div class="wk-dl">Days 85–91</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 85</td><td class="dt-tp">Feature Engineering: New Features, Scaling, Selection</td><td class="dt-ac">ML feature design</td></tr>
+          <tr><td class="dt-d">Day 86</td><td class="dt-tp">Dimensionality Reduction: PCA, Visualisation</td><td class="dt-ac">High-dimensional data handling</td></tr>
+          <tr><td class="dt-d">Day 87</td><td class="dt-tp">Model Validation: K-Fold CV, GridSearchCV</td><td class="dt-ac">Hyperparameter tuning</td></tr>
+          <tr><td class="dt-d">Day 88</td><td class="dt-tp">Time Series Basics: Trend, Seasonality, Noise</td><td class="dt-ac">Temporal data analysis</td></tr>
+          <tr><td class="dt-d">Day 89</td><td class="dt-tp">NLP Basics: Tokenisation, Stopwords, TF-IDF</td><td class="dt-ac">Text data processing</td></tr>
+          <tr><td class="dt-d">Day 90</td><td class="dt-tp">Sentiment Analysis: Text Classification</td><td class="dt-ac">NLP classification project</td></tr>
+          <tr><td class="dt-d">Day 91</td><td class="dt-tp">Mini Projects: PCA Clustering + Sentiment Analysis</td><td class="dt-ac">Advanced data science projects</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 14</div><div class="wk-ttl">Capstone — Build &amp; Deploy Your ML App 🚀</div></div><div class="wt-r"><div class="wk-dl">Days 92–98</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 92</td><td class="dt-tp">Dataset Selection from Kaggle/UCI</td><td class="dt-ac">Define problem + evaluation metric</td></tr>
+          <tr><td class="dt-d">Day 93</td><td class="dt-tp">Data Preprocessing &amp; Feature Selection</td><td class="dt-ac">Full data pipeline</td></tr>
+          <tr><td class="dt-d">Day 94</td><td class="dt-tp">Train Multiple ML Algorithms &amp; Compare</td><td class="dt-ac">Model selection &amp; evaluation</td></tr>
+          <tr><td class="dt-d">Day 95</td><td class="dt-tp">Model Serialisation: save with pickle</td><td class="dt-ac">Production model packaging</td></tr>
+          <tr><td class="dt-d">Day 96</td><td class="dt-tp">Streamlit App: Build UI, input → prediction</td><td class="dt-ac">ML web app deployment</td></tr>
+          <tr><td class="dt-d">Day 97</td><td class="dt-tp">GitHub: Push code + write README.md</td><td class="dt-ac">Version control &amp; portfolio</td></tr>
+          <tr><td class="dt-d">Day 98</td><td class="dt-tp">Final Presentation: End-to-End ML Project</td><td class="dt-ac">Portfolio-ready project ✅</td></tr>
+        </table></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="rainbow"></div>
+
+<!-- ══════════════════ MONTH 4 ══════════════════ -->
+<div class="mb m4 alt" id="month4">
+  <div class="container">
+    <div class="mhd reveal">
+      <div><div class="mhd-k">Month 4 · Weeks 15–21 · Days 99–147 · 50-Day Advanced Program</div><div class="mhd-n">Raw Data → Real-Time Dashboards</div><div class="mhd-m">Python + MySQL + Power BI · <b>BeautifulSoup · SQLAlchemy · DAX · Power Query</b></div></div>
+      <a href="https://careerbytecode.substack.com/p/mastering-data-sql-raw-data-to-real-time-dashboards-in-50-days" target="_blank" class="mhd-btn">Access Full Course ↗</a>
+    </div>
+    <div class="wks reveal">
+
+      <div class="wk open"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 15</div><div class="wk-ttl">Data Collection &amp; Web Scraping</div></div><div class="wt-r"><div class="wk-dl">Days 99–105</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 99</td><td class="dt-tp">Intro to Data Types: Structured vs Unstructured</td><td class="dt-ac">Nominal, Ordinal, Numerical, Categorical</td></tr>
+          <tr><td class="dt-d">Day 100</td><td class="dt-tp">Data Collection Methods, HTML Structure for Scraping</td><td class="dt-ac">Web scraping concepts</td></tr>
+          <tr><td class="dt-d">Day 101</td><td class="dt-tp">Python Web Scraping: BeautifulSoup + Requests</td><td class="dt-ac">Extract live web data</td></tr>
+          <tr><td class="dt-d">Day 102</td><td class="dt-tp">API Basics: Requests + JSON Parsing</td><td class="dt-ac">Consume real-world APIs</td></tr>
+          <tr><td class="dt-d">Day 103</td><td class="dt-tp">Data Cleaning: Nulls, Duplicates → CSV/Excel</td><td class="dt-ac">Pipeline data cleaning</td></tr>
+          <tr><td class="dt-d">Day 104</td><td class="dt-tp">Task: Scrape e-commerce product data (10+ items)</td><td class="dt-ac">Hands-on scraping project</td></tr>
+          <tr><td class="dt-d">Day 105</td><td class="dt-tp">Review: Data collection pipeline recap</td><td class="dt-ac">Consolidate Module 1</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 16</div><div class="wk-ttl">Databases, MySQL &amp; RDBMS Concepts</div></div><div class="wt-r"><div class="wk-dl">Days 106–112</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 106</td><td class="dt-tp">DBMS vs RDBMS, Install MySQL + Workbench</td><td class="dt-ac">Database environment setup</td></tr>
+          <tr><td class="dt-d">Day 107</td><td class="dt-tp">Tables, Rows, Columns, Types of Databases</td><td class="dt-ac">Relational database structure</td></tr>
+          <tr><td class="dt-d">Day 108</td><td class="dt-tp">NoSQL Databases Overview</td><td class="dt-ac">NoSQL vs SQL decision making</td></tr>
+          <tr><td class="dt-d">Day 109</td><td class="dt-tp">ER Diagrams, Relationship Types, MySQL + Jupyter CLI</td><td class="dt-ac">Database design &amp; modelling</td></tr>
+          <tr><td class="dt-d">Day 110</td><td class="dt-tp">Task: Design ER Diagram — Hospital Management System</td><td class="dt-ac">ER diagram design task</td></tr>
+          <tr><td class="dt-d">Day 111</td><td class="dt-tp">Case Study: Amazon DB Architecture Design</td><td class="dt-ac">Applied database design thinking</td></tr>
+          <tr><td class="dt-d">Day 112</td><td class="dt-tp">Review: RDBMS + Normalisation intro</td><td class="dt-ac">Foundation reinforcement</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 17–18</div><div class="wk-ttl">SQL CRUD + Keys, Aggregations &amp; Logic</div></div><div class="wt-r"><div class="wk-dl">Days 113–126</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">113–115</td><td class="dt-tp">DDL, DML, DCL, TCL: CREATE, ALTER, INSERT, UPDATE, DELETE, GRANT</td><td class="dt-ac">Full CRUD operations</td></tr>
+          <tr><td class="dt-d">116–119</td><td class="dt-tp">SQL Essentials, Data Types, Conditions, Patterns, Live Playground</td><td class="dt-ac">Hands-on CRUD project</td></tr>
+          <tr><td class="dt-d">120–122</td><td class="dt-tp">Primary/Foreign/Super Keys, CASCADE DELETE, Soft Delete, Logical Operators</td><td class="dt-ac">Constraint + filter mastery</td></tr>
+          <tr><td class="dt-d">123–126</td><td class="dt-tp">COUNT/SUM/AVG, GROUP BY, HAVING, CASE WHEN, NULL Handling</td><td class="dt-ac">Business logic in SQL</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 19–20</div><div class="wk-ttl">Advanced SQL + Python Integration</div></div><div class="wt-r"><div class="wk-dl">Days 127–140</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">127–129</td><td class="dt-tp">String Functions, Date Functions, Subqueries, Derived Tables, Set Operations</td><td class="dt-ac">Advanced SQL patterns</td></tr>
+          <tr><td class="dt-d">130–133</td><td class="dt-tp">Views, All 6 Joins, Window Functions (Aggregate + Ranking + Value)</td><td class="dt-ac">Analytical SQL mastery</td></tr>
+          <tr><td class="dt-d">134–138</td><td class="dt-tp">UNION, REGEX, Indexes, EXPLAIN, Partitioning, ACID, CAP, Normalisation 1NF–BCNF, SCD Types</td><td class="dt-ac">Database theory + warehouse design</td></tr>
+          <tr><td class="dt-d">139–140</td><td class="dt-tp">Connect MySQL + Python, Parameterised Queries, Export to Excel/CSV</td><td class="dt-ac">Full Python + SQL automation</td></tr>
+        </table></div>
+      </div>
+
+      <div class="wk"><div class="wk-t" onclick="tw(this)"><div class="wt-l"><div class="wk-b">WEEK 21</div><div class="wk-ttl">Power BI Dashboards + Final Capstone 🏆</div></div><div class="wt-r"><div class="wk-dl">Days 141–147</div><div class="wk-cv">▼</div></div></div>
+        <div class="wk-bd"><table class="dt"><tr><th>Day</th><th>Topic</th><th>Key Action</th></tr>
+          <tr><td class="dt-d">Day 141</td><td class="dt-tp">Power BI Interface, Import CSV/Excel</td><td class="dt-ac">Dashboard tool setup</td></tr>
+          <tr><td class="dt-d">Day 142</td><td class="dt-tp">Visuals: Cards, Charts, Tables, Slicers, Drilldowns</td><td class="dt-ac">Interactive BI components</td></tr>
+          <tr><td class="dt-d">Day 143</td><td class="dt-tp">Data Modelling: Relationships, Measures, Fields</td><td class="dt-ac">Power BI data model design</td></tr>
+          <tr><td class="dt-d">Day 144</td><td class="dt-tp">Connect Power BI to MySQL — Live Data</td><td class="dt-ac">Real-time SQL dashboard</td></tr>
+          <tr><td class="dt-d">Day 145</td><td class="dt-tp">Multi-page Reports, Bookmarks, Publishing</td><td class="dt-ac">Professional dashboard delivery</td></tr>
+          <tr><td class="dt-d">Day 146</td><td class="dt-tp">Capstone: University Student Performance Analytics Dashboard</td><td class="dt-ac">Final capstone project 🏆</td></tr>
+          <tr><td class="dt-d">Day 147</td><td class="dt-tp">Final Review, Portfolio Wrap-up, What's Next</td><td class="dt-ac">AI Expert Journey Complete 🎓</td></tr>
+        </table></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="rainbow"></div>
+
+<!-- SKILLS -->
+<section class="section stripe">
+  <div class="container reveal">
+    <div class="sec-lbl">after 147 days</div>
+    <h2 class="sec-ttl">Your Complete<br>Skill Arsenal</h2>
+    <div class="sk-grid">
+      <div class="sk"><div class="sk-i">🐍</div><div class="sk-t">Python Mastery</div><div class="sk-d">16 classes: variables, functions, loops, error handling, file automation, OS scripting</div></div>
+      <div class="sk"><div class="sk-i">🗄️</div><div class="sk-t">SQL Expertise</div><div class="sk-d">CRUD, all 6 joins, CTEs, window functions, indexes, cloud data warehouses</div></div>
+      <div class="sk"><div class="sk-i">📊</div><div class="sk-t">Data Analysis</div><div class="sk-d">NumPy, Pandas, EDA, data cleaning, Matplotlib, Seaborn visualisations</div></div>
+      <div class="sk"><div class="sk-i">📐</div><div class="sk-t">Statistics</div><div class="sk-d">Probability, distributions, hypothesis testing, correlation, CLT</div></div>
+      <div class="sk"><div class="sk-i">🤖</div><div class="sk-t">Machine Learning</div><div class="sk-d">Regression, classification, clustering, NLP, PCA, GridSearchCV</div></div>
+      <div class="sk"><div class="sk-i">🌐</div><div class="sk-t">Web Scraping &amp; APIs</div><div class="sk-d">BeautifulSoup, Requests, JSON — automated data collection pipelines</div></div>
+      <div class="sk"><div class="sk-i">📈</div><div class="sk-t">Power BI</div><div class="sk-d">DAX measures, MySQL-connected dashboards, multi-page reports</div></div>
+      <div class="sk"><div class="sk-i">🚀</div><div class="sk-t">Deployment</div><div class="sk-d">Streamlit apps, pickle models, GitHub repos, README documentation</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section class="section white" id="careers">
+  <div class="container reveal">
+    <div class="sec-lbl">job market ready</div>
+    <h2 class="sec-ttl">7 Career Paths<br>Now Open to You</h2>
+    <p class="sec-dsc">Complete all 4 courses and you are fully qualified to apply for these high-demand AI and data roles.</p>
+    <div class="ca-grid">
+      <div class="ca"><div class="ca-i">🤖</div><div class="ca-t">AI Engineer</div><div class="ca-l">Senior Ready</div></div>
+      <div class="ca"><div class="ca-i">🔬</div><div class="ca-t">Data Scientist</div><div class="ca-l">Junior → Mid Level</div></div>
+      <div class="ca"><div class="ca-i">📊</div><div class="ca-t">Data Analyst</div><div class="ca-l">Python-based</div></div>
+      <div class="ca"><div class="ca-i">⚙️</div><div class="ca-t">ML Engineer</div><div class="ca-l">Model → Production</div></div>
+      <div class="ca"><div class="ca-i">🛠️</div><div class="ca-t">Python Developer</div><div class="ca-l">Automation &amp; Scripts</div></div>
+      <div class="ca"><div class="ca-i">🗄️</div><div class="ca-t">Data Engineer</div><div class="ca-l">SQL + Pipelines</div></div>
+      <div class="ca"><div class="ca-i">📈</div><div class="ca-t">BI Developer</div><div class="ca-l">Power BI Expert</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rainbow"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="ft-top">
+      <div><div class="ft-bn">Career<span>Byte</span>Code</div><div class="ft-tg">Build skills. Get hired. Level up.</div></div>
+      <div class="ft-col">
+        <h4>Python Classes 1–8</h4>
+        <a href="https://careerbytecode.substack.com/p/python-class1-setting-up-your-environment-and-mastering-the-basics" target="_blank">Class 1 — Installation &amp; Basics</a>
+        <a href="https://careerbytecode.substack.com/p/class2-mastering-python-syntax-single-line-multi-line-comments-made-easy" target="_blank">Class 2 — Python Syntax</a>
+        <a href="https://careerbytecode.substack.com/p/class3-essentials-get-comfortable-with-python-integer-float-complex-and-boolean-types" target="_blank">Class 3 — Data Types</a>
+        <a href="https://careerbytecode.substack.com/p/class4-python-administration-training-mastering-strings-and-mutable-immutable-concepts" target="_blank">Class 4 — Strings</a>
+        <a href="https://careerbytecode.substack.com/p/class5-mastering-string-slicing-raw-strings-inbuilt-methods-in-python" target="_blank">Class 5 — String Slicing</a>
+        <a href="https://careerbytecode.substack.com/p/class6-unlock-the-magic-of-type-casting-boolean-and-list-data-structures" target="_blank">Class 6 — Type Casting &amp; Lists</a>
+        <a href="https://careerbytecode.substack.com/p/class7-python-dive-deep-into-tuples-and-sets-their-features-operations-and-limitations" target="_blank">Class 7 — Tuples &amp; Sets</a>
+        <a href="https://careerbytecode.substack.com/p/class8-python-administration-training-mastering-dictionaries-range-function-and-nonetype" target="_blank">Class 8 — Dictionaries &amp; range()</a>
+      </div>
+      <div class="ft-col">
+        <h4>Python Classes 9–16</h4>
+        <a href="https://careerbytecode.substack.com/p/python-class9-harnessing-the-power-of-input-eval-and-print-for-smarter-coding" target="_blank">Class 9 — input(), eval(), print()</a>
+        <a href="http://careerbytecode.substack.com/p/class10-master-file-handling-in-python-opening-reading-writing-and-more" target="_blank">Class 10 — File Handling</a>
+        <a href="https://careerbytecode.substack.com/p/class11-python-file-handling-mastery-from-write-to-writelines-everything-you-need-to-know" target="_blank">Class 11 — File Writing</a>
+        <a href="https://careerbytecode.substack.com/p/class12-conditional-statements-demystified-a-deep-dive-into-if-elif-and-nested-if-in-python" target="_blank">Class 12 — Conditional Statements</a>
+        <a href="https://careerbytecode.substack.com/p/class13-python-administration-training-mastering-nested-if-and-looping-statements" target="_blank">Class 13 — Loops</a>
+        <a href="https://careerbytecode.substack.com/p/class14-unlock-the-power-of-python-operators-arithmetic-comparison-and-assignment" target="_blank">Class 14 — Transfer &amp; Operators</a>
+        <a href="https://careerbytecode.substack.com/p/class15-mastering-logical-bitwise-membership-and-identity-operators-in-python" target="_blank">Class 15 — Advanced Operators</a>
+        <a href="https://careerbytecode.substack.com/p/class16-step-by-step-guide-to-python-functions-learn-how-to-create-and-use-them-like-a-python-expert" target="_blank">Class 16 — Python Functions</a>
+      </div>
+      <div class="ft-col">
+        <h4>Other Courses</h4>
+        <a href="https://careerbytecode.substack.com/p/sql-mastery-for-ai-data-engineers-complete-realtime-handson-training" target="_blank">Course 2 — SQL Mastery</a>
+        <a href="https://careerbytecode.substack.com/p/python-for-data-science-analytics-a-complete-6-week-job-ready-program" target="_blank">Course 3 — Data Science</a>
+        <a href="https://careerbytecode.substack.com/p/mastering-data-sql-raw-data-to-real-time-dashboards-in-50-days" target="_blank">Course 4 — Dashboards</a>
+        <a href="https://careerbytecode.substack.com" target="_blank">CareerByteCode Hub ↗</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="ft-cp">© 2025 CareerByteCode · AI Expert Master Training Plan · 4 Months · 147 Days · 16 Python Classes</div>
+      <div class="ft-cp">Built for aspiring AI Engineers 💙</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function tw(btn){btn.closest('.wk').classList.toggle('open')}
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')})},{threshold:.06,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+scrollY-68,behavior:'smooth'})}})});
+</script>
+</body>
+</html>
