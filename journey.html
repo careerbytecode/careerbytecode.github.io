@@ -50,10 +50,60 @@
 .j-stat__num{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-family:var(--font-mono);}
 .j-stat__lbl{font-size:0.75rem;font-weight:600;color:var(--text-3);font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;margin-top:6px;}
 
-/* ── EVENT BLOCK (per-event slab) ── */
-.event-block{position:relative;z-index:1;padding:var(--sp-8) var(--sp-6);scroll-margin-top:calc(var(--nav-h) + 20px);}
-.event-block + .event-block{border-top:1px solid var(--border);}
-.event-block__inner{max-width:var(--max-w);margin:0 auto;}
+/* ── EVENTS TOOLBAR (search + filters + controls) ── */
+.events-toolbar{max-width:var(--max-w);margin:0 auto;padding:0 var(--sp-6) var(--sp-3);display:flex;flex-direction:column;gap:var(--sp-2);}
+.events-toolbar__row{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap;}
+.events-toolbar__search{flex:1;min-width:240px;position:relative;}
+.events-toolbar__search input{width:100%;padding:11px 16px 11px 40px;border-radius:var(--r-full);border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:0.9rem;font-family:inherit;transition:all var(--dur-fast) ease;outline:none;}
+.events-toolbar__search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light);}
+.events-toolbar__search::before{content:'\1F50D';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.6;pointer-events:none;}
+.events-toolbar__count{font-family:var(--font-mono);font-size:0.74rem;font-weight:600;color:var(--text-3);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;}
+.events-toolbar__btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:9px 16px;border-radius:var(--r-full);background:var(--surface);border:1px solid var(--border);color:var(--text-2);cursor:pointer;transition:all var(--dur-fast) ease;font-family:inherit;}
+.events-toolbar__btn:hover{background:var(--accent-light);color:var(--accent);border-color:var(--accent);}
+
+.filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.filter-row__lbl{font-family:var(--font-mono);font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-right:4px;}
+.filter-chip{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:var(--r-full);font-size:0.74rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text-2);transition:all var(--dur-fast) ease;font-family:inherit;}
+.filter-chip:hover{background:var(--accent-light);color:var(--accent);border-color:var(--accent);}
+.filter-chip.active{background:var(--text);color:var(--bg);border-color:var(--text);box-shadow:var(--sh-sm);}
+.filter-chip__count{opacity:.55;font-size:0.66rem;font-weight:700;}
+
+/* year separator (sticky band that floats between event cards) */
+.year-sep{display:flex;align-items:center;gap:var(--sp-2);max-width:var(--max-w);margin:var(--sp-4) auto var(--sp-2);padding:0 var(--sp-6);position:sticky;top:var(--nav-h);z-index:4;pointer-events:none;}
+.year-sep__pill{display:inline-flex;align-items:baseline;gap:8px;padding:8px 18px;border-radius:var(--r-full);background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);box-shadow:var(--sh-sm);pointer-events:auto;}
+.year-sep__yr{font-family:var(--font-mono);font-size:0.95rem;font-weight:800;color:var(--text);letter-spacing:-0.01em;}
+.year-sep__count{font-family:var(--font-mono);font-size:0.7rem;font-weight:600;color:var(--text-3);letter-spacing:0.04em;}
+.year-sep__line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+
+/* empty state */
+.empty-state{max-width:var(--max-w);margin:var(--sp-5) auto;padding:var(--sp-6) var(--sp-4);text-align:center;border:2px dashed var(--border-2);border-radius:var(--r-lg);background:var(--surface);}
+.empty-state__icon{font-size:48px;margin-bottom:8px;opacity:.6;}
+.empty-state__txt{font-size:0.95rem;color:var(--text-2);}
+
+/* ── EVENT BLOCK (collapsible per-event card) ── */
+.event-block{position:relative;z-index:1;max-width:var(--max-w);margin:0 auto var(--sp-3);padding:0;scroll-margin-top:calc(var(--nav-h) + 20px);background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;transition:border-color var(--dur-normal) ease,box-shadow var(--dur-normal) ease;}
+.event-block:hover{border-color:var(--border-2);box-shadow:var(--sh-md);}
+.event-block--open{border-color:var(--accent);box-shadow:var(--sh-lg);}
+.event-block__inner{padding:var(--sp-5) var(--sp-5) var(--sp-6);}
+
+/* head (always visible) */
+.event-block__head{display:flex;width:100%;align-items:center;justify-content:space-between;gap:var(--sp-3);padding:var(--sp-3) var(--sp-4);background:none;border:none;cursor:pointer;text-align:left;transition:background var(--dur-fast) ease;font-family:inherit;color:inherit;}
+.event-block__head:hover{background:var(--accent-light);}
+.event-block__head:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+.event-block__head-left{display:flex;align-items:center;gap:var(--sp-2);min-width:0;flex:1;}
+.event-block__num{font-family:var(--font-mono);font-size:1.5rem;font-weight:800;color:transparent;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;flex-shrink:0;line-height:1;letter-spacing:-0.02em;}
+.event-block__head-text{min-width:0;flex:1;}
+.event-block__name-row{font-size:1.05rem;font-weight:700;color:var(--text);line-height:1.3;}
+.event-block__meta-row{font-size:0.76rem;color:var(--text-3);margin-top:3px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.event-block__meta-row span{display:inline-flex;align-items:center;gap:4px;}
+.event-block__head-right{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.event-block__pill{display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono);font-size:0.68rem;font-weight:700;padding:5px 11px;border-radius:var(--r-full);background:var(--accent-light);color:var(--accent);letter-spacing:0.04em;}
+.event-block__chevron{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-2);background:var(--surface-2);transition:transform var(--dur-normal) var(--ease-out-expo),background var(--dur-fast) ease;font-size:14px;}
+.event-block--open .event-block__chevron{transform:rotate(180deg);background:var(--accent);color:#fff;}
+
+/* body (collapsible) */
+.event-block__body{max-height:0;overflow:hidden;transition:max-height var(--dur-slow) var(--ease-out-expo);}
+.event-block--open .event-block__body{max-height:99999px;}
 
 /* hero strip */
 .eh{position:relative;border-radius:var(--r-xl);overflow:hidden;background:linear-gradient(135deg,#0a1628,#0d2147);box-shadow:var(--sh-lg);margin-bottom:var(--sp-5);min-height:280px;display:flex;align-items:flex-end;}
@@ -68,8 +118,8 @@
 .eh__meta span{display:inline-flex;align-items:center;gap:6px;}
 .eh__meta .dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35);}
 
-/* mini-nav */
-.emn{position:sticky;top:var(--nav-h);z-index:5;display:flex;gap:6px;flex-wrap:wrap;padding:10px;background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:var(--sp-4);box-shadow:var(--sh-sm);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+/* mini-nav (jump links within an expanded event) */
+.emn{display:flex;gap:6px;flex-wrap:wrap;padding:10px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:var(--sp-4);overflow-x:auto;-webkit-overflow-scrolling:touch;}
 .emn a{flex-shrink:0;padding:6px 14px;border-radius:var(--r-sm);font-size:0.78rem;font-weight:600;color:var(--text-2);transition:all var(--dur-fast) ease;text-decoration:none;}
 .emn a:hover{background:var(--accent-light);color:var(--accent);}
 
@@ -215,7 +265,10 @@
   .story-section{padding:var(--sp-5) var(--sp-3);}
   .j-stats{padding:0 var(--sp-3) var(--sp-5);}
   .j-stats-grid{grid-template-columns:repeat(3,1fr);}
-  .event-block{padding:var(--sp-6) var(--sp-3);}
+  .events-toolbar{padding:0 var(--sp-3) var(--sp-3);}
+  .year-sep{padding:0 var(--sp-3);margin-left:var(--sp-3);margin-right:var(--sp-3);}
+  .event-block{margin-left:var(--sp-3);margin-right:var(--sp-3);}
+  .event-block__inner{padding:var(--sp-3);}
   .eh__body{padding:var(--sp-4) var(--sp-3);}
   .eqs{grid-template-columns:repeat(3,1fr);}
   .j-cta{padding:var(--sp-5) var(--sp-3);}
@@ -236,6 +289,11 @@
   .share-btn{justify-content:center;}
   .j-cta-banner__btns{width:100%;flex-direction:column;}
   .j-cta-btn{justify-content:center;}
+  .event-block__head{padding:var(--sp-2) var(--sp-3);gap:var(--sp-2);}
+  .event-block__num{font-size:1.2rem;}
+  .event-block__name-row{font-size:0.95rem;}
+  .event-block__meta-row{font-size:0.72rem;gap:8px;}
+  .event-block__pill{display:none;}
 }
 </style>
 <script type="application/ld+json">
@@ -312,30 +370,28 @@
   <p>So we started showing up in cities. Renting halls, partnering with sponsors who got it, and inviting the community to one full day of demos, conversations, and the kind of clarity you only get face-to-face. This page is where those days live on.</p>
 </section>
 
-<!-- COMBINED STATS -->
+<!-- COMBINED STATS (numbers auto-computed from events-data.js) -->
 <section class="j-stats reveal" aria-label="Journey statistics">
   <div class="j-stats-grid">
-    <div class="j-stat">
-      <div class="j-stat__num" data-count-to="2">0</div>
-      <div class="j-stat__lbl">Physical Events</div>
-    </div>
-    <div class="j-stat">
-      <div class="j-stat__num" data-count-to="250">0</div>
-      <div class="j-stat__lbl">Attendees</div>
-    </div>
-    <div class="j-stat">
-      <div class="j-stat__num" data-count-to="12">0</div>
-      <div class="j-stat__lbl">Speakers</div>
-    </div>
-    <div class="j-stat">
-      <div class="j-stat__num" data-count-to="2">0</div>
-      <div class="j-stat__lbl">Cities</div>
-    </div>
-    <div class="j-stat">
-      <div class="j-stat__num" data-count-to="6">0</div>
-      <div class="j-stat__lbl">Sponsors</div>
-    </div>
+    <div class="j-stat"><div class="j-stat__num" data-stat="events">0</div><div class="j-stat__lbl">Physical Events</div></div>
+    <div class="j-stat"><div class="j-stat__num" data-stat="attendees">0</div><div class="j-stat__lbl">Attendees</div></div>
+    <div class="j-stat"><div class="j-stat__num" data-stat="speakers">0</div><div class="j-stat__lbl">Speakers</div></div>
+    <div class="j-stat"><div class="j-stat__num" data-stat="cities">0</div><div class="j-stat__lbl">Cities</div></div>
+    <div class="j-stat"><div class="j-stat__num" data-stat="sponsors">0</div><div class="j-stat__lbl">Sponsors</div></div>
   </div>
+</section>
+
+<!-- TOOLBAR: search + filters + expand-all -->
+<section class="events-toolbar reveal" aria-label="Search and filter events">
+  <div class="events-toolbar__row">
+    <div class="events-toolbar__search">
+      <input type="search" id="ev-search" placeholder="Search by event name, speaker, city, or hashtag..." aria-label="Search events">
+    </div>
+    <span class="events-toolbar__count" id="ev-count"></span>
+    <button class="events-toolbar__btn" id="ev-toggle-all" type="button">Expand all</button>
+  </div>
+  <div class="filter-row" id="ev-year-filter" aria-label="Filter by year"></div>
+  <div class="filter-row" id="ev-city-filter" aria-label="Filter by city"></div>
 </section>
 
 <!-- EVENTS RENDERED FROM JS -->
@@ -386,301 +442,418 @@
 
 <button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
 
+<!-- Events data — edit this file to add new events. -->
+<script src="events-data.js"></script>
+
 <script>
-/* ──────────────────────────────────────────────────────────────
-   EVENTS DATA — single source of truth.
-   Add a new event by appending a new object below. No HTML changes needed.
-   All fields except slug/name/date are optional and degrade gracefully.
-   ────────────────────────────────────────────────────────────── */
-const events = [
-  {
-    slug: "event-1",
-    name: "CareerByteCode Meetup - Event 1",
-    tagline: "A full day of hands-on cloud, AI, and career conversations.",
-    date: "2025-09-20",
-    city: "City TBD",
-    venue: "Venue TBD",
-    hashtag: "#CBCMeetup1",
-    bannerImage: "",
-    about: "Event description coming soon. This block will cover the theme, who it was for, and what made the day memorable. Edit the 'about' field in journey.html to replace this placeholder text.",
-    stats: { attendees: 120, sessions: 5, speakers: 6, durationHours: 8 },
-    agenda: [
-      { time: "09:30", title: "Registration & Coffee", speaker: "" },
-      { time: "10:00", title: "Welcome & Opening Note", speaker: "CBC Team" },
-      { time: "10:30", title: "Session 1 - To Be Announced", speaker: "Speaker name" },
-      { time: "12:00", title: "Networking Lunch", speaker: "" },
-      { time: "14:00", title: "Session 2 - To Be Announced", speaker: "Speaker name" },
-      { time: "16:00", title: "Panel - Career in Cloud & AI", speaker: "All speakers" },
-      { time: "17:30", title: "Closing & Group Photo", speaker: "" }
-    ],
-    speakers: [
-      { name: "Speaker One", role: "Cloud Architect", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Two", role: "AI Engineer", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Three", role: "DevOps Lead", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" }
-    ],
-    demos: [
-      { title: "Demo 1 - Use case title", speaker: "Speaker One", stack: ["Azure", "Terraform", "GitHub Actions"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" },
-      { title: "Demo 2 - Use case title", speaker: "Speaker Two", stack: ["Python", "OpenAI", "LangChain"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" }
-    ],
-    gallery: [],
-    sponsors: [
-      { name: "Title Sponsor", tier: "Title", logo: "", url: "#" },
-      { name: "Gold Sponsor", tier: "Gold", logo: "", url: "#" },
-      { name: "Community Partner", tier: "Community", logo: "", url: "#" }
-    ],
-    feedback: [
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "Cloud Engineer", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." },
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "DevOps Practitioner", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." }
-    ],
-    resources: [
-      { label: "Event Recap on LinkedIn", url: "#", type: "article" },
-      { label: "Demo Code Repository", url: "#", type: "repo" }
-    ]
-  },
-  {
-    slug: "event-2",
-    name: "CareerByteCode Meetup - Event 2",
-    tagline: "Round two - bigger room, sharper demos, same community.",
-    date: "2026-01-25",
-    city: "City TBD",
-    venue: "Venue TBD",
-    hashtag: "#CBCMeetup2",
-    bannerImage: "",
-    about: "Event description coming soon. This block will cover the theme, who it was for, and what made the day memorable. Edit the 'about' field in journey.html to replace this placeholder text.",
-    stats: { attendees: 130, sessions: 6, speakers: 6, durationHours: 8 },
-    agenda: [
-      { time: "09:30", title: "Registration & Coffee", speaker: "" },
-      { time: "10:00", title: "Welcome & Opening Note", speaker: "CBC Team" },
-      { time: "10:30", title: "Session 1 - To Be Announced", speaker: "Speaker name" },
-      { time: "12:00", title: "Networking Lunch", speaker: "" },
-      { time: "14:00", title: "Session 2 - To Be Announced", speaker: "Speaker name" },
-      { time: "16:00", title: "Panel - Career in Cloud & AI", speaker: "All speakers" },
-      { time: "17:30", title: "Closing & Group Photo", speaker: "" }
-    ],
-    speakers: [
-      { name: "Speaker One", role: "Platform Engineer", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Two", role: "ML Practitioner", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Three", role: "FullStack Lead", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" }
-    ],
-    demos: [
-      { title: "Demo 1 - Use case title", speaker: "Speaker One", stack: ["Kubernetes", "ArgoCD", "Helm"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" },
-      { title: "Demo 2 - Use case title", speaker: "Speaker Two", stack: ["AWS", "SageMaker", "Lambda"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" }
-    ],
-    gallery: [],
-    sponsors: [
-      { name: "Title Sponsor", tier: "Title", logo: "", url: "#" },
-      { name: "Gold Sponsor", tier: "Gold", logo: "", url: "#" },
-      { name: "Silver Sponsor", tier: "Silver", logo: "", url: "#" }
-    ],
-    feedback: [
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "SRE", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." },
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "Data Engineer", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." }
-    ],
-    resources: [
-      { label: "Event Recap on LinkedIn", url: "#", type: "article" }
-    ]
-  }
-];
-
-/* ──────────────────────────────────────────────────────────────
-   RENDERER
-   ────────────────────────────────────────────────────────────── */
-const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
-const initials = name => name.split(/\s+/).filter(Boolean).slice(0,2).map(w => w[0]).join("").toUpperCase();
-const fmtDate = iso => {
-  if (!iso) return "";
-  const d = new Date(iso);
-  if (isNaN(d)) return iso;
-  return d.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" });
-};
-const liIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.5a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM20 19h-3v-5.5c0-3.3-4-3-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>';
-const resIcons = { recording: "&#x25B6;", deck: "&#x1F4D1;", repo: "&lt;/&gt;", article: "&#x1F4DD;" };
-
-function speakerAvatar(s){
-  if (s.photo) return `<img src="${esc(s.photo)}" alt="${esc(s.name)}" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='${esc(initials(s.name))}'">`;
-  return esc(initials(s.name));
-}
-function feedbackAvatar(f){
-  if (f.photo) return `<img src="${esc(f.photo)}" alt="${esc(f.name)}" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='${esc(initials(f.name))}'">`;
-  return esc(initials(f.name));
-}
-
-function renderEvent(e, idx){
-  // hero
-  const heroBg = e.bannerImage
-    ? `<div class="eh__bg" style="background-image:url('${esc(e.bannerImage)}')"></div>`
-    : `<div class="eh__noimg"></div>`;
-  const heroMeta = [];
-  if (e.date) heroMeta.push(`<span>&#x1F4C5; ${esc(fmtDate(e.date))}</span>`);
-  if (e.city) heroMeta.push(`<span>&#x1F4CD; ${esc(e.city)}${e.venue ? " &middot; " + esc(e.venue) : ""}</span>`);
-  if (e.hashtag) heroMeta.push(`<span>&#x0023; ${esc(e.hashtag.replace(/^#/,""))}</span>`);
-
-  // mini-nav
-  const sections = [
-    ["About", "about"],
-    e.agenda?.length && ["Agenda", "agenda"],
-    e.speakers?.length && ["Speakers", "speakers"],
-    e.demos?.length && ["Demos", "demos"],
-    e.gallery?.length && ["Gallery", "gallery"],
-    e.sponsors?.length && ["Sponsors", "sponsors"],
-    e.feedback?.length && ["Feedback", "feedback"],
-    e.resources?.length && ["Resources", "resources"]
-  ].filter(Boolean);
-  const miniNav = sections.length > 1
-    ? `<nav class="emn" aria-label="${esc(e.name)} sections">${sections.map(([l,s]) => `<a href="#${esc(e.slug)}-${esc(s)}">${esc(l)}</a>`).join("")}</nav>`
-    : "";
-
-  // quick stats
-  const qs = [];
-  if (e.stats?.attendees != null) qs.push([e.stats.attendees + "+", "Attendees"]);
-  if (e.stats?.sessions != null) qs.push([e.stats.sessions, "Sessions"]);
-  if (e.stats?.speakers != null) qs.push([e.stats.speakers, "Speakers"]);
-  if (e.stats?.durationHours != null) qs.push([e.stats.durationHours + "h", "Duration"]);
-  if (e.hashtag) qs.push([e.hashtag, "Hashtag"]);
-  const quickStats = qs.length
-    ? `<div class="eqs">${qs.map(([n,l]) => `<div class="eqs__item"><div class="eqs__num">${esc(n)}</div><div class="eqs__lbl">${esc(l)}</div></div>`).join("")}</div>`
-    : "";
-
-  // about
-  const about = e.about
-    ? `<div class="sub" id="${esc(e.slug)}-about"><div class="sub__head"><div class="sub__title">About this event</div></div><div class="eabout">${esc(e.about)}</div></div>`
-    : "";
-
-  // agenda
-  const agenda = e.agenda?.length
-    ? `<div class="sub" id="${esc(e.slug)}-agenda"><div class="sub__head"><div class="sub__title">Agenda</div><div class="sub__sub">${esc(fmtDate(e.date))}</div></div><div class="agenda">${e.agenda.map(a => `<div class="agenda__row"><div class="agenda__time">${esc(a.time || "")}</div><div class="agenda__title">${esc(a.title || "")}</div>${a.speaker ? `<div class="agenda__spk">${esc(a.speaker)}</div>` : ""}</div>`).join("")}</div></div>`
-    : "";
-
-  // speakers
-  const speakers = e.speakers?.length
-    ? `<div class="sub" id="${esc(e.slug)}-speakers"><div class="sub__head"><div class="sub__title">Speakers</div><div class="sub__sub">${e.speakers.length} voice${e.speakers.length===1?"":"s"} on the day</div></div><div class="spk-grid">${e.speakers.map(s => `<div class="spk-card"><div class="spk-card__avatar">${speakerAvatar(s)}</div><div class="spk-card__name">${esc(s.name)}</div>${s.role ? `<div class="spk-card__role">${esc(s.role)}</div>` : ""}${s.bio ? `<div class="spk-card__bio">${esc(s.bio)}</div>` : ""}${s.linkedin ? `<a href="${esc(s.linkedin)}" target="_blank" rel="noopener noreferrer" class="spk-card__li">${liIcon}<span>LinkedIn</span></a>` : ""}</div>`).join("")}</div></div>`
-    : "";
-
-  // demos
-  const demos = e.demos?.length
-    ? `<div class="sub" id="${esc(e.slug)}-demos"><div class="sub__head"><div class="sub__title">Demos & use cases</div><div class="sub__sub">What we built on stage</div></div><div class="demos-grid">${e.demos.map(d => {
-        const links = [];
-        if (d.github) links.push(`<a href="${esc(d.github)}" target="_blank" rel="noopener noreferrer" class="demo-card__link">&lt;/&gt; Code</a>`);
-        if (d.slides) links.push(`<a href="${esc(d.slides)}" target="_blank" rel="noopener noreferrer" class="demo-card__link">&#x1F4D1; Slides</a>`);
-        return `<div class="demo-card"><div class="demo-card__title">${esc(d.title)}</div>${d.speaker ? `<div class="demo-card__spk">by ${esc(d.speaker)}</div>` : ""}${d.description ? `<div class="demo-card__desc">${esc(d.description)}</div>` : ""}${d.stack?.length ? `<div class="demo-card__stack">${d.stack.map(t => `<span class="demo-card__tag">${esc(t)}</span>`).join("")}</div>` : ""}${links.length ? `<div class="demo-card__links">${links.join("")}</div>` : ""}</div>`;
-      }).join("")}</div></div>`
-    : "";
-
-  // gallery
-  let gallery = "";
-  if (e.gallery?.length){
-    gallery = `<div class="sub" id="${esc(e.slug)}-gallery"><div class="sub__head"><div class="sub__title">From the day</div><div class="sub__sub">${e.gallery.length} photo${e.gallery.length===1?"":"s"}</div></div><div class="gal">${e.gallery.map(src => `<div class="gal__item" data-lb="${esc(src)}"><img src="${esc(src)}" loading="lazy" alt="Event photo"></div>`).join("")}</div></div>`;
-  } else {
-    gallery = `<div class="sub" id="${esc(e.slug)}-gallery"><div class="sub__head"><div class="sub__title">From the day</div></div><div class="coming-soon"><div class="coming-soon__icon">&#x1F4F8;</div><div class="coming-soon__txt">Photos coming soon - drop them in <code>images/events/${esc(e.slug)}/</code> and add filenames to the <code>gallery</code> array.</div></div></div>`;
-  }
-
-  // sponsors
-  let sponsors = "";
-  if (e.sponsors?.length){
-    const tiers = ["Title","Gold","Silver","Community"];
-    const grouped = tiers.map(t => [t, e.sponsors.filter(s => s.tier === t)]).filter(([,arr]) => arr.length);
-    sponsors = `<div class="sub" id="${esc(e.slug)}-sponsors"><div class="sub__head"><div class="sub__title">Sponsors & partners</div><div class="sub__sub">The people who made it possible</div></div>${grouped.map(([tier, list]) => `<div class="spons-tier spons-tier--${tier.toLowerCase()}"><div class="spons-tier__head">${esc(tier)} ${tier === "Community" ? "Partner" : "Sponsor"}${list.length>1?"s":""}</div><div class="spons-grid">${list.map(s => `<a href="${esc(s.url||"#")}" target="_blank" rel="noopener noreferrer" class="spons-card">${s.logo ? `<img src="${esc(s.logo)}" alt="${esc(s.name)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;spons-card__ph&quot;>'+this.alt+'</div>'">` : `<div class="spons-card__ph">${esc(s.name)}</div>`}<div class="spons-card__name">${esc(s.name)}</div></a>`).join("")}</div></div>`).join("")}</div>`;
-  }
-
-  // feedback (name + linkedin required)
-  const feedback = e.feedback?.length
-    ? `<div class="sub" id="${esc(e.slug)}-feedback"><div class="sub__head"><div class="sub__title">What attendees said</div><div class="sub__sub">In their own words</div></div><div class="fb-grid">${e.feedback.map(f => `<div class="fb-card"><div class="fb-card__quote">${esc(f.quote)}</div><div class="fb-card__person"><div class="fb-card__av">${feedbackAvatar(f)}</div><div class="fb-card__who"><div class="fb-card__name">${esc(f.name)}</div>${f.role ? `<div class="fb-card__role">${esc(f.role)}</div>` : ""}</div>${f.linkedin ? `<a href="${esc(f.linkedin)}" target="_blank" rel="noopener noreferrer" class="fb-card__li" aria-label="${esc(f.name)} on LinkedIn">${liIcon}</a>` : ""}</div></div>`).join("")}</div></div>`
-    : "";
-
-  // resources
-  const resources = e.resources?.length
-    ? `<div class="sub" id="${esc(e.slug)}-resources"><div class="sub__head"><div class="sub__title">Resources</div><div class="sub__sub">Decks, code, recordings, recaps</div></div><div class="res-grid">${e.resources.map(r => `<a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" class="res-card"><div class="res-card__icon">${resIcons[r.type] || "&#x1F517;"}</div><div class="res-card__lbl">${esc(r.label)}</div><div class="res-card__type">${esc(r.type||"link")}</div></a>`).join("")}</div></div>`
-    : "";
-
-  // share strip
-  const shareUrl = `https://careerbytecode.github.io/journey.html#${e.slug}`;
-  const shareTxt = `Relive ${e.name} on CareerByteCode`;
-  const shareStrip = `<div class="share-strip"><div class="share-strip__txt">Loved the recap? Share it with someone who'd want to be in the room next time.</div><div class="share-strip__btns"><a class="share-btn share-btn--li" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}">${liIcon}<span>LinkedIn</span></a><a class="share-btn share-btn--x" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTxt)}">X</a><a class="share-btn share-btn--wa" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=${encodeURIComponent(shareTxt+" "+shareUrl)}">WhatsApp</a></div></div>`;
-
-  return `<section class="event-block reveal" id="${esc(e.slug)}">
-    <div class="event-block__inner">
-      <div class="eh">
-        ${heroBg}
-        <div class="eh__body">
-          <div class="eh__tag">Event ${idx+1}</div>
-          <div class="eh__name">${esc(e.name)}</div>
-          ${e.tagline ? `<div class="eh__tagline">${esc(e.tagline)}</div>` : ""}
-          <div class="eh__meta">${heroMeta.join('<span class="dot"></span>')}</div>
-        </div>
-      </div>
-      ${miniNav}
-      ${quickStats}
-      ${about}
-      ${agenda}
-      ${speakers}
-      ${demos}
-      ${gallery}
-      ${sponsors}
-      ${feedback}
-      ${resources}
-      ${shareStrip}
-    </div>
-  </section>`;
-}
-
-/* MOUNT */
-document.getElementById("events-host").innerHTML = events.map(renderEvent).join("");
-
-/* COUNTERS — animate any [data-count-to] that's visible */
+/* ──────────────────────────────────────────────────────────────────────────
+   Journey orchestrator — reads window.JOURNEY_EVENTS (defined in events-data.js)
+   - Sorts newest first
+   - Auto-builds Year + City filter chips from data
+   - Search across name / speaker / city / hashtag / domain / demos
+   - Accordion cards; bodies are rendered ONLY when first opened (lazy)
+   - First event auto-open; deep-link (#slug) opens that event instead
+   - Expand all / Collapse all toggle
+   - Year separators (sticky) for visual chronology
+   ────────────────────────────────────────────────────────────────────────── */
 (function(){
-  const els = document.querySelectorAll("[data-count-to]");
-  const animate = el => {
-    const target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
-    const dur = 1400;
-    const start = performance.now();
+  // ── PARSE DATA ────────────────────────────────────────────────────────
+  const RAW = Array.isArray(window.JOURNEY_EVENTS) ? window.JOURNEY_EVENTS : [];
+
+  // ── HELPERS ───────────────────────────────────────────────────────────
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  const initials = name => String(name||"?").split(/\s+/).filter(Boolean).slice(0,2).map(w => w[0]||"").join("").toUpperCase();
+  const fmtDate = iso => { if (!iso) return ""; const d = new Date(iso); return isNaN(d) ? iso : d.toLocaleDateString("en-US",{day:"numeric",month:"long",year:"numeric"}); };
+  const fmtDateShort = iso => { if (!iso) return ""; const d = new Date(iso); return isNaN(d) ? iso : d.toLocaleDateString("en-US",{day:"numeric",month:"short",year:"numeric"}); };
+  const yearOf = iso => { const d = new Date(iso); return isNaN(d) ? null : d.getFullYear(); };
+  const liIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.5a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM20 19h-3v-5.5c0-3.3-4-3-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>';
+  const resIcons = { recording:"&#x25B6;", deck:"&#x1F4D1;", repo:"&lt;/&gt;", article:"&#x1F4DD;" };
+
+  // ── SORT NEWEST FIRST ─────────────────────────────────────────────────
+  const events = [...RAW].sort((a,b) => new Date(b.date) - new Date(a.date));
+
+  // ── STATS (auto-computed from data) ───────────────────────────────────
+  function animateCounter(el, target){
+    target = Number(target) || 0;
+    const dur = 1200, start = performance.now();
+    const suffix = target >= 100 ? "+" : "";
     const tick = now => {
-      const t = Math.min(1, (now - start)/dur);
-      const eased = 1 - Math.pow(1-t, 3);
-      el.textContent = Math.round(target * eased) + (target >= 100 ? "+" : "");
+      const t = Math.min(1, (now-start)/dur);
+      const eased = 1 - Math.pow(1-t,3);
+      el.textContent = Math.round(target * eased) + (t === 1 ? suffix : "");
       if (t < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
-  };
-  if (!("IntersectionObserver" in window)){ els.forEach(animate); return; }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if (en.isIntersecting){ animate(en.target); io.unobserve(en.target); } });
-  }, { threshold: 0.4 });
-  els.forEach(el => io.observe(el));
-})();
-
-/* LIGHTBOX */
-(function(){
-  const lb = document.getElementById("lb");
-  const lbImg = document.getElementById("lb-img");
-  const close = () => { lb.classList.remove("active"); lbImg.src = ""; };
-  document.body.addEventListener("click", e => {
-    const t = e.target.closest("[data-lb]");
-    if (t){ lbImg.src = t.getAttribute("data-lb"); lb.classList.add("active"); return; }
-    if (e.target.matches(".lb, .lb__close")){ close(); }
-  });
-  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
-})();
-
-/* shared-premium.js wires up reveal observers on initial load only.
-   Our event blocks are inserted dynamically, so attach our own observer
-   that toggles `reveal--visible` (matching shared-premium.js convention). */
-(function(){
-  const els = document.querySelectorAll("#events-host .reveal");
-  if (!els.length) return;
-  if (!("IntersectionObserver" in window)){
-    els.forEach(el => el.classList.add("reveal--visible"));
-    return;
   }
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => {
-      if (en.isIntersecting){
-        en.target.classList.add("reveal--visible");
-        io.unobserve(en.target);
+  function setStats(){
+    const speakerSet = new Set(), citySet = new Set();
+    let attendees = 0, sponsors = 0;
+    events.forEach(e => {
+      attendees += Number(e.stats?.attendees || 0);
+      sponsors += (e.sponsors||[]).length;
+      if (e.city) citySet.add(e.city);
+      (e.speakers||[]).forEach(s => speakerSet.add(String(s.name||"").trim().toLowerCase()));
+    });
+    const map = { events: events.length, attendees, speakers: speakerSet.size, cities: citySet.size, sponsors };
+    Object.keys(map).forEach(k => { const el = document.querySelector(`[data-stat="${k}"]`); if (el) animateCounter(el, map[k]); });
+  }
+
+  // ── FILTERS ───────────────────────────────────────────────────────────
+  const filters = { year: "all", city: "all", q: "" };
+  function chipHtml(key, val, label, count, active){
+    return `<button class="filter-chip${active?" active":""}" data-filter-key="${esc(key)}" data-filter-val="${esc(val)}" type="button">${esc(label)} <span class="filter-chip__count">${count}</span></button>`;
+  }
+  function rebuildFilters(){
+    const years = {}, cities = {};
+    events.forEach(e => {
+      const y = yearOf(e.date);
+      if (y != null) years[y] = (years[y]||0)+1;
+      if (e.city) cities[e.city] = (cities[e.city]||0)+1;
+    });
+    const yEl = document.getElementById("ev-year-filter");
+    if (yEl){
+      const yearOpts = Object.keys(years).map(Number).sort((a,b)=>b-a);
+      yEl.innerHTML = `<span class="filter-row__lbl">Year:</span>` + chipHtml("year","all","All",events.length,filters.year==="all") +
+        yearOpts.map(y => chipHtml("year",String(y),String(y),years[y],filters.year===String(y))).join("");
+    }
+    const cEl = document.getElementById("ev-city-filter");
+    if (cEl){
+      const cityOpts = Object.keys(cities).sort();
+      if (cityOpts.length > 1){
+        cEl.style.display = "";
+        cEl.innerHTML = `<span class="filter-row__lbl">City:</span>` + chipHtml("city","all","All",events.length,filters.city==="all") +
+          cityOpts.map(c => chipHtml("city",c,c,cities[c],filters.city===c)).join("");
+      } else {
+        cEl.style.display = "none";
+      }
+    }
+  }
+
+  // ── RENDER (head only; body is lazy) ──────────────────────────────────
+  function renderHead(e, displayNum){
+    const meta = [];
+    if (e.date) meta.push(`<span>&#x1F4C5; ${esc(fmtDateShort(e.date))}</span>`);
+    if (e.city) meta.push(`<span>&#x1F4CD; ${esc(e.city)}</span>`);
+    if (e.hashtag) meta.push(`<span>&#x0023; ${esc(e.hashtag.replace(/^#/,""))}</span>`);
+    if (e.domain) meta.push(`<span style="color:var(--accent);font-weight:600">${esc(e.domain)}</span>`);
+    const pill = e.stats?.attendees ? `<span class="event-block__pill">${esc(e.stats.attendees)}+ attendees</span>` : "";
+    return `<button class="event-block__head" type="button" aria-expanded="false" aria-controls="${esc(e.slug)}-body">
+      <div class="event-block__head-left">
+        <div class="event-block__num">#${esc(displayNum)}</div>
+        <div class="event-block__head-text">
+          <div class="event-block__name-row">${esc(e.name)}</div>
+          <div class="event-block__meta-row">${meta.join("")}</div>
+        </div>
+      </div>
+      <div class="event-block__head-right">${pill}<span class="event-block__chevron" aria-hidden="true">&#x25BE;</span></div>
+    </button>
+    <div class="event-block__body" id="${esc(e.slug)}-body" role="region" aria-label="${esc(e.name)} details"></div>`;
+  }
+
+  function speakerAv(s){
+    if (s.photo) return `<img src="${esc(s.photo)}" alt="${esc(s.name)}" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='${esc(initials(s.name))}'">`;
+    return esc(initials(s.name));
+  }
+  function feedbackAv(f){
+    if (f.photo) return `<img src="${esc(f.photo)}" alt="${esc(f.name)}" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='${esc(initials(f.name))}'">`;
+    return esc(initials(f.name));
+  }
+
+  function renderBody(e){
+    const heroBg = e.bannerImage
+      ? `<div class="eh__bg" style="background-image:url('${esc(e.bannerImage)}')"></div>`
+      : `<div class="eh__noimg"></div>`;
+    const heroMeta = [];
+    if (e.date) heroMeta.push(`<span>&#x1F4C5; ${esc(fmtDate(e.date))}</span>`);
+    if (e.city) heroMeta.push(`<span>&#x1F4CD; ${esc(e.city)}${e.venue ? " &middot; " + esc(e.venue) : ""}</span>`);
+    if (e.hashtag) heroMeta.push(`<span>&#x0023; ${esc(e.hashtag.replace(/^#/,""))}</span>`);
+
+    const sections = [
+      e.about && ["About","about"],
+      e.agenda?.length && ["Agenda","agenda"],
+      e.speakers?.length && ["Speakers","speakers"],
+      e.demos?.length && ["Demos","demos"],
+      ["Gallery","gallery"],
+      e.sponsors?.length && ["Sponsors","sponsors"],
+      e.feedback?.length && ["Feedback","feedback"],
+      e.resources?.length && ["Resources","resources"]
+    ].filter(Boolean);
+    const miniNav = sections.length > 1
+      ? `<nav class="emn" aria-label="${esc(e.name)} sections">${sections.map(([l,s]) => `<a href="#${esc(e.slug)}-${esc(s)}">${esc(l)}</a>`).join("")}</nav>`
+      : "";
+
+    const qs = [];
+    if (e.stats?.attendees != null) qs.push([e.stats.attendees + "+", "Attendees"]);
+    if (e.stats?.sessions != null) qs.push([e.stats.sessions, "Sessions"]);
+    if (e.stats?.speakers != null) qs.push([e.stats.speakers, "Speakers"]);
+    if (e.stats?.durationHours != null) qs.push([e.stats.durationHours + "h", "Duration"]);
+    if (e.hashtag) qs.push([e.hashtag, "Hashtag"]);
+    const quickStats = qs.length ? `<div class="eqs">${qs.map(([n,l]) => `<div class="eqs__item"><div class="eqs__num">${esc(n)}</div><div class="eqs__lbl">${esc(l)}</div></div>`).join("")}</div>` : "";
+
+    const about = e.about ? `<div class="sub" id="${esc(e.slug)}-about"><div class="sub__head"><div class="sub__title">About this event</div></div><div class="eabout">${esc(e.about)}</div></div>` : "";
+
+    const agenda = e.agenda?.length
+      ? `<div class="sub" id="${esc(e.slug)}-agenda"><div class="sub__head"><div class="sub__title">Agenda</div><div class="sub__sub">${esc(fmtDate(e.date))}</div></div><div class="agenda">${e.agenda.map(a => `<div class="agenda__row"><div class="agenda__time">${esc(a.time||"")}</div><div class="agenda__title">${esc(a.title||"")}</div>${a.speaker ? `<div class="agenda__spk">${esc(a.speaker)}</div>` : ""}</div>`).join("")}</div></div>`
+      : "";
+
+    const speakers = e.speakers?.length
+      ? `<div class="sub" id="${esc(e.slug)}-speakers"><div class="sub__head"><div class="sub__title">Speakers</div><div class="sub__sub">${e.speakers.length} voice${e.speakers.length===1?"":"s"} on the day</div></div><div class="spk-grid">${e.speakers.map(s => `<div class="spk-card"><div class="spk-card__avatar">${speakerAv(s)}</div><div class="spk-card__name">${esc(s.name)}</div>${s.role?`<div class="spk-card__role">${esc(s.role)}</div>`:""}${s.bio?`<div class="spk-card__bio">${esc(s.bio)}</div>`:""}${s.linkedin?`<a href="${esc(s.linkedin)}" target="_blank" rel="noopener noreferrer" class="spk-card__li">${liIcon}<span>LinkedIn</span></a>`:""}</div>`).join("")}</div></div>`
+      : "";
+
+    const demos = e.demos?.length
+      ? `<div class="sub" id="${esc(e.slug)}-demos"><div class="sub__head"><div class="sub__title">Demos &amp; use cases</div><div class="sub__sub">What we built on stage</div></div><div class="demos-grid">${e.demos.map(d => {
+          const links = [];
+          if (d.github) links.push(`<a href="${esc(d.github)}" target="_blank" rel="noopener noreferrer" class="demo-card__link">&lt;/&gt; Code</a>`);
+          if (d.slides) links.push(`<a href="${esc(d.slides)}" target="_blank" rel="noopener noreferrer" class="demo-card__link">&#x1F4D1; Slides</a>`);
+          return `<div class="demo-card"><div class="demo-card__title">${esc(d.title)}</div>${d.speaker?`<div class="demo-card__spk">by ${esc(d.speaker)}</div>`:""}${d.description?`<div class="demo-card__desc">${esc(d.description)}</div>`:""}${d.stack?.length?`<div class="demo-card__stack">${d.stack.map(t=>`<span class="demo-card__tag">${esc(t)}</span>`).join("")}</div>`:""}${links.length?`<div class="demo-card__links">${links.join("")}</div>`:""}</div>`;
+        }).join("")}</div></div>`
+      : "";
+
+    const gallery = e.gallery?.length
+      ? `<div class="sub" id="${esc(e.slug)}-gallery"><div class="sub__head"><div class="sub__title">From the day</div><div class="sub__sub">${e.gallery.length} photo${e.gallery.length===1?"":"s"}</div></div><div class="gal">${e.gallery.map(src => `<div class="gal__item" data-lb="${esc(src)}"><img src="${esc(src)}" loading="lazy" alt="Event photo"></div>`).join("")}</div></div>`
+      : `<div class="sub" id="${esc(e.slug)}-gallery"><div class="sub__head"><div class="sub__title">From the day</div></div><div class="coming-soon"><div class="coming-soon__icon">&#x1F4F8;</div><div class="coming-soon__txt">Photos coming soon - drop them in <code>images/events/${esc(e.slug)}/</code> and add filenames to the <code>gallery</code> array in <code>events-data.js</code>.</div></div></div>`;
+
+    let sponsors = "";
+    if (e.sponsors?.length){
+      const tiers = ["Title","Gold","Silver","Community"];
+      const grouped = tiers.map(t => [t, e.sponsors.filter(s => s.tier === t)]).filter(([,arr]) => arr.length);
+      sponsors = `<div class="sub" id="${esc(e.slug)}-sponsors"><div class="sub__head"><div class="sub__title">Sponsors &amp; partners</div><div class="sub__sub">The people who made it possible</div></div>${grouped.map(([tier, list]) => `<div class="spons-tier spons-tier--${tier.toLowerCase()}"><div class="spons-tier__head">${esc(tier)} ${tier==="Community"?"Partner":"Sponsor"}${list.length>1?"s":""}</div><div class="spons-grid">${list.map(s => `<a href="${esc(s.url||"#")}" target="_blank" rel="noopener noreferrer" class="spons-card">${s.logo?`<img src="${esc(s.logo)}" alt="${esc(s.name)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;spons-card__ph&quot;>'+this.alt+'</div>'">`:`<div class="spons-card__ph">${esc(s.name)}</div>`}<div class="spons-card__name">${esc(s.name)}</div></a>`).join("")}</div></div>`).join("")}</div>`;
+    }
+
+    const feedback = e.feedback?.length
+      ? `<div class="sub" id="${esc(e.slug)}-feedback"><div class="sub__head"><div class="sub__title">What attendees said</div><div class="sub__sub">In their own words</div></div><div class="fb-grid">${e.feedback.map(f => `<div class="fb-card"><div class="fb-card__quote">${esc(f.quote)}</div><div class="fb-card__person"><div class="fb-card__av">${feedbackAv(f)}</div><div class="fb-card__who"><div class="fb-card__name">${esc(f.name)}</div>${f.role?`<div class="fb-card__role">${esc(f.role)}</div>`:""}</div>${f.linkedin?`<a href="${esc(f.linkedin)}" target="_blank" rel="noopener noreferrer" class="fb-card__li" aria-label="${esc(f.name)} on LinkedIn">${liIcon}</a>`:""}</div></div>`).join("")}</div></div>`
+      : "";
+
+    const resources = e.resources?.length
+      ? `<div class="sub" id="${esc(e.slug)}-resources"><div class="sub__head"><div class="sub__title">Resources</div><div class="sub__sub">Decks, code, recordings, recaps</div></div><div class="res-grid">${e.resources.map(r => `<a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" class="res-card"><div class="res-card__icon">${resIcons[r.type]||"&#x1F517;"}</div><div class="res-card__lbl">${esc(r.label)}</div><div class="res-card__type">${esc(r.type||"link")}</div></a>`).join("")}</div></div>`
+      : "";
+
+    const shareUrl = `https://careerbytecode.github.io/journey.html#${e.slug}`;
+    const shareTxt = `Relive ${e.name} on CareerByteCode`;
+    const shareStrip = `<div class="share-strip"><div class="share-strip__txt">Loved the recap? Share it with someone who'd want to be in the room next time.</div><div class="share-strip__btns"><a class="share-btn share-btn--li" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}">${liIcon}<span>LinkedIn</span></a><a class="share-btn share-btn--x" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTxt)}">X</a><a class="share-btn share-btn--wa" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=${encodeURIComponent(shareTxt+" "+shareUrl)}">WhatsApp</a></div></div>`;
+
+    return `<div class="event-block__inner">
+      <div class="eh">${heroBg}<div class="eh__body"><div class="eh__tag">${esc(e.domain||"Event")}</div><div class="eh__name">${esc(e.name)}</div>${e.tagline?`<div class="eh__tagline">${esc(e.tagline)}</div>`:""}<div class="eh__meta">${heroMeta.join('<span class="dot"></span>')}</div></div></div>
+      ${miniNav}${quickStats}${about}${agenda}${speakers}${demos}${gallery}${sponsors}${feedback}${resources}${shareStrip}
+    </div>`;
+  }
+
+  // ── FILTER MATCHING ───────────────────────────────────────────────────
+  function matchFilters(e){
+    if (filters.year !== "all" && String(yearOf(e.date)) !== filters.year) return false;
+    if (filters.city !== "all" && e.city !== filters.city) return false;
+    const q = filters.q.trim().toLowerCase();
+    if (!q) return true;
+    const hay = [
+      e.name, e.tagline, e.city, e.venue, e.hashtag, e.domain, e.about,
+      ...(e.speakers||[]).map(s => s.name + " " + (s.role||"")),
+      ...(e.demos||[]).map(d => d.title + " " + (d.description||"") + " " + (d.stack||[]).join(" "))
+    ].filter(Boolean).join(" ").toLowerCase();
+    return hay.includes(q);
+  }
+
+  // ── ACCORDION OPEN/CLOSE ──────────────────────────────────────────────
+  const host = document.getElementById("events-host");
+  const renderedBodies = new Set();
+  const openSet = new Set();
+
+  function openCard(blockEl, scrollIntoView){
+    if (!blockEl) return;
+    const slug = blockEl.dataset.slug;
+    const event = events.find(e => e.slug === slug);
+    if (!event) return;
+    const body = blockEl.querySelector(".event-block__body");
+    if (!renderedBodies.has(slug)){
+      body.innerHTML = renderBody(event);
+      renderedBodies.add(slug);
+    }
+    if (blockEl.classList.contains("event-block--open")) {
+      if (scrollIntoView) scrollTo(blockEl);
+      return;
+    }
+    blockEl.classList.add("event-block--open");
+    const head = blockEl.querySelector(".event-block__head");
+    if (head) head.setAttribute("aria-expanded","true");
+    openSet.add(slug);
+    body.style.overflow = "hidden";
+    body.style.maxHeight = body.scrollHeight + "px";
+    body.addEventListener("transitionend", function onEnd(ev){
+      if (ev.propertyName !== "max-height") return;
+      body.style.maxHeight = "none";
+      body.style.overflow = "visible";
+      body.removeEventListener("transitionend", onEnd);
+    });
+    if (scrollIntoView) scrollTo(blockEl);
+  }
+  function closeCard(blockEl){
+    if (!blockEl || !blockEl.classList.contains("event-block--open")) return;
+    const body = blockEl.querySelector(".event-block__body");
+    body.style.overflow = "hidden";
+    body.style.maxHeight = body.scrollHeight + "px";
+    requestAnimationFrame(() => { body.style.maxHeight = "0"; });
+    blockEl.classList.remove("event-block--open");
+    const head = blockEl.querySelector(".event-block__head");
+    if (head) head.setAttribute("aria-expanded","false");
+    openSet.delete(blockEl.dataset.slug);
+  }
+  function toggleCard(blockEl){
+    if (blockEl.classList.contains("event-block--open")) closeCard(blockEl);
+    else openCard(blockEl, false);
+  }
+  function scrollTo(blockEl){
+    requestAnimationFrame(() => {
+      const top = blockEl.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  }
+
+  // ── RENDER LIST ───────────────────────────────────────────────────────
+  function renderList(){
+    const filtered = events.filter(matchFilters);
+    const countEl = document.getElementById("ev-count");
+    if (countEl) countEl.textContent = `${filtered.length} of ${events.length} ${events.length===1?"event":"events"}`;
+    if (!filtered.length){
+      host.innerHTML = `<div class="empty-state"><div class="empty-state__icon">&#x1F50D;</div><div class="empty-state__txt">No events match your current filters. Try clearing the search or selecting a different year.</div></div>`;
+      return;
+    }
+    let lastYear = null;
+    const html = filtered.map(e => {
+      const y = yearOf(e.date);
+      let prefix = "";
+      if (y !== lastYear){
+        const yc = filtered.filter(x => yearOf(x.date) === y).length;
+        prefix = `<div class="year-sep"><div class="year-sep__pill"><span class="year-sep__yr">${y}</span><span class="year-sep__count">${yc} event${yc===1?"":"s"}</span></div><div class="year-sep__line"></div></div>`;
+        lastYear = y;
+      }
+      const displayNum = events.indexOf(e) + 1;
+      return prefix + `<section class="event-block reveal" id="${esc(e.slug)}" data-slug="${esc(e.slug)}">${renderHead(e, displayNum)}</section>`;
+    }).join("");
+    host.innerHTML = html;
+    // restore open state for any previously-open cards still visible
+    openSet.forEach(slug => {
+      const el = host.querySelector(`[data-slug="${CSS.escape(slug)}"]`);
+      if (el){
+        // re-render body immediately and mark open (skip animation)
+        const body = el.querySelector(".event-block__body");
+        const event = events.find(x => x.slug === slug);
+        if (event && !renderedBodies.has(slug)){ body.innerHTML = renderBody(event); renderedBodies.add(slug); }
+        el.classList.add("event-block--open");
+        body.style.maxHeight = "none";
+        body.style.overflow = "visible";
+        const h = el.querySelector(".event-block__head");
+        if (h) h.setAttribute("aria-expanded","true");
       }
     });
-  }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
-  els.forEach(el => io.observe(el));
+    observeReveal();
+    updateToggleAllLabel();
+  }
+
+  function updateToggleAllLabel(){
+    const btn = document.getElementById("ev-toggle-all");
+    if (!btn) return;
+    const blocks = host.querySelectorAll(".event-block");
+    if (!blocks.length){ btn.style.display = "none"; return; }
+    btn.style.display = "";
+    const anyClosed = Array.from(blocks).some(b => !b.classList.contains("event-block--open"));
+    btn.textContent = anyClosed ? "Expand all" : "Collapse all";
+  }
+
+  // ── EVENT DELEGATION ──────────────────────────────────────────────────
+  host.addEventListener("click", e => {
+    const head = e.target.closest(".event-block__head");
+    if (!head) return;
+    const block = head.closest(".event-block");
+    if (block){
+      toggleCard(block);
+      updateToggleAllLabel();
+    }
+  });
+
+  // filter chip clicks (delegated globally because chips re-render)
+  document.addEventListener("click", e => {
+    const chip = e.target.closest(".filter-chip");
+    if (!chip) return;
+    const key = chip.dataset.filterKey;
+    const val = chip.dataset.filterVal;
+    if (!key) return;
+    filters[key] = val;
+    rebuildFilters();
+    renderList();
+  });
+
+  // search
+  const searchInput = document.getElementById("ev-search");
+  if (searchInput){
+    let t;
+    searchInput.addEventListener("input", () => {
+      clearTimeout(t);
+      t = setTimeout(() => { filters.q = searchInput.value; renderList(); }, 120);
+    });
+  }
+
+  // expand/collapse all
+  const toggleAllBtn = document.getElementById("ev-toggle-all");
+  if (toggleAllBtn){
+    toggleAllBtn.addEventListener("click", () => {
+      const blocks = host.querySelectorAll(".event-block");
+      const anyClosed = Array.from(blocks).some(b => !b.classList.contains("event-block--open"));
+      blocks.forEach(b => { if (anyClosed) openCard(b, false); else closeCard(b); });
+      updateToggleAllLabel();
+    });
+  }
+
+  // deep-link auto-open
+  function applyHash(){
+    const slug = location.hash.replace(/^#/,"");
+    if (!slug) return;
+    const el = host.querySelector(`[data-slug="${CSS.escape(slug)}"]`);
+    if (el) openCard(el, true);
+  }
+
+  // ── LIGHTBOX ──────────────────────────────────────────────────────────
+  (function(){
+    const lb = document.getElementById("lb");
+    const lbImg = document.getElementById("lb-img");
+    const close = () => { lb.classList.remove("active"); lbImg.src = ""; };
+    document.body.addEventListener("click", e => {
+      const t = e.target.closest("[data-lb]");
+      if (t){ lbImg.src = t.getAttribute("data-lb"); lb.classList.add("active"); return; }
+      if (e.target.matches(".lb, .lb__close")){ close(); }
+    });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  })();
+
+  // ── REVEAL OBSERVER ───────────────────────────────────────────────────
+  function observeReveal(){
+    const els = document.querySelectorAll("#events-host .reveal:not(.reveal--visible)");
+    if (!els.length) return;
+    if (!("IntersectionObserver" in window)){ els.forEach(el => el.classList.add("reveal--visible")); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting){ en.target.classList.add("reveal--visible"); io.unobserve(en.target); } });
+    }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+    els.forEach(el => io.observe(el));
+  }
+
+  // ── KICK OFF ──────────────────────────────────────────────────────────
+  if (!events.length){
+    document.querySelectorAll("[data-stat]").forEach(el => el.textContent = "0");
+    host.innerHTML = `<div class="empty-state"><div class="empty-state__icon">&#x1F4C5;</div><div class="empty-state__txt">No events yet. Add some to <code>events-data.js</code>.</div></div>`;
+    const tb = document.getElementById("ev-toggle-all"); if (tb) tb.style.display = "none";
+  } else {
+    setStats();
+    rebuildFilters();
+    renderList();
+    if (location.hash){
+      applyHash();
+    } else {
+      const first = host.querySelector(".event-block");
+      if (first) openCard(first, false);
+      updateToggleAllLabel();
+    }
+    window.addEventListener("hashchange", applyHash);
+  }
 })();
+
 </script>
 <script src="shared-premium.js" defer></script>
 </body>
