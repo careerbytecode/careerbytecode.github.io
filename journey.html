@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="description" content="Our Journey - relive every CareerByteCode physical tech event. Demos, speakers, sponsors, attendee voices and photos from the field.">
+<meta property="og:title" content="CareerByteCode - Our Journey">
+<meta property="og:description" content="Demos, speakers, sponsors, and attendee voices from every CareerByteCode physical tech event.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/journey.html">
+<meta property="og:image" content="https://careerbytecode.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f5f7fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c1220" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://careerbytecode.github.io/journey.html">
+<title>CareerByteCode - Our Journey</title>
+<link rel="icon" href="cbc - logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=optional" rel="stylesheet">
+<link rel="stylesheet" href="shared-premium.css">
+<style>
+/* ── PAGE HEADER ── */
+.page-header{position:relative;z-index:1;padding:calc(var(--nav-h) + var(--sp-8)) var(--sp-6) var(--sp-7);text-align:center;overflow:hidden;}
+.page-header::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 25% 35%,rgba(37,99,235,0.07) 0%,transparent 50%),radial-gradient(circle at 75% 65%,rgba(139,92,246,0.05) 0%,transparent 40%);}
+[data-theme="dark"] .page-header::before{background:radial-gradient(circle at 25% 35%,rgba(96,165,250,0.09) 0%,transparent 50%),radial-gradient(circle at 75% 65%,rgba(167,139,250,0.07) 0%,transparent 40%);}
+.page-header h1{margin-bottom:var(--sp-2);font-size:clamp(2rem,5vw,3.4rem);}
+.page-header .lede{font-size:1.05rem;color:var(--text-2);max-width:640px;margin:0 auto;line-height:1.7;}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{display:inline-flex;align-items:center;gap:var(--sp-1);background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);font-family:var(--font-mono);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:6px 20px;border-radius:var(--r-full);margin-bottom:var(--sp-3);color:var(--text-3);}
+.breadcrumb a{color:var(--accent);transition:color var(--dur-fast) ease;}
+.breadcrumb a:hover{color:var(--accent-2);}
+.breadcrumb .sep{color:var(--text-3);margin:0 4px;}
+.breadcrumb .current{color:var(--text-3);}
+
+/* ── ORIGIN STORY ── */
+.story-section{position:relative;z-index:1;padding:var(--sp-7) var(--sp-6);max-width:880px;margin:0 auto;}
+.story-tag{display:inline-block;font-family:var(--font-mono);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);padding:5px 14px;border-radius:var(--r-full);margin-bottom:var(--sp-3);}
+.story-section h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:var(--sp-3);letter-spacing:-0.02em;}
+.story-section p{font-size:1rem;color:var(--text-2);line-height:1.85;margin-bottom:var(--sp-2);}
+
+/* ── COMBINED STATS ── */
+.j-stats{position:relative;z-index:1;padding:0 var(--sp-6) var(--sp-7);max-width:var(--max-w);margin:0 auto;}
+.j-stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--sp-2);}
+.j-stat{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:var(--sp-3) var(--sp-2);text-align:center;box-shadow:var(--sh-sm);transition:transform var(--dur-normal) var(--ease-out-expo),box-shadow var(--dur-normal) ease;}
+.j-stat:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);}
+.j-stat__num{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-family:var(--font-mono);}
+.j-stat__lbl{font-size:0.75rem;font-weight:600;color:var(--text-3);font-family:var(--font-mono);letter-spacing:0.06em;text-transform:uppercase;margin-top:6px;}
+
+/* ── EVENT BLOCK (per-event slab) ── */
+.event-block{position:relative;z-index:1;padding:var(--sp-8) var(--sp-6);scroll-margin-top:calc(var(--nav-h) + 20px);}
+.event-block + .event-block{border-top:1px solid var(--border);}
+.event-block__inner{max-width:var(--max-w);margin:0 auto;}
+
+/* hero strip */
+.eh{position:relative;border-radius:var(--r-xl);overflow:hidden;background:linear-gradient(135deg,#0a1628,#0d2147);box-shadow:var(--sh-lg);margin-bottom:var(--sp-5);min-height:280px;display:flex;align-items:flex-end;}
+.eh__bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.45;}
+.eh__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,40,.2) 0%,rgba(10,22,40,.85) 100%);}
+.eh__noimg{position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(37,99,235,.35) 0%,transparent 60%),radial-gradient(circle at 80% 70%,rgba(139,92,246,.3) 0%,transparent 60%),linear-gradient(135deg,#0a1628,#0d2147);}
+.eh__body{position:relative;z-index:1;padding:var(--sp-5) var(--sp-5);color:#fff;width:100%;}
+.eh__tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:var(--r-full);margin-bottom:var(--sp-2);}
+.eh__name{font-size:clamp(1.6rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:8px;}
+.eh__tagline{font-size:1rem;color:rgba(255,255,255,.78);margin-bottom:var(--sp-2);max-width:680px;}
+.eh__meta{display:flex;flex-wrap:wrap;gap:var(--sp-2);align-items:center;font-size:0.82rem;color:rgba(255,255,255,.7);}
+.eh__meta span{display:inline-flex;align-items:center;gap:6px;}
+.eh__meta .dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.35);}
+
+/* mini-nav */
+.emn{position:sticky;top:var(--nav-h);z-index:5;display:flex;gap:6px;flex-wrap:wrap;padding:10px;background:var(--surface);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:var(--sp-4);box-shadow:var(--sh-sm);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.emn a{flex-shrink:0;padding:6px 14px;border-radius:var(--r-sm);font-size:0.78rem;font-weight:600;color:var(--text-2);transition:all var(--dur-fast) ease;text-decoration:none;}
+.emn a:hover{background:var(--accent-light);color:var(--accent);}
+
+/* quick stats row */
+.eqs{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--sp-2);margin-bottom:var(--sp-5);}
+.eqs__item{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--sp-2) var(--sp-1);text-align:center;}
+.eqs__num{font-size:1.3rem;font-weight:800;color:var(--text);font-family:var(--font-mono);}
+.eqs__lbl{font-size:0.66rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-top:2px;}
+
+/* subsection */
+.sub{margin-bottom:var(--sp-5);}
+.sub__head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:var(--sp-3);gap:var(--sp-2);flex-wrap:wrap;}
+.sub__title{font-size:1.3rem;font-weight:700;letter-spacing:-0.01em;color:var(--text);display:inline-flex;align-items:center;gap:10px;}
+.sub__title::before{content:'';width:4px;height:18px;border-radius:2px;background:linear-gradient(180deg,var(--accent),var(--accent-2));}
+.sub__sub{font-size:0.82rem;color:var(--text-3);}
+
+/* about block */
+.eabout{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:var(--sp-4);font-size:0.95rem;line-height:1.8;color:var(--text-2);}
+
+/* agenda */
+.agenda{border-left:2px solid var(--border);padding-left:var(--sp-3);}
+.agenda__row{position:relative;padding:var(--sp-2) 0 var(--sp-2) var(--sp-2);}
+.agenda__row::before{content:'';position:absolute;left:calc(-1 * var(--sp-3) - 6px);top:calc(var(--sp-2) + 6px);width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-light);}
+.agenda__row + .agenda__row{border-top:1px dashed var(--border);}
+.agenda__time{font-family:var(--font-mono);font-size:0.78rem;font-weight:700;color:var(--accent);letter-spacing:0.04em;}
+.agenda__title{font-size:0.95rem;font-weight:700;color:var(--text);margin:2px 0;}
+.agenda__spk{font-size:0.78rem;color:var(--text-3);}
+
+/* speakers grid */
+.spk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--sp-2);}
+.spk-card{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:var(--sp-3);text-align:center;transition:transform var(--dur-normal) var(--ease-out-expo),box-shadow var(--dur-normal) ease;}
+.spk-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);}
+.spk-card__avatar{width:84px;height:84px;border-radius:50%;margin:0 auto var(--sp-2);background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;overflow:hidden;border:3px solid var(--surface);box-shadow:var(--sh-md);}
+.spk-card__avatar img{width:100%;height:100%;object-fit:cover;}
+.spk-card__name{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:2px;}
+.spk-card__role{font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:8px;}
+.spk-card__bio{font-size:0.78rem;color:var(--text-3);line-height:1.55;margin-bottom:10px;}
+.spk-card__li{display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-weight:700;color:#0077b5;padding:4px 12px;border-radius:var(--r-full);background:rgba(0,119,181,0.1);border:1px solid rgba(0,119,181,0.2);transition:all var(--dur-fast) ease;}
+.spk-card__li:hover{background:#0077b5;color:#fff;}
+
+/* demos */
+.demos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--sp-2);}
+.demo-card{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:var(--sp-3);transition:transform var(--dur-normal) ease,box-shadow var(--dur-normal) ease;position:relative;overflow:hidden;}
+.demo-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent-3),#a78bfa);}
+.demo-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);}
+.demo-card__title{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:6px;padding-left:8px;}
+.demo-card__spk{font-size:0.78rem;color:var(--accent);font-weight:600;padding-left:8px;margin-bottom:10px;}
+.demo-card__desc{font-size:0.85rem;color:var(--text-2);line-height:1.65;padding-left:8px;margin-bottom:var(--sp-2);}
+.demo-card__stack{display:flex;flex-wrap:wrap;gap:5px;padding-left:8px;margin-bottom:var(--sp-2);}
+.demo-card__tag{font-family:var(--font-mono);font-size:0.65rem;font-weight:700;color:var(--accent-3);background:var(--accent-3-light);padding:3px 9px;border-radius:var(--r-sm);letter-spacing:0.02em;}
+.demo-card__links{display:flex;gap:8px;flex-wrap:wrap;padding-left:8px;}
+.demo-card__link{display:inline-flex;align-items:center;gap:4px;font-size:0.72rem;font-weight:700;color:var(--accent);padding:5px 12px;border-radius:var(--r-sm);background:var(--accent-light);border:1px solid rgba(37,99,235,0.15);transition:all var(--dur-fast) ease;}
+.demo-card__link:hover{background:var(--accent);color:#fff;}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;}
+.gal__item{position:relative;border-radius:var(--r-md);overflow:hidden;cursor:zoom-in;background:var(--surface-2);aspect-ratio:4/3;transition:transform var(--dur-normal) ease,box-shadow var(--dur-normal) ease;}
+.gal__item:hover{transform:scale(1.02);box-shadow:var(--sh-lg);}
+.gal__item img{width:100%;height:100%;object-fit:cover;display:block;}
+.gal__item--ph{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent-light),var(--accent-3-light));color:var(--text-3);font-family:var(--font-mono);font-size:0.7rem;font-weight:600;}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:none;align-items:center;justify-content:center;padding:var(--sp-3);cursor:zoom-out;}
+.lb.active{display:flex;animation:fade-in 0.25s ease;}
+.lb img{max-width:100%;max-height:100%;border-radius:var(--r-md);box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.lb__close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--dur-fast) ease;}
+.lb__close:hover{background:rgba(255,255,255,.2);}
+
+/* sponsors */
+.spons-tier{margin-bottom:var(--sp-3);}
+.spons-tier__head{display:inline-block;font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:var(--r-full);margin-bottom:var(--sp-2);}
+.spons-tier--title .spons-tier__head{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#78350f;}
+.spons-tier--gold .spons-tier__head{background:var(--warning-light);color:var(--gold);border:1px solid rgba(245,158,11,0.25);}
+.spons-tier--silver .spons-tier__head{background:var(--surface-2);color:var(--text-3);border:1px solid var(--border);}
+.spons-tier--community .spons-tier__head{background:var(--accent-3-light);color:var(--accent-3);border:1px solid rgba(139,92,246,0.2);}
+.spons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--sp-2);}
+.spons-card{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-md);padding:var(--sp-3) var(--sp-2);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;transition:all var(--dur-normal) ease;min-height:120px;justify-content:center;}
+.spons-card:hover{transform:translateY(-2px);box-shadow:var(--sh-md);border-color:var(--accent);}
+.spons-card img{max-width:120px;max-height:48px;object-fit:contain;}
+.spons-card__name{font-size:0.85rem;font-weight:700;color:var(--text);}
+.spons-card__ph{width:100%;height:48px;border-radius:var(--r-sm);background:linear-gradient(135deg,var(--surface-2),var(--surface));display:flex;align-items:center;justify-content:center;color:var(--text-3);font-family:var(--font-mono);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;}
+
+/* feedback */
+.fb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--sp-2);}
+.fb-card{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-lg);padding:var(--sp-3);position:relative;transition:transform var(--dur-normal) ease,box-shadow var(--dur-normal) ease;}
+.fb-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);}
+.fb-card::before{content:'\201C';position:absolute;top:-6px;left:14px;font-size:60px;color:var(--accent);opacity:.25;font-family:Georgia,serif;line-height:1;}
+.fb-card__quote{font-size:0.92rem;line-height:1.7;color:var(--text-2);font-style:italic;margin-bottom:var(--sp-3);padding-top:var(--sp-2);}
+.fb-card__person{display:flex;align-items:center;gap:12px;padding-top:var(--sp-2);border-top:1px solid var(--border);}
+.fb-card__av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent-3),#a78bfa);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:0.95rem;flex-shrink:0;overflow:hidden;}
+.fb-card__av img{width:100%;height:100%;object-fit:cover;}
+.fb-card__who{flex:1;min-width:0;}
+.fb-card__name{font-size:0.88rem;font-weight:700;color:var(--text);}
+.fb-card__role{font-size:0.72rem;color:var(--text-3);}
+.fb-card__li{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:var(--r-sm);background:rgba(0,119,181,0.1);color:#0077b5;border:1px solid rgba(0,119,181,0.2);transition:all var(--dur-fast) ease;flex-shrink:0;}
+.fb-card__li:hover{background:#0077b5;color:#fff;transform:translateY(-1px);}
+.fb-card__li svg{width:16px;height:16px;}
+
+/* resources */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--sp-2);}
+.res-card{display:flex;align-items:center;gap:var(--sp-2);background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px solid var(--glass-border);border-radius:var(--r-md);padding:var(--sp-2) var(--sp-3);transition:all var(--dur-normal) ease;text-decoration:none;}
+.res-card:hover{transform:translateX(3px);border-color:var(--accent);box-shadow:var(--sh-sm);}
+.res-card__icon{width:34px;height:34px;border-radius:var(--r-sm);background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.res-card__lbl{font-size:0.85rem;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.res-card__type{font-family:var(--font-mono);font-size:0.62rem;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;}
+
+/* share strip */
+.share-strip{background:var(--glass);backdrop-filter:blur(var(--glass-blur));-webkit-backdrop-filter:blur(var(--glass-blur));border:1px dashed var(--border-2);border-radius:var(--r-lg);padding:var(--sp-3);text-align:center;margin-top:var(--sp-3);}
+.share-strip__txt{font-size:0.92rem;color:var(--text-2);margin-bottom:var(--sp-2);}
+.share-strip__btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.share-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:var(--r-md);font-size:0.78rem;font-weight:700;transition:all var(--dur-fast) ease;text-decoration:none;border:1px solid transparent;}
+.share-btn--li{background:linear-gradient(135deg,#0077b5,#0e76a8);color:#fff;}
+.share-btn--li:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,119,181,.3);}
+.share-btn--x{background:#000;color:#fff;border-color:#000;}
+.share-btn--x:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.4);}
+.share-btn--wa{background:linear-gradient(135deg,#25d366,#1ebe57);color:#fff;}
+.share-btn--wa:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(37,211,102,.3);}
+
+/* big CTA banner */
+.j-cta{position:relative;z-index:1;padding:var(--sp-7) var(--sp-6);max-width:var(--max-w);margin:0 auto;}
+.j-cta-banner{background:linear-gradient(135deg,#0a1628,#0d2147);border-radius:var(--r-xl);padding:var(--sp-6) var(--sp-5);position:relative;overflow:hidden;}
+.j-cta-banner::before{content:'\1F680';position:absolute;right:40px;top:50%;transform:translateY(-50%);font-size:120px;opacity:.06;pointer-events:none;}
+.j-cta-banner__inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4);flex-wrap:wrap;}
+.j-cta-banner__title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-0.02em;}
+.j-cta-banner__sub{font-size:0.95rem;color:rgba(255,255,255,.65);max-width:500px;}
+.j-cta-banner__btns{display:flex;gap:10px;flex-wrap:wrap;}
+.j-cta-btn{display:inline-flex;align-items:center;gap:6px;padding:12px 22px;border-radius:var(--r-md);font-size:0.85rem;font-weight:700;transition:all var(--dur-fast) ease;text-decoration:none;}
+.j-cta-btn--p{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 6px 18px rgba(37,99,235,.3);}
+.j-cta-btn--p:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,99,235,.4);}
+.j-cta-btn--s{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.j-cta-btn--s:hover{background:rgba(255,255,255,.15);transform:translateY(-2px);}
+
+/* empty / "more coming soon" placeholder */
+.coming-soon{padding:var(--sp-5) var(--sp-4);text-align:center;border:2px dashed var(--border-2);border-radius:var(--r-lg);background:var(--surface);margin-top:var(--sp-4);}
+.coming-soon__icon{font-size:42px;margin-bottom:8px;}
+.coming-soon__txt{font-size:0.9rem;color:var(--text-3);}
+
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .page-header{padding:calc(var(--nav-h) + var(--sp-4)) var(--sp-3) var(--sp-5);}
+  .story-section{padding:var(--sp-5) var(--sp-3);}
+  .j-stats{padding:0 var(--sp-3) var(--sp-5);}
+  .j-stats-grid{grid-template-columns:repeat(3,1fr);}
+  .event-block{padding:var(--sp-6) var(--sp-3);}
+  .eh__body{padding:var(--sp-4) var(--sp-3);}
+  .eqs{grid-template-columns:repeat(3,1fr);}
+  .j-cta{padding:var(--sp-5) var(--sp-3);}
+  .j-cta-banner{padding:var(--sp-4) var(--sp-3);}
+  .j-cta-banner::before{display:none;}
+  .j-cta-banner__inner{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:640px){
+  .breadcrumb{font-size:0.65rem;padding:6px 14px;}
+  .j-stats-grid{grid-template-columns:repeat(2,1fr);}
+  .eqs{grid-template-columns:repeat(2,1fr);}
+  .sub__title{font-size:1.1rem;}
+  .eh__name{font-size:1.4rem;}
+  .eh__tagline{font-size:0.9rem;}
+  .demos-grid{grid-template-columns:1fr;}
+  .gal{grid-template-columns:repeat(2,1fr);}
+  .share-strip__btns{flex-direction:column;align-items:stretch;}
+  .share-btn{justify-content:center;}
+  .j-cta-banner__btns{width:100%;flex-direction:column;}
+  .j-cta-btn{justify-content:center;}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"CareerByteCode - Our Journey","description":"Demos, speakers, sponsors and attendee voices from every CareerByteCode physical tech event.","url":"https://careerbytecode.github.io/journey.html","publisher":{"@type":"Organization","name":"CareerByteCode","url":"https://www.careerbytecode.com"}}
+</script>
+</head>
+<body>
+
+<!-- NOISE -->
+<div class="noise"></div>
+
+<!-- ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <a class="nav__logo" href="index.html" aria-label="CareerByteCode home">
+    <img src="cbc - logo.png" alt="CBC" class="nav__logo-icon" width="36" height="36">
+    <span class="nav__logo-text">Career<em>ByteCode</em></span>
+  </a>
+  <div class="nav__links">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="journey.html" class="active">Journey</a>
+    <a href="sheleads.html">SheLeads</a>
+    <a href="revenue-models.html">Revenue</a>
+    <a href="onboarding.html">Onboarding</a>
+    <a href="collaborate.html">Collaborate</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
+    <a class="nav__cta" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener noreferrer" aria-label="Join CareerByteCode on LinkedIn">Join Now</a>
+  </div>
+  <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav__mobile" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="events.html">Events</a>
+  <a href="journey.html" class="active">Journey</a>
+  <a href="sheleads.html">SheLeads</a>
+  <a href="revenue-models.html">Revenue</a>
+  <a href="onboarding.html">Onboarding</a>
+  <a href="collaborate.html">Collaborate</a>
+  <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle dark mode" style="margin-top:12px;"></button>
+  <a class="nav__cta" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener noreferrer" style="display:inline-flex;margin-top:12px;">Join Now</a>
+</div>
+
+<main>
+
+<!-- PAGE HEADER -->
+<header class="page-header reveal">
+  <div class="breadcrumb">
+    <a href="events.html">Events</a>
+    <span class="sep">/</span>
+    <span class="current">Our Journey</span>
+  </div>
+  <h1>Our <span class="text-gradient">Journey</span> so far</h1>
+  <p class="lede">From hallway conversations to packed meetup rooms - relive every CareerByteCode physical event through the demos, the speakers, the sponsors and the voices of the people who showed up.</p>
+</header>
+
+<!-- ORIGIN STORY -->
+<section class="story-section reveal">
+  <div class="story-tag">The Story</div>
+  <h2>How we got here</h2>
+  <p>CareerByteCode began as a small circle of practitioners who refused to teach what they hadn't shipped. Online sessions came first - free, hands-on, late-night labs where engineers from across the world rebuilt clusters, broke production replicas, and learned by doing.</p>
+  <p>Somewhere between the 30th LinkedIn live and the first time a learner flew across the country just to meet their mentor in person, we realised the screen wasn't enough. The hugs at the door, the whiteboard arguments, the shared chai between two strangers who'd debug a Terraform plan together - those needed a real room.</p>
+  <p>So we started showing up in cities. Renting halls, partnering with sponsors who got it, and inviting the community to one full day of demos, conversations, and the kind of clarity you only get face-to-face. This page is where those days live on.</p>
+</section>
+
+<!-- COMBINED STATS -->
+<section class="j-stats reveal" aria-label="Journey statistics">
+  <div class="j-stats-grid">
+    <div class="j-stat">
+      <div class="j-stat__num" data-count-to="2">0</div>
+      <div class="j-stat__lbl">Physical Events</div>
+    </div>
+    <div class="j-stat">
+      <div class="j-stat__num" data-count-to="250">0</div>
+      <div class="j-stat__lbl">Attendees</div>
+    </div>
+    <div class="j-stat">
+      <div class="j-stat__num" data-count-to="12">0</div>
+      <div class="j-stat__lbl">Speakers</div>
+    </div>
+    <div class="j-stat">
+      <div class="j-stat__num" data-count-to="2">0</div>
+      <div class="j-stat__lbl">Cities</div>
+    </div>
+    <div class="j-stat">
+      <div class="j-stat__num" data-count-to="6">0</div>
+      <div class="j-stat__lbl">Sponsors</div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS RENDERED FROM JS -->
+<div id="events-host"></div>
+
+<!-- BIG CTA -->
+<section class="j-cta reveal">
+  <div class="j-cta-banner">
+    <div class="j-cta-banner__inner">
+      <div>
+        <div class="j-cta-banner__title">Be part of the next chapter</div>
+        <div class="j-cta-banner__sub">Sponsor the next event, take the stage as a speaker, or just show up and meet the community face to face.</div>
+      </div>
+      <div class="j-cta-banner__btns">
+        <a href="mailto:community@careerbytecode.com?subject=Sponsor%20a%20CBC%20Event" class="j-cta-btn j-cta-btn--p">Sponsor &rarr;</a>
+        <a href="mailto:community@careerbytecode.com?subject=Speak%20at%20a%20CBC%20Event" class="j-cta-btn j-cta-btn--s">Speak</a>
+        <a href="events.html" class="j-cta-btn j-cta-btn--s">Attend</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lb__close" aria-label="Close preview">&times;</button>
+  <img id="lb-img" alt="">
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__title">We don't just teach tech - <em>we create leaders</em></div>
+    <div class="footer__sub">CareerByteCode &middot; Top European Tech Brand &middot; Remote-first &middot; Serving 105+ Countries</div>
+    <div class="footer__links">
+      <a href="https://www.careerbytecode.com" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://blog.careerbytecode.com" target="_blank" rel="noopener noreferrer">Blog</a>
+      <a href="https://github.com/careerbytecode" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://youtube.com/@CareerByteCode" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://medium.com/careerbytecode" target="_blank" rel="noopener noreferrer">Medium</a>
+    </div>
+    <a href="mailto:community@careerbytecode.com" class="footer__email">community@careerbytecode.com</a>
+    <div class="footer__copy">&copy; 2015-2026 CareerByteCode. All rights reserved.</div>
+  </div>
+</footer>
+
+<button class="btt" aria-label="Back to top" title="Back to top">&#x2191;</button>
+
+<script>
+/* ──────────────────────────────────────────────────────────────
+   EVENTS DATA — single source of truth.
+   Add a new event by appending a new object below. No HTML changes needed.
+   All fields except slug/name/date are optional and degrade gracefully.
+   ────────────────────────────────────────────────────────────── */
+const events = [
+  {
+    slug: "event-1",
+    name: "CareerByteCode Meetup - Event 1",
+    tagline: "A full day of hands-on cloud, AI, and career conversations.",
+    date: "2025-09-20",
+    city: "City TBD",
+    venue: "Venue TBD",
+    hashtag: "#CBCMeetup1",
+    bannerImage: "",
+    about: "Event description coming soon. This block will cover the theme, who it was for, and what made the day memorable. Edit the 'about' field in journey.html to replace this placeholder text.",
+    stats: { attendees: 120, sessions: 5, speakers: 6, durationHours: 8 },
+    agenda: [
+      { time: "09:30", title: "Registration & Coffee", speaker: "" },
+      { time: "10:00", title: "Welcome & Opening Note", speaker: "CBC Team" },
+      { time: "10:30", title: "Session 1 - To Be Announced", speaker: "Speaker name" },
+      { time: "12:00", title: "Networking Lunch", speaker: "" },
+      { time: "14:00", title: "Session 2 - To Be Announced", speaker: "Speaker name" },
+      { time: "16:00", title: "Panel - Career in Cloud & AI", speaker: "All speakers" },
+      { time: "17:30", title: "Closing & Group Photo", speaker: "" }
+    ],
+    speakers: [
+      { name: "Speaker One", role: "Cloud Architect", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
+      { name: "Speaker Two", role: "AI Engineer", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
+      { name: "Speaker Three", role: "DevOps Lead", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" }
+    ],
+    demos: [
+      { title: "Demo 1 - Use case title", speaker: "Speaker One", stack: ["Azure", "Terraform", "GitHub Actions"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" },
+      { title: "Demo 2 - Use case title", speaker: "Speaker Two", stack: ["Python", "OpenAI", "LangChain"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" }
+    ],
+    gallery: [],
+    sponsors: [
+      { name: "Title Sponsor", tier: "Title", logo: "", url: "#" },
+      { name: "Gold Sponsor", tier: "Gold", logo: "", url: "#" },
+      { name: "Community Partner", tier: "Community", logo: "", url: "#" }
+    ],
+    feedback: [
+      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "Cloud Engineer", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." },
+      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "DevOps Practitioner", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." }
+    ],
+    resources: [
+      { label: "Event Recap on LinkedIn", url: "#", type: "article" },
+      { label: "Demo Code Repository", url: "#", type: "repo" }
+    ]
+  },
+  {
+    slug: "event-2",
+    name: "CareerByteCode Meetup - Event 2",
+    tagline: "Round two - bigger room, sharper demos, same community.",
+    date: "2026-01-25",
+    city: "City TBD",
+    venue: "Venue TBD",
+    hashtag: "#CBCMeetup2",
+    bannerImage: "",
+    about: "Event description coming soon. This block will cover the theme, who it was for, and what made the day memorable. Edit the 'about' field in journey.html to replace this placeholder text.",
+    stats: { attendees: 130, sessions: 6, speakers: 6, durationHours: 8 },
+    agenda: [
+      { time: "09:30", title: "Registration & Coffee", speaker: "" },
+      { time: "10:00", title: "Welcome & Opening Note", speaker: "CBC Team" },
+      { time: "10:30", title: "Session 1 - To Be Announced", speaker: "Speaker name" },
+      { time: "12:00", title: "Networking Lunch", speaker: "" },
+      { time: "14:00", title: "Session 2 - To Be Announced", speaker: "Speaker name" },
+      { time: "16:00", title: "Panel - Career in Cloud & AI", speaker: "All speakers" },
+      { time: "17:30", title: "Closing & Group Photo", speaker: "" }
+    ],
+    speakers: [
+      { name: "Speaker One", role: "Platform Engineer", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
+      { name: "Speaker Two", role: "ML Practitioner", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
+      { name: "Speaker Three", role: "FullStack Lead", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" }
+    ],
+    demos: [
+      { title: "Demo 1 - Use case title", speaker: "Speaker One", stack: ["Kubernetes", "ArgoCD", "Helm"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" },
+      { title: "Demo 2 - Use case title", speaker: "Speaker Two", stack: ["AWS", "SageMaker", "Lambda"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" }
+    ],
+    gallery: [],
+    sponsors: [
+      { name: "Title Sponsor", tier: "Title", logo: "", url: "#" },
+      { name: "Gold Sponsor", tier: "Gold", logo: "", url: "#" },
+      { name: "Silver Sponsor", tier: "Silver", logo: "", url: "#" }
+    ],
+    feedback: [
+      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "SRE", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." },
+      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "Data Engineer", photo: "", quote: "Replace with a real attendee testimonial. The format is: one to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." }
+    ],
+    resources: [
+      { label: "Event Recap on LinkedIn", url: "#", type: "article" }
+    ]
+  }
+];
+
+/* ──────────────────────────────────────────────────────────────
+   RENDERER
+   ────────────────────────────────────────────────────────────── */
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+const initials = name => name.split(/\s+/).filter(Boolean).slice(0,2).map(w => w[0]).join("").toUpperCase();
+const fmtDate = iso => {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d)) return iso;
+  return d.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" });
+};
+const liIcon = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.5a1.75 1.75 0 110-3.5 1.75 1.75 0 010 3.5zM20 19h-3v-5.5c0-3.3-4-3-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/></svg>';
+const resIcons = { recording: "&#x25B6;", deck: "&#x1F4D1;", repo: "&lt;/&gt;", article: "&#x1F4DD;" };
+
+function speakerAvatar(s){
+  if (s.photo) return `<img src="${esc(s.photo)}" alt="${esc(s.name)}" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='${esc(initials(s.name))}'">`;
+  return esc(initials(s.name));
+}
+function feedbackAvatar(f){
+  if (f.photo) return `<img src="${esc(f.photo)}" alt="${esc(f.name)}" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='${esc(initials(f.name))}'">`;
+  return esc(initials(f.name));
+}
+
+function renderEvent(e, idx){
+  // hero
+  const heroBg = e.bannerImage
+    ? `<div class="eh__bg" style="background-image:url('${esc(e.bannerImage)}')"></div>`
+    : `<div class="eh__noimg"></div>`;
+  const heroMeta = [];
+  if (e.date) heroMeta.push(`<span>&#x1F4C5; ${esc(fmtDate(e.date))}</span>`);
+  if (e.city) heroMeta.push(`<span>&#x1F4CD; ${esc(e.city)}${e.venue ? " &middot; " + esc(e.venue) : ""}</span>`);
+  if (e.hashtag) heroMeta.push(`<span>&#x0023; ${esc(e.hashtag.replace(/^#/,""))}</span>`);
+
+  // mini-nav
+  const sections = [
+    ["About", "about"],
+    e.agenda?.length && ["Agenda", "agenda"],
+    e.speakers?.length && ["Speakers", "speakers"],
+    e.demos?.length && ["Demos", "demos"],
+    e.gallery?.length && ["Gallery", "gallery"],
+    e.sponsors?.length && ["Sponsors", "sponsors"],
+    e.feedback?.length && ["Feedback", "feedback"],
+    e.resources?.length && ["Resources", "resources"]
+  ].filter(Boolean);
+  const miniNav = sections.length > 1
+    ? `<nav class="emn" aria-label="${esc(e.name)} sections">${sections.map(([l,s]) => `<a href="#${esc(e.slug)}-${esc(s)}">${esc(l)}</a>`).join("")}</nav>`
+    : "";
+
+  // quick stats
+  const qs = [];
+  if (e.stats?.attendees != null) qs.push([e.stats.attendees + "+", "Attendees"]);
+  if (e.stats?.sessions != null) qs.push([e.stats.sessions, "Sessions"]);
+  if (e.stats?.speakers != null) qs.push([e.stats.speakers, "Speakers"]);
+  if (e.stats?.durationHours != null) qs.push([e.stats.durationHours + "h", "Duration"]);
+  if (e.hashtag) qs.push([e.hashtag, "Hashtag"]);
+  const quickStats = qs.length
+    ? `<div class="eqs">${qs.map(([n,l]) => `<div class="eqs__item"><div class="eqs__num">${esc(n)}</div><div class="eqs__lbl">${esc(l)}</div></div>`).join("")}</div>`
+    : "";
+
+  // about
+  const about = e.about
+    ? `<div class="sub" id="${esc(e.slug)}-about"><div class="sub__head"><div class="sub__title">About this event</div></div><div class="eabout">${esc(e.about)}</div></div>`
+    : "";
+
+  // agenda
+  const agenda = e.agenda?.length
+    ? `<div class="sub" id="${esc(e.slug)}-agenda"><div class="sub__head"><div class="sub__title">Agenda</div><div class="sub__sub">${esc(fmtDate(e.date))}</div></div><div class="agenda">${e.agenda.map(a => `<div class="agenda__row"><div class="agenda__time">${esc(a.time || "")}</div><div class="agenda__title">${esc(a.title || "")}</div>${a.speaker ? `<div class="agenda__spk">${esc(a.speaker)}</div>` : ""}</div>`).join("")}</div></div>`
+    : "";
+
+  // speakers
+  const speakers = e.speakers?.length
+    ? `<div class="sub" id="${esc(e.slug)}-speakers"><div class="sub__head"><div class="sub__title">Speakers</div><div class="sub__sub">${e.speakers.length} voice${e.speakers.length===1?"":"s"} on the day</div></div><div class="spk-grid">${e.speakers.map(s => `<div class="spk-card"><div class="spk-card__avatar">${speakerAvatar(s)}</div><div class="spk-card__name">${esc(s.name)}</div>${s.role ? `<div class="spk-card__role">${esc(s.role)}</div>` : ""}${s.bio ? `<div class="spk-card__bio">${esc(s.bio)}</div>` : ""}${s.linkedin ? `<a href="${esc(s.linkedin)}" target="_blank" rel="noopener noreferrer" class="spk-card__li">${liIcon}<span>LinkedIn</span></a>` : ""}</div>`).join("")}</div></div>`
+    : "";
+
+  // demos
+  const demos = e.demos?.length
+    ? `<div class="sub" id="${esc(e.slug)}-demos"><div class="sub__head"><div class="sub__title">Demos & use cases</div><div class="sub__sub">What we built on stage</div></div><div class="demos-grid">${e.demos.map(d => {
+        const links = [];
+        if (d.github) links.push(`<a href="${esc(d.github)}" target="_blank" rel="noopener noreferrer" class="demo-card__link">&lt;/&gt; Code</a>`);
+        if (d.slides) links.push(`<a href="${esc(d.slides)}" target="_blank" rel="noopener noreferrer" class="demo-card__link">&#x1F4D1; Slides</a>`);
+        return `<div class="demo-card"><div class="demo-card__title">${esc(d.title)}</div>${d.speaker ? `<div class="demo-card__spk">by ${esc(d.speaker)}</div>` : ""}${d.description ? `<div class="demo-card__desc">${esc(d.description)}</div>` : ""}${d.stack?.length ? `<div class="demo-card__stack">${d.stack.map(t => `<span class="demo-card__tag">${esc(t)}</span>`).join("")}</div>` : ""}${links.length ? `<div class="demo-card__links">${links.join("")}</div>` : ""}</div>`;
+      }).join("")}</div></div>`
+    : "";
+
+  // gallery
+  let gallery = "";
+  if (e.gallery?.length){
+    gallery = `<div class="sub" id="${esc(e.slug)}-gallery"><div class="sub__head"><div class="sub__title">From the day</div><div class="sub__sub">${e.gallery.length} photo${e.gallery.length===1?"":"s"}</div></div><div class="gal">${e.gallery.map(src => `<div class="gal__item" data-lb="${esc(src)}"><img src="${esc(src)}" loading="lazy" alt="Event photo"></div>`).join("")}</div></div>`;
+  } else {
+    gallery = `<div class="sub" id="${esc(e.slug)}-gallery"><div class="sub__head"><div class="sub__title">From the day</div></div><div class="coming-soon"><div class="coming-soon__icon">&#x1F4F8;</div><div class="coming-soon__txt">Photos coming soon - drop them in <code>images/events/${esc(e.slug)}/</code> and add filenames to the <code>gallery</code> array.</div></div></div>`;
+  }
+
+  // sponsors
+  let sponsors = "";
+  if (e.sponsors?.length){
+    const tiers = ["Title","Gold","Silver","Community"];
+    const grouped = tiers.map(t => [t, e.sponsors.filter(s => s.tier === t)]).filter(([,arr]) => arr.length);
+    sponsors = `<div class="sub" id="${esc(e.slug)}-sponsors"><div class="sub__head"><div class="sub__title">Sponsors & partners</div><div class="sub__sub">The people who made it possible</div></div>${grouped.map(([tier, list]) => `<div class="spons-tier spons-tier--${tier.toLowerCase()}"><div class="spons-tier__head">${esc(tier)} ${tier === "Community" ? "Partner" : "Sponsor"}${list.length>1?"s":""}</div><div class="spons-grid">${list.map(s => `<a href="${esc(s.url||"#")}" target="_blank" rel="noopener noreferrer" class="spons-card">${s.logo ? `<img src="${esc(s.logo)}" alt="${esc(s.name)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;spons-card__ph&quot;>'+this.alt+'</div>'">` : `<div class="spons-card__ph">${esc(s.name)}</div>`}<div class="spons-card__name">${esc(s.name)}</div></a>`).join("")}</div></div>`).join("")}</div>`;
+  }
+
+  // feedback (name + linkedin required)
+  const feedback = e.feedback?.length
+    ? `<div class="sub" id="${esc(e.slug)}-feedback"><div class="sub__head"><div class="sub__title">What attendees said</div><div class="sub__sub">In their own words</div></div><div class="fb-grid">${e.feedback.map(f => `<div class="fb-card"><div class="fb-card__quote">${esc(f.quote)}</div><div class="fb-card__person"><div class="fb-card__av">${feedbackAvatar(f)}</div><div class="fb-card__who"><div class="fb-card__name">${esc(f.name)}</div>${f.role ? `<div class="fb-card__role">${esc(f.role)}</div>` : ""}</div>${f.linkedin ? `<a href="${esc(f.linkedin)}" target="_blank" rel="noopener noreferrer" class="fb-card__li" aria-label="${esc(f.name)} on LinkedIn">${liIcon}</a>` : ""}</div></div>`).join("")}</div></div>`
+    : "";
+
+  // resources
+  const resources = e.resources?.length
+    ? `<div class="sub" id="${esc(e.slug)}-resources"><div class="sub__head"><div class="sub__title">Resources</div><div class="sub__sub">Decks, code, recordings, recaps</div></div><div class="res-grid">${e.resources.map(r => `<a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer" class="res-card"><div class="res-card__icon">${resIcons[r.type] || "&#x1F517;"}</div><div class="res-card__lbl">${esc(r.label)}</div><div class="res-card__type">${esc(r.type||"link")}</div></a>`).join("")}</div></div>`
+    : "";
+
+  // share strip
+  const shareUrl = `https://careerbytecode.github.io/journey.html#${e.slug}`;
+  const shareTxt = `Relive ${e.name} on CareerByteCode`;
+  const shareStrip = `<div class="share-strip"><div class="share-strip__txt">Loved the recap? Share it with someone who'd want to be in the room next time.</div><div class="share-strip__btns"><a class="share-btn share-btn--li" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}">${liIcon}<span>LinkedIn</span></a><a class="share-btn share-btn--x" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTxt)}">X</a><a class="share-btn share-btn--wa" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=${encodeURIComponent(shareTxt+" "+shareUrl)}">WhatsApp</a></div></div>`;
+
+  return `<section class="event-block reveal" id="${esc(e.slug)}">
+    <div class="event-block__inner">
+      <div class="eh">
+        ${heroBg}
+        <div class="eh__body">
+          <div class="eh__tag">Event ${idx+1}</div>
+          <div class="eh__name">${esc(e.name)}</div>
+          ${e.tagline ? `<div class="eh__tagline">${esc(e.tagline)}</div>` : ""}
+          <div class="eh__meta">${heroMeta.join('<span class="dot"></span>')}</div>
+        </div>
+      </div>
+      ${miniNav}
+      ${quickStats}
+      ${about}
+      ${agenda}
+      ${speakers}
+      ${demos}
+      ${gallery}
+      ${sponsors}
+      ${feedback}
+      ${resources}
+      ${shareStrip}
+    </div>
+  </section>`;
+}
+
+/* MOUNT */
+document.getElementById("events-host").innerHTML = events.map(renderEvent).join("");
+
+/* COUNTERS — animate any [data-count-to] that's visible */
+(function(){
+  const els = document.querySelectorAll("[data-count-to]");
+  const animate = el => {
+    const target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+    const dur = 1400;
+    const start = performance.now();
+    const tick = now => {
+      const t = Math.min(1, (now - start)/dur);
+      const eased = 1 - Math.pow(1-t, 3);
+      el.textContent = Math.round(target * eased) + (target >= 100 ? "+" : "");
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  if (!("IntersectionObserver" in window)){ els.forEach(animate); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting){ animate(en.target); io.unobserve(en.target); } });
+  }, { threshold: 0.4 });
+  els.forEach(el => io.observe(el));
+})();
+
+/* LIGHTBOX */
+(function(){
+  const lb = document.getElementById("lb");
+  const lbImg = document.getElementById("lb-img");
+  const close = () => { lb.classList.remove("active"); lbImg.src = ""; };
+  document.body.addEventListener("click", e => {
+    const t = e.target.closest("[data-lb]");
+    if (t){ lbImg.src = t.getAttribute("data-lb"); lb.classList.add("active"); return; }
+    if (e.target.matches(".lb, .lb__close")){ close(); }
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+})();
+
+/* shared-premium.js wires up reveal observers on initial load only.
+   Our event blocks are inserted dynamically, so attach our own observer
+   that toggles `reveal--visible` (matching shared-premium.js convention). */
+(function(){
+  const els = document.querySelectorAll("#events-host .reveal");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window)){
+    els.forEach(el => el.classList.add("reveal--visible"));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting){
+        en.target.classList.add("reveal--visible");
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+  els.forEach(el => io.observe(el));
+})();
+</script>
+<script src="shared-premium.js" defer></script>
+</body>
+</html>
