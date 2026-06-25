@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="1024" height="1024">
+  <title>Ann — mark (cyan tile)</title>
+  <rect x="14" y="14" width="72" height="72" rx="20" fill="#3DD7E0"></rect>
+  <circle cx="68" cy="58" r="8" fill="#0E1014"></circle>
+</svg>

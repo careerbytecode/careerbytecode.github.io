@@ -1,0 +1,17 @@
+CareerByteCode (trial) — third-party licenses
+=============================================
+
+This project self-hosts the following fonts. Both are permissively licensed
+for commercial use under the SIL Open Font License 1.1, which permits free
+commercial use, embedding, and self-hosting. The fonts may not be sold by
+themselves and this notice must be retained.
+
+1) Bricolage Grotesque — display font (assets/fonts/bricolage.woff2)
+   License: SIL Open Font License 1.1
+   Source:  https://github.com/ateliertriay/bricolage
+
+2) Hanken Grotesk — body font (assets/fonts/hanken.woff2)
+   License: SIL Open Font License 1.1
+   Source:  https://github.com/marcologous/Hanken-Grotesk
+
+Full OFL text: https://openfontlicense.org

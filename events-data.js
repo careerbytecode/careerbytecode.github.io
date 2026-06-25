@@ -1,8 +1,8 @@
 /* ──────────────────────────────────────────────────────────────────────────
-   events-data.js — Single source of truth for the "Our Journey" page.
+   events-data.js - Single source of truth for the "Our Journey" page.
 
    ❶  To add a new event: append a new object to the `events` array below.
-       Save the file. Commit. Done — the page handles sorting, year grouping,
+       Save the file. Commit. Done - the page handles sorting, year grouping,
        filters, search, accordion behavior, stats, and lazy rendering for you.
 
    ❷  Photos:
@@ -13,7 +13,7 @@
    ❸  All fields except `slug`, `name`, `date` are optional and degrade
        gracefully. Empty arrays hide their subsection entirely.
 
-   ❹  Newest events show first automatically — no manual reordering needed.
+   ❹  Newest events show first automatically - no manual reordering needed.
 
    FIELD REFERENCE:
    {
@@ -42,99 +42,54 @@
 
 window.JOURNEY_EVENTS = [
 
-  // ─────────────────── EVENT 1 (placeholder — replace with real details) ───
+  // ─────────────────── CareerByteCode Chennai AI Meetup 2026 ───────────────
   {
-    slug: "event-1",
-    name: "CareerByteCode Meetup - Event 1",
-    tagline: "A full day of hands-on cloud, AI, and career conversations.",
-    date: "2025-09-20",
-    city: "City TBD",
-    venue: "Venue TBD",
-    hashtag: "#CBCMeetup1",
-    domain: "Cloud",
-    bannerImage: "",
-    about: "Event description coming soon. This block will cover the theme, who it was for, and what made the day memorable. Edit the 'about' field in events-data.js to replace this placeholder text.",
-    stats: { attendees: 120, sessions: 5, speakers: 6, durationHours: 8 },
-    agenda: [
-      { time: "09:30", title: "Registration & Coffee", speaker: "" },
-      { time: "10:00", title: "Welcome & Opening Note", speaker: "CBC Team" },
-      { time: "10:30", title: "Session 1 - To Be Announced", speaker: "Speaker name" },
-      { time: "12:00", title: "Networking Lunch", speaker: "" },
-      { time: "14:00", title: "Session 2 - To Be Announced", speaker: "Speaker name" },
-      { time: "16:00", title: "Panel - Career in Cloud & AI", speaker: "All speakers" },
-      { time: "17:30", title: "Closing & Group Photo", speaker: "" }
-    ],
-    speakers: [
-      { name: "Speaker One", role: "Cloud Architect", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Two", role: "AI Engineer", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Three", role: "DevOps Lead", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" }
-    ],
-    demos: [
-      { title: "Demo 1 - Use case title", speaker: "Speaker One", stack: ["Azure", "Terraform", "GitHub Actions"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" },
-      { title: "Demo 2 - Use case title", speaker: "Speaker Two", stack: ["Python", "OpenAI", "LangChain"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" }
-    ],
-    gallery: [],
-    sponsors: [
-      { name: "Title Sponsor", tier: "Title", logo: "", url: "#" },
-      { name: "Gold Sponsor", tier: "Gold", logo: "", url: "#" },
-      { name: "Community Partner", tier: "Community", logo: "", url: "#" }
-    ],
-    feedback: [
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "Cloud Engineer", photo: "", quote: "Replace with a real attendee testimonial. One to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." },
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "DevOps Practitioner", photo: "", quote: "Replace with a real attendee testimonial. One to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." }
-    ],
-    resources: [
-      { label: "Event Recap on LinkedIn", url: "#", type: "article" },
-      { label: "Demo Code Repository", url: "#", type: "repo" }
-    ]
-  },
-
-  // ─────────────────── EVENT 2 (placeholder — replace with real details) ───
-  {
-    slug: "event-2",
-    name: "CareerByteCode Meetup - Event 2",
-    tagline: "Round two - bigger room, sharper demos, same community.",
-    date: "2026-01-25",
-    city: "City TBD",
-    venue: "Venue TBD",
-    hashtag: "#CBCMeetup2",
+    slug: "chennai-ai-meetup-2026",
+    name: "CareerByteCode Chennai AI Meetup 2026",
+    tagline: "A full day of practical AI - live demos, real-world use cases and a packed room at IIT Madras Research Park.",
+    date: "2026-05-24",
+    city: "Chennai",
+    venue: "BrahmaGupta Event Hall, IIT Madras Research Park",
     domain: "AI",
-    bannerImage: "",
-    about: "Event description coming soon. This block will cover the theme, who it was for, and what made the day memorable. Edit the 'about' field in events-data.js to replace this placeholder text.",
-    stats: { attendees: 130, sessions: 6, speakers: 6, durationHours: 8 },
-    agenda: [
-      { time: "09:30", title: "Registration & Coffee", speaker: "" },
-      { time: "10:00", title: "Welcome & Opening Note", speaker: "CBC Team" },
-      { time: "10:30", title: "Session 1 - To Be Announced", speaker: "Speaker name" },
-      { time: "12:00", title: "Networking Lunch", speaker: "" },
-      { time: "14:00", title: "Session 2 - To Be Announced", speaker: "Speaker name" },
-      { time: "16:00", title: "Panel - Career in Cloud & AI", speaker: "All speakers" },
-      { time: "17:30", title: "Closing & Group Photo", speaker: "" }
-    ],
+    bannerImage: "assets/img/events/chennai-ai-meetup-2026/banner.jpg",
+    about: "CareerByteCode's first in-person AI meetup in Chennai brought together developers, AI enthusiasts, cloud engineers, students and working professionals for a full day of practical AI. Hosted at the BrahmaGupta Event Hall inside IIT Madras Research Park, the day featured live demos, real-world use cases, an interactive prompt battle and a career-growth session - all centred on how AI is actually built and shipped in production.",
+    stats: { attendees: 45, sessions: 5, speakers: 7, durationHours: 5 },
+    agenda: [],
     speakers: [
-      { name: "Speaker One", role: "Platform Engineer", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Two", role: "ML Practitioner", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" },
-      { name: "Speaker Three", role: "FullStack Lead", bio: "Replace this with a 2-line speaker bio. Years of experience, current role, one signature project.", photo: "", linkedin: "https://www.linkedin.com/in/careerbytecode" }
+      { name: "Kiruthiga Ravi", role: "AI Engineer", bio: "Hosted the opening and closing of the meetup.", photo: "", linkedin: "https://www.linkedin.com/in/aiwithkiruthiga/" },
+      { name: "Swathipriya D.G", role: "AI Engineer", bio: "Event host and co-presenter of the MediRAG AI medical assistant demo.", photo: "", linkedin: "https://www.linkedin.com/in/swathi-priya-d-g-curious2upgrade/" },
+      { name: "Dharshini K", role: "Data Mentor", bio: "Co-presented the MediRAG AI medical assistant demo.", photo: "", linkedin: "https://www.linkedin.com/in/askdharshiniai/" },
+      { name: "Infantus Godfrey", role: "Cloud DevOps", bio: "Presented the Fastly web content acceleration use case.", photo: "", linkedin: "https://www.linkedin.com/in/infantusgodfrey/" },
+      { name: "Siva Ranjan", role: "AI/ML Engineer", bio: "Co-presented the Fastly web content acceleration use case.", photo: "", linkedin: "https://www.linkedin.com/in/sivaaiexpert" },
+      { name: "Jenefer R George", role: "NLP Specialist", bio: "Co-presented the Fastly web content acceleration use case.", photo: "", linkedin: "https://www.linkedin.com/in/jenwithai/" },
+      { name: "Daisy G Thomas", role: "AI Engineer", bio: "Led the career-growth session.", photo: "", linkedin: "https://www.linkedin.com/in/daisy-grace-thomas-38034b189/" }
     ],
     demos: [
-      { title: "Demo 1 - Use case title", speaker: "Speaker One", stack: ["Kubernetes", "ArgoCD", "Helm"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" },
-      { title: "Demo 2 - Use case title", speaker: "Speaker Two", stack: ["AWS", "SageMaker", "Lambda"], description: "Brief description of the demo and the real-world problem it solved. Replace this with the actual story.", github: "", slides: "" }
+      { title: "MediRAG - AI Medical Assistant", speaker: "Swathipriya D.G & Dharshini K", stack: ["Python", "LangChain", "RAG", "LLM"], description: "A retrieval-augmented medical assistant that answers health queries from trusted medical sources - a demonstration of safe, grounded GenAI in healthcare.", github: "", slides: "" },
+      { title: "Fastly - Web Content Acceleration", speaker: "Infantus Godfrey, Siva Ranjan & Jenefer R George", stack: ["Fastly", "CDN", "Edge", "VCL"], description: "How edge caching and CDN strategies accelerate global web content delivery, with a walkthrough of real-world performance gains.", github: "", slides: "" }
     ],
-    gallery: [],
+    gallery: [
+      "assets/img/events/chennai-ai-meetup-2026/01.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/02.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/03.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/04.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/05.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/06.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/07.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/08.jpg",
+      "assets/img/events/chennai-ai-meetup-2026/09.jpg"
+    ],
     sponsors: [
-      { name: "Title Sponsor", tier: "Title", logo: "", url: "#" },
-      { name: "Gold Sponsor", tier: "Gold", logo: "", url: "#" },
-      { name: "Silver Sponsor", tier: "Silver", logo: "", url: "#" }
+      { name: "CareerByteCode", tier: "Title", logo: "assets/img/cbc-logo.png", url: "https://www.careerbytecode.com" },
+      { name: "Fastly", tier: "Gold", logo: "assets/img/fastly-logo.svg", url: "https://www.fastly.com" }
     ],
-    feedback: [
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "SRE", photo: "", quote: "Replace with a real attendee testimonial. One to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." },
-      { name: "Attendee Name", linkedin: "https://www.linkedin.com/in/careerbytecode", role: "Data Engineer", photo: "", quote: "Replace with a real attendee testimonial. One to three sentences describing what they got out of the day. Name and LinkedIn are required - bio and photo are optional." }
-    ],
+    feedback: [],
     resources: [
-      { label: "Event Recap on LinkedIn", url: "#", type: "article" }
+      { label: "View on Meetup", url: "https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/events/314755402/", type: "article" },
+      { label: "Photo Album on Meetup", url: "https://www.meetup.com/careerbytecode-ai-cloud-emerging-leaders/photos/35998111/", type: "article" }
     ]
   }
 
-  // ─────────────────── Add new events below — same shape as above. ─────────
+  // ─────────────────── Add new events below - same shape as above. ─────────
 
 ];

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CareerByteCode Programs — live bootcamps, internships & courses plus what's coming next. DevOps, Kubernetes, Digital Marketing, AI & GenAI — mentor-led and hands-on.">
+<meta property="og:title" content="Programs | CareerByteCode">
+<meta property="og:description" content="Live bootcamps & courses you can join now, plus upcoming internships across DevOps, GenAI and AI/ML.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://careerbytecode.github.io/programs.html">
+<meta property="og:image" content="assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#EDF1F8">
+<link rel="icon" href="assets/img/cbc-logo.png" type="image/png">
+<title>Programs | CareerByteCode</title>
+<link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/hanken.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/cbc.css">
+<style>
+/* ===== Programs page-specific ===== */
+.pg-hero{position:relative;overflow:clip;text-align:center;padding:clamp(46px,7vw,96px) 0 clamp(30px,4vw,48px)}
+.pg-hero__bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.pg-hero__bg .blob{position:absolute;border-radius:50%;filter:blur(92px);opacity:.2}
+.pg-hero__bg .b1{width:440px;height:440px;background:var(--blue);top:-150px;left:7%}
+.pg-hero__bg .b2{width:360px;height:360px;background:var(--teal);top:-110px;right:8%;opacity:.15}
+.pg-hero__bg .b3{width:300px;height:300px;background:#8b5cf6;bottom:-150px;left:44%;opacity:.13}
+.pg-hero__bg .grid{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(var(--line) 1.1px,transparent 1.2px);background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 28%,#000,transparent 78%);mask-image:radial-gradient(ellipse 72% 70% at 50% 28%,#000,transparent 78%)}
+.pg-hero__in{position:relative;z-index:2;max-width:880px;margin:0 auto}
+.pg-hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(2.3rem,5.4vw,4.3rem);letter-spacing:-.035em;line-height:1.02;color:var(--ink)}
+.pg-hero h1 .sh{background:linear-gradient(120deg,var(--navy),var(--blue));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pg-hero .sub{color:var(--body);max-width:640px;margin:18px auto 0;line-height:1.75;font-size:1.04rem}
+.pg-stats{display:flex;justify-content:center;gap:clamp(20px,4vw,48px);flex-wrap:wrap;margin-top:30px}
+.pg-stat{text-align:center}
+.pg-stat .n{font-family:var(--fd);font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1;color:var(--navy)}
+.pg-stat.s2 .n{color:#0a8e82}.pg-stat.s3 .n{color:#7c3aed}
+.pg-stat .l{font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:6px}
+
+/* accents */
+.acc-blue{--acc:#1E88E5;--accd:#0D47A1}.acc-rose{--acc:#E0479E;--accd:#c8195a}.acc-teal{--acc:#0FB5A6;--accd:#0a8e82}
+.acc-purple{--acc:#8b5cf6;--accd:#7c3aed}.acc-gold{--acc:#F59E0B;--accd:#b8780a}.acc-cyan{--acc:#3aa6e0;--accd:#1E88E5}
+
+/* ── RUNNING program cards ── */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.pcard{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 4px 18px rgba(13,71,161,.06);transition:transform .2s,box-shadow .25s,border-color .25s;overflow:hidden}
+.pcard::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--acc),var(--accd))}
+.pcard:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(13,71,161,.14);border-color:var(--acc)}
+.pcard__top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.pcard__ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--acc),var(--accd))}.pcard__ic svg{width:26px;height:26px}
+.pbadge{display:inline-flex;align-items:center;gap:7px;font-family:var(--fm);font-size:.64rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0a8e82;background:rgba(15,181,166,.12);border:1px solid rgba(15,181,166,.3);padding:6px 11px;border-radius:999px}
+.pbadge .dot{width:7px;height:7px;border-radius:50%;background:#0FB5A6;box-shadow:0 0 0 0 rgba(15,181,166,.5);animation:plive 1.8s infinite}
+@keyframes plive{0%{box-shadow:0 0 0 0 rgba(15,181,166,.5)}70%{box-shadow:0 0 0 7px rgba(15,181,166,0)}100%{box-shadow:0 0 0 0 rgba(15,181,166,0)}}
+@media(prefers-reduced-motion:reduce){.pbadge .dot{animation:none}}
+.pcard h3{font-family:var(--fd);font-weight:700;font-size:1.28rem;color:var(--ink);letter-spacing:-.02em;line-height:1.2;margin-bottom:9px}
+.pcard__desc{font-size:.9rem;color:var(--body);line-height:1.65;margin-bottom:16px}
+.pcard__meta{display:flex;flex-wrap:wrap;gap:8px 16px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:14px}
+.pcard__meta span{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--body);font-weight:500}
+.pcard__meta svg{width:15px;height:15px;color:var(--acc);flex:0 0 auto}
+.pcard__tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+.ptag{font-family:var(--fm);font-size:.66rem;letter-spacing:.02em;color:var(--accd);background:color-mix(in srgb,var(--acc) 11%,#fff);border:1px solid color-mix(in srgb,var(--acc) 24%,#fff);padding:4px 9px;border-radius:7px}
+.pcard__cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--fd);font-weight:600;font-size:.92rem;color:#fff;background:linear-gradient(135deg,var(--acc),var(--accd));border-radius:12px;padding:13px 20px;transition:transform .2s,box-shadow .25s}
+.pcard:hover .pcard__cta{box-shadow:0 12px 26px color-mix(in srgb,var(--acc) 38%,transparent)}
+.pcard__cta svg{width:16px;height:16px;transition:transform .2s}
+.pcard:hover .pcard__cta svg{transform:translateX(3px)}
+
+/* ── UPCOMING cards ── */
+.ugrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.ucard{position:relative;display:flex;flex-direction:column;background:var(--canvas);border:1px solid var(--line);border-radius:18px;padding:24px;transition:transform .2s,box-shadow .25s,border-color .25s;overflow:hidden}
+.ucard::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--acc);opacity:.5}
+.ucard:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(13,71,161,.1);border-color:var(--acc);background:#fff}
+.ucard__top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.ucard__ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:var(--accd);background:color-mix(in srgb,var(--acc) 14%,#fff);border:1px solid color-mix(in srgb,var(--acc) 26%,#fff)}.ucard__ic svg{width:22px;height:22px}
+.ubadge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#b8780a;background:rgba(245,158,11,.13);border:1px solid rgba(245,158,11,.32);padding:5px 10px;border-radius:999px}
+.ucard h3{font-family:var(--fd);font-weight:700;font-size:1.12rem;color:var(--ink);letter-spacing:-.01em;line-height:1.2;margin-bottom:8px}
+.ucard__loc{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--body);margin-bottom:20px}
+.ucard__loc svg{width:15px;height:15px;color:var(--acc)}
+.ucard__cta{margin-top:auto;display:inline-flex;align-items:center;gap:7px;font-family:var(--fd);font-weight:600;font-size:.86rem;color:var(--accd)}
+.ucard__cta svg{width:15px;height:15px;transition:transform .2s}
+.ucard:hover .ucard__cta svg{transform:translateX(3px)}
+
+/* CTA band */
+.pg-cta{position:relative;overflow:hidden;background:linear-gradient(135deg,#0a2a5e,#0D47A1 55%,#1565c0);border-radius:26px;padding:clamp(40px,6vw,68px) clamp(20px,4vw,48px);text-align:center;color:#fff}
+.pg-cta__orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
+.pg-cta__orb1{width:330px;height:330px;background:var(--sky);top:-120px;left:-80px}.pg-cta__orb2{width:290px;height:290px;background:#0a2a5e;bottom:-110px;right:-60px;opacity:.7}
+.pg-cta__in{position:relative;z-index:2;max-width:720px;margin:0 auto}
+.pg-cta h2{font-family:var(--fd);font-weight:600;font-size:clamp(1.7rem,3.6vw,2.5rem);color:#fff;letter-spacing:-.02em;line-height:1.14;margin-bottom:14px}
+.pg-cta p{color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:28px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav4">
+  <div class="wrap">
+    <div class="navp">
+      <div class="navp__l">
+        <a href="index.html" aria-label="CareerByteCode home"><img class="navp__logoimg" src="assets/img/cbc-logo.png" alt="CareerByteCode"></a>
+        <nav class="navp__links">
+          <a href="events.html">Events</a><a href="journey.html">Journey</a><a href="programs.html" class="active">Programs</a><a href="sheleads.html">SheLeads</a><a href="revenue-models.html">Revenue</a><a href="onboarding.html">Onboarding</a><a href="collaborate.html">Collaborate</a>
+        </nav>
+      </div>
+      <div class="navp__r">
+        <span class="navp__note">Bootcamps · internships · courses</span>
+        <span class="navp__clock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-clock>--:--</span></span>
+        <a class="btx btx--blue" href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer"><span class="roll"><span class="roll__in"><span>Join Free</span><span>Join Free</span></span></span><span class="btx__c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <button class="navp__menu" type="button" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="pg-hero" id="hero">
+  <div class="pg-hero__bg" aria-hidden="true"><div class="grid"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap pg-hero__in">
+    <span class="pill fx fx-1"><span class="dot"></span> Bootcamps · Internships · Courses</span>
+    <h1 class="fx fx-2" style="margin-top:18px">Programs that turn skills into <span class="sh">careers</span></h1>
+    <p class="sub fx fx-3">Mentor-led, hands-on and project-driven. Join a bootcamp or course running right now, or get a head start on what's coming next.</p>
+    <div class="pg-stats fx fx-4">
+      <div class="pg-stat s1"><div class="n" data-pstat="running">0</div><div class="l">Running Now</div></div>
+      <div class="pg-stat s2"><div class="n" data-pstat="upcoming">0</div><div class="l">Upcoming</div></div>
+      <div class="pg-stat s3"><div class="n">100%</div><div class="l">Mentor-led</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RUNNING -->
+<section class="sec--tight wrap" id="running">
+  <div class="shead"><span class="eye rv">Running now</span><h2 class="h2v rv" data-d="1">Live bootcamps &amp; <span class="pop">courses</span></h2><p class="rv" data-d="2">Enrolling today - structured, mentor-led programs you can join right now and start building production-grade skills.</p></div>
+  <div class="pgrid" id="prog-running"></div>
+</section>
+
+<!-- UPCOMING -->
+<section class="bandw" id="upcoming"><div class="sec--tight wrap">
+  <div class="shead"><span class="eye rv">Coming soon</span><h2 class="h2v rv" data-d="1">Upcoming <span class="pop">internships</span></h2><p class="rv" data-d="2">New cohorts opening across India. Register your interest now and our team will reach out with dates, curriculum and how to apply.</p></div>
+  <div class="ugrid" id="prog-upcoming"></div>
+</div></section>
+
+<!-- CTA -->
+<section class="sec--tight wrap" id="cta">
+  <div class="pg-cta rv">
+    <div class="pg-cta__orb pg-cta__orb1"></div><div class="pg-cta__orb pg-cta__orb2"></div>
+    <div class="pg-cta__in">
+      <h2>Don't see your track yet? It's probably coming.</h2>
+      <p>We launch new bootcamps and internships every cohort. Follow CareerByteCode to be the first to know when applications open - and to get early access.</p>
+      <a class="wbtn" href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer">Follow for announcements <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="foot4">
+  <div class="wrap">
+    <img class="foot4__logo" src="assets/img/cbc-logo.png" alt="CareerByteCode">
+    <div class="foot4__big">We don't just teach tech -<br><em>we create leaders.</em></div>
+    <a class="wbtn" href="https://www.linkedin.com/in/careerbytecode" target="_blank" rel="noopener noreferrer">Join CareerByteCode <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="foot4__copy">© 2015-2026 CareerByteCode · Cloudnloud Technologies SRL · Belgium · community@careerbytecode.com</div>
+  </div>
+</footer>
+
+<!-- mobile sheet -->
+<div class="sheet">
+  <div class="sheet__bg"></div>
+  <div class="sheet__p">
+    <span class="navp__clock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-clock>--:--</span></span>
+    <nav class="sheet__links"><a href="events.html">Events</a><a href="journey.html">Journey</a><a href="programs.html">Programs</a><a href="sheleads.html">SheLeads</a><a href="revenue-models.html">Revenue</a><a href="onboarding.html">Onboarding</a><a href="collaborate.html">Collaborate</a></nav>
+    <a class="btx btx--blue" href="https://www.linkedin.com/company/careerbytecode" target="_blank" rel="noopener noreferrer" data-sheet-close><span class="roll"><span class="roll__in"><span>Join Free</span><span>Join Free</span></span></span><span class="btx__c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </div>
+</div>
+
+<button class="btt" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<!-- Programs data — edit programs-data.js to add/update programs -->
+<script src="programs-data.js"></script>
+<script>
+(function(){
+  var P = window.CBC_PROGRAMS || { running: [], upcoming: [] };
+  var esc = function(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); };
+  var accClass = function(a){ return 'acc-' + (a||'blue'); };
+
+  /* domain → inline SVG icon */
+  var ICON = {
+    DevOps:   '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.9 6.9a2.12 2.12 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.94-7.94z"/>',
+    Kubernetes:'<path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/>',
+    Marketing:'<path d="M3 11l18-5v12L3 13zM11.6 16.8a3 3 0 0 1-5.8-1.6"/>',
+    AI:       '<rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M8 2h8M9 14h0M15 14h0"/>',
+    GenAI:    '<path d="M12 3l1.9 4.6L19 9l-3.8 3 1.3 5.2L12 14.8 7.5 17.2 8.8 12 5 9l5.1-1.4z"/>',
+    'AI/ML':  '<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/>',
+    Cloud:    '<path d="M18 10h1a3 3 0 0 1 0 6H6a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A3.5 3.5 0 0 1 18 10z"/>',
+    Security: '<path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/>',
+    Data:     '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/>'
+  };
+  var icon = function(d){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + (ICON[d] || ICON.DevOps) + '</svg>'; };
+  var arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+  /* running cards */
+  var rHost = document.getElementById('prog-running');
+  if (rHost) rHost.innerHTML = (P.running||[]).map(function(p){
+    var tags = (p.tags||[]).map(function(t){ return '<span class="ptag">'+esc(t)+'</span>'; }).join('');
+    var meta = '';
+    if (p.duration) meta += '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'+esc(p.duration)+'</span>';
+    if (p.mentor)   meta += '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>'+esc(p.mentor)+'</span>';
+    if (p.format)   meta += '<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>'+esc(p.format)+'</span>';
+    return '<a class="pcard rv '+accClass(p.accent)+'" href="'+esc(p.url)+'" target="_blank" rel="noopener noreferrer">'
+      + '<div class="pcard__top"><span class="pcard__ic">'+icon(p.domain)+'</span><span class="pbadge"><span class="dot"></span> Live · Enrolling</span></div>'
+      + '<h3>'+esc(p.title)+'</h3>'
+      + '<p class="pcard__desc">'+esc(p.description)+'</p>'
+      + '<div class="pcard__meta">'+meta+'</div>'
+      + (tags?'<div class="pcard__tags">'+tags+'</div>':'')
+      + '<span class="pcard__cta">View Program '+arrow+'</span></a>';
+  }).join('');
+
+  /* upcoming cards */
+  var uHost = document.getElementById('prog-upcoming');
+  if (uHost) uHost.innerHTML = (P.upcoming||[]).map(function(p){
+    return '<a class="ucard rv '+accClass(p.accent)+'" href="'+esc(p.url)+'" target="_blank" rel="noopener noreferrer">'
+      + '<div class="ucard__top"><span class="ucard__ic">'+icon(p.domain)+'</span><span class="ubadge">Coming soon</span></div>'
+      + '<h3>'+esc(p.title)+'</h3>'
+      + '<div class="ucard__loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'+esc(p.city)+'</div>'
+      + '<span class="ucard__cta">Register interest '+arrow+'</span></a>';
+  }).join('');
+
+  /* stat strip */
+  var setN = function(k,v){ var el=document.querySelector('[data-pstat="'+k+'"]'); if(el) el.textContent=v; };
+  setN('running', (P.running||[]).length);
+  setN('upcoming', (P.upcoming||[]).length);
+
+  /* reveal the freshly-injected cards */
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('#prog-running .rv, #prog-upcoming .rv').forEach(function(e){io.observe(e);});
+  } else {
+    document.querySelectorAll('#prog-running .rv, #prog-upcoming .rv').forEach(function(e){e.classList.add('in');});
+  }
+})();
+</script>
+<script src="assets/js/cbc.js" defer></script>
+</body>
+</html>
